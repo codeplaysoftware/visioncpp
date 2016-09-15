@@ -1,0 +1,4 @@
+<map id="visioncpp::internal::LocalOutput&lt; false, IsRoot, LC, LR, ParallelCopy&lt; LHSExpr, RHSExpr, Cols, Rows, OffsetColIn, OffsetRowIn, OffsetColOut, OffsetRowOut, LeafType, LVL &gt; &gt;::getTuple" name="visioncpp::internal::LocalOutput&lt; false, IsRoot, LC, LR, ParallelCopy&lt; LHSExpr, RHSExpr, Cols, Rows, OffsetColIn, OffsetRowIn, OffsetColOut, OffsetRowOut, LeafType, LVL &gt; &gt;::getTuple">
+<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1LocalOutput.html#abc63292a957140f2a601692f3c2983c4" title="getTuple function is used to create and wrap local memory into a tuple " alt="" coords="315,42,474,83"/>
+<area shape="rect" id="node3" href="$namespacevisioncpp_1_1internal_1_1tools_1_1tuple.html#a327306360f5729315416bf96f49a4d73" title="make_tuple " alt="" coords="523,42,693,83"/>
+</map>

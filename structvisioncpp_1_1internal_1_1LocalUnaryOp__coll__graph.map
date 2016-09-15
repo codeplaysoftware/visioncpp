@@ -1,0 +1,4 @@
+<map id="visioncpp::internal::LocalUnaryOp&lt; USROP, InTp &gt;" name="visioncpp::internal::LocalUnaryOp&lt; USROP, InTp &gt;">
+<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title="{visioncpp::internal\l::LocalNeighbour\&lt; InTp \&gt;\n||+ LocalNeighbour()\l+ set_offset()\l+ at()\l+ at()\l}" alt="" coords="103,360,273,496"/>
+<area shape="rect" id="node5" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title="LocalNeighbour is used to provide local access for each element of the local memory based on the Coor..." alt="" coords="243,160,395,296"/>
+</map>

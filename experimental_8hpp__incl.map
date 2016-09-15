@@ -1,0 +1,14 @@
+<map id="experimental.hpp" name="experimental.hpp">
+<area shape="rect" id="node2" href="$OP__AbsSub_8hpp.html" title="It gets the absolute difference between 2 images. " alt="" coords="5,80,123,107"/>
+<area shape="rect" id="node3" href="$OP__Add_8hpp.html" title="It adds the values pixel by pixel of two images. " alt="" coords="148,80,244,107"/>
+<area shape="rect" id="node4" href="$OP__AniDiff_8hpp.html" title="It applies a simplified version of the anisotropic diffusion. " alt="" coords="269,80,381,107"/>
+<area shape="rect" id="node5" href="$OP__Div_8hpp.html" title="It divides two matrices element&#45;wise. " alt="" coords="407,80,500,107"/>
+<area shape="rect" id="node6" href="$OP__FloatToF32C3_8hpp.html" title="Converts from uchar to float and float to uchar. " alt="" coords="525,80,680,107"/>
+<area shape="rect" id="node7" href="$OP__Median_8hpp.html" title="It applies the median filter in an image. " alt="" coords="705,80,820,107"/>
+<area shape="rect" id="node8" href="$OP__Merge2Chns_8hpp.html" title="It merges 2 matrices of one channels into one matrix of 2 channels. " alt="" coords="844,80,991,107"/>
+<area shape="rect" id="node9" href="$OP__Mul_8hpp.html" title="Element&#45;wise matrix multiplication. " alt="" coords="1015,80,1109,107"/>
+<area shape="rect" id="node10" href="$OP__PowerOf2_8hpp.html" title="It calculates the power of 2 of a matrix. " alt="" coords="1135,80,1264,107"/>
+<area shape="rect" id="node11" href="$OP__Scale_8hpp.html" title="It scales the pixel value of an image by a factor. " alt="" coords="1289,80,1396,107"/>
+<area shape="rect" id="node12" href="$OP__Sub_8hpp.html" title="It calculates the difference between 2 images. " alt="" coords="1420,80,1516,107"/>
+<area shape="rect" id="node13" href="$OP__Thresh_8hpp.html" title="it applies a threshold operation in the image " alt="" coords="1541,80,1653,107"/>
+</map>

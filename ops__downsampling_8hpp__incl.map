@@ -1,0 +1,4 @@
+<map id="ops_downsampling.hpp" name="ops_downsampling.hpp">
+<area shape="rect" id="node2" href="$OP__DownsampleAverage_8hpp.html" title="This file contains the downsampling filter using average technique. " alt="" coords="5,80,203,107"/>
+<area shape="rect" id="node3" href="$OP__DownsampleClosest_8hpp.html" title="This files contains downsampling filter using closest technique If the number of channel is different..." alt="" coords="227,80,421,107"/>
+</map>

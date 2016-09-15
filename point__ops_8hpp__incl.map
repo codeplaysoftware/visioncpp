@@ -1,0 +1,7 @@
+<map id="point_ops.hpp" name="point_ops.hpp">
+<area shape="rect" id="node2" href="$assign_8hpp.html" title="This file contains the Assign struct which is used to allocate the result of the right hand side expr..." alt="" coords="5,80,91,107"/>
+<area shape="rect" id="node3" href="$leaf__node_8hpp.html" title="This file contains the LeafNode struct which is a general representation of our terminal node in the ..." alt="" coords="115,80,217,107"/>
+<area shape="rect" id="node4" href="$parallel__copy_8hpp.html" title="This file contains the ParallelCopy struct which is used to allocate the partial result of the right&#45;..." alt="" coords="243,80,365,107"/>
+<area shape="rect" id="node5" href="$resizable__binary_8hpp.html" title="This file contains RBiOP (Binary Operation) struct which is used to apply Binary Operation on left ha..." alt="" coords="389,80,529,107"/>
+<area shape="rect" id="node6" href="$resizable__unary_8hpp.html" title="This file contains RUnOP (Unary Operation) struct which is used to apply Unary Operation on the right..." alt="" coords="555,80,693,107"/>
+</map>
