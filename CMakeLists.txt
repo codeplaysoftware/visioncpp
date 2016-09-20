@@ -30,7 +30,6 @@ message(STATUS "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
 #setup
 include(FindCXX11)
 include(FindOpenCL)
-include(FindComputeCpp)
 
 # find pthread
 find_package(Threads REQUIRED)
@@ -39,23 +38,17 @@ if(THREADS_HAVE_PTHREAD_ARG)
   set_property(TARGET my_app PROPERTY INTERFACE_COMPILE_OPTIONS "pthread")
 endif()
 
-# set up sycl variables
-SET(COMPUTECPP_PACKAGE_ROOT_DIR "UNDEFINED" CACHE PATH "ComputeCPP root")
-SET(COMPUTECPP_INCLUDE ${COMPUTECPP_PACKAGE_ROOT_DIR}/include)
-SET(COMPUTECPP_LIBS ${COMPUTECPP_PACKAGE_ROOT_DIR}/lib)
-SET(COMPUTECPP_BIN ${COMPUTECPP_PACKAGE_ROOT_DIR}/bin)
-
-if(NOT EXISTS ${COMPUTECPP_BIN}/compute++${EXEEXT})
-  message("Need to set COMPUTECPP_PACKAGE_ROOT_DIR to a valid directory!")
-  message(FATAL_ERROR "${COMPUTECPP_BIN}/compute++${EXEEXT}")
-endif(NOT EXISTS ${COMPUTECPP_BIN}/compute++${EXEEXT})
-
-#internal dep
-include(testgen)
-
-#projects
-include(tests)
-include(examples)
+SET(COMPUTECPP_PACKAGE_ROOT_DIR "UNDEFINED" CACHE PATH "ComputeCpp root")
+if(${COMPUTECPP_PACKAGE_ROOT_DIR} STREQUAL "UNDEFINED")
+  message(STATUS "COMPUTECPP_PACKAGE_ROOT_DIR is not set.")
+else()
+  include(FindComputeCpp)
+  #internal dep
+  include(testgen)
+  #projects
+  include(tests)
+  include(examples)
+endif()
 
 #docs
 include(doxygen)
