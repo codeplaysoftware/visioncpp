@@ -43,40 +43,13 @@
 // it was created for displaying the optical flow in RGB
 struct OP_UVtoPolar {
   visioncpp::pixel::F32C3 operator()(visioncpp::pixel::F32C2 t) {
-    float intensity = cl::sycl::sqrt(t[0] * t[0] + t[1] * t[1]) / 2.0f;
+    float intensity = cl::sycl::clamp(
+        cl::sycl::sqrt(t[0] * t[0] + t[1] * t[1]) / 2.0f, 0.0f, 1.0f);
     float angle = cl::sycl::atan2(t[1], t[0]) / (2.0f * M_PI);
     float chn = 1.0f;
     return visioncpp::pixel::F32C3(angle, chn, intensity);
   }
 };
-
-// function to convert the (u,v) matrix to colors for displaying purposes
-template <size_t COLS, size_t ROWS, size_t SM, typename Device>
-void displayOpticalFlow(const std::shared_ptr<float> uv,
-                        std::shared_ptr<uchar> rgbFlow, Device &dev) {
-  // output node that will store the color information
-  auto out =
-      visioncpp::terminal<visioncpp::pixel::U8C3, COLS, ROWS,
-                          visioncpp::memory_type::Buffer2D>(rgbFlow.get());
-
-  // input UV
-  auto inUV = visioncpp::terminal<visioncpp::pixel::F32C2, COLS, ROWS,
-                                  visioncpp::memory_type::Buffer2D>(uv.get());
-  // convert UV into polar coordinates
-  auto polar = visioncpp::point_operation<OP_UVtoPolar>(inUV);
-
-  // convert into RGB
-  auto frgb = visioncpp::point_operation<visioncpp::OP_HSVToRGB>(polar);
-
-  // convert float to char
-  auto urgb = visioncpp::point_operation<visioncpp::OP_F32C3ToU8C3>(frgb);
-
-  // assign the urgb to the output node
-  auto k = visioncpp::assign(out, urgb);
-
-  // execute
-  visioncpp::execute<visioncpp::policy::Fuse, SM, SM, SM, SM>(k, dev);
-}
 
 // main program
 int main(int argc, char **argv) {
@@ -94,16 +67,21 @@ int main(int argc, char **argv) {
   constexpr size_t ROWS = 480;
   constexpr size_t SM = 16;
 
-  // initializing the mask memories
-  float sum_mask[9] = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
+  // defining sum mask
+  constexpr size_t N = 15;
+  constexpr size_t NxN = N * N;
+  float sum_mask[NxN];
+  for (size_t i = 0; i < NxN; i++) {
+    sum_mask[i] = 1.0f;
+  }
+
+  // defining derivatives
   float prewitt_x[9] = {-1.0f, 0.0f,  1.0f, -2.0f, 0.0f,
                         2.0f,  -1.0f, 0.0f, 1.0f};
   float prewitt_y[9] = {-1.0f, -2.0f, -1.0f, 0.0, 0.0f, 0.0f, 1.0f, 2.0f, 1.0f};
 
   // initializing pointers which will store the final results
-  std::shared_ptr<float> outputUV(new float[COLS * ROWS * 2],
-                                  [](float *dataMem) { delete[] dataMem; });
-  std::shared_ptr<uchar> rgbflow(new uchar[COLS * ROWS * 3],
+  std::shared_ptr<uchar> rgbFlow(new uchar[COLS * ROWS * 3],
                                  [](uchar *dataMem) { delete[] dataMem; });
 
   // initializing matrices which will store current and previous frame
@@ -111,7 +89,7 @@ int main(int argc, char **argv) {
   cv::Mat previous;
 
   // init matrix which displays in RGB the (u,v) matrix
-  cv::Mat rgbflow_mat(ROWS, COLS, CV_8UC3, rgbflow.get());
+  cv::Mat rgbflow_mat(ROWS, COLS, CV_8UC3, rgbFlow.get());
 
   // flag to control if it is the first frame
   bool first = true;
@@ -144,9 +122,9 @@ int main(int argc, char **argv) {
       cv::resize(current, current, cv::Size(COLS, ROWS), 0, 0, cv::INTER_CUBIC);
 
       // init terminal nodes
-      auto outUV =
-          visioncpp::terminal<visioncpp::pixel::F32C2, COLS, ROWS,
-                              visioncpp::memory_type::Buffer2D>(outputUV.get());
+      auto out =
+          visioncpp::terminal<visioncpp::pixel::U8C3, COLS, ROWS,
+                              visioncpp::memory_type::Buffer2D>(rgbFlow.get());
 
       auto in =
           visioncpp::terminal<visioncpp::pixel::U8C3, COLS, ROWS,
@@ -223,7 +201,7 @@ int main(int argc, char **argv) {
 
       // Sum neighbours
       auto sum_mask_node =
-          visioncpp::terminal<float, 3, 3, visioncpp::memory_type::Buffer2D,
+          visioncpp::terminal<float, N, N, visioncpp::memory_type::Buffer2D,
                               visioncpp::scope::Constant>(sum_mask);
 
       auto sumpx2 = visioncpp::neighbour_operation<visioncpp::OP_Filter2D>(
@@ -270,11 +248,7 @@ int main(int argc, char **argv) {
           visioncpp::point_operation<visioncpp::OP_Mul>(ksumpx2, ksumpyt);
       auto pxtpxy_Sub_px2pyt =
           visioncpp::point_operation<visioncpp::OP_Sub>(pxtpxy, px2pyt);
-      auto kpxtpxy_Sub_px2pyt =
-          visioncpp::schedule<visioncpp::policy::Fuse, SM, SM, SM, SM>(
-              pxtpxy_Sub_px2pyt);
-
-      auto v = visioncpp::point_operation<visioncpp::OP_Div>(kpxtpxy_Sub_px2pyt,
+      auto v = visioncpp::point_operation<visioncpp::OP_Div>(pxtpxy_Sub_px2pyt,
                                                              norm);
 
       // calculate U
@@ -285,23 +259,28 @@ int main(int argc, char **argv) {
           visioncpp::point_operation<visioncpp::OP_Mul>(ksumpy2, ksumpxt);
       auto pxypft_Sub_py2pxt =
           visioncpp::point_operation<visioncpp::OP_Sub>(pxypyt, py2pxt);
-      auto kpxypft_Sub_py2pxt =
-          visioncpp::schedule<visioncpp::policy::Fuse, SM, SM, SM, SM>(
-              pxypft_Sub_py2pxt);
-
-      auto u = visioncpp::point_operation<visioncpp::OP_Div>(kpxypft_Sub_py2pxt,
+      auto u = visioncpp::point_operation<visioncpp::OP_Div>(pxypft_Sub_py2pxt,
                                                              norm);
 
       // assign result in one matrix with 2 channels
+      // variable uv contains the optical flow computed for each pixel
       auto uv = visioncpp::point_operation<visioncpp::OP_Merge2Chns>(u, v);
 
-      auto kuv = visioncpp::assign(outUV, uv);
+      // The next operations were created to visualize the optical flow
+      // convert UV into polar coordinates
+      auto polar = visioncpp::point_operation<OP_UVtoPolar>(uv);
 
-      // execute expression tree
-      visioncpp::execute<visioncpp::policy::Fuse, SM, SM, SM, SM>(kuv, dev);
+      // convert into RGB
+      auto frgb = visioncpp::point_operation<visioncpp::OP_HSVToRGB>(polar);
 
-      // convert (u,v) matrix into colors for better visualization
-      displayOpticalFlow<COLS, ROWS, SM>(outputUV, rgbflow, dev);
+      // convert float to char
+      auto urgb = visioncpp::point_operation<visioncpp::OP_F32C3ToU8C3>(frgb);
+
+      // assign the urgb to the output node
+      auto k = visioncpp::assign(out, urgb);
+
+      // execute
+      visioncpp::execute<visioncpp::policy::Fuse, SM, SM, SM, SM>(k, dev);
     }
     // display optical flow
     cv::imshow("Reference Image", current);
