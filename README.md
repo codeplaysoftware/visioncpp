@@ -15,7 +15,7 @@ Written using [SYCL 1.2](https://www.khronos.org/registry/sycl/specs/sycl-1.2.pd
 * [Examples](#examples)
 * [Documentation](#documentation)
 * [Contributing](#contributing)
-* [References](#references)
+* [Resources](#resources)
 * [License](#license)
 * [Known Issues](#known-issues)
 
@@ -138,9 +138,10 @@ Contributors always welcome! See <a href="https://github.com/codeplaysoftware/vi
 
 The list of <a href="https://github.com/codeplaysoftware/visioncpp/blob/master/CONTRIBUTORS.md">contributors</a>.
 
-## <a name="references" /> References
+## <a name="resources" /> Resources
 * [Kernel composition in SYCL](http://opus.bath.ac.uk/49695/)
 * [VisionCPP: A SYCL-based Computer Vision Framework](http://dl.acm.org/citation.cfm?doid=2909437.2909444)
+* [Wiki](https://github.com/codeplaysoftware/visioncpp/wiki)
 
 ## <a name="license" /> License
 The Apache License, Version 2.0 License. See [LICENSE](https://github.com/codeplaysoftware/visioncpp/blob/master/LICENSE) for more.
