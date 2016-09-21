@@ -1,0 +1,26 @@
+language: cpp
+sudo: true
+dist: trusty
+
+branches:
+  except:
+    - gh-pages
+
+env:
+  global:
+    - GH_REPO: github.com/codeplaysoftware/visioncpp.git
+
+addons:
+  apt:
+    packages:
+      - doxygen
+      - graphviz
+before_script:
+  - chmod +x ./scripts/travis_build_docs.sh
+  - chmod +x ./scripts/travis_deploy_docs.sh
+
+script:
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/travis_build_docs.sh; fi'
+
+after_success:
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/travis_deploy_docs.sh; fi'

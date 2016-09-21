@@ -1,6 +1,5 @@
 find_package(OpenCV REQUIRED)
 find_package(GTest REQUIRED)
-find_package(OpenCV REQUIRED)
 
 include_directories(
   ${GTEST_INCLUDE_DIRS}
