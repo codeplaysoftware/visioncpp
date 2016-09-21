@@ -38,10 +38,7 @@ if(THREADS_HAVE_PTHREAD_ARG)
   set_property(TARGET my_app PROPERTY INTERFACE_COMPILE_OPTIONS "pthread")
 endif()
 
-SET(COMPUTECPP_PACKAGE_ROOT_DIR "UNDEFINED" CACHE PATH "ComputeCpp root")
-if(${COMPUTECPP_PACKAGE_ROOT_DIR} STREQUAL "UNDEFINED")
-  message(STATUS "COMPUTECPP_PACKAGE_ROOT_DIR is not set.")
-else()
+if(NOT VISIONCPP_DOC_ONLY)
   include(FindComputeCpp)
   #internal dep
   include(testgen)
