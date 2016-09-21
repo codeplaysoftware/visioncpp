@@ -5,7 +5,7 @@ include_directories(
   ${GTEST_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
   ${PROJECT_SOURCE_DIR}/include
-  ${COMPUTECPP_INCLUDE}
+  ${COMPUTECPP_PACKAGE_ROOT_DIR}/include
 )
 
 link_directories(${GTEST_LIBRARIES} ${COMPUTECPP_LIBS})
