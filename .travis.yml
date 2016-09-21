@@ -20,7 +20,7 @@ before_script:
   - chmod +x ./scripts/travis_deploy_docs.sh
 
 script:
-  - ./scripts/travis_build_docs.sh
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/travis_build_docs.sh; fi'
 
 after_success:
-  - ./scripts/travis_deploy_docs.sh
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/travis_deploy_docs.sh; fi'
