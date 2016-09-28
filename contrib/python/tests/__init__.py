@@ -7,6 +7,11 @@ from visioncpp import codegen
 
 
 class test_codegen(TestCase):
+    def init_bad_path(self):
+        with self.assertRaises(vp.VisionCppException):
+            vp.init("/not/a/real/path/i/think")
+
+
     def test_bad_device(self):
         node_in = vp.Image("examples/lena.jpg")
         node_out = vp.show(node_in)
