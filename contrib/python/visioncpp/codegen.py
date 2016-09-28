@@ -30,6 +30,35 @@ def standalone_bin_source(lines):
     return '\n'.join(program_lines) + "\n"
 
 
+def library_source(lines):
+    """
+    Return source code for a VisionCpp library.
+
+    The generated code will compile a callable library method
+    "natvie_expression_tree()".
+
+    Arguments:
+        lines (str[]): Program implementation.
+
+    Returns:
+        str: Source code
+    """
+    program_lines = [
+        "#include <opencv2/opencv.hpp>",
+        "#include <visioncpp.hpp>",
+        "",
+        "extern \"C\" {",
+        "",
+        "int native_expression_tree() {",
+    ] + lines + [
+        "}",
+        "",
+        "}  // extern \"C\""
+    ]
+
+    return "\n".join(program_lines) + "\n"
+
+
 def get_device(devtype="cpu", name="device"):
     """
     Return the lines to construct a VisionCPP device.
@@ -177,7 +206,7 @@ def generate(expression, devtype, use_clang_format=True):
 
     if is_repeating(pipeline): lines += ["}  // main loop"]
 
-    code = standalone_bin_source(lines)
+    code = library_source(lines)
 
     if use_clang_format:
         code = clang_format(code)
