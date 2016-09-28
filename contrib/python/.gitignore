@@ -1,0 +1,10 @@
+*.pyc
+
+# Python setuptools:
+.eggs/
+/build
+/dist
+visioncpp.egg-info/
+
+# Python virtualenv:
+/env
