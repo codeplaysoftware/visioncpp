@@ -17,7 +17,8 @@ class test_codegen(TestCase):
     def test_load_and_show_cpu(self):
         node_in = vp.Image("examples/lena.jpg")
         node_out = vp.show(node_in)
-        self.assertEqual(codegen.generate(node_out, "cpu", use_clang_format=False),
+        self.assertEqual(codegen.generate(node_out, "cpu",
+                                          use_clang_format=False),
 """#include <opencv2/opencv.hpp>
 #include <visioncpp.hpp>
 
@@ -55,7 +56,8 @@ cv::waitKey(0);
     def test_load_and_show_gpu(self):
         node_in = vp.Image("examples/lena.jpg")
         node_out = vp.show(node_in)
-        self.assertEqual(codegen.generate(node_out, "gpu", use_clang_format=False),
+        self.assertEqual(codegen.generate(node_out, "gpu",
+                                          use_clang_format=False),
 """#include <opencv2/opencv.hpp>
 #include <visioncpp.hpp>
 
