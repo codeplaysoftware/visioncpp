@@ -11,25 +11,6 @@ from subprocess import Popen, PIPE
 from visioncpp import util
 
 
-def standalone_bin_source(lines):
-    """
-    Return source code for a standalone VisionCpp program.
-
-    Arguments:
-        lines (str[]): Program implementation.
-
-    Returns:
-        str: Source code.
-    """
-    program_lines = [
-        "#include <opencv2/opencv.hpp>",
-        "#include <visioncpp.hpp>",
-        "int main(int argc, char **argv) {",
-    ] + lines + ["}"]
-
-    return '\n'.join(program_lines) + "\n"
-
-
 def library_source(lines):
     """
     Return source code for a VisionCpp library.
