@@ -17,7 +17,6 @@ class test_cache(TestCase):
         self.assertEqual(cache.get_uid("abc"), "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad")
 
     def test_is_cached(self):
-    	uid = cache.get_uid("abc")
     	self.assertEqual(cache.is_cached("abc"), False)
     	_create_test_file("abc.txt", "foobar")
     	cache.emplace("abc", "abc.txt")
@@ -26,10 +25,18 @@ class test_cache(TestCase):
     	self.assertEqual(cache.is_cached("abc"), False)
 
     def test_load(self):
-    	uid = cache.get_uid("abc")
     	_create_test_file("abc.txt", "foobar")
     	cache.emplace("abc", "abc.txt")
     	path = cache.load("abc")
     	with open(path) as infile:
 	    	self.assertEqual(infile.read(), "foobar")
     	cache.empty()
+
+    def test_init(self):
+    	_create_test_file("abc.txt", "foobar")
+    	cache.emplace("abc", "abc.txt")
+    	path = cache.cacheroot
+    	cache.init("different-path")
+    	self.assertEqual(cache.is_cached("abc"), False)
+    	cache.init(path)
+    	self.assertEqual(cache.is_cached("abc"), True)
