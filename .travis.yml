@@ -12,7 +12,7 @@ python:
   - "pypy"
 
 install:
-  - cd contrib/python && python ./setup.py install; cd ../../
+  - cd contrib/python && python ./setup.py install && cd ../../
 
 branches:
   except:
@@ -33,7 +33,7 @@ before_script:
 
 script:
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/travis_build_docs.sh; fi'
-  - cd contrib/python && python ./setup.py test; cd ../../
+  - cd contrib/python && python ./setup.py test && cd ../../
 
 after_success:
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/travis_deploy_docs.sh; fi'
