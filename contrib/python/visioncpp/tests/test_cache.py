@@ -12,7 +12,7 @@ def _create_test_file(path, contents):
 
 
 class test_cache(TestCase):
-    def test_init(self):
+    def test_get_uid(self):
         self.assertEqual(cache.get_uid("test"), "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08")
         self.assertEqual(cache.get_uid("abc"), "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad")
 
