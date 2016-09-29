@@ -90,7 +90,7 @@ def clang_format(code, clang_format=find_clang_format()):
         str: Formatted C++ code.
     """
     if clang_format is None:
-        io.debug("Could not find clang-format. Is it installed?")
+        logging.debug("Could not find clang-format. Is it installed?")
         return code
 
     process = Popen([clang_format], stdin=PIPE, stdout=PIPE, stderr=PIPE)
