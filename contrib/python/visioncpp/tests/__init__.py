@@ -3,7 +3,6 @@ from __future__ import print_function
 from unittest import TestCase
 
 import visioncpp as vp
-from visioncpp import codegen
 
 
 class test_visioncpp(TestCase):
