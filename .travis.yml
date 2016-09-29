@@ -1,6 +1,18 @@
-language: cpp
+language: python
 sudo: true
 dist: trusty
+
+python:
+  - "2.7"
+  - "3.2"
+  - "3.3"
+  - "3.4"
+  # does not have headers provided, please ask https://launchpad.net/~pypy/+archive/ppa
+  # maintainers to fix their pypy-dev package.
+  - "pypy"
+
+install:
+  - cd contrib/python && python ./setup.py install && cd ../../
 
 branches:
   except:
@@ -21,6 +33,7 @@ before_script:
 
 script:
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/travis_build_docs.sh; fi'
+  - cd contrib/python && python ./setup.py test && cd ../../
 
 after_success:
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/travis_deploy_docs.sh; fi'
