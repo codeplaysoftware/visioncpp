@@ -23,6 +23,7 @@ class test_cache(TestCase):
     	cache.emplace("abc", "abc.txt")
     	self.assertEqual(cache.is_cached("abc"), True)
     	cache.empty()
+    	self.assertEqual(cache.is_cached("abc"), False)
 
     def test_load(self):
     	uid = cache.get_uid("abc")
