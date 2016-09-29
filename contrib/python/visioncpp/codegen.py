@@ -186,7 +186,7 @@ def generate(expression, devtype, use_clang_format=True):
 
     def is_repeating(pipeline):
         for node in pipeline:
-            if util.get_bool_attribute(node, "repeating"):
+            if util.get_attribute(node, "repeating"):
                 return True
 
     # Inputs:

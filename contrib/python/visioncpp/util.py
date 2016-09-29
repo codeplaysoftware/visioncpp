@@ -35,12 +35,19 @@ def call_if_attribute(obj, attr, *args, **kwargs):
         return op(*args, **kwargs)
 
 
-def get_bool_attribute(obj, attr):
+def get_attribute(obj, attr):
+    """
+    Return object attribute value, if it exists.
+
+    Arguments:
+        obj (object): The object.
+        attr (str): The name of the object attribute.
+    """
     at = getattr(obj, attr, None)
     if at:
         return at
     else:
-        return False
+        return None
 
 
 def get_image_size(fname):
