@@ -8,6 +8,7 @@ import os
 import sys
 import pkgconfig
 
+from ctypes import cdll
 from pkg_resources import resource_filename
 from shutil import rmtree
 from subprocess import Popen, PIPE, STDOUT
@@ -119,6 +120,7 @@ def host_compile(code, stub, dir="/tmp"):
 
     args = get_host_cflags() + [
         "-c", "-",
+        "-fPIC",
         "-include", stub,
         "-o", dest
     ]
@@ -154,7 +156,7 @@ def stub_file(code, dir="/tmp"):
 
 def link(host, dir="/tmp"):
     """
-    Link object file to executable.
+    Link object file to library.
 
     Arguments:
         host (str): Path to object file.
@@ -163,11 +165,16 @@ def link(host, dir="/tmp"):
     Returns:
         str: Path to generated executable.
     """
-    dest = os.path.join(dir, "binary")
+    dest = os.path.join(dir, "visioncpp_native")
     assert(not os.path.exists(dest))
+
+    computecpp_lib_path = os.path.join(vp.computecpp_prefix, "lib")
 
     args = [
         "-std=c++11",
+        "-shared",
+        "-Wl,-soname,visioncpp_native.so",
+        "-Wl,-rpath=" + computecpp_lib_path,
         host,
         "-o", dest
     ] + get_ldflags()
@@ -177,44 +184,40 @@ def link(host, dir="/tmp"):
     return dest
 
 
-def must_exist(path):
+def check_for_computecpp():
     """
-    Check that a file exists.
-
-    Arguments:
-        path (str): Path to file.
-
-    Returns:
-        str: Path to file (same as argument).
+    Check that ComputeCpp files exist.
 
     Raises:
-        VisionCppException: If file does not exist.
+            VisionCppException: If ComputeCpp file(s) are mising.
     """
-    if not os.path.exists(path):
-        raise vp.VisionCppException(
-            "file '{}' not found. Is ComputeCpp installed?"
-            .format(path))
-    return path
+    def must_exist(path):
+        """
+        Check that a file exists.
 
+        Arguments:
+            path (str): Path to file.
 
-def check_for_buildtools():
-    """
-    Check that ComputeCpp binaries exist.
-    """
+        Returns:
+            str: Path to file (same as argument).
+
+        Raises:
+            VisionCppException: If file does not exist.
+        """
+        if not os.path.exists(path):
+            raise vp.VisionCppException(
+                "file '{}' not found. Is ComputeCpp installed?"
+                .format(path))
+        return path
+
     must_exist(os.path.join(vp.computecpp_prefix, "bin", "computecpp_info"))
     must_exist(os.path.join(vp.computecpp_prefix, "bin", "compute++"))
-
-
-def check_for_runlibs():
-    """
-    Check that ComputeCpp libraries exist.
-    """
     must_exist(os.path.join(vp.computecpp_prefix, "lib", "libComputeCpp.so"))
 
 
 def compile_cpp_code(code):
     """
-    Compile C++ code to a binary.
+    Compile C++ code to a dynamic library.
 
     Arguments:
         code (str): C++ socde.
@@ -228,7 +231,7 @@ def compile_cpp_code(code):
         logging.info("Found cached binary {}".format(uid))
         binary = cache.load(uid)
     else:
-        check_for_buildtools()
+        check_for_computecpp()
 
         counter = {"val": 0}
 
@@ -273,16 +276,5 @@ def run_binary(binary):
     """
     assert(binary and os.path.exists(binary))
 
-    check_for_runlibs()
-
-    ld_library_path = os.path.join(vp.computecpp_prefix, "lib")
-
-    cmd = [binary]
-    env = {"LD_LIBRARY_PATH": ld_library_path, "DISPLAY": ":0.0"}
-
-    process = Popen(cmd, env=env)
-    process.communicate()
-    ret = process.returncode
-    if ret != 0:
-        raise vp.VisionCppException(
-            "Program exited with code {}".format(ret))
+    lib = cdll.LoadLibrary(binary)
+    lib.native_expression_tree()

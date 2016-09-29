@@ -22,10 +22,14 @@ class test_codegen(TestCase):
     def test_load_and_show_cpu(self):
         node_in = vp.Image("examples/lena.jpg")
         node_out = vp.show(node_in)
-        self.assertEqual(codegen.generate(node_out, "cpu", use_clang_format=False),
+        self.assertEqual(codegen.generate(node_out, "cpu",
+                                          use_clang_format=False),
 """#include <opencv2/opencv.hpp>
 #include <visioncpp.hpp>
-int main(int argc, char **argv) {
+
+extern "C" {
+
+int native_expression_tree() {
 auto device = visioncpp::make_device<visioncpp::backend::sycl, visioncpp::device::cpu>();
 
 // inputs:
@@ -49,16 +53,22 @@ cv::namedWindow("show_1", cv::WINDOW_AUTOSIZE);
 cv::imshow("show_1", show_1_cv);
 cv::waitKey(0);
 }
+
+}  // extern "C"
 """)
 
 
     def test_load_and_show_gpu(self):
         node_in = vp.Image("examples/lena.jpg")
         node_out = vp.show(node_in)
-        self.assertEqual(codegen.generate(node_out, "gpu", use_clang_format=False),
+        self.assertEqual(codegen.generate(node_out, "gpu",
+                                          use_clang_format=False),
 """#include <opencv2/opencv.hpp>
 #include <visioncpp.hpp>
-int main(int argc, char **argv) {
+
+extern "C" {
+
+int native_expression_tree() {
 auto device = visioncpp::make_device<visioncpp::backend::sycl, visioncpp::device::gpu>();
 
 // inputs:
@@ -82,4 +92,6 @@ cv::namedWindow("show_1", cv::WINDOW_AUTOSIZE);
 cv::imshow("show_1", show_1_cv);
 cv::waitKey(0);
 }
+
+}  // extern "C"
 """)
