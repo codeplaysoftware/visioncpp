@@ -1,4 +1,5 @@
 # Python interface for VisionCpp
+[![Build Status](https://travis-ci.org/ChrisCummins/visioncpp.svg?branch=master)](https://travis-ci.org/ChrisCummins/visioncpp)
 
 Provides a simple python interface for GPU-accelerated vision processing
 using VisionCpp.
