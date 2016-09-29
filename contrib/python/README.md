@@ -1,5 +1,5 @@
 # Python interface for VisionCpp
-[![Build Status](https://travis-ci.org/ChrisCummins/visioncpp.svg?branch=master)](https://travis-ci.org/ChrisCummins/visioncpp) [![Coverage Status](https://coveralls.io/repos/github/ChrisCummins/visioncpp/badge.svg?branch=wip%2F10)](https://coveralls.io/github/ChrisCummins/visioncpp?branch=wip%2F10)
+[![Build Status](https://travis-ci.org/ChrisCummins/visioncpp.svg?branch=development)](https://travis-ci.org/ChrisCummins/visioncpp) [![Coverage Status](https://coveralls.io/repos/github/ChrisCummins/visioncpp/badge.svg?branch=development)](https://coveralls.io/github/ChrisCummins/visioncpp?branch=development)
 
 Provides a simple python interface for GPU-accelerated vision processing
 using VisionCpp.
