@@ -40,3 +40,4 @@ class test_cache(TestCase):
     	self.assertEqual(cache.is_cached("abc"), False)
     	cache.init(path)
     	self.assertEqual(cache.is_cached("abc"), True)
+    	cache.empty()
