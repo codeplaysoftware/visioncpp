@@ -7,9 +7,6 @@ from visioncpp import codegen
 
 
 class test_codegen(TestCase):
-    def test_deliberate_fail(self):
-        self.assertEqual(True, False)
-
     def init_bad_path(self):
         with self.assertRaises(vp.VisionCppException):
             vp.init("/not/a/real/path/i/think")
