@@ -35,6 +35,7 @@ setup(
     name='visioncpp',
     version='0.0.1',
     description='',
+    download_url='https://github.com/ChrisCummins/visioncpp/tarball/0.0.1',
     url='https://github.com/codeplaysoftware/visioncpp',
     author='Chris Cummins',
     author_email='chrisc.101@gmail.com',
