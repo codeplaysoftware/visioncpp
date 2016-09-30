@@ -6,22 +6,28 @@ using VisionCpp.
 
 ## Requirements
 
-* python >= 2.7 or 3
+* python >= 3.3, or 2.7
 * [ComputeCpp](https://www.codeplay.com/products/computesuite/computecpp)
 * [clang-format](http://llvm.org/releases/download.html) *(optional)*
 
 ## Installation
 
+```
+$ pip install visioncpp
+```
+
+To build from source:
+
 ```sh
-virtualenv env
-source env/bin/activate
-python ./setup.py install && pip install ipython
+$ virtualenv env
+$ source env/bin/activate
+(env) $ python ./setup.py install && pip install ipython
 ```
 
 ## Get Started
 
 ```sh
-$ ./env/bin/ipython
+(env) $ ./env/bin/ipython
 ```
 
 ```py
@@ -29,7 +35,7 @@ $ ./env/bin/ipython
 >>> vp.init("/opt/ComputeCpp-CE-0.1-Linux")  # path to your ComputeCpp package
 >>> a = vp.Image("examples/lena.jpg")
 >>> b = vp.show(a)
->>> vp.run(d)
+>>> vp.run(b)
 ```
 
 See `examples/` directory for more information.
