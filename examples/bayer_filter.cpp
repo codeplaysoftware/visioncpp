@@ -22,7 +22,7 @@
 ///              ---------Example---------
 ///                    Bayer Filter
 ///
-/// \brief This example implements the Bayer Filter
+/// \brief This example implements the Bayer Filter Demosaic Method
 
 // include OpenCV for camera display
 #include <opencv2/opencv.hpp>
