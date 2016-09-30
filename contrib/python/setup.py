@@ -12,8 +12,8 @@ def visioncpp_headers():
     import os
     cwd = os.getcwd()
 
-    # Change to the module root directory, since package_data paths
-    # must be relative to this.
+    # Change to the module root directory, since package_data paths must be
+    # relative to this.
     module_root = "visioncpp"
     os.chdir(module_root)
 
@@ -45,7 +45,7 @@ setup(
     test_suite='nose.collector',
     tests_require=['nose'],
     install_requires=[
-        'pkgconfig == 1.1.0',
+        "pkgconfig == 1.1.0",
         "Send2Trash == 1.3.0",
     ],
     data_files=[],
