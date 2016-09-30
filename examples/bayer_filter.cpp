@@ -195,8 +195,14 @@ struct BayerRGGBToBGR {
 
 // main program
 int main(int argc, char **argv) {
-  cv::Mat bayer =
-      cv::imread("../media/lena_bayer.png", CV_LOAD_IMAGE_GRAYSCALE);
+  // Load the
+  cv::Mat bayer = cv::imread(argv[1], CV_LOAD_IMAGE_GRAYSCALE);
+
+  if (!bayer.data) {
+    std::cout << "Image not loaded" << std::endl;
+    std::cout << "example>: ./bayer_filter raw_image.png" << std::endl;
+    return -1;
+  }
 
   constexpr size_t COLS = 512;
   constexpr size_t ROWS = 512;
