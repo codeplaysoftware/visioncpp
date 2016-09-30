@@ -6,6 +6,7 @@ import logging
 import sys
 
 from collections import defaultdict
+from distutils.spawn import find_executable
 from subprocess import Popen, PIPE
 
 from visioncpp import util
@@ -72,16 +73,16 @@ def find_clang_format():
     Returns:
         str: Path to clang-format if found, else None.
     """
-    from distutils.spawn import find_executable
+    clang_format = {"val": None}
+    def set_if_exists(executable):
+        if not clang_format["val"]:
+            clang_format["val"] = find_executable(executable)
 
-    path = find_executable("clang-format")
-    if path:
-        return path
-    path = find_executable("clang-format-3.6")
-    if path:
-        return path
+    set_if_exists("clang-format")
+    set_if_exists("clang-format-3.6")
+    set_if_exists("clang-format-3.8")
 
-    return None
+    return clang_format["val"]
 
 
 def clang_format(code, clang_format=find_clang_format()):
