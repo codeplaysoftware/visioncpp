@@ -199,7 +199,8 @@ int main(int argc, char **argv) {
   cv::Mat bayer = cv::imread(argv[1], CV_LOAD_IMAGE_GRAYSCALE);
 
   if (!bayer.data) {
-    std::cout << "Image not loaded" << std::endl;
+    std::cout << "Image not loaded, BayerRGGB image required as input"
+              << std::endl;
     std::cout << "example>: ./bayer_filter raw_image.png" << std::endl;
     return -1;
   }
