@@ -25,6 +25,8 @@ def get_host_cflags():
     return [
         "-x", "c++",
         "-std=c++11",
+        # Workaround for issue with libc++
+        "-D_GLIBCXX_USE_CXX11_ABI=0",
         "-I" + os.path.join(vp.computecpp_prefix, "include"),
         "-I" + resource_filename(__name__, os.path.join("lib", "include")),
     ] + pkgconfig.cflags("opencv").split()
