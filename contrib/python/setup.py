@@ -1,5 +1,6 @@
 from setuptools import setup
 
+
 def visioncpp_headers():
     """
     Find the VisionCpp headers using a recursive walk.
