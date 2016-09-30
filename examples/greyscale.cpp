@@ -43,7 +43,7 @@ int main() {
 
   // where VisionCpp will run.
   auto dev = visioncpp::make_device<visioncpp::backend::sycl,
-                                    visioncpp::device::gpu>();
+                                    visioncpp::device::cpu>();
 
   // create a container for pipe output
   std::shared_ptr<unsigned char> img_cv(
