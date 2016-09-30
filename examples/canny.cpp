@@ -31,74 +31,80 @@
 // include VisionCpp
 #include <visioncpp.hpp>
 
-inline float magnitude(float a, float b) { return sqrt(a * a + b * b); }
-
+// \brief Functor which implements the canny edge detector
 struct Canny {
   template <typename NeighbourT>
   float operator()(const NeighbourT p) {
     float output;
     float a11 = p.at(p.I_c - 1, p.I_r - 1)[0];
-    float a21 = p.at(p.I_c - 1, p.I_r)[0];
-    float a31 = p.at(p.I_c - 1, p.I_r + 1)[0];
     float a12 = p.at(p.I_c, p.I_r - 1)[0];
-    float a22 = p.at(p.I_c, p.I_r)[0];
-    float a32 = p.at(p.I_c, p.I_r + 1)[0];
     float a13 = p.at(p.I_c + 1, p.I_r - 1)[0];
+    float a21 = p.at(p.I_c - 1, p.I_r)[0];
+    float a22 = p.at(p.I_c, p.I_r)[0];
     float a23 = p.at(p.I_c + 1, p.I_r)[0];
+    float a31 = p.at(p.I_c - 1, p.I_r + 1)[0];
+    float a32 = p.at(p.I_c, p.I_r + 1)[0];
     float a33 = p.at(p.I_c + 1, p.I_r + 1)[0];
 
     float b11 = p.at(p.I_c - 1, p.I_r - 1)[1];
-    float b21 = p.at(p.I_c - 1, p.I_r)[1];
-    float b31 = p.at(p.I_c - 1, p.I_r + 1)[1];
     float b12 = p.at(p.I_c, p.I_r - 1)[1];
-    float b22 = p.at(p.I_c, p.I_r)[1];
-    float b32 = p.at(p.I_c, p.I_r + 1)[1];
     float b13 = p.at(p.I_c + 1, p.I_r - 1)[1];
+    float b21 = p.at(p.I_c - 1, p.I_r)[1];
+    float b22 = p.at(p.I_c, p.I_r)[1];
     float b23 = p.at(p.I_c + 1, p.I_r)[1];
+    float b31 = p.at(p.I_c - 1, p.I_r + 1)[1];
+    float b32 = p.at(p.I_c, p.I_r + 1)[1];
     float b33 = p.at(p.I_c + 1, p.I_r + 1)[1];
 
     float xGrad = a22;
     float yGrad = b22;
-    float gradMag = magnitude(xGrad, yGrad);
+    float gradMag = cl::sycl::hypot(xGrad, yGrad);
 
     // perform non-maximal supression
-    float nMag = magnitude(a12, b12);
-    float sMag = magnitude(a32, b32);
-    float wMag = magnitude(a21, b21);
-    float eMag = magnitude(a23, b23);
-    float neMag = magnitude(a13, b13);
-    float seMag = magnitude(a33, b33);
-    float swMag = magnitude(a31, b31);
-    float nwMag = magnitude(a11, b11);
+    float mag11 = cl::sycl::hypot(a11, b11);
+    float mag12 = cl::sycl::hypot(a12, b12);
+    float mag13 = cl::sycl::hypot(a13, b13);
+
+    float mag21 = cl::sycl::hypot(a21, b21);
+    float mag23 = cl::sycl::hypot(a23, b23);
+
+    float mag33 = cl::sycl::hypot(a33, b33);
+    float mag32 = cl::sycl::hypot(a32, b32);
+    float mag31 = cl::sycl::hypot(a31, b31);
+
     float tmp;
 
     if (xGrad * yGrad <= 0.0f                                /*(1)*/
             ? cl::sycl::fabs(xGrad) >= cl::sycl::fabs(yGrad) /*(2)*/
                   ? (tmp = cl::sycl::fabs(xGrad * gradMag)) >=
-                            cl::sycl::fabs(yGrad * neMag -
-                                           (xGrad + yGrad) * eMag) /*(3)*/
+                            cl::sycl::fabs(yGrad * mag13 -
+                                           (xGrad + yGrad) * mag23)
+                        /*(3)*/
                         &&
-                        tmp > cl::sycl::fabs(yGrad * swMag -
-                                             (xGrad + yGrad) * wMag) /*(4)*/
+                        tmp > cl::sycl::fabs(yGrad * mag31 -
+                                             (xGrad + yGrad) * mag21) /*(4)*/
                   : (tmp = cl::sycl::fabs(yGrad * gradMag)) >=
-                            cl::sycl::fabs(xGrad * neMag -
-                                           (yGrad + xGrad) * nMag) /*(3)*/
+                            cl::sycl::fabs(xGrad * mag13 -
+                                           (yGrad + xGrad) * mag12)
+                        /*(3)*/
                         &&
-                        tmp > cl::sycl::fabs(xGrad * swMag -
-                                             (yGrad + xGrad) * sMag) /*(4)*/
-            : cl::sycl::fabs(xGrad) >= cl::sycl::fabs(yGrad)         /*(2)*/
+                        tmp > cl::sycl::fabs(xGrad * mag31 -
+                                             (yGrad + xGrad) * mag32) /*(4)*/
+            : cl::sycl::fabs(xGrad) >= cl::sycl::fabs(yGrad)          /*(2)*/
                   ? (tmp = cl::sycl::fabs(xGrad * gradMag)) >=
-                            cl::sycl::fabs(yGrad * seMag +
-                                           (xGrad - yGrad) * eMag) /*(3)*/
+                            cl::sycl::fabs(yGrad * mag33 +
+                                           (xGrad - yGrad) * mag23)
+                        /*(3)*/
                         &&
-                        tmp > cl::sycl::fabs(yGrad * nwMag +
-                                             (xGrad - yGrad) * wMag) /*(4)*/
+                        tmp > cl::sycl::fabs(yGrad * mag11 +
+                                             (xGrad - yGrad) * mag21) /*(4)*/
                   : (tmp = cl::sycl::fabs(yGrad * gradMag)) >=
-                            cl::sycl::fabs(xGrad * seMag +
-                                           (yGrad - xGrad) * sMag) /*(3)*/
+                            cl::sycl::fabs(xGrad * mag33 +
+                                           (yGrad - xGrad) * mag32)
+                        /*(3)*/
                         &&
-                        tmp > cl::sycl::fabs(xGrad * nwMag +
-                                             (yGrad - xGrad) * nMag) /*(4)*/
+                        tmp > cl::sycl::fabs(xGrad * mag11 +
+                                             (yGrad - xGrad) * mag12) /*(4)*/
         ) {
       output = gradMag;
 
@@ -239,7 +245,9 @@ int main(int argc, char** argv) {
 
     // Display results
     cv::imshow("Reference Image", input);
+    cv::moveWindow("Reference Image", 0, 0);
     cv::imshow("Canny Edge Detector", outputImage);
+    cv::moveWindow("Canny Edge Detector", COLS + 65, 0);
 
     // check button pressed to finalize program
     if (cv::waitKey(1) >= 0) break;

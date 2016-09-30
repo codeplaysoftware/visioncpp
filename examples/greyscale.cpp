@@ -43,7 +43,7 @@ int main() {
 
   // where VisionCpp will run.
   auto dev = visioncpp::make_device<visioncpp::backend::sycl,
-                                    visioncpp::device::cpu>();
+                                    visioncpp::device::gpu>();
 
   // create a container for pipe output
   std::shared_ptr<unsigned char> img_cv(
@@ -87,7 +87,8 @@ int main() {
     visioncpp::execute<visioncpp::policy::Fuse, 8, 8, 8, 8>(pipe, dev);
 
     // show image
-    cv::imshow("VisionCpp: GreyScale!", output);
+    cv::imshow("Reference Image", frame);
+    cv::imshow("Greyscale", output);
 
     // esc?
     if (cv::waitKey(30) >= 0) break;
