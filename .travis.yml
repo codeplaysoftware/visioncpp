@@ -25,7 +25,7 @@ env:
 addons:
   apt:
     packages:
-      - clang-format
+      - clang-format-3.6
       - doxygen
       - graphviz
 before_script:
