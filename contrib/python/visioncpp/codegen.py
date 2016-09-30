@@ -74,6 +74,7 @@ def find_clang_format():
         str: Path to clang-format if found, else None.
     """
     clang_format = {"val": None}
+
     def set_if_exists(executable):
         if not clang_format["val"]:
             clang_format["val"] = find_executable(executable)
@@ -175,7 +176,8 @@ def generate(expression, devtype, use_clang_format=True):
     lines += ["\n// inputs:"]
     get_pipeline_stage(lines, pipeline, "input")
 
-    if is_repeating(pipeline): lines += ["for (;;) {  // main loop"]
+    if is_repeating(pipeline):
+        lines += ["for (;;) {  // main loop"]
 
     # Compute scope:
     lines += ["\n{  // compute scope"]
@@ -186,7 +188,8 @@ def generate(expression, devtype, use_clang_format=True):
     lines += ["\n// outputs:"]
     get_pipeline_stage(lines, pipeline, "output")
 
-    if is_repeating(pipeline): lines += ["}  // main loop"]
+    if is_repeating(pipeline):
+        lines += ["}  // main loop"]
 
     code = library_source(lines)
 

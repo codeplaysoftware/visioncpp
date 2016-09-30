@@ -12,7 +12,6 @@ class test_codegen(TestCase):
         with self.assertRaises(vp.VisionCppException):
             codegen.generate(node_out, "bad_device", use_clang_format=False)
 
-
     def test_load_and_show_cpu(self):
         node_in = vp.Image("examples/lena.jpg")
         node_out = vp.show(node_in)
@@ -50,7 +49,6 @@ cv::waitKey(0);
 
 }  // extern "C"
 """)
-
 
     def test_load_and_show_gpu(self):
         node_in = vp.Image("examples/lena.jpg")
