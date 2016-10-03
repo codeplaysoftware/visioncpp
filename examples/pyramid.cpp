@@ -39,8 +39,8 @@ int main() {
     return -1;
   }
 
-  constexpr size_t COLS = 800;
-  constexpr size_t ROWS = 600;
+  constexpr size_t COLS = 640;
+  constexpr size_t ROWS = 480;
 
   // where VisionCpp will run.
   auto dev = visioncpp::make_device<visioncpp::backend::sycl,
@@ -141,13 +141,13 @@ int main() {
                                                                   dev);
     }
     // show reference image
-    cv::imshow("VisionCpp: Ref", frame);
+    cv::imshow("Reference Image", frame);
 
     // show pyramid level 1 image
-    cv::imshow("VisionCpp: Pyramid lvl 1", output_lvl1);
+    cv::imshow("Pyramid lvl 1: HSV", output_lvl1);
 
-    // show pyramid level 1 image
-    cv::imshow("VisionCpp: Pyramid lvl 2", output_lvl2);
+    // show pyramid level 2 image
+    cv::imshow("Pyramid lvl 2: Greyscale", output_lvl2);
 
     // esc?
     if (cv::waitKey(1) >= 0) break;
