@@ -205,8 +205,8 @@ int main(int argc, char **argv) {
     return -1;
   }
 
-  constexpr size_t COLS = 512;
-  constexpr size_t ROWS = 512;
+  constexpr size_t COLS = 1280;
+  constexpr size_t ROWS = 720;
 
   // initializing input pointer
   std::shared_ptr<uchar> input_ptr(new uchar[COLS * ROWS],
