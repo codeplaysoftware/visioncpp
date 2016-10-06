@@ -21,7 +21,7 @@ else()
 endif()
 
 set(CMAKE_MODULE_PATH
-${PROJECT_SOURCE_DIR}/cmake
+${CMAKE_CURRENT_SOURCE_DIR}/cmake
 )
 
 find_package(PythonInterp 3.2 REQUIRED)
