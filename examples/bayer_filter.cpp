@@ -248,7 +248,7 @@ int main(int argc, char **argv) {
 
   // display results
   cv::imshow("Reference Image", bayer);
-  cv::imshow("Demoisaic", outImage);
+  cv::imshow("Demosaic", outImage);
 
   // wait for key to finalize program
   cv::waitKey(0);
