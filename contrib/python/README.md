@@ -21,13 +21,13 @@ To build from source:
 ```sh
 $ virtualenv env
 $ source env/bin/activate
-(env) $ python ./setup.py install && pip install ipython
+(env) $ python ./setup.py install
 ```
 
 ## Get Started
 
 ```sh
-(env) $ ./env/bin/ipython
+$ python
 ```
 
 ```py
