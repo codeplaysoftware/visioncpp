@@ -1,3 +1,4 @@
+
 // This file is part of VisionCPP, a lightweight C++ template library
 // for computer vision and image processing.
 //
@@ -36,20 +37,23 @@
 // include VisionCpp
 #include <visioncpp.hpp>
 
+// tunable parameter for the Harris
+constexpr float k_param = 0.04f;  // k parameter (usually 0.02 - 0.04)
+constexpr float threshold = 0.5f; // threhold parameter
+constexpr int windowSize = 7;     // window size for non-maximal suppresion
+constexpr int halfWindowSize = windowSize / 2; // half window size
+
 // Below a set of operators created to implement the algorithm
 
 // operator created to perform a power of 2 of the image
 struct PowerOf2 {
-  template <typename T>
-  const float operator()(const T& t) {
-    return t * t;
-  }
+  template <typename T> const float operator()(const T &t) { return t * t; }
 };
 
 // operator for element-wise multiplication of two images
 struct Mul {
   template <typename T1, typename T2>
-  float operator()(const T1& t1, const T2& t2) {
+  float operator()(const T1 &t1, const T2 &t2) {
     return t1 * t2;
   }
 };
@@ -57,7 +61,7 @@ struct Mul {
 // operator to add two images
 struct Add {
   template <typename T1, typename T2>
-  float operator()(const T1& t1, const T2& t2) {
+  float operator()(const T1 &t1, const T2 &t2) {
     return t1 + t2;
   }
 };
@@ -65,7 +69,7 @@ struct Add {
 // operator to subtract two images
 struct Sub {
   template <typename T1, typename T2>
-  float operator()(const T1& t1, const T2& t2) {
+  float operator()(const T1 &t1, const T2 &t2) {
     return t1 - t2;
   }
 };
@@ -73,11 +77,11 @@ struct Sub {
 // convolution for a custom filter in a one-dimensional image
 struct Filter2D {
   template <typename T1, typename T2>
-  float operator()(const T1& nbr, const T2& fltr) {
+  float operator()(const T1 &nbr, const T2 &fltr) {
     int hs_c = (fltr.cols / 2);
     int hs_r = (fltr.rows / 2);
-    float out = 0;
 
+    float out = 0;
     for (int i2 = -hs_c, i = 0; i2 <= hs_c; i2++, i++)
       for (int j2 = -hs_r, j = 0; j2 <= hs_r; j2++, j++)
         out += (nbr.at(nbr.I_c + i2, nbr.I_r + j2) * fltr.at(i, j));
@@ -87,7 +91,7 @@ struct Filter2D {
 
 // Convert from float to unsigned char one channel
 struct FloatToU8C1 {
-  visioncpp::pixel::U8C1 operator()(const float& t) {
+  visioncpp::pixel::U8C1 operator()(const float &t) {
     return visioncpp::pixel::U8C1(static_cast<unsigned char>(t * 255));
   }
 };
@@ -95,16 +99,31 @@ struct FloatToU8C1 {
 // apply threshold operation to the image
 struct Thresh {
   template <typename T, typename Thresh>
-  float operator()(const T& t, const Thresh& thresh) {
-    return t > thresh ? 1 : 0;
+  float operator()(const T &t, const Thresh &thresh) {
+    return t > thresh ? 1.0f : 0.0f;
+  }
+};
+// non-maximal suppresion, supress all values which are not the maximum in a
+// neighbourhood
+struct NonMaximalSuppresion {
+  template <typename T> float operator()(const T &im) {
+    float currentPixel{im.at(im.I_c, im.I_r)};
+    for (int i = -halfWindowSize; i <= halfWindowSize; i++) {
+      for (int j = -halfWindowSize; j <= halfWindowSize; j++) {
+        if (currentPixel < im.at(im.I_c + i, im.I_r + j)) {
+          return 0.0f;
+        }
+      }
+    }
+    return currentPixel;
   }
 };
 
 // main program
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
   // open camera using OpenCV
-  cv::VideoCapture cap(0);  // open the default camera
-  if (!cap.isOpened()) {    // check if we succeeded
+  cv::VideoCapture cap(0); // open the default camera
+  if (!cap.isOpened()) {   // check if we succeeded
     std::cout << "Opening Camera Failed." << std::endl;
     return -1;
   }
@@ -119,19 +138,13 @@ int main(int argc, char** argv) {
   // Shared Memory variable
   constexpr size_t SM = 16;
 
-  // k parameter for the Harris
-  constexpr float k_param = 0.04f;
-
-  // threhold parameter for the Harris
-  constexpr float threshold = 1.0f;
-
   // init input image
   cv::Mat input;
 
   // creating a pointer to store the results
   std::shared_ptr<unsigned char> output(
       new unsigned char[COLS * ROWS],
-      [](unsigned char* dataMem) { delete[] dataMem; });
+      [](unsigned char *dataMem) { delete[] dataMem; });
 
   // init output image from OpenCV for displaying results
   cv::Mat outputImage(ROWS, COLS, CV_8UC1, output.get());
@@ -231,12 +244,26 @@ int main(int argc, char** argv) {
       // harris = det(M)-k*(trace(M)^2)
       auto harris = visioncpp::point_operation<Sub>(det, ktrace2);
 
+      // break tree before neighbour_operation
+      auto kharris =
+          visioncpp::schedule<visioncpp::policy::Fuse, SM, SM, SM, SM>(harris);
+
+      auto harris_non_maximum =
+          visioncpp::neighbour_operation<NonMaximalSuppresion, halfWindowSize,
+                                         halfWindowSize, halfWindowSize,
+                                         halfWindowSize>(kharris);
+
+      // break tree after neighbour_operation
+      auto kharris_non_maximum =
+          visioncpp::schedule<visioncpp::policy::Fuse, SM, SM, SM, SM>(
+              harris_non_maximum);
+
       // apply a threshold
       auto thresh_node =
           visioncpp::terminal<float, visioncpp::memory_type::Const>(
               static_cast<float>(threshold));
       auto harrisTresh =
-          visioncpp::point_operation<Thresh>(harris, thresh_node);
+          visioncpp::point_operation<Thresh>(kharris_non_maximum, thresh_node);
 
       // convert to unsigned char for displaying purposes
       // scale threhold to display
@@ -258,7 +285,8 @@ int main(int argc, char** argv) {
     cv::imshow("Harris Corner Detector", outputImage);
 
     // check button pressed to finalize program
-    if (cv::waitKey(1) >= 0) break;
+    if (cv::waitKey(1) >= 0)
+      break;
   }
 
   return 0;
