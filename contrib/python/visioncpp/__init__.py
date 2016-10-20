@@ -276,7 +276,7 @@ class show(TerminalOperation):
 
 # PointOperations:
 
-class BGR_to_RGB(PointOperation):
+class BGRToRGB(PointOperation):
     """
     This functor reorders channels BGR to RGB.
     """
@@ -290,10 +290,10 @@ class BGR_to_RGB(PointOperation):
         ]
 
     def __repr__(self):
-        return "VisionCpp::BGR_to_RGB<{}>".format(self.parent)
+        return "VisionCpp::BGRToRGB<{}>".format(self.parent)
 
 
-class RGB_to_HSV(PointOperation):
+class RGBToHSV(PointOperation):
     """
     Functor converts RGB to HSV color space.
     """
@@ -307,10 +307,10 @@ class RGB_to_HSV(PointOperation):
         ]
 
     def __repr__(self):
-        return "VisionCpp::RGB_to_HSV<{}>".format(self.parent)
+        return "VisionCpp::RGBToHSV<{}>".format(self.parent)
 
 
-class RGB_to_BGR(PointOperation):
+class RGBToBGR(PointOperation):
     """
     This functor reorders channels BGR to RGB.
     """
@@ -325,10 +325,10 @@ class RGB_to_BGR(PointOperation):
         ]
 
     def __repr__(self):
-        return "VisionCpp::RGB_to_GBR<{}>".format(self.parent)
+        return "VisionCpp::RGBToGBR<{}>".format(self.parent)
 
 
-class HSV_to_RGB(PointOperation):
+class HSVToRGB(PointOperation):
     """
     Functor converts HSV to color RGB.
     """
@@ -342,10 +342,10 @@ class HSV_to_RGB(PointOperation):
         ]
 
     def __repr__(self):
-        return "VisionCpp::HSV_to_BGR<{}>".format(self.parent)
+        return "VisionCpp::HSVToBGR<{}>".format(self.parent)
 
 
-class U8C3_to_F32C3(PointOperation):
+class U8C3ToF32C3(PointOperation):
     """
     This functor performs conversion from [0, 255] to [0.0f, 1.0f].
     """
@@ -360,10 +360,10 @@ class U8C3_to_F32C3(PointOperation):
         ]
 
     def __repr__(self):
-        return "VisionCpp::U8C3_to_F32C3<{}>".format(self.parent)
+        return "VisionCpp::U8C3ToF32C3<{}>".format(self.parent)
 
 
-class F32C3_to_U8C3(PointOperation):
+class F32C3ToU8C3(PointOperation):
     """
     This functor performs conversion from [0.0f, 1.0f] to [0, 255].
     """
@@ -378,4 +378,4 @@ class F32C3_to_U8C3(PointOperation):
         ]
 
     def __repr__(self):
-        return "VisionCpp::F32C3_to_U8C3<{}>".format(self.parent)
+        return "VisionCpp::F32C3ToU8C3<{}>".format(self.parent)

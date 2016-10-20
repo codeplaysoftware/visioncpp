@@ -36,12 +36,12 @@ def main():
 
     # VisionCpp expression tree:
     image_in = vp.Webcam()
-    node1 = vp.BGR_to_RGB(image_in)
-    node2 = vp.U8C3_to_F32C3(node1)
-    node3 = vp.RGB_to_HSV(node2)
-    node4 = vp.HSV_to_RGB(node3)
-    node5 = vp.F32C3_to_U8C3(node4)
-    node6 = vp.RGB_to_BGR(node5)
+    node1 = vp.BGRToRGB(image_in)
+    node2 = vp.U8C3ToF32C3(node1)
+    node3 = vp.RGBToHSV(node2)
+    node4 = vp.HSVToRGB(node3)
+    node5 = vp.F32C3ToU8C3(node4)
+    node6 = vp.RGBToBGR(node5)
     output = vp.show(node6)
 
     vp.run(output)
