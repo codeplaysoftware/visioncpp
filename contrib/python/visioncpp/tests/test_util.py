@@ -1,9 +1,11 @@
 from __future__ import print_function
 
+
 from unittest import TestCase
 
 import visioncpp as vp
 from visioncpp import util
+from visioncpp.tests import data_path
 
 
 class TestClass(object):
@@ -37,3 +39,22 @@ class test_util(TestCase):
         x = TestClass(10)
         self.assertEqual(util.get_attribute(x, "x"), 5)
         self.assertEqual(util.get_attribute(x, "nope"), None)
+
+    def test_get_image_size_jpg(self):
+        w, h = util.get_image_size(data_path('lena.jpg'))
+        self.assertEqual(512, w)
+        self.assertEqual(512, h)
+
+    def test_get_image_size_png(self):
+        w, h = util.get_image_size(data_path('lena.png'))
+        self.assertEqual(512, w)
+        self.assertEqual(512, h)
+
+    def test_get_image_size_gif(self):
+        w, h = util.get_image_size(data_path('lena.gif'))
+        self.assertEqual(512, w)
+        self.assertEqual(512, h)
+
+    def test_get_image_size_unsupported_type(self):
+        with self.assertRaises(vp.VisionCppException):
+            util.get_image_size(data_path('lena.bmp'))
