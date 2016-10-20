@@ -110,6 +110,9 @@ class PointOperation(Operation):
     """
     VisionCpp pointwise operation type.
     """
+    def __init__(self, parent):
+        self.parent = parent
+
     def _compute_code(self):
         return [
             "auto {name} = visioncpp::point_operation<"
@@ -291,45 +294,39 @@ class BGRToRGB(PointOperation):
     """
     This functor reorders channels BGR to RGB.
     """
-    def __init__(self, parent):
-        self.parent = parent
+    pass
 
 
 class RGBToHSV(PointOperation):
     """
     Functor converts RGB to HSV color space.
     """
-    def __init__(self, parent):
-        self.parent = parent
+    pass
 
 
 class RGBToBGR(PointOperation):
     """
     This functor reorders channels BGR to RGB.
     """
-    def __init__(self, parent):
-        self.parent = parent
+    pass
 
 
 class HSVToRGB(PointOperation):
     """
     Functor converts HSV to color RGB.
     """
-    def __init__(self, parent):
-        self.parent = parent
+    pass
 
 
 class U8C3ToF32C3(PointOperation):
     """
     This functor performs conversion from [0, 255] to [0.0f, 1.0f].
     """
-    def __init__(self, parent):
-        self.parent = parent
+    pass
 
 
 class F32C3ToU8C3(PointOperation):
     """
     This functor performs conversion from [0.0f, 1.0f] to [0, 255].
     """
-    def __init__(self, parent):
-        self.parent = parent
+    pass
