@@ -11,6 +11,14 @@ __license__ = "Apache License, Version 2.0"
 import os
 import logging
 
+
+class VisionCppException(Exception):
+    """
+    VisionCpp module exception.
+    """
+    pass
+
+
 from visioncpp import backend
 from visioncpp import codegen
 from visioncpp import util
@@ -20,32 +28,28 @@ default_computecpp_prefix = "/usr/local"
 computecpp_prefix = default_computecpp_prefix
 
 
-class VisionCppException(Exception):
-    """
-    VisionCpp module exception.
-    """
-    pass
-
-
 def init(path=None):
     """
     Initialize VisionCpp module.
 
     Arguments:
         path (str, optional): Path to ComputeCpp directory.
+
+    Returns:
+        str: Path to ComputeCpp directory.
     """
     def must_exist(path):
         if not os.path.exists(path):
             raise VisionCppException(
                 "File {} not found. Is ComputeCpp installed?".format(path))
 
-    if path is None:
-        return
+    if path is not None:
+        global computecpp_prefix
+        path = os.path.abspath(os.path.expanduser(path))
+        must_exist(path)
+        computecpp_prefix = path
 
-    path = os.path.expanduser(path)
-    must_exist(path)
-    global computecpp_prefix
-    computecpp_prefix = path
+    return computecpp_prefix
 
 
 def run(expression, devtype="cpu"):

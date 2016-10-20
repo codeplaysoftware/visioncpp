@@ -60,6 +60,7 @@ def get_image_size(fname):
     Returns:
         (int, int): The dimensions of the image, width x height.
     """
+    import visioncpp as vp  # needed for VisionCppException type
     with open(fname, 'rb') as fhandle:
         head = fhandle.read(24)
         if len(head) != 24:
@@ -87,7 +88,7 @@ def get_image_size(fname):
                 fhandle.seek(1, 1)  # Skip `precision' byte.
                 height, width = struct.unpack('>HH', fhandle.read(4))
             except Exception: #IGNORE:W0703
-                return
+                raise vp.VisionCppException('failed to read image')
         else:
-            return
+            raise vp.VisionCppException('unsupported image type')
         return width, height
