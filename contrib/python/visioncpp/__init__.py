@@ -91,6 +91,13 @@ class Operation(object):
         """ Get code lines for outputs """
         return None
 
+    def __repr__(self):
+        return '{node}<{base}>'.format(node=type(self).__name__,
+                                       base=repr(self.parent))
+
+    def __str__(self):
+        return str(self.__repr__())
+
 
 class TerminalOperation(Operation):
     """
@@ -166,7 +173,7 @@ class Image(TerminalOperation):
         ]
 
     def __repr__(self):
-        return "VisionCpp::image<{}>".format(self.input)
+        return "Image<{}>".format(self.input)
 
 
 class Webcam(TerminalOperation):
@@ -214,7 +221,7 @@ class Webcam(TerminalOperation):
         ]
 
     def __repr__(self):
-        return "VisionCpp::webcam<{}>".format(self.device_id)
+        return "Webcam<{}>".format(self.device_id)
 
 
 class show(TerminalOperation):
@@ -270,9 +277,6 @@ class show(TerminalOperation):
 
         return lines
 
-    def __repr__(self):
-        return "VisionCpp::show<{}>".format(self.parent)
-
 
 # PointOperations:
 
@@ -289,9 +293,6 @@ class BGRToRGB(PointOperation):
              '({arg});'.format(name=self.name, arg=self.parent.name))
         ]
 
-    def __repr__(self):
-        return "VisionCpp::BGRToRGB<{}>".format(self.parent)
-
 
 class RGBToHSV(PointOperation):
     """
@@ -305,9 +306,6 @@ class RGBToHSV(PointOperation):
             ('auto {name} = visioncpp::point_operation<visioncpp::OP_RGBToHSV>'
              '({arg});'.format(name=self.name, arg=self.parent.name))
         ]
-
-    def __repr__(self):
-        return "VisionCpp::RGBToHSV<{}>".format(self.parent)
 
 
 class RGBToBGR(PointOperation):
@@ -324,9 +322,6 @@ class RGBToBGR(PointOperation):
              .format(name=self.name, arg=self.parent.name))
         ]
 
-    def __repr__(self):
-        return "VisionCpp::RGBToGBR<{}>".format(self.parent)
-
 
 class HSVToRGB(PointOperation):
     """
@@ -340,9 +335,6 @@ class HSVToRGB(PointOperation):
             ('auto {name} = visioncpp::point_operation<visioncpp::OP_HSVToRGB>'
              '({arg});'.format(name=self.name, arg=self.parent.name))
         ]
-
-    def __repr__(self):
-        return "VisionCpp::HSVToBGR<{}>".format(self.parent)
 
 
 class U8C3ToF32C3(PointOperation):
@@ -359,9 +351,6 @@ class U8C3ToF32C3(PointOperation):
              .format(name=self.name, arg=self.parent.name))
         ]
 
-    def __repr__(self):
-        return "VisionCpp::U8C3ToF32C3<{}>".format(self.parent)
-
 
 class F32C3ToU8C3(PointOperation):
     """
@@ -377,5 +366,3 @@ class F32C3ToU8C3(PointOperation):
              .format(name=self.name, arg=self.parent.name))
         ]
 
-    def __repr__(self):
-        return "VisionCpp::F32C3ToU8C3<{}>".format(self.parent)
