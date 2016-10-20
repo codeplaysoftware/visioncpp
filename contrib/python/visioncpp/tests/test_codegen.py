@@ -87,3 +87,46 @@ cv::waitKey(0);
 
 }  // extern "C"
 """)
+
+    def test_local_and_show_webcam_gpu(self):
+        node_in = vp.Webcam()
+        node_out = vp.show(node_in)
+        self.assertEqual(
+                codegen.generate(node_out, "gpu", use_clang_format=False),
+                """#include <opencv2/opencv.hpp>
+#include <visioncpp.hpp>
+
+extern "C" {
+
+int native_expression_tree() {
+auto device = visioncpp::make_device<visioncpp::backend::sycl, visioncpp::device::gpu>();
+
+// inputs:
+std::shared_ptr<unsigned char> Webcam_1_data(new unsigned char[921600], [](unsigned char *d) { delete[] d; });
+cv::VideoCapture Webcam_1_cap(0);
+if (!Webcam_1_cap.isOpened()) {
+  std::cerr << "Could not open capture device 0" << std::endl;
+return 1;
+}
+cv::Mat Webcam_1_cv;
+cv::Mat show_1_cv(480, 640, CV_8UC(3), Webcam_1_data.get());
+for (;;) {  // main loop
+
+{  // compute scope
+Webcam_1_cap.read(Webcam_1_cv);
+auto Webcam_1 = visioncpp::terminal<visioncpp::pixel::U8C3, 640, 480, visioncpp::memory_type::Buffer2D>(Webcam_1_cv.data);
+auto Webcam_1_out = visioncpp::terminal<visioncpp::pixel::U8C3, 640, 480, visioncpp::memory_type::Buffer2D>(Webcam_1_data.get());
+auto show_1 = visioncpp::assign(Webcam_1_out, Webcam_1);
+visioncpp::execute<visioncpp::policy::Fuse, 16, 16, 8, 8>(show_1, device);
+}  // compute scope
+
+// outputs:
+cv::namedWindow("show_1", cv::WINDOW_AUTOSIZE);
+cv::imshow("show_1", show_1_cv);
+if (cv::waitKey(1) >= 0) break;
+}  // main loop
+}
+
+}  // extern "C"
+""")
+
