@@ -110,7 +110,14 @@ class PointOperation(Operation):
     """
     VisionCpp pointwise operation type.
     """
-    pass
+    def _compute_code(self):
+        return [
+            "auto {name} = visioncpp::point_operation<"
+            "visioncpp::OP_{type}>({parent});"
+            .format(name=self.name,
+                    type=type(self).__name__,
+                    parent=self.parent.name)
+        ]
 
 
 class NeighbourOperation(Operation):
@@ -287,12 +294,6 @@ class BGRToRGB(PointOperation):
     def __init__(self, parent):
         self.parent = parent
 
-    def _compute_code(self):
-        return [
-            ('auto {name} = visioncpp::point_operation<visioncpp::OP_BGRToRGB>'
-             '({arg});'.format(name=self.name, arg=self.parent.name))
-        ]
-
 
 class RGBToHSV(PointOperation):
     """
@@ -300,12 +301,6 @@ class RGBToHSV(PointOperation):
     """
     def __init__(self, parent):
         self.parent = parent
-
-    def _compute_code(self):
-        return [
-            ('auto {name} = visioncpp::point_operation<visioncpp::OP_RGBToHSV>'
-             '({arg});'.format(name=self.name, arg=self.parent.name))
-        ]
 
 
 class RGBToBGR(PointOperation):
@@ -315,13 +310,6 @@ class RGBToBGR(PointOperation):
     def __init__(self, parent):
         self.parent = parent
 
-    def _compute_code(self):
-        return [
-            ('auto {name} = visioncpp::point_operation<'
-             'visioncpp::OP_RGBToBGR>({arg});'
-             .format(name=self.name, arg=self.parent.name))
-        ]
-
 
 class HSVToRGB(PointOperation):
     """
@@ -329,12 +317,6 @@ class HSVToRGB(PointOperation):
     """
     def __init__(self, parent):
         self.parent = parent
-
-    def _compute_code(self):
-        return [
-            ('auto {name} = visioncpp::point_operation<visioncpp::OP_HSVToRGB>'
-             '({arg});'.format(name=self.name, arg=self.parent.name))
-        ]
 
 
 class U8C3ToF32C3(PointOperation):
@@ -344,13 +326,6 @@ class U8C3ToF32C3(PointOperation):
     def __init__(self, parent):
         self.parent = parent
 
-    def _compute_code(self):
-        return [
-            ('auto {name} = visioncpp::point_operation<'
-             'visioncpp::OP_U8C3ToF32C3>({arg});'
-             .format(name=self.name, arg=self.parent.name))
-        ]
-
 
 class F32C3ToU8C3(PointOperation):
     """
@@ -358,11 +333,3 @@ class F32C3ToU8C3(PointOperation):
     """
     def __init__(self, parent):
         self.parent = parent
-
-    def _compute_code(self):
-        return [
-            ('auto {name} = visioncpp::point_operation<'
-             'visioncpp::OP_F32C3ToU8C3>({arg});'
-             .format(name=self.name, arg=self.parent.name))
-        ]
-
