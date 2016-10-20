@@ -77,11 +77,13 @@ class test_Operation(TestCase):
 class test_PointOperation(TestCase):
     OPS = [
         vp.BGRToRGB(_in),
-        vp.RGBToHSV(_in),
-        vp.RGBToBGR(_in),
-        vp.HSVToRGB(_in),
-        vp.U8C3ToF32C3(_in),
         vp.F32C3ToU8C3(_in),
+        vp.HSVToRGB(_in),
+        vp.HSVToU8C3(_in),
+        vp.RGBToBGR(_in),
+        vp.RGBToGREY(_in),
+        vp.RGBToHSV(_in),
+        vp.U8C3ToF32C3(_in),
     ]
 
     def test_repr(self):

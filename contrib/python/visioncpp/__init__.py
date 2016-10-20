@@ -297,16 +297,9 @@ class BGRToRGB(PointOperation):
     pass
 
 
-class RGBToHSV(PointOperation):
+class F32C3ToU8C3(PointOperation):
     """
-    Functor converts RGB to HSV color space.
-    """
-    pass
-
-
-class RGBToBGR(PointOperation):
-    """
-    This functor reorders channels BGR to RGB.
+    This functor performs conversion from [0.0f, 1.0f] to [0, 255].
     """
     pass
 
@@ -318,15 +311,38 @@ class HSVToRGB(PointOperation):
     pass
 
 
-class U8C3ToF32C3(PointOperation):
+class HSVToU8C3(PointOperation):
     """
-    This functor performs conversion from [0, 255] to [0.0f, 1.0f].
+    Functor allows displaying HSV.
     """
     pass
 
 
-class F32C3ToU8C3(PointOperation):
+class RGBToBGR(PointOperation):
     """
-    This functor performs conversion from [0.0f, 1.0f] to [0, 255].
+    This functor reorders channels BGR to RGB.
+    """
+    pass
+
+
+class RGBToGREY(PointOperation):
+    """
+    This functor performs RGB to GREY convertion.
+
+    Uses the following rule: GREY <- 0.299f * R + 0,587f * G + 0.114 * B.
+    """
+    pass
+
+
+class RGBToHSV(PointOperation):
+    """
+    Functor converts RGB to HSV color space.
+    """
+    pass
+
+
+class U8C3ToF32C3(PointOperation):
+    """
+    This functor performs conversion from [0, 255] to [0.0f, 1.0f].
     """
     pass
