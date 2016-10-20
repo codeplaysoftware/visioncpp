@@ -11,6 +11,14 @@ __license__ = "Apache License, Version 2.0"
 import os
 import logging
 
+
+class VisionCppException(Exception):
+    """
+    VisionCpp module exception.
+    """
+    pass
+
+
 from visioncpp import backend
 from visioncpp import codegen
 from visioncpp import util
@@ -18,13 +26,6 @@ from visioncpp import util
 
 default_computecpp_prefix = "/usr/local"
 computecpp_prefix = default_computecpp_prefix
-
-
-class VisionCppException(Exception):
-    """
-    VisionCpp module exception.
-    """
-    pass
 
 
 def init(path=None):
