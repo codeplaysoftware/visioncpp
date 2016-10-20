@@ -6,6 +6,46 @@ import os
 import visioncpp as vp
 
 
+class TestData404(Exception): pass
+
+
+def data_path(path, exists=True):
+    """
+    Return absolute path to unittest data file. Data files are located in
+    tests/data.
+
+    Args:
+        path (str): Relative path.
+
+    Returns:
+        string: Absolute path.
+
+    Raises:
+        TestData404: If path doesn"t exist.
+    """
+    abspath = os.path.join(os.path.dirname(__file__), "data", path)
+    if exists and not os.path.exists(abspath):
+        raise TestData404(abspath)
+    return abspath
+
+
+def data_str(path):
+    """
+    Return contents of unittest data file as a string.
+
+    Args:
+        path (str): Relative path.
+
+    Returns:
+        string: File contents.
+
+    Raises:
+        TestData404: If path doesn't exist.
+    """
+    with open(data_path(path)) as infile:
+        return infile.read()
+
+
 class test_visioncpp(TestCase):
     def test_init_path_unchanged(self):
         path = vp.init()
