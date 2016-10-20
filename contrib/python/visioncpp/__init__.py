@@ -33,19 +33,22 @@ def init(path=None):
 
     Arguments:
         path (str, optional): Path to ComputeCpp directory.
+
+    Returns:
+        str: Path to ComputeCpp directory.
     """
     def must_exist(path):
         if not os.path.exists(path):
             raise VisionCppException(
                 "File {} not found. Is ComputeCpp installed?".format(path))
 
-    if path is None:
-        return
+    if path is not None:
+        global computecpp_prefix
+        path = os.path.abspath(os.path.expanduser(path))
+        must_exist(path)
+        computecpp_prefix = path
 
-    path = os.path.expanduser(path)
-    must_exist(path)
-    global computecpp_prefix
-    computecpp_prefix = path
+    return computecpp_prefix
 
 
 def run(expression, devtype="cpu"):
