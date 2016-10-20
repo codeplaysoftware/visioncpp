@@ -95,7 +95,8 @@ int main() {
 
     // show image
     output = cv::Mat(ROWS, COLS, CV_8UC3, vc_buffer.get());
-    cv::imshow("VisionCpp: Conv", output);
+    cv::imshow("Reference Image", frame);
+    cv::imshow("Mean Filter Convolution", output);
 
     // loop
     if (cv::waitKey(30) >= 0) break;

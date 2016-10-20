@@ -60,7 +60,7 @@ int main(int argc, char **argv) {
 
   // selecting device using sycl as backend
   auto dev = visioncpp::make_device<visioncpp::backend::sycl,
-                                    visioncpp::device::gpu>();
+                                    visioncpp::device::cpu>();
 
   // defining the image size constants
   constexpr size_t COLS = 640;

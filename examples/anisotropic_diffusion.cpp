@@ -17,7 +17,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/// \file anisotropic_diffusion.cc
+/// \file anisotropic_diffusion.cpp
 ///
 ///              ---------Example---------
 ///            Simplified Anisotropic Diffusion
@@ -43,9 +43,7 @@ constexpr size_t iters{15};  // controls the blur
 // operator which implements the simplified anisotropic diffusion
 struct AniDiff {
   template <typename T>
-  typename T::PixelType operator()(T nbr) {
-    using Type = typename T::PixelType::data_type;
-
+  visioncpp::pixel::F32C3 operator()(T nbr) {
     // init output pixel
     cl::sycl::float4 out(0, 0, 0, 0);
 
@@ -66,7 +64,7 @@ struct AniDiff {
                             nbr.at(nbr.I_c + i, nbr.I_r + j)[2], 0);
 
         // computes the weight which basically is the difference between pixels
-        cl::sycl::float4 w = exp((-k) * cl::sycl::fabs(p1 - p2));
+        cl::sycl::float4 w = cl::sycl::exp((-k) * cl::sycl::fabs(p1 - p2));
 
         // sum the weights for normalization
         sum_w += w;
@@ -77,9 +75,7 @@ struct AniDiff {
     }
     // normalize output and return
     out = out / sum_w;
-    return typename T::PixelType(static_cast<Type>(out.x()),
-                                 static_cast<Type>(out.y()),
-                                 static_cast<Type>(out.z()));
+    return visioncpp::pixel::F32C3(out.x(), out.y(), out.z());
   }
 };
 
