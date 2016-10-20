@@ -46,6 +46,9 @@ def data_str(path):
         return infile.read()
 
 
+_in = vp.Image(data_path('lena.jpg'))
+
+
 class test_visioncpp(TestCase):
     def test_init_path_unchanged(self):
         path = vp.init()
@@ -69,6 +72,33 @@ class test_Operation(TestCase):
         self.assertEqual(None, op._input_code())
         self.assertEqual(None, op._compute_code())
         self.assertEqual(None, op._output_code())
+
+
+class test_PointOperation(TestCase):
+    OPS = [
+        vp.BGRToRGB(_in),
+        vp.RGBToHSV(_in),
+        vp.RGBToBGR(_in),
+        vp.HSVToRGB(_in),
+        vp.U8C3ToF32C3(_in),
+        vp.F32C3ToU8C3(_in),
+    ]
+
+    def test_repr(self):
+        base = repr(_in)
+        for node in self.OPS:
+            self.assertEqual(repr(node),
+                "{node}<{base}>".format(node=type(node).__name__, base=base))
+
+    def test_compute_code(self):
+        _in.name = "foo"
+        for node in self.OPS:
+            node.name = "bar"
+            self.assertEqual(
+                node._compute_code(),
+                ["auto bar = visioncpp::point_operation<"
+                 "visioncpp::OP_{type}>(foo);".format(
+                     type=type(node).__name__)])
 
 
 class test_Image(TestCase):
