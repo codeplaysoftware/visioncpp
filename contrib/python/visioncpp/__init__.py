@@ -127,7 +127,42 @@ class NeighbourOperation(Operation):
     """
     VisionCpp neighbour operation type.
     """
-    pass
+    def __init__(self, parent):
+        self.parent = parent
+
+    def _compute_code(self):
+        return [
+            "auto {name} = visioncpp::point_operation<"
+            "visioncpp::OP_{type}>({parent});"
+            .format(name=self.name,
+                    type=type(self).__name__,
+                    parent=self.parent.name)
+        ]
+
+
+class NeighbourOpWithArg(Operation):
+    """
+    VisionCpp neighbour operation type.
+    """
+    def __init__(self, parent, arg):
+        self.parent = parent
+        self.arg = arg
+
+    def _compute_code(self):
+        return [
+            "auto {name} = visioncpp::point_operation<"
+            "visioncpp::OP_{type}>({parent}, {arg});"
+            .format(name=self.name,
+                    type=type(self).__name__,
+                    parent=self.parent.name,
+                    arg=self.arg.name)
+        ]
+
+    def __repr__(self):
+        return '{node}<{base}, {arg}>'.format(
+            node=type(self).__name__,
+            base=repr(self.parent),
+            arg=repr(self.arg))
 
 
 # Terminal Operations:
@@ -344,5 +379,69 @@ class RGBToHSV(PointOperation):
 class U8C3ToF32C3(PointOperation):
     """
     This functor performs conversion from [0, 255] to [0.0f, 1.0f].
+    """
+    pass
+
+
+class Filter2D(NeighbourOpWithArg):
+    """
+    Applying the general convolution for 3 channel Image.
+    """
+    pass
+
+
+class Filter2D_One(NeighbourOpWithArg):
+    """
+    Applying the general convolution for 1 channel Image.
+    """
+    pass
+
+
+class GaussianBlur3x3(NeighbourOperation):
+    """
+    Applying the Gaussian blur 3x3.
+    """
+    pass
+
+
+class SepFilterRow(NeighbourOpWithArg):
+    """
+    Separable filter for rows.
+    """
+    pass
+
+
+class SepFilterCol(NeighbourOpWithArg):
+    """
+    Separable filter for cols.
+    """
+    pass
+
+
+class SepGaussRow3(NeighbourOperation):
+    """
+    Applying the general convolution for 3 channel Image.
+    """
+    pass
+
+
+class SepGaussCol3(NeighbourOperation):
+    """
+    Applying the general convolution for 3 channel Image.
+    """
+    pass
+
+
+class DownsampleAverage(NeighbourOperation):
+    """
+    Downsampling filter using average technique Other filters could be added
+    for different numbers of channels.
+    """
+    pass
+
+
+class DownsampleClosest(NeighbourOperation):
+    """
+    Downsampling filter using closest technique.
     """
     pass

@@ -103,6 +103,58 @@ class test_PointOperation(TestCase):
                      type=type(node).__name__)])
 
 
+class test_NeighbourOpWithArg(TestCase):
+    OPS = [
+        vp.Filter2D(_in, _in),
+        vp.Filter2D_One(_in, _in),
+        vp.SepFilterRow(_in, _in),
+        vp.SepFilterCol(_in, _in),
+    ]
+
+    def test_repr(self):
+        base = repr(_in)
+        for node in self.OPS:
+            self.assertEqual(repr(node),
+                "{node}<{base}, {base}>".format(
+                    node=type(node).__name__, base=base))
+
+    def test_compute_code(self):
+        _in.name = "foo"
+        for node in self.OPS:
+            node.name = "bar"
+            self.assertEqual(
+                node._compute_code(),
+                ["auto bar = visioncpp::point_operation<"
+                 "visioncpp::OP_{type}>(foo, foo);".format(
+                     type=type(node).__name__)])
+
+
+class test_NeighbourOperation(TestCase):
+    OPS = [
+        vp.GaussianBlur3x3(_in),
+        vp.SepGaussRow3(_in,),
+        vp.SepGaussCol3(_in,),
+        vp.DownsampleAverage(_in,),
+        vp.DownsampleClosest(_in,),
+    ]
+
+    def test_repr(self):
+        base = repr(_in)
+        for node in self.OPS:
+            self.assertEqual(repr(node),
+                "{node}<{base}>".format(node=type(node).__name__, base=base))
+
+    def test_compute_code(self):
+        _in.name = "foo"
+        for node in self.OPS:
+            node.name = "bar"
+            self.assertEqual(
+                node._compute_code(),
+                ["auto bar = visioncpp::point_operation<"
+                 "visioncpp::OP_{type}>(foo);".format(
+                     type=type(node).__name__)])
+
+
 class test_Image(TestCase):
     def test_unsupported_image(self):
         with self.assertRaises(vp.VisionCppException):
