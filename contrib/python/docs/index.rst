@@ -11,6 +11,7 @@ List of Pages
 .. toctree::
 
    api
+   license
 
 
 Indices and tables
