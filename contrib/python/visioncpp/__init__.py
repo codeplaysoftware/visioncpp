@@ -3,21 +3,18 @@
 """
 Python interface to VisionCpp.
 """
+import os
+
 __author__ = "Chris Cummins"
 __email__ = "chrisc.101@gmail.com"
 __copyright__ = "Copyright 2016 Codeplay Software Limited"
 __license__ = "Apache License, Version 2.0"
-
-import os
-import logging
-
 
 class VisionCppException(Exception):
     """
     VisionCpp module exception.
     """
     pass
-
 
 from visioncpp import backend
 from visioncpp import codegen
@@ -242,8 +239,8 @@ class Webcam(TerminalOperation):
     def _input_code(self):
         nbytes = self.width * self.height * self.channels
         return _shared_ptr(self.name + "_data", nbytes) + [
-            "cv::VideoCapture {name}_cap({devid});".format(name=self.name,
-                                                           devid=self.device_id),
+            "cv::VideoCapture {name}_cap({devid});".format(
+                name=self.name, devid=self.device_id),
             "if (!{name}_cap.isOpened()) {{".format(name=self.name),
             ("  std::cerr << \"Could not open capture device {devid}\" "
              "<< std::endl;").format(devid=self.device_id),
