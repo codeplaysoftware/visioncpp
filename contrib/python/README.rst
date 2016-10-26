@@ -1,7 +1,7 @@
 Python interface for VisionCpp
 ==============================
 
-|Build Status| |Coverage Status|
+|Build Status| |Coverage Status| |Documentation Status|
 
 Provides a python interface for GPU-accelerated vision processing using
 VisionCpp.
@@ -50,3 +50,5 @@ See ``examples/`` directory for more information.
    :target: https://travis-ci.org/ChrisCummins/visioncpp
 .. |Coverage Status| image:: https://coveralls.io/repos/github/ChrisCummins/visioncpp/badge.svg?branch=development
    :target: https://coveralls.io/github/ChrisCummins/visioncpp?branch=development
+.. |Documentation Status| image:: https://readthedocs.org/projects/visioncpp/badge/?version=latest
+   :target: http://visioncpp.readthedocs.io/en/latest/?badge=latest
