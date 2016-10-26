@@ -1,4 +1,5 @@
 from setuptools import setup
+from pip.req import parse_requirements
 
 
 def visioncpp_headers():
@@ -32,6 +33,10 @@ def visioncpp_headers():
     return visioncpp_headers
 
 
+install_reqs = parse_requirements('./requirements.txt', session=False)
+requirements = [str(ir.req) for ir in install_reqs]
+
+
 setup(
     name='visioncpp',
     version='0.0.2',
@@ -53,10 +58,7 @@ setup(
         'computecpp',
         'machine learning'
     ],
-    install_requires=[
-        "pkgconfig == 1.1.0",
-        "Send2Trash == 1.3.0",
-    ],
+    install_requires=requirements,
     data_files=[],
     zip_safe=False
 )
