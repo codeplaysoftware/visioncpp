@@ -1,16 +1,17 @@
-Python interface for VisionCpp
-==============================
+VisionCpp
+=========
 
 |Build Status| |Coverage Status| |Documentation Status|
 
-Provides a python interface for GPU-accelerated vision processing using
-VisionCpp.
+GPU-accelerated vision processing using
+`VisionCpp <https://github.com/codeplaysoftware/visioncpp>`__.
 
 Requirements
 ------------
 
--  python 2.7 or >= 3.3.
+-  python 2.7 or >= 3.3
 -  `ComputeCpp <https://www.codeplay.com/products/computesuite/computecpp>`__
+   Community Edition Beta
 -  `clang-format <http://llvm.org/releases/download.html>`__
    *(optional)*
 
@@ -44,11 +45,11 @@ Get Started
     >>> b = vp.show(a)
     >>> vp.run(b)
 
-See ``examples/`` directory for more information.
+See the `tutorial <http://visioncpp.readthedocs.io/en/latest/tutorial.html>`__ for more information.
 
 .. |Build Status| image:: https://travis-ci.org/ChrisCummins/visioncpp.svg?branch=development
    :target: https://travis-ci.org/ChrisCummins/visioncpp
 .. |Coverage Status| image:: https://coveralls.io/repos/github/ChrisCummins/visioncpp/badge.svg?branch=development
    :target: https://coveralls.io/github/ChrisCummins/visioncpp?branch=development
-.. |Documentation Status| image:: https://readthedocs.org/projects/visioncpp/badge/?version=latest
-   :target: http://visioncpp.readthedocs.io/en/latest/?badge=latest
+.. |Documentation Status| image:: https://img.shields.io/badge/docs-latest-f39f37.svg
+   :target: http://chriscummins.cc/visioncpp/
