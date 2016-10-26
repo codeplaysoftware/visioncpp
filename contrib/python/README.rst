@@ -1,16 +1,17 @@
-Python interface for VisionCpp
-==============================
+VisionCpp
+=========
 
 |Build Status| |Coverage Status| |Documentation Status|
 
-Provides a python interface for GPU-accelerated vision processing using
-VisionCpp.
+GPU-accelerated vision processing using
+`VisionCpp <https://github.com/codeplaysoftware/visioncpp>`__.
 
 Requirements
 ------------
 
--  python 2.7 or >= 3.3.
+-  python 2.7 or >= 3.3
 -  `ComputeCpp <https://www.codeplay.com/products/computesuite/computecpp>`__
+   Community Edition Beta
 -  `clang-format <http://llvm.org/releases/download.html>`__
    *(optional)*
 
@@ -44,7 +45,7 @@ Get Started
     >>> b = vp.show(a)
     >>> vp.run(b)
 
-See ``examples/`` directory for more information.
+See the `tutorial <http://visioncpp.readthedocs.io/en/latest/tutorial.html>`__ for more information.
 
 .. |Build Status| image:: https://travis-ci.org/ChrisCummins/visioncpp.svg?branch=development
    :target: https://travis-ci.org/ChrisCummins/visioncpp
