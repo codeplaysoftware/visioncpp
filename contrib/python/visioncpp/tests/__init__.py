@@ -77,11 +77,109 @@ class test_Operation(TestCase):
 class test_PointOperation(TestCase):
     OPS = [
         vp.BGRToRGB(_in),
-        vp.RGBToHSV(_in),
-        vp.RGBToBGR(_in),
-        vp.HSVToRGB(_in),
-        vp.U8C3ToF32C3(_in),
         vp.F32C3ToU8C3(_in),
+        vp.HSVToRGB(_in),
+        vp.HSVToU8C3(_in),
+        vp.RGBToBGR(_in),
+        vp.RGBToGREY(_in),
+        vp.RGBToHSV(_in),
+        vp.U8C3ToF32C3(_in),
+    ]
+
+    def test_repr(self):
+        base = repr(_in)
+        for node in self.OPS:
+            self.assertEqual(repr(node),
+                "{node}<{base}>".format(node=type(node).__name__, base=base))
+
+    def test_compute_code(self):
+        _in.name = "foo"
+        for node in self.OPS:
+            node.name = "bar"
+            self.assertEqual(
+                node._compute_code(),
+                ["auto bar = visioncpp::point_operation<"
+                 "visioncpp::OP_{type}>(foo);".format(
+                     type=type(node).__name__)])
+
+
+class test_OpWithArgs(TestCase):
+    OPS = [
+        vp.AbsSub,
+        vp.Add,
+        vp.AniDiff_Grey,
+        vp.AniDiff,
+        vp.Div,
+        vp.FloatToF32C3,
+        vp.FloatToU8C1,
+        vp.U8C1ToFloat,
+        vp.FloatToUChar,
+        vp.Median,
+        vp.Merge2Chns,
+        vp.Mul,
+        vp.PowerOf2,
+        vp.Scale,
+        vp.Sub,
+        vp.Thresh,
+        vp.Broadcast,
+        vp.ScaleChannelZero,
+        vp.ScaleChannelOne,
+        vp.ScaleChannelTwo,
+    ]
+
+    def test_repr(self):
+        base = repr(_in)
+        for nodetype in self.OPS:
+            node = nodetype(_in, _in)
+            self.assertEqual(
+                repr(node),
+                "{node}<{base}>".format(node=type(node).__name__, base=base))
+
+    def test_compute_code(self):
+        _in.name = "foo"
+        for nodetype in self.OPS:
+            node = nodetype(_in, _in, _in)
+            node.name = "bar"
+            self.assertEqual(
+                node._compute_code(),
+                ["auto bar = visioncpp::point_operation<"
+                 "visioncpp::OP_{type}>(foo, foo, foo);".format(
+                     type=type(node).__name__)])
+
+
+class test_NeighbourOpWithArg(TestCase):
+    OPS = [
+        vp.Filter2D(_in, _in),
+        vp.Filter2D_One(_in, _in),
+        vp.SepFilterRow(_in, _in),
+        vp.SepFilterCol(_in, _in),
+    ]
+
+    def test_repr(self):
+        base = repr(_in)
+        for node in self.OPS:
+            self.assertEqual(repr(node),
+                "{node}<{base}, {base}>".format(
+                    node=type(node).__name__, base=base))
+
+    def test_compute_code(self):
+        _in.name = "foo"
+        for node in self.OPS:
+            node.name = "bar"
+            self.assertEqual(
+                node._compute_code(),
+                ["auto bar = visioncpp::point_operation<"
+                 "visioncpp::OP_{type}>(foo, foo);".format(
+                     type=type(node).__name__)])
+
+
+class test_NeighbourOperation(TestCase):
+    OPS = [
+        vp.GaussianBlur3x3(_in),
+        vp.SepGaussRow3(_in,),
+        vp.SepGaussCol3(_in,),
+        vp.DownsampleAverage(_in,),
+        vp.DownsampleClosest(_in,),
     ]
 
     def test_repr(self):
