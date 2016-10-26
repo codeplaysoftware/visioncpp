@@ -56,8 +56,8 @@ class test_visioncpp(TestCase):
         self.assertEqual(path, path2)
 
     def test_init_path_set(self):
-        path = vp.init('README.md')
-        self.assertEqual(path, os.path.abspath('README.md'))
+        path = vp.init('README.rst')
+        self.assertEqual(path, os.path.abspath('README.rst'))
         path2 = vp.init()
         self.assertEqual(path, path2)
 
