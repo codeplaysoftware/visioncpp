@@ -36,7 +36,8 @@ setup(
     name='visioncpp',
     version='0.0.2',
     description='Fast, GPU-accelerated computer vision and image processing',
-    url='https://github.com/ChrisCummins/visioncpp/tree/development/contrib/python',
+    url=('https://github.com/ChrisCummins/visioncpp/tree/'
+         'development/contrib/python'),
     author='Chris Cummins',
     author_email='chrisc.101@gmail.com',
     license='Apache License, Version 2.0',
@@ -45,7 +46,7 @@ setup(
     scripts=[],
     test_suite='nose.collector',
     tests_require=['nose'],
-    keywords = [
+    keywords=[
         'vision',
         'image processing',
         'gpu',
@@ -54,8 +55,8 @@ setup(
         'machine learning'
     ],
     install_requires=[
-        "pkgconfig == 1.1.0",
-        "Send2Trash == 1.3.0",
+        'pkgconfig == 1.1.0',
+        'Send2Trash == 1.3.0',
     ],
     data_files=[],
     zip_safe=False
