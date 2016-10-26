@@ -50,6 +50,7 @@ clean:
 
 .PHONY: modules
 modules:
+	cd .. && python ./setup.py install
 	rm -rf modules
 	mkdir -p modules
 	@for module in $$(cd ../visioncpp; ls *.py | grep -v __init__.py); do \
@@ -60,9 +61,15 @@ modules:
 
 .PHONY: html
 html: modules
+	test -d _build/html || git clone git@github.com:ChrisCummins/visioncpp.git _build/html
+	cd _build/html && git checkout gh-pages
+	cd _build/html && git reset --hard origin/gh-pages
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+	cd _build/html && git add .
+	cd _build/html && git commit -m "Updated sphinx docs"
+	cd _build/html && git push -u origin gh-pages
 
 .PHONY: dirhtml
 dirhtml:
