@@ -8,3 +8,6 @@ visioncpp.egg-info/
 
 # Python virtualenv:
 /env
+
+# sphinx docs:
+/docs/_build

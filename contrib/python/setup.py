@@ -1,4 +1,5 @@
 from setuptools import setup
+from pip.req import parse_requirements
 
 
 def visioncpp_headers():
@@ -32,11 +33,16 @@ def visioncpp_headers():
     return visioncpp_headers
 
 
+install_reqs = parse_requirements('./requirements.txt', session=False)
+requirements = [str(ir.req) for ir in install_reqs]
+
+
 setup(
     name='visioncpp',
     version='0.0.2',
     description='Fast, GPU-accelerated computer vision and image processing',
-    url='https://github.com/ChrisCummins/visioncpp/tree/development/contrib/python',
+    url=('https://github.com/ChrisCummins/visioncpp/tree/'
+         'development/contrib/python'),
     author='Chris Cummins',
     author_email='chrisc.101@gmail.com',
     license='Apache License, Version 2.0',
@@ -45,7 +51,7 @@ setup(
     scripts=[],
     test_suite='nose.collector',
     tests_require=['nose'],
-    keywords = [
+    keywords=[
         'vision',
         'image processing',
         'gpu',
@@ -53,10 +59,7 @@ setup(
         'computecpp',
         'machine learning'
     ],
-    install_requires=[
-        "pkgconfig == 1.1.0",
-        "Send2Trash == 1.3.0",
-    ],
+    install_requires=requirements,
     data_files=[],
     zip_safe=False
 )
