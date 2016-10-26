@@ -45,7 +45,8 @@ Get Started
     >>> b = vp.show(a)
     >>> vp.run(b)
 
-See the `tutorial <http://visioncpp.readthedocs.io/en/latest/tutorial.html>`__ for more information.
+See the `tutorial <http://chriscummins.cc/visioncpp/tutorial.html>`__
+for more information.
 
 .. |Build Status| image:: https://travis-ci.org/ChrisCummins/visioncpp.svg?branch=development
    :target: https://travis-ci.org/ChrisCummins/visioncpp
