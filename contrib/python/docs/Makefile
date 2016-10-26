@@ -48,8 +48,18 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 
+.PHONY: modules
+modules:
+	rm -rf modules
+	mkdir -p modules
+	@for module in $$(cd ../visioncpp; ls *.py | grep -v __init__.py); do \
+		cp -v module.rst.template modules/visioncpp.$${module%.py}.rst; \
+		sed -i "s/@MODULE@/visioncpp.$${module%.py}/g" modules/visioncpp.$${module%.py}.rst; \
+		sed -i "s/@MODULE_UNDERLINE@/$$(head -c $$(echo visioncpp.$${module%.py} | wc -c) < /dev/zero | tr '\0' '=')/" modules/visioncpp.$${module%.py}.rst; \
+	done
+
 .PHONY: html
-html:
+html: modules
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
