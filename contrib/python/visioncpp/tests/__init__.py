@@ -103,6 +103,50 @@ class test_PointOperation(TestCase):
                      type=type(node).__name__)])
 
 
+class test_OpWithArgs(TestCase):
+    OPS = [
+        vp.AbsSub,
+        vp.Add,
+        vp.AniDiff_Grey,
+        vp.AniDiff,
+        vp.Div,
+        vp.FloatToF32C3,
+        vp.FloatToU8C1,
+        vp.U8C1ToFloat,
+        vp.FloatToUChar,
+        vp.Median,
+        vp.Merge2Chns,
+        vp.Mul,
+        vp.PowerOf2,
+        vp.Scale,
+        vp.Sub,
+        vp.Thresh,
+        vp.Broadcast,
+        vp.ScaleChannelZero,
+        vp.ScaleChannelOne,
+        vp.ScaleChannelTwo,
+    ]
+
+    def test_repr(self):
+        base = repr(_in)
+        for nodetype in self.OPS:
+            node = nodetype(_in, _in)
+            self.assertEqual(
+                repr(node),
+                "{node}<{base}>".format(node=type(node).__name__, base=base))
+
+    def test_compute_code(self):
+        _in.name = "foo"
+        for nodetype in self.OPS:
+            node = nodetype(_in, _in, _in)
+            node.name = "bar"
+            self.assertEqual(
+                node._compute_code(),
+                ["auto bar = visioncpp::point_operation<"
+                 "visioncpp::OP_{type}>(foo, foo, foo);".format(
+                     type=type(node).__name__)])
+
+
 class test_NeighbourOpWithArg(TestCase):
     OPS = [
         vp.Filter2D(_in, _in),

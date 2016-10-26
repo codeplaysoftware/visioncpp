@@ -120,6 +120,25 @@ class PointOperation(Operation):
         ]
 
 
+class OpWithArgs(Operation):
+    """
+    VisionCpp pointwise operation type.
+    """
+    def __init__(self, *args):
+        assert(len(args) >= 1)
+        self.parent = args[0]
+        self.args = args
+
+    def _compute_code(self):
+        return [
+            "auto {name} = visioncpp::point_operation<"
+            "visioncpp::OP_{type}>({argnames});"
+            .format(name=self.name,
+                    type=type(self).__name__,
+                    argnames=", ".join([x.name for x in self.args]))
+        ]
+
+
 class NeighbourOperation(Operation):
     """
     VisionCpp neighbour operation type.
@@ -440,5 +459,145 @@ class DownsampleAverage(NeighbourOperation):
 class DownsampleClosest(NeighbourOperation):
     """
     Downsampling filter using closest technique.
+    """
+    pass
+
+
+class AbsSub(OpWithArgs):
+    """
+    Uses the sycl::fabs to return the difference.
+    """
+    pass
+
+
+class Add(OpWithArgs):
+    """
+    This functor adds two pixels.
+    """
+    pass
+
+
+class AniDiff_Grey(OpWithArgs):
+    """
+    This functor applies anisotropic diffusion for one channel.
+    """
+    pass
+
+
+class AniDiff(OpWithArgs):
+    """
+    This functor applies anisotropic diffusion for 3 channels.
+    """
+    pass
+
+
+class Div(OpWithArgs):
+    """
+    This functor divides two matrices element-wise.
+    """
+    pass
+
+
+class FloatToF32C3(OpWithArgs):
+    """
+    It replicates one channel to 3 channels.
+    """
+    pass
+
+
+class FloatToU8C1(OpWithArgs):
+    """
+    It converts float to uchar converting [0.0f, 1.0f] to [0, 255].
+    """
+    pass
+
+
+class U8C1ToFloat(OpWithArgs):
+    """
+    It converts uchar to float converting range [0, 255] to [0.0f, 1.0f].
+    """
+    pass
+
+
+class FloatToUChar(OpWithArgs):
+    """
+    It converts float to uchar.
+    """
+    pass
+
+
+class Median(OpWithArgs):
+    """
+    This functor implements a median filter.
+    """
+    pass
+
+
+class Merge2Chns(OpWithArgs):
+    """
+    This functor merges 2 matrices into one matrix of 2 channels.
+    """
+    pass
+
+
+class Mul(OpWithArgs):
+    """
+    This functor implements an element-wise matrix multiplication.
+    """
+    pass
+
+
+class PowerOf2(OpWithArgs):
+    """
+    This functor implements the power of 2 of one matrix.
+    """
+    pass
+
+
+class Scale(OpWithArgs):
+    """
+    Scales the pixel value of an image by a factor.
+    """
+    pass
+
+
+class Sub(OpWithArgs):
+    """
+    This functor subtracts 2 images.
+    """
+    pass
+
+
+class Thresh(OpWithArgs):
+    """
+    Implements a binary threshold.
+    """
+    pass
+
+
+class Broadcast(OpWithArgs):
+    """
+    This functor sets the pixel to the value passed in.
+    """
+    pass
+
+
+class ScaleChannelZero(OpWithArgs):
+    """
+    This functor applies anisotropic diffusion for 3 channels.
+    """
+    pass
+
+
+class ScaleChannelOne(OpWithArgs):
+    """
+    This functor applies anisotropic diffusion for 3 channels.
+    """
+    pass
+
+
+class ScaleChannelTwo(OpWithArgs):
+    """
+    This custom functor changes 2 channel by factor passed via float f.
     """
     pass
