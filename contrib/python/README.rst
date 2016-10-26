@@ -51,5 +51,5 @@ See the `tutorial <http://visioncpp.readthedocs.io/en/latest/tutorial.html>`__ f
    :target: https://travis-ci.org/ChrisCummins/visioncpp
 .. |Coverage Status| image:: https://coveralls.io/repos/github/ChrisCummins/visioncpp/badge.svg?branch=development
    :target: https://coveralls.io/github/ChrisCummins/visioncpp?branch=development
-.. |Documentation Status| image:: https://readthedocs.org/projects/visioncpp/badge/?version=latest
-   :target: http://visioncpp.readthedocs.io/en/latest/?badge=latest
+.. |Documentation Status| image:: https://img.shields.io/badge/docs-latest-f39f37.svg
+   :target: http://chriscummins.cc/visioncpp/
