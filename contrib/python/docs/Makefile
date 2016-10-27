@@ -67,6 +67,9 @@ html: modules
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+
+.PHONY: publish
+publish: html
 	cd _build/html && git add .
 	cd _build/html && git commit -m "Updated sphinx docs"
 	cd _build/html && git push -u origin gh-pages
