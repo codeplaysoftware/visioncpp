@@ -61,7 +61,7 @@ modules:
 
 .PHONY: html
 html: modules
-	test -d _build/html || git clone git@github.com:ChrisCummins/visioncpp.git _build/html
+	test -d _build/html || (mkdir -p _build && cd _build && git clone git@github.com:ChrisCummins/visioncpp.git html)
 	cd _build/html && git checkout gh-pages
 	cd _build/html && git reset --hard origin/gh-pages
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
