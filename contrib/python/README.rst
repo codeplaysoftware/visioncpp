@@ -1,7 +1,7 @@
 VisionCpp
 =========
 
-|Build Status| |Coverage Status| |Documentation Status|
+|PyPi Status| |Build Status| |Coverage Status| |Documentation Status|
 
 GPU-accelerated vision processing using
 `VisionCpp <https://github.com/codeplaysoftware/visioncpp>`__.
@@ -48,6 +48,8 @@ Get Started
 See the `tutorial <http://chriscummins.cc/visioncpp/tutorial.html>`__
 for more information.
 
+.. |PyPi Status| image:: https://badge.fury.io/py/visioncpp.svg
+   :target: https://pypi.python.org/pypi/visioncpp
 .. |Build Status| image:: https://travis-ci.org/ChrisCummins/visioncpp.svg?branch=development
    :target: https://travis-ci.org/ChrisCummins/visioncpp
 .. |Coverage Status| image:: https://coveralls.io/repos/github/ChrisCummins/visioncpp/badge.svg?branch=development
