@@ -5,8 +5,7 @@ API
    :members:
    :undoc-members:
 
-Submodules
-----------
+Additional submodules:
 
 .. toctree::
    :glob:
