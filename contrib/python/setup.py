@@ -39,7 +39,7 @@ requirements = [str(ir.req) for ir in install_reqs]
 
 setup(
     name='visioncpp',
-    version='0.0.2',
+    version='0.1.0',
     description='Fast, GPU-accelerated computer vision and image processing',
     url=('https://github.com/ChrisCummins/visioncpp/tree/'
          'development/contrib/python'),
