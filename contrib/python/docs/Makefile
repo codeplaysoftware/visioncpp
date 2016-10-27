@@ -71,7 +71,7 @@ html: modules
 .PHONY: publish
 publish: html
 	cd _build/html && git add .
-	cd _build/html && git commit -m "Updated sphinx docs"
+	cd _build/html && git commit -m "Updated sphinx docs" || true
 	cd _build/html && git push -u origin gh-pages
 
 .PHONY: dirhtml
