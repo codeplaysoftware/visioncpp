@@ -1,6 +1,19 @@
-language: cpp
+language: python
 sudo: true
 dist: trusty
+
+python:
+  - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  # does not have headers provided, please ask https://launchpad.net/~pypy/+archive/ppa
+  # maintainers to fix their pypy-dev package.
+  - "pypy"
+
+install:
+  - pip install coveralls
+  - cd contrib/python && python ./setup.py install && cd ../../
 
 branches:
   except:
@@ -13,6 +26,7 @@ env:
 addons:
   apt:
     packages:
+      - clang-format-3.6
       - doxygen
       - graphviz
 before_script:
@@ -21,6 +35,8 @@ before_script:
 
 script:
   - 'if [ "$TRAVIS_REPO_SLUG" = "codeplaysoftware/visioncpp" ] && [ "$TRAVIS_BRANCH" = "master" ]; then bash ./scripts/travis_build_docs.sh; fi'
+  - cd contrib/python && coverage run --source=visioncpp setup.py test && cd ../../
 
 after_success:
   - 'if [ "$TRAVIS_REPO_SLUG" = "codeplaysoftware/visioncpp" ] && [ "$TRAVIS_BRANCH" = "master" ]; then bash ./scripts/travis_deploy_docs.sh; fi'
+  - cd contrib/python && coveralls && cd ../../
