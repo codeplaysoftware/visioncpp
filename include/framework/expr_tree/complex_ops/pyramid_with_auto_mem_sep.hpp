@@ -68,7 +68,7 @@ template <bool SatisfyingConds, typename SepFltrColOP, typename SepFltrRowOP,
           size_t OffsetCol, size_t OffsetRow, size_t LVL, size_t LC, size_t LR,
           size_t LCT, size_t LRT, size_t Depth, size_t CurrentDepth,
           typename LHS, typename RHS, typename SepFilterCol,
-          typename SepFilterRow, typename PyramidMem>
+          typename SepFilterRow, typename PyramidMem, typename DeviceT>
 struct PyramidExecuteAutoMemSep {
   /// function sub_execute
   /// \brief is the function used to construct a subexpression tree
@@ -80,7 +80,6 @@ struct PyramidExecuteAutoMemSep {
   /// \param mem: is the tuple of pyramid output memory
   /// \param dev : the selected device for executing the expression
   /// \return void
-  template <typename DeviceT>
   static void sub_execute(RHS &rhs, SepFilterCol &spFltrCol,
                           SepFilterRow &spFltrRow, PyramidMem &mem,
                           const DeviceT &dev) {
@@ -113,7 +112,7 @@ struct PyramidExecuteAutoMemSep {
         Cols / 2, Rows / 2, LeafType, OffsetCol, OffsetRow + Rows / 2,
         RHSType::Level + 1, LC, LR, LCT, LRT, Depth, CurrentDepth + 1, LHS,
         RHSType, SepFilterCol, SepFilterRow,
-        PyramidMem>::sub_execute(tools::tuple::get<CurrentDepth>(mem),
+        PyramidMem, DeviceT>::sub_execute(tools::tuple::get<CurrentDepth>(mem),
                                  spFltrCol, spFltrRow, mem, dev);
   }
 };
@@ -126,12 +125,11 @@ template <typename SepFltrColOP, typename SepFltrRowOP, typename DownSmplOP,
           size_t OffsetRow, size_t LVL, size_t LC, size_t LR, size_t LRT,
           size_t LCT, size_t Depth, size_t CurrentDepth, typename LHS,
           typename RHS, typename SepFilterCol, typename SepFilterRow,
-          typename PyramidMem>
+          typename PyramidMem, typename DeviceT>
 struct PyramidExecuteAutoMemSep<true, SepFltrColOP, SepFltrRowOP, DownSmplOP,
                                 Cols, Rows, LeafType, OffsetCol, OffsetRow, LVL,
                                 LC, LR, LCT, LRT, Depth, CurrentDepth, LHS, RHS,
-                                SepFilterCol, SepFilterRow, PyramidMem> {
-  template <typename DeviceT>
+                                SepFilterCol, SepFilterRow, PyramidMem, DeviceT> {
   static void sub_execute(RHS &, SepFilterCol &, SepFilterRow &, PyramidMem &,
                           const DeviceT &) {}
 };
@@ -240,7 +238,7 @@ struct PyramidAutomemSep {
         Depth == 0, typename SepFltrColOP::OP, typename SepFltrRowOP::OP,
         typename DownSmplOP::OP, Cols, Rows, LeafType, Cols, 0, 1 + LVL, LC, LR,
         LCT, LRT, Depth, 0, LHSExpr, decltype(eval_sub), SepFilterCol,
-        SepFilterRow, PyramidMem>::sub_execute(eval_sub, spFltrCol, spFltrRow,
+        SepFilterRow, PyramidMem, DeviceT>::sub_execute(eval_sub, spFltrCol, spFltrRow,
                                                mem, dev);
     return get<0>();
   }

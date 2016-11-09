@@ -28,13 +28,12 @@ namespace visioncpp {
 namespace internal {
 /// \brief the FuseExpr when the expression type is not a terminal node
 /// (leafNode).
-template <size_t LCIn, size_t LRIn, size_t LCT, size_t LRT, typename Expr>
+template <size_t LCIn, size_t LRIn, size_t LCT, size_t LRT, typename Expr, typename DeviceT>
 struct FuseExpr {
   /// \brief the fuse function for executing the given expr.
   /// \param expr : the expression passed to be executed on the device
   /// \param dev : the selected device for executing the expression
   /// return void
-  template <typename DeviceT>
   static void fuse(Expr &expr, const DeviceT &dev) {
     /// LRT is the  workgroup size row and is checked with LR. LR is based
     /// on LRIn. LCT is the workgroup size column checked with LC. LC is based
@@ -67,11 +66,10 @@ struct FuseExpr {
 /// \brief specialisation of Fuse struct when the Expr is a terminal node
 /// (leafNode)
 template <size_t LC, size_t LR, size_t LCT, size_t LRT, size_t LVL,
-          typename RHS>
-struct FuseExpr<LC, LR, LCT, LRT, LeafNode<RHS, LVL>> {
+          typename RHS, typename DeviceT>
+struct FuseExpr<LC, LR, LCT, LRT, LeafNode<RHS, LVL>, DeviceT> {
   /// when the node is a terminal node (leafNode) we do nothing as there is no
   /// need to run any expression
-  template <typename DeviceT>
   static void fuse(LeafNode<RHS, LVL> &expr, const DeviceT &dev) {}
 };
 
@@ -89,7 +87,7 @@ struct FuseExpr<LC, LR, LCT, LRT, LeafNode<RHS, LVL>> {
 template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename Expr,
           typename DeviceT>
 inline void fuse(Expr expr, const DeviceT &dev) {
-  FuseExpr<LC, LR, LCT, LRT, Expr>::fuse(expr, dev);
+  FuseExpr<LC, LR, LCT, LRT, Expr, DeviceT>::fuse(expr, dev);
 };
 }  // internal
 }  // visioncpp
