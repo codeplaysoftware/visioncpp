@@ -8,7 +8,7 @@ name (N), email (E), description (D), affiliation (A).
 N: Cummins, Chris     
 A: PhD student at The University of Edinburgh.
 E: visioncpp@codeplay.com
-D: design and developer for python binding: https://github.com/ChrisCummins/visioncpp 
+D: design and main developer of contrib/python
 
 N: Dolinsky, Uwe
 A: Codeplay Software Ltd.
