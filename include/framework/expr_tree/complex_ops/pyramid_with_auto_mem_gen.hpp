@@ -66,7 +66,7 @@ template <bool SatisfyingConds, typename Fltr2DOP, typename DownSmplOP,
           size_t Cols, size_t Rows, size_t LeafType, size_t OffsetCol,
           size_t OffsetRow, size_t LVL, size_t LC, size_t LR, size_t LRT,
           size_t LCT, size_t Depth, size_t CurrentDepth, typename LHS,
-          typename RHS, typename Fltr2D, typename PyramidMem>
+          typename RHS, typename Fltr2D, typename PyramidMem, typename DeviceT>
 struct PyramidExecuteAutoMemGen {
   /// function sub_execute
   /// \brief is the function used to construct a subexpression tree
@@ -77,7 +77,6 @@ struct PyramidExecuteAutoMemGen {
   /// \param mem: is the tuple of pyramid output memory
   /// \param dev : the selected device for executing the expression
   /// \return void
-  template <typename DeviceT>
   static void sub_execute(RHS &rhs, Fltr2D &fltr2D, PyramidMem &mem,
                           const DeviceT &dev) {
     // apply reduction
@@ -102,7 +101,7 @@ struct PyramidExecuteAutoMemGen {
         (Depth == (CurrentDepth + 1)), Fltr2DOP, DownSmplOP, Cols / 2, Rows / 2,
         LeafType, OffsetCol, OffsetRow + Rows / 2, RHSType::Level + 1, LC, LR,
         LCT, LRT, Depth, CurrentDepth + 1, LHS, RHSType, Fltr2D,
-        PyramidMem>::sub_execute(tools::tuple::get<CurrentDepth>(mem), fltr2D,
+        PyramidMem, DeviceT>::sub_execute(tools::tuple::get<CurrentDepth>(mem), fltr2D,
                                  mem, dev);
   }
 };
@@ -113,11 +112,10 @@ template <typename Fltr2DOP, typename DownSmplOP, size_t Cols, size_t Rows,
           size_t LeafType, size_t OffsetCol, size_t OffsetRow, size_t LVL,
           size_t LC, size_t LR, size_t LCT, size_t LRT, size_t Depth,
           size_t CurrentDepth, typename LHS, typename RHS, typename Fltr2D,
-          typename PyramidMem>
+          typename PyramidMem, typename DeviceT>
 struct PyramidExecuteAutoMemGen<
     true, Fltr2DOP, DownSmplOP, Cols, Rows, LeafType, OffsetCol, OffsetRow, LVL,
-    LC, LR, LCT, LRT, Depth, CurrentDepth, LHS, RHS, Fltr2D, PyramidMem> {
-  template <typename DeviceT>
+    LC, LR, LCT, LRT, Depth, CurrentDepth, LHS, RHS, Fltr2D, PyramidMem, DeviceT> {
   static void sub_execute(RHS &rhs, Fltr2D &fltr2D, PyramidMem &mem,
                           const DeviceT &dev) {}
 };
@@ -217,7 +215,7 @@ struct PyramidAutomemGen {
     PyramidExecuteAutoMemGen<
         Depth == 0, typename Fltr2DOP::OP, typename DownSmplOP::OP, Cols, Rows,
         LeafType, Cols, 0, 1 + LVL, LC, LR, LCT, LRT, Depth, 0, LHSExpr,
-        decltype(eval_sub), Fltr2D, PyramidMem>::sub_execute(eval_sub, fltr2D,
+        decltype(eval_sub), Fltr2D, PyramidMem, DeviceT>::sub_execute(eval_sub, fltr2D,
                                                              mem, dev);
     return get<0>();
   }
