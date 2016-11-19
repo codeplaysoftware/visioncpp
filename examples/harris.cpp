@@ -38,16 +38,19 @@
 #include <visioncpp.hpp>
 
 // tunable parameter for the Harris
-constexpr float k_param = 0.04f;  // k parameter (usually 0.02 - 0.04)
-constexpr float threshold = 0.5f; // threhold parameter
-constexpr int windowSize = 7;     // window size for non-maximal suppresion
-constexpr int halfWindowSize = windowSize / 2; // half window size
+constexpr float k_param = 0.04f;   // k parameter (usually 0.02 - 0.04)
+constexpr float threshold = 0.5f;  // threhold parameter
+constexpr int windowSize = 7;      // window size for non-maximal suppresion
+constexpr int halfWindowSize = windowSize / 2;  // half window size
 
 // Below a set of operators created to implement the algorithm
 
 // operator created to perform a power of 2 of the image
 struct PowerOf2 {
-  template <typename T> const float operator()(const T &t) { return t * t; }
+  template <typename T>
+  const float operator()(const T &t) {
+    return t * t;
+  }
 };
 
 // operator for element-wise multiplication of two images
@@ -106,7 +109,8 @@ struct Thresh {
 // non-maximal suppresion, supress all values which are not the maximum in a
 // neighbourhood
 struct NonMaximalSuppresion {
-  template <typename T> float operator()(const T &im) {
+  template <typename T>
+  float operator()(const T &im) {
     float currentPixel{im.at(im.I_c, im.I_r)};
     for (int i = -halfWindowSize; i <= halfWindowSize; i++) {
       for (int j = -halfWindowSize; j <= halfWindowSize; j++) {
@@ -121,10 +125,20 @@ struct NonMaximalSuppresion {
 
 // main program
 int main(int argc, char **argv) {
-  // open camera using OpenCV
-  cv::VideoCapture cap(0); // open the default camera
-  if (!cap.isOpened()) {   // check if we succeeded
-    std::cout << "Opening Camera Failed." << std::endl;
+  // open video or camera
+  cv::VideoCapture cap;
+
+  if (argc == 1) {
+    cap.open(0);
+    std::cout << "To use video" << std::endl;
+    std::cout << "example>: ./example path/to/video.avi" << std::endl;
+  } else if (argc > 1) {
+    cap.open(argv[1]);
+  }
+
+  // check if we succeeded
+  if (!cap.isOpened()) {
+    std::cout << "Opening Camera/Video Failed." << std::endl;
     return -1;
   }
 
@@ -159,6 +173,11 @@ int main(int argc, char **argv) {
     {
       // read frame
       cap.read(input);
+
+      // check if image was loaded
+      if (!input.data) {
+        break;
+      }
 
       // resize input for the desirable size
       cv::resize(input, input, cv::Size(COLS, ROWS), 0, 0, cv::INTER_CUBIC);
@@ -285,9 +304,11 @@ int main(int argc, char **argv) {
     cv::imshow("Harris Corner Detector", outputImage);
 
     // check button pressed to finalize program
-    if (cv::waitKey(1) >= 0)
-      break;
+    if (cv::waitKey(1) >= 0) break;
   }
+
+  // release video/camera
+  cap.release();
 
   return 0;
 }

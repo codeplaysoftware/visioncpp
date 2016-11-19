@@ -54,7 +54,7 @@ int main(int argc, char** argv) {
 
   // open camera using OpenCV
   if (!cap.isOpened()) {  // check if we succeeded
-    std::cout << "Failed." << std::endl;
+    std::cout << "Opening Camera/Video Failed." << std::endl;
     return -1;
   }
 
@@ -96,6 +96,7 @@ int main(int argc, char** argv) {
       // read frame
       cap.read(input);
 
+      // check if image was loaded
       if (!input.data) {
         break;
       }
@@ -162,6 +163,7 @@ int main(int argc, char** argv) {
     if (cv::waitKey(1) >= 0) break;
   }
 
+  // release video/camera
   cap.release();
 
   return 0;
