@@ -38,11 +38,11 @@ namespace internal {
 /// \tparam LCT: is the column size of workgroup
 /// \tparam LRT: is the row size of workgroup
 /// \tparam Expr : the expression tree needed to be executed
-template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename Expr>
+template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename Expr, typename DeviceT>
 struct FuseExpr;
 
-// \struct NoFuse
-/// \brief The NoFuse struct is used to generate one device kernel per each
+// \struct NoFuseExpr
+/// \brief The NoFuseExpr struct is used to generate one device kernel per each
 /// non-terminal node in the expression. It is used to specialise the no_fuse
 /// function for different non-terminal nodes
 /// template parameters:
@@ -53,8 +53,8 @@ struct FuseExpr;
 /// \tparam Expr : the node needed to be executed
 ///\tparam Category: the Category type of the node (Binary, Unary, Nullary)
 template <size_t LC, size_t LR, size_t LCT, size_t LRT, size_t Category,
-          typename Expr>
-struct NoFuse;
+          typename Expr, typename DeviceT>
+struct NoFuseExpr;
 
 /// \brief IfExprExecNeeded is used to decide:
 /// 1) the expression should force its children to launch a separate kernel and
@@ -70,38 +70,36 @@ struct NoFuse;
 /// \tparam Category: representing to what expression Category the Expr
 /// besize_ts
 /// \tparam Expr: the type of the expression
-template <bool Conds, bool ParentConds, size_t Category, typename Expr>
+template <bool Conds, bool ParentConds, size_t Category, typename Expr, typename DeviceT>
 struct IfExprExecNeeded;
 
 /// \struct Executor
 /// \brief The Executor struct is used to specialise the execute function for
 /// different avaiable policies at compile time.
 template <bool ExecPolicy, size_t LC, size_t LR, size_t LCT, size_t LRT,
-          typename Expr>
+          typename Expr, typename DeviceT>
 struct Executor;
 
 /// \brief specialisaton of Execute function when the policy is fuse.
-template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename Expr>
-struct Executor<policy::Fuse, LC, LR, LCT, LRT, Expr> {
+template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename Expr, typename DeviceT>
+struct Executor<policy::Fuse, LC, LR, LCT, LRT, Expr, DeviceT> {
   /// \brief  executing the expression
   /// parameters:
   /// \param expr : the expression needed to be executed
   /// \param dev : the selected device for executing the expression
   /// return void
-  template <typename DeviceT>
   static inline void execute(Expr expr, const DeviceT &dev) {
     fuse<LC, LR, LCT, LRT>(expr, dev);
   }
 };
 
-template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename Expr>
-struct Executor<policy::NoFuse, LC, LR, LCT, LRT, Expr> {
+template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename Expr,typename DeviceT>
+struct Executor<policy::NoFuse, LC, LR, LCT, LRT, Expr, DeviceT> {
   /// \brief  executing the expression
   /// parameters:
   /// \param expr : the expression needed to be executed
   /// \param dev : the selected device for executing the expression
   /// return void
-  template <typename DeviceT>
   static inline void execute(Expr expr, const DeviceT &dev) {
     no_fuse<LC, LR, LCT, LRT>(expr, dev);
   }
@@ -114,14 +112,13 @@ struct Executor<policy::NoFuse, LC, LR, LCT, LRT, Expr> {
 /// struct with sub_expression_evaluation parameter in every non-terminal node,
 /// it is possible to determine such condition at compile time.
 template <bool Val, bool ExecPolicy, size_t LC, size_t LR, size_t LCT,
-          size_t LRT, typename Expr>
+          size_t LRT, typename Expr, typename DeviceT>
 struct SubExprExecute {
-  template <typename DeviceT>
   static void inline execute(Expr &expr, const DeviceT &dev) {
     expr.reset(true);
     Executor<ExecPolicy, LC, LR, LCT, LRT,
              decltype(expr.template sub_expression_evaluation<false, LC, LR,
-                                                              LCT, LRT>(dev))>::
+                                                              LCT, LRT>(dev)), DeviceT>::
         execute(
             expr.template sub_expression_evaluation<false, LC, LR, LCT, LRT>(
                 dev),
@@ -131,11 +128,10 @@ struct SubExprExecute {
 /// \brief specialisation of the status of when there is no need for
 /// subexpression execution
 template <bool ExecPolicy, size_t LC, size_t LR, size_t LCT, size_t LRT,
-          typename Expr>
-struct SubExprExecute<false, ExecPolicy, LC, LR, LCT, LRT, Expr> {
-  template <typename DeviceT>
+          typename Expr, typename DeviceT>
+struct SubExprExecute<false, ExecPolicy, LC, LR, LCT, LRT, Expr, DeviceT> {
   static void inline execute(Expr &expr, const DeviceT &dev) {
-    Executor<ExecPolicy, LC, LR, LCT, LRT, Expr>::execute(expr, dev);
+    Executor<ExecPolicy, LC, LR, LCT, LRT, Expr, DeviceT>::execute(expr, dev);
   }
 };
 
@@ -158,7 +154,7 @@ template <bool ExecPolicy, size_t LC, size_t LR, size_t LCT, size_t LRT,
           typename Expr, typename DeviceT>
 void inline execute(Expr &expr, const DeviceT &dev) {
   internal::SubExprExecute<Expr::SubExpressionEvaluationNeeded, ExecPolicy, LC,
-                           LR, LCT, LRT, Expr>::execute(expr, dev);
+                           LR, LCT, LRT, Expr, DeviceT>::execute(expr, dev);
 }
 
 /// \brief special case of the execute function with default value for local
@@ -174,7 +170,7 @@ void inline execute(Expr &expr, const DeviceT &dev) {
 template <bool ExecPolicy, typename Expr, typename DeviceT>
 void inline execute(Expr &expr, const DeviceT &dev) {
   internal::SubExprExecute<Expr::SubExpressionEvaluationNeeded, ExecPolicy, 8,
-                           8, 8, 8, Expr>::execute(expr, dev);
+                           8, 8, 8, Expr, DeviceT>::execute(expr, dev);
 }
 }  // visioncpp
 #include "executor_subexpr_if_needed.hpp"

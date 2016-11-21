@@ -127,7 +127,7 @@ struct ParallelCopy {
         rhs.template sub_expression_evaluation<false, LC, LR, LCT, LRT>(dev);
     // through template instantiation it executes the kernel when it is a leaf node.
     auto intermediate_output =
-        SubExprRes<LC, LR, LCT, LRT, 1 + LVL, decltype(eval_sub)>::get(eval_sub,
+        SubExprRes<LC, LR, LCT, LRT, 1 + LVL, decltype(eval_sub), DeviceT>::get(eval_sub,
                                                                        dev);
     internal::fuse<LC, LR, LCT, LRT>(
         internal::ParallelCopy<

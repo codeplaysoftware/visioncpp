@@ -162,7 +162,7 @@ struct Assign;
 
 /// \brief The definition is in \ref SubExprRes file.
 template <size_t LC, size_t LR, size_t LCT, size_t LRT, size_t LVL,
-          typename Expr>
+          typename Expr,typename DeviceT>
 struct SubExprRes;
 
 template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename Expr,

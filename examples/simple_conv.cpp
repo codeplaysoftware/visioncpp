@@ -33,13 +33,24 @@
 #include <visioncpp.hpp>
 
 // main program
-int main() {
-  // capture image via OpenCV
-  cv::VideoCapture cap(0);  // open the default camera
-  if (!cap.isOpened()) {    // check if we succeeded
-    std::cout << "Opening Camera Failed." << std::endl;
+int main(int argc, char** argv) {
+  // open video or camera
+  cv::VideoCapture cap;
+
+  if (argc == 1) {
+    cap.open(0);
+    std::cout << "To use video" << std::endl;
+    std::cout << "example>: ./example path/to/video.avi" << std::endl;
+  } else if (argc > 1) {
+    cap.open(argv[1]);
+  }
+
+  // check if we succeeded
+  if (!cap.isOpened()) {
+    std::cout << "Opening Camera/Video Failed." << std::endl;
     return -1;
   }
+
   // set fixed resolution on the camera
   constexpr size_t COLS = 640;
   constexpr size_t ROWS = 480;
@@ -49,7 +60,7 @@ int main() {
                                     visioncpp::device::cpu>();
   std::shared_ptr<unsigned char> vc_buffer(
       new unsigned char[COLS * ROWS * 3],
-      [](unsigned char *dataMem) { delete[] dataMem; });
+      [](unsigned char* dataMem) { delete[] dataMem; });
 
   // creating a 1x9 filter mean filter
   float filter_array[9] = {1.0f / 9.0f, 1.0f / 9.0f, 1.0f / 9.0f,
@@ -62,6 +73,11 @@ int main() {
   for (;;) {
     // read frame
     cap.read(frame);
+
+    // check if image was loaded
+    if (!frame.data) {
+      break;
+    }
 
     // resize image to the desirable size
     cv::resize(frame, frame, cv::Size(COLS, ROWS), 0, 0, cv::INTER_CUBIC);
@@ -101,5 +117,9 @@ int main() {
     // loop
     if (cv::waitKey(30) >= 0) break;
   }
+
+  // release video/camera
+  cap.release();
+
   return 0;
 }

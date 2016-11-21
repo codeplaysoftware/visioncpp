@@ -81,11 +81,23 @@ struct AniDiff {
 
 // main program
 int main(int argc, char **argv) {
-  cv::VideoCapture cap(0);  // open the default camera
-  if (!cap.isOpened()) {    // check if we succeeded
-    std::cout << "Opening Camera Failed." << std::endl;
+  // open video or camera
+  cv::VideoCapture cap;
+
+  if (argc == 1) {
+    cap.open(0);
+    std::cout << "To use video" << std::endl;
+    std::cout << "example>: ./example path/to/video.avi" << std::endl;
+  } else if (argc > 1) {
+    cap.open(argv[1]);
+  }
+
+  // check if we succeeded
+  if (!cap.isOpened()) {
+    std::cout << "Opening Camera/Video Failed." << std::endl;
     return -1;
   }
+
   // selecting device using sycl as backend
   auto dev = visioncpp::make_device<visioncpp::backend::sycl,
                                     visioncpp::device::cpu>();
@@ -130,6 +142,11 @@ int main(int argc, char **argv) {
     {
       // read frame
       cap.read(input);
+
+      // check if image was loaded
+      if (!input.data) {
+        break;
+      }
 
       // resize image to the desirable size
       cv::resize(input, input, cv::Size(COLS, ROWS), 0, 0, cv::INTER_CUBIC);
@@ -186,5 +203,9 @@ int main(int argc, char **argv) {
     // wait for key to finalize program
     if (cv::waitKey(1) >= 0) break;
   }
+
+  // release video/camera
+  cap.release();
+
   return 0;
 }

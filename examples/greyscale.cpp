@@ -30,11 +30,21 @@
 // include VisionCpp
 #include <visioncpp.hpp>
 
-int main() {
-  // capture image via OpenCV
-  cv::VideoCapture cap(0);  // open the default camera
-  if (!cap.isOpened()) {    // check if we succeeded
-    std::cout << "Opening Camera Failed." << std::endl;
+int main(int argc, char** argv) {
+  // open video or camera
+  cv::VideoCapture cap;
+
+  if (argc == 1) {
+    cap.open(0);
+    std::cout << "To use video" << std::endl;
+    std::cout << "example>: ./example path/to/video.avi" << std::endl;
+  } else if (argc > 1) {
+    cap.open(argv[1]);
+  }
+
+  // check if we succeeded
+  if (!cap.isOpened()) {
+    std::cout << "Opening Camera/Video Failed." << std::endl;
     return -1;
   }
 
@@ -48,7 +58,7 @@ int main() {
   // create a container for pipe output
   std::shared_ptr<unsigned char> img_cv(
       new unsigned char[COLS * ROWS],
-      [](unsigned char *dataMem) { delete[] dataMem; });
+      [](unsigned char* dataMem) { delete[] dataMem; });
 
   // create opencv mat
   cv::Mat frame;
@@ -59,6 +69,11 @@ int main() {
   for (;;) {
     // read frame
     cap.read(frame);
+
+    // check if image was loaded
+    if (!frame.data) {
+      break;
+    }
 
     // resize image to the desirable size
     cv::resize(frame, frame, cv::Size(COLS, ROWS), 0, 0, cv::INTER_CUBIC);
@@ -93,5 +108,9 @@ int main() {
     // esc?
     if (cv::waitKey(30) >= 0) break;
   }
+
+  // release video/camera
+  cap.release();
+
   return 0;
 }

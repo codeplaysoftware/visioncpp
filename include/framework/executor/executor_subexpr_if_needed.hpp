@@ -33,7 +33,7 @@ namespace internal {
 /// executes the expression and returns a leaf node representing the output
 /// result of the kernel execution, when it is a non-terminal node.
 template <size_t LC, size_t LR, size_t LCT, size_t LRT, size_t LVL,
-          typename Expr>
+          typename Expr, typename DeviceT>
 struct SubExprRes {
   using Type = internal::LeafNode<typename Expr::Type, LVL>;
   /// \brief The get function in SubExprRes
@@ -42,7 +42,6 @@ struct SubExprRes {
   /// \param dev : the selected device for executing the expression
   /// \return LeafNode: the leafNode containing the result of the
   /// subexpression execution.
-  template <typename DeviceT>
   static Type get(Expr &eval_sub, const DeviceT &dev) {
     using Intermediate_Output = internal::LeafNode<typename Expr::Type, LVL>;
     auto intermediate_output = Intermediate_Output();
@@ -65,15 +64,14 @@ struct SubExprRes {
 /// apply. This specialisation is used to speed up the process and to prevent
 /// extra memory creation and execution.
 template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename RHS,
-          size_t LVL1, size_t LVL2>
-struct SubExprRes<LC, LR, LCT, LRT, LVL1, internal::LeafNode<RHS, LVL2>> {
+          size_t LVL1, size_t LVL2, typename DeviceT>
+struct SubExprRes<LC, LR, LCT, LRT, LVL1, internal::LeafNode<RHS, LVL2>, DeviceT> {
   using Type = internal::LeafNode<RHS, LVL2>;
   /// \brief The get function in SubExprRes do nothing but return the leaf node
   /// when the input expression type is a leafNode.
   /// \param eval_sub: the SubExprRes passed to be executed on the device
   /// \return LeafNode: the leafNode containing the result of the
   /// subexpression execution.
-  template <typename DeviceT>
   static inline Type get(Type &eval_sub, const DeviceT &) {
     return eval_sub;
   }
@@ -84,8 +82,8 @@ struct SubExprRes<LC, LR, LCT, LRT, LVL1, internal::LeafNode<RHS, LVL2>> {
 template <size_t LC, size_t LR, size_t LCT, size_t LRT, size_t LVL,
           typename Expr, typename DeviceT>
 auto get_subexpr_executor(Expr &expr, const DeviceT &dev) ->
-    typename internal::SubExprRes<LC, LR, LCT, LRT, LVL, Expr>::Type {
-  return internal::SubExprRes<LC, LR, LCT, LRT, LVL, Expr>::get(expr, dev);
+    typename internal::SubExprRes<LC, LR, LCT, LRT, LVL, Expr, DeviceT>::Type {
+  return internal::SubExprRes<LC, LR, LCT, LRT, LVL, Expr, DeviceT>::get(expr, dev);
 };
 
 // \brief template deduction for SubExprRes. This one will automatically level
@@ -94,8 +92,8 @@ template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename Expr,
           typename DeviceT>
 auto get_subexpr_executor(Expr &expr, const DeviceT &dev) ->
     typename internal::SubExprRes<LC, LR, LCT, LRT, 1 + Expr::Level,
-                                  Expr>::Type {
-  return internal::SubExprRes<LC, LR, LCT, LRT, 1 + Expr::Level, Expr>::get(
+                                  Expr, DeviceT>::Type {
+  return internal::SubExprRes<LC, LR, LCT, LRT, 1 + Expr::Level, Expr, DeviceT>::get(
       expr, dev);
 };
 
@@ -107,12 +105,12 @@ auto get_subexpr_executor(Expr &expr, const DeviceT &dev) ->
 /// example would be when you have reduction as a root of a subexpression tree
 /// in the middle of an expression, it is possible to minimise the number of
 /// subexpression to be creating by 2.
-template <bool ParentConds, typename Expr>
+template <bool ParentConds, typename Expr, typename DeviceT>
 struct ParentForcedExecute;
 
 /// \brief specialisation of ParentForcedExecute when the condition is true
-template <typename Expr>
-struct ParentForcedExecute<true, Expr> {
+template <typename Expr, typename DeviceT>
+struct ParentForcedExecute<true, Expr, DeviceT> {
   using Type = internal::LeafNode<typename Expr::Type, Expr::Level>;
   /// \brief forced_exec here executes the expr and return the leafNode
   /// template parameters
@@ -125,7 +123,7 @@ struct ParentForcedExecute<true, Expr> {
   /// \param expr: the expression needed to be executed
   /// \param dev : the selected device for executing the expression
   /// \return LeafNode
-  template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename DeviceT>
+  template <size_t LC, size_t LR, size_t LCT, size_t LRT>
   static inline Type forced_exec(Expr &expr, const DeviceT &dev) {
     auto lhs = Type();
     internal::fuse<LC, LR, LCT, LRT>(
@@ -139,8 +137,8 @@ struct ParentForcedExecute<true, Expr> {
   }
 };
 /// \brief specialisation of ParentForcedExecute when the condition is false
-template <typename Expr>
-struct ParentForcedExecute<false, Expr> {
+template <typename Expr,typename DeviceT>
+struct ParentForcedExecute<false, Expr,DeviceT> {
   using Type = Expr;
   /// \brief forced_exec here does nothing but return the expression as the parent
   // of the expression does not require to break the expression further more.
@@ -153,7 +151,7 @@ struct ParentForcedExecute<false, Expr> {
   /// function parameters:
   /// \param expr: the input expression
   /// \return Expr the input expression
-  template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename DeviceT>
+  template <size_t LC, size_t LR, size_t LCT, size_t LRT>
   static inline Type forced_exec(Expr &expr, const DeviceT &) {
     return expr;
   }
@@ -162,18 +160,17 @@ struct ParentForcedExecute<false, Expr> {
 /// \brief the specialisation of the IfExprExecNeeded when the decision for
 /// executing the children of the expression is false and the expression
 /// category is unary.
-template <bool ParentConds, typename Expr>
+template <bool ParentConds, typename Expr, typename DeviceT>
 struct IfExprExecNeeded<false, ParentConds, internal::expr_category::Unary,
-                        Expr> {
-  template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename NestedExpr,
-            typename DeviceT>
+                        Expr, DeviceT> {
+  template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename NestedExpr>
   static inline auto execute_expr(NestedExpr &nestedExpr, const DeviceT &dev) ->
       typename ParentForcedExecute<
-          ParentConds, typename Expr::template ExprExchange<NestedExpr>>::Type {
+          ParentConds, typename Expr::template ExprExchange<NestedExpr>, DeviceT>::Type {
     using NestedType = typename Expr::template ExprExchange<NestedExpr>;
     auto res = NestedType(nestedExpr);
 
-    return ParentForcedExecute<ParentConds, NestedType>::template forced_exec<
+    return ParentForcedExecute<ParentConds, NestedType, DeviceT>::template forced_exec<
         LC, LR, LCT, LRT>(res, dev);
   }
 };
@@ -181,21 +178,20 @@ struct IfExprExecNeeded<false, ParentConds, internal::expr_category::Unary,
 /// \brief the specialisation of the IfExprExecNeeded when the decision for
 /// executing the children of the expression is true and the expression
 /// category is unary.
-template <bool ParentConds, typename Expr>
+template <bool ParentConds, typename Expr,typename DeviceT>
 struct IfExprExecNeeded<true, ParentConds, internal::expr_category::Unary,
-                        Expr> {
-  template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename NestedExpr,
-            typename DeviceT>
+                        Expr, DeviceT> {
+  template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename NestedExpr>
   static inline auto execute_expr(NestedExpr &sub_expr, const DeviceT &dev) ->
       typename ParentForcedExecute<
           ParentConds,
           typename Expr::template ExprExchange<decltype(
-              get_subexpr_executor<LC, LR, LCT, LRT>(sub_expr, dev))>>::Type {
+              get_subexpr_executor<LC, LR, LCT, LRT>(sub_expr, dev))>, DeviceT>::Type {
     auto nested_output = get_subexpr_executor<LC, LR, LCT, LRT>(sub_expr, dev);
     using NestedType =
         typename Expr::template ExprExchange<decltype(nested_output)>;
     auto res = NestedType(nested_output);
-    return ParentForcedExecute<ParentConds, NestedType>::template forced_exec<
+    return ParentForcedExecute<ParentConds, NestedType, DeviceT>::template forced_exec<
         LC, LR, LCT, LRT>(res, dev);
   }
 };
@@ -203,19 +199,19 @@ struct IfExprExecNeeded<true, ParentConds, internal::expr_category::Unary,
 /// \brief the specialisation of the IfExprExecNeeded when the decision for
 /// executing the children of the expression is false and the expression
 /// category is binary.
-template <bool ParentConds, typename Expr>
+template <bool ParentConds, typename Expr, typename DeviceT>
 struct IfExprExecNeeded<false, ParentConds, internal::expr_category::Binary,
-                        Expr> {
+                        Expr, DeviceT> {
   template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename LHSExpr,
-            typename RHSExpr, typename DeviceT>
+            typename RHSExpr>
   static inline auto execute_expr(LHSExpr &lhsExpr, RHSExpr &rhsExpr,
                                   const DeviceT &dev) ->
       typename ParentForcedExecute<
           ParentConds,
-          typename Expr::template ExprExchange<LHSExpr, RHSExpr>>::Type {
+          typename Expr::template ExprExchange<LHSExpr, RHSExpr>, DeviceT>::Type {
     using SubExprType = typename Expr::template ExprExchange<LHSExpr, RHSExpr>;
     auto res = SubExprType(lhsExpr, rhsExpr);
-    return ParentForcedExecute<ParentConds, SubExprType>::template forced_exec<
+    return ParentForcedExecute<ParentConds, SubExprType, DeviceT>::template forced_exec<
         LC, LR, LCT, LRT>(res, dev);
   }
 };
@@ -223,11 +219,11 @@ struct IfExprExecNeeded<false, ParentConds, internal::expr_category::Binary,
 /// \brief the specialisation of the IfExprExecNeeded when the decision for
 /// executing the children of the expression is true and the expression
 /// category is binary.
-template <bool ParentConds, typename Expr>
+template <bool ParentConds, typename Expr, typename DeviceT>
 struct IfExprExecNeeded<true, ParentConds, internal::expr_category::Binary,
-                        Expr> {
+                        Expr, DeviceT> {
   template <size_t LC, size_t LR, size_t LCT, size_t LRT, typename LHSExpr,
-            typename RHSExpr, typename DeviceT>
+            typename RHSExpr>
   static inline auto execute_expr(LHSExpr &lhsExpr, RHSExpr &rhsExpr,
                                   const DeviceT &dev) ->
 
@@ -236,14 +232,14 @@ struct IfExprExecNeeded<true, ParentConds, internal::expr_category::Binary,
           typename Expr::template ExprExchange<
               decltype(get_subexpr_executor<LC, LR, LCT, LRT>(lhsExpr, dev)),
               decltype(get_subexpr_executor<LC, LR, LCT, LRT>(rhsExpr,
-                                                              dev))>>::Type {
+                                                              dev))>, DeviceT>::Type {
     auto lhs_output = get_subexpr_executor<LC, LR, LCT, LRT>(lhsExpr, dev);
     auto rhs_output = get_subexpr_executor<LC, LR, LCT, LRT>(rhsExpr, dev);
     using SubExprType =
         typename Expr::template ExprExchange<decltype(lhs_output),
                                              decltype(rhs_output)>;
     auto res = SubExprType(lhs_output, rhs_output);
-    return ParentForcedExecute<ParentConds, SubExprType>::template forced_exec<
+    return ParentForcedExecute<ParentConds, SubExprType, DeviceT>::template forced_exec<
         LC, LR, LCT, LRT>(res, dev);
   }
 };
@@ -255,10 +251,10 @@ template <bool Conds, bool ParentConds, typename Expr, size_t LC, size_t LR,
 inline auto execute_expr(NestedExpr nestedExpr, const DeviceT &dev)
     -> decltype(internal::IfExprExecNeeded<
         Conds, ParentConds, internal::expr_category::Unary,
-        Expr>::template execute_expr<LC, LR, LCT, LRT>(nestedExpr, dev)) {
+        Expr, DeviceT>::template execute_expr<LC, LR, LCT, LRT>(nestedExpr, dev)) {
   return internal::IfExprExecNeeded<
       Conds, ParentConds, internal::expr_category::Unary,
-      Expr>::template execute_expr<LC, LR, LCT, LRT>(nestedExpr, dev);
+      Expr, DeviceT>::template execute_expr<LC, LR, LCT, LRT>(nestedExpr, dev);
 }
 
 /// \brief template deduction for IfExprExecNeeded when the expression
@@ -269,10 +265,10 @@ template <bool Conds, bool ParentConds, typename Expr, size_t LC, size_t LR,
 inline auto execute_expr(LHSExpr lhsExpr, RHSExpr rhsExpr, const DeviceT &dev)
     -> decltype(internal::IfExprExecNeeded<
         Conds, ParentConds, internal::expr_category::Binary,
-        Expr>::template execute_expr<LC, LR, LCT, LRT>(lhsExpr, rhsExpr, dev)) {
+        Expr, DeviceT>::template execute_expr<LC, LR, LCT, LRT>(lhsExpr, rhsExpr, dev)) {
   return internal::IfExprExecNeeded<
       Conds, ParentConds, internal::expr_category::Binary,
-      Expr>::template execute_expr<LC, LR, LCT, LRT>(lhsExpr, rhsExpr, dev);
+      Expr, DeviceT>::template execute_expr<LC, LR, LCT, LRT>(lhsExpr, rhsExpr, dev);
 }
 }  // internal
 }  // visioncpp
