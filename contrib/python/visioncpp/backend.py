@@ -1,7 +1,6 @@
 from __future__ import print_function
 
 import visioncpp as vp
-from visioncpp import cache
 
 import logging
 import os
@@ -9,6 +8,8 @@ import sys
 import pkgconfig
 
 from ctypes import cdll
+from labm8 import cache
+from labm8 import fs
 from pkg_resources import resource_filename
 from shutil import rmtree
 from subprocess import Popen, PIPE, STDOUT
@@ -227,11 +228,10 @@ def compile_cpp_code(code):
     Returns:
         str: Path to binary.
     """
-    uid = cache.get_uid(code)
+    bincache = cache.FSCache(fs.path("~/.cache/visioncpp"))
 
-    if cache.is_cached(uid):
-        logging.info("Found cached binary {}".format(uid))
-        binary = cache.load(uid)
+    if bincache.get(code):
+        logging.info("Found cached binary {}".format(fs.basename(c[code])))
     else:
         check_for_computecpp()
 
@@ -257,13 +257,13 @@ def compile_cpp_code(code):
             tmpbin = link(host, dir=tmpdir)
             progress("")
 
-            binary = cache.emplace(uid, tmpbin)
+            bincache[code] = tmpbin
         except Exception as e:
             rmtree(tmpdir)
             raise e
         rmtree(tmpdir)
 
-    return binary
+    return bincache[code]
 
 
 def run_binary(binary):
