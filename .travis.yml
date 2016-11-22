@@ -4,14 +4,11 @@ dist: trusty
 
 python:
   - "2.7"
-  - "3.3"
   - "3.4"
   - "3.5"
-  # does not have headers provided, please ask https://launchpad.net/~pypy/+archive/ppa
-  # maintainers to fix their pypy-dev package.
-  - "pypy"
 
 install:
+  - pip install --upgrade pip
   - pip install coveralls
   - pip install --only-binary=numpy 'numpy>=1.10.4'
   - pip install --only-binary=scipy 'scipy>=0.16.1'
