@@ -13,6 +13,10 @@ python:
 
 install:
   - pip install coveralls
+  - pip install --only-binary=numpy 'numpy>=1.10.4'
+  - pip install --only-binary=scipy 'scipy>=0.16.1'
+  - pip install --only-binary=pandas 'pandas>=0.19.0'
+  - pip install 'Cython==0.23.4'
   - cd contrib/python && python ./setup.py install && cd ../../
 
 branches:
