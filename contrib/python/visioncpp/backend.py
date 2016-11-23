@@ -231,7 +231,8 @@ def compile_cpp_code(code):
     bincache = cache.FSCache(fs.path("~/.cache/visioncpp"))
 
     if bincache.get(code):
-        logging.info("Found cached binary {}".format(fs.basename(c[code])))
+        logging.info("Found cached binary {}"
+                     .format(fs.basename(bincache[code])))
     else:
         check_for_computecpp()
 
