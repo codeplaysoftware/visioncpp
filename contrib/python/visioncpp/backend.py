@@ -6,6 +6,7 @@ import logging
 import os
 import sys
 import pkgconfig
+import numpy as np
 
 from ctypes import cdll
 from labm8 import cache
@@ -228,6 +229,16 @@ def compile_cpp_code(code):
     Returns:
         str: Path to binary.
     """
+    code = """
+extern "C" {
+void test_add(float *a, float *b, float *c, long n) {
+  while (n--) {
+    *c++ = *a++ + *b++;
+  }
+}
+}
+    """ + code
+
     bincache = cache.FSCache(fs.path("~/.cache/visioncpp"))
 
     if bincache.get(code):
@@ -280,4 +291,28 @@ def run_binary(binary):
     assert(binary and os.path.exists(binary))
 
     lib = cdll.LoadLibrary(binary)
+
+    lib.test_add.restype = None
+    lib.test_add.argtypes = [
+        np.ctypeslib.ndpointer(np.single, flags='aligned, contiguous'),
+        np.ctypeslib.ndpointer(np.single, flags='aligned, contiguous'),
+        np.ctypeslib.ndpointer(np.single, flags='aligned, contiguous'),
+        np.ctypeslib.c_intp
+    ]
+
+    dtype = np.float32
+    requires = ['CONTIGUOUS', 'ALIGNED']
+    a = np.arange(10, dtype=dtype)
+    b = np.arange(10, dtype=dtype)
+    c = np.zeros(10, dtype=dtype)
+    a = np.asanyarray(a)
+
+    a = np.require(a, dtype, requires)
+    b = np.require(b, dtype, requires)
+    c = np.empty_like(a)
+
+    lib.test_add(a, b, c, 10)
+    print(c)
+    print("done")
+
     lib.native_expression_tree()
