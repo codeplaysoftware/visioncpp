@@ -216,16 +216,9 @@ class Image(TerminalOperation):
 
     def _compute_code(self):
         return [
-            "cv::Mat {name}_cv = cv::imread(\"{arg}\");".format(
-                name=self.name, arg=self.input),
-            "if (!{name}_cv.data) {{".format(name=self.name),
-            ("std::cerr << \"Could not open or find the image {arg}\" "
-             "<< std::endl;".format(arg=self.input)),
-            "return 1;",
-            "}",
             ("auto {name} = visioncpp::terminal<visioncpp::pixel::U8C3, "
              "{width}, {height}, visioncpp::memory_type::Buffer2D>"
-             "({name}_cv.data);").format(
+             "(in1);").format(  # FIXME: Hardoded argument
                 name=self.name, width=self.width, height=self.height),
             ("auto {name}_out = visioncpp::terminal<visioncpp::pixel::U8C3, "
              "{width}, {height}, visioncpp::memory_type::Buffer2D>"
@@ -306,14 +299,6 @@ class show(TerminalOperation):
             raise VisionCppException("Expression tree has no input")
         self.input = input
 
-    def _input_code(self):
-        return [
-            ('cv::Mat {name}_cv({height}, {width}, CV_8UC({channels}), '
-             '{input}_data.get());'.format(
-                name=self.name, width=self.input.width,
-                height=self.input.height,
-                channels=self.input.channels, input=self.input.name)),
-        ]
 
     def _compute_code(self):
         return [
@@ -321,23 +306,16 @@ class show(TerminalOperation):
              .format(name=self.name, input=self.input.name,
                      tail=self.parent.name)),
             ("visioncpp::execute<visioncpp::policy::Fuse, 16, 16, 8, 8>("
-             "{name}, device);".format(name=self.name)),
-             "out[0] = 204;"  # FIXME: This is just for testing
+             "{name}, device);".format(name=self.name))
         ]
 
-    def _output_code(self):
-        lines = [
-            ('cv::namedWindow("{name}", cv::WINDOW_AUTOSIZE);'
-             .format(name=self.name)),
-            'cv::imshow("{name}", {name}_cv);'.format(name=self.name),
+    def _get_output_code(self):
+        nbytes = self.input.width * self.input.height * self.input.channels
+        return [
+            # FIXME: Hardcoded argument name:
+            "memcpy(out, {input}_data.get(), {nbytes});".format(
+                input=self.input.name, nbytes=nbytes)
         ]
-
-        if self.repeating:
-            lines += ["if (cv::waitKey(1) >= 0) break;"]
-        else:
-            lines += ["cv::waitKey(0);"]
-
-        return lines
 
 
 # PointOperations:

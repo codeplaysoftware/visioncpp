@@ -27,12 +27,13 @@ def library_source(lines):
         str: Source code
     """
     program_lines = [
-        "#include <opencv2/opencv.hpp>",
         "#include <visioncpp.hpp>",
         "",
         "extern \"C\" {",
         "",
-        "int native_expression_tree(unsigned char *const out) {",
+        # FIXME: Hardcoded arguments while I figure this out:
+        "int native_expression_tree(unsigned char *const in1, "
+                                    "unsigned char *const out) {",
     ] + lines + [
         "  return 0;",
         "}",

@@ -313,12 +313,6 @@ def run(pipeline, binary):
         # plt.imshow(lum_img)
         # plt.show()
 
-    out_terminal = pipeline[-1]
-    if not isinstance(out_terminal, vp.show):
-        raise TypeError
-    size = out_terminal.input.width * out_terminal.input.height * 3
-    out = np.empty_like(np.zeros(size, dtype=np.uint8))
-
     lib = cdll.LoadLibrary(binary)
 
     lib.test_add.restype = None
@@ -329,6 +323,7 @@ def run(pipeline, binary):
         np.ctypeslib.c_intp
     ]
 
+    # test
     dtype = np.float32
     requires = ['CONTIGUOUS', 'ALIGNED']
     a = np.arange(10, dtype=dtype)
@@ -341,13 +336,35 @@ def run(pipeline, binary):
     c = np.empty_like(a)
 
     lib.test_add(a, b, c, 10)
-    print(c)
-    print("done")
+    # end test
+
+    # inputs
+    assert(len(impaths) == 1)
+    img = mpimg.imread(impaths[0])
+    in1 = np.require(img, np.uint8, ['CONTIGUOUS', 'ALIGNED'])
+
+    # output
+    out_terminal = pipeline[-1]
+    if not isinstance(out_terminal, vp.show):
+        raise TypeError
+    size = out_terminal.input.width * out_terminal.input.height * 3
+    out = np.empty_like(np.zeros(size, dtype=np.uint8))
 
     lib.native_expression_tree.argtypes = [
+        np.ctypeslib.ndpointer(np.uint8, flags='aligned, contiguous'),
         np.ctypeslib.ndpointer(np.uint8, flags='aligned, contiguous'), # output
     ]
 
     print(len(out), out[0])
-    lib.native_expression_tree(out)
+    lib.native_expression_tree(in1, out)
     print(len(out), out[0])
+
+    img = np.reshape(out, (-1, out_terminal.input.width, 3))
+    print(in1)
+    print(in1.shape)
+    print(img)
+    print(img.shape)
+    plt.imshow(in1)
+    plt.show()
+    plt.imshow(img)
+    plt.show()
