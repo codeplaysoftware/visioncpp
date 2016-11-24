@@ -308,8 +308,16 @@ def run(pipeline, binary):
     # Use matploblib to load and show images
     for impath in impaths:
         img = mpimg.imread(impath)
-        imgplot = plt.imshow(img)
-        plt.show()
+        print(type(img))
+        lum_img = img[:,:,0]
+        # plt.imshow(lum_img)
+        # plt.show()
+
+    out_terminal = pipeline[-1]
+    if not isinstance(out_terminal, vp.show):
+        raise TypeError
+    size = out_terminal.input.width * out_terminal.input.height * 3
+    out = np.empty_like(np.zeros(size, dtype=np.uint8))
 
     lib = cdll.LoadLibrary(binary)
 
@@ -336,4 +344,10 @@ def run(pipeline, binary):
     print(c)
     print("done")
 
-    lib.native_expression_tree()
+    lib.native_expression_tree.argtypes = [
+        np.ctypeslib.ndpointer(np.uint8, flags='aligned, contiguous'), # output
+    ]
+
+    print(len(out), out[0])
+    lib.native_expression_tree(out)
+    print(len(out), out[0])

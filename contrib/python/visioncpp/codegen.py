@@ -32,7 +32,7 @@ def library_source(lines):
         "",
         "extern \"C\" {",
         "",
-        "int native_expression_tree() {",
+        "int native_expression_tree(unsigned char *const out) {",
     ] + lines + [
         "  return 0;",
         "}",

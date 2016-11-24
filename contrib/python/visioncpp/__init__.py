@@ -321,7 +321,8 @@ class show(TerminalOperation):
              .format(name=self.name, input=self.input.name,
                      tail=self.parent.name)),
             ("visioncpp::execute<visioncpp::policy::Fuse, 16, 16, 8, 8>("
-             "{name}, device);".format(name=self.name))
+             "{name}, device);".format(name=self.name)),
+             "out[0] = 204;"  # FIXME: This is just for testing
         ]
 
     def _output_code(self):
