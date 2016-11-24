@@ -307,38 +307,7 @@ def run(pipeline, binary):
         if isinstance(stage, vp.Image):
             impaths.append(stage.input)
 
-    # Use matploblib to load and show images
-    for impath in impaths:
-        img = mpimg.imread(impath)
-        print(type(img))
-        lum_img = img[:,:,0]
-        # plt.imshow(lum_img)
-        # plt.show()
-
     lib = cdll.LoadLibrary(binary)
-
-    lib.test_add.restype = None
-    lib.test_add.argtypes = [
-        np.ctypeslib.ndpointer(np.single, flags='aligned, contiguous'),
-        np.ctypeslib.ndpointer(np.single, flags='aligned, contiguous'),
-        np.ctypeslib.ndpointer(np.single, flags='aligned, contiguous'),
-        np.ctypeslib.c_intp
-    ]
-
-    # test
-    dtype = np.float32
-    requires = ['CONTIGUOUS', 'ALIGNED']
-    a = np.arange(10, dtype=dtype)
-    b = np.arange(10, dtype=dtype)
-    c = np.zeros(10, dtype=dtype)
-    a = np.asanyarray(a)
-
-    a = np.require(a, dtype, requires)
-    b = np.require(b, dtype, requires)
-    c = np.empty_like(a)
-
-    lib.test_add(a, b, c, 10)
-    # end test
 
     # inputs
     assert(len(impaths) == 1)
@@ -357,16 +326,10 @@ def run(pipeline, binary):
         np.ctypeslib.ndpointer(np.uint8, flags='aligned, contiguous'), # output
     ]
 
-    print(len(out), out[0])
-    lib.native_expression_tree(in1, out)
-    print(len(out), out[0])
+    ret = lib.native_expression_tree(in1, out)
+    if ret:
+        raise RuntimeError("native expression tree failed")
 
     img = np.reshape(out, (-1, out_terminal.input.width, 3))
-    print(in1)
-    print(in1.shape)
-    print(img)
-    print(img.shape)
-    plt.imshow(in1)
-    plt.show()
     plt.imshow(img)
     plt.show()
