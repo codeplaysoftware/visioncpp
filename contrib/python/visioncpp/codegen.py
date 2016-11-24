@@ -34,6 +34,7 @@ def library_source(lines):
         "",
         "int native_expression_tree() {",
     ] + lines + [
+        "  return 0;",
         "}",
         "",
         "}  // extern \"C\""
