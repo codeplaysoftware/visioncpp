@@ -14,8 +14,8 @@ install:
   - pip install --only-binary=scipy 'scipy>=0.16.1'
   - pip install --only-binary=pandas 'pandas>=0.19.0'
   - pip install 'Cython==0.23.4'
-  - cd contrib/python && pip install -r requirements.txt
-  - cd contrib/python && python ./setup.py install && cd ../../
+  - cd "$TRAVIS_BUILD_DIR/contrib/python" && pip install -r requirements.txt; cd -
+  - cd "$TRAVIS_BUILD_DIR/contrib/python" && python ./setup.py install; cd -
 
 branches:
   except:
@@ -37,8 +37,8 @@ before_script:
 
 script:
   - 'if [ "$TRAVIS_REPO_SLUG" = "codeplaysoftware/visioncpp" ] && [ "$TRAVIS_BRANCH" = "master" ]; then bash ./scripts/travis_build_docs.sh; fi'
-  - cd contrib/python && coverage run --source=visioncpp setup.py test && cd ../../
+  - cd "$TRAVIS_BUILD_DIR/contrib/python" && coverage run --source=visioncpp setup.py test; cd -
 
 after_success:
   - 'if [ "$TRAVIS_REPO_SLUG" = "codeplaysoftware/visioncpp" ] && [ "$TRAVIS_BRANCH" = "master" ]; then bash ./scripts/travis_deploy_docs.sh; fi'
-  - cd contrib/python && coveralls && cd ../../
+  - cd "$TRAVIS_BUILD_DIR/contrib/python" && coveralls && cd ../../; cd -
