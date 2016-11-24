@@ -198,9 +198,6 @@ class Image(TerminalOperation):
     An image node.
     """
     def __init__(self, path):
-        if not path.endswith(".jpg"):
-            raise VisionCppException("Unspported image type")
-
         self.input = os.path.expanduser(path)
         if not os.path.exists(self.input):
             raise VisionCppException(
