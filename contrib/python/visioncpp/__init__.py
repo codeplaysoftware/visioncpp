@@ -309,7 +309,7 @@ class show(TerminalOperation):
              "{name}, device);".format(name=self.name))
         ]
 
-    def _get_output_code(self):
+    def _output_code(self):
         nbytes = self.input.width * self.input.height * self.input.channels
         return [
             # FIXME: Hardcoded argument name:
