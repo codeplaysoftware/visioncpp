@@ -6,6 +6,8 @@ import logging
 import os
 import sys
 import pkgconfig
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import numpy as np
 
 from ctypes import cdll
@@ -296,6 +298,18 @@ def run(pipeline, binary):
         raise TypeError
     if not (binary and os.path.exists(binary)):
         raise ValueError
+
+    # Get input images
+    impaths = []
+    for stage in pipeline:
+        if isinstance(stage, vp.Image):
+            impaths.append(stage.input)
+
+    # Use matploblib to load and show images
+    for impath in impaths:
+        img = mpimg.imread(impath)
+        imgplot = plt.imshow(img)
+        plt.show()
 
     lib = cdll.LoadLibrary(binary)
 
