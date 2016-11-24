@@ -7,6 +7,7 @@ import sys
 
 from collections import defaultdict
 from distutils.spawn import find_executable
+from labm8 import types
 from subprocess import Popen, PIPE
 
 from visioncpp import util
@@ -153,6 +154,9 @@ def generate(expression, devtype, use_clang_format=True):
     Returns:
         str: C++ code.
     """
+    if not isinstance(expression, vp.Operation): raise TypeError
+    if not types.is_str(devtype): raise TypeError
+
     pipeline = process_expression(expression)
 
     lines = []
