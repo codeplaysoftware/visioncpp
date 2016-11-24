@@ -290,7 +290,9 @@ def run(pipeline, binary):
         binary (str): Path to binary.
 
     Raises:
-        VisionCppException: If program returns non-zero exit status.
+        TypeError: If any of the arguments are bad.
+        ValueError: If binary does not exist.
+        RuntimeError: If native tree returns non-zero exit status.
     """
     if not all(isinstance(stage, vp.Operation) for stage in pipeline):
         raise TypeError
