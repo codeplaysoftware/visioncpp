@@ -11,6 +11,7 @@ import numpy as np
 from ctypes import cdll
 from labm8 import cache
 from labm8 import fs
+from labm8 import types
 from pkg_resources import resource_filename
 from shutil import rmtree
 from subprocess import Popen, PIPE, STDOUT
@@ -278,17 +279,23 @@ void test_add(float *a, float *b, float *c, long n) {
     return bincache[code]
 
 
-def run_binary(binary):
+def run(pipeline, binary):
     """
     Execute a program binary.
 
     Arguments:
+        pipeline (list of visioncpp.Operation): Serialized pipeline.
         binary (str): Path to binary.
 
     Raises:
         VisionCppException: If program returns non-zero exit status.
     """
-    assert(binary and os.path.exists(binary))
+    if not all(isinstance(stage, vp.Operation) for stage in pipeline):
+        raise TypeError
+    if not types.is_str(binary):
+        raise TypeError
+    if not (binary and os.path.exists(binary)):
+        raise ValueError
 
     lib = cdll.LoadLibrary(binary)
 

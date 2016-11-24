@@ -152,7 +152,7 @@ def generate(expression, devtype, use_clang_format=True):
         devtype (str, optional): Execution device type.
 
     Returns:
-        str: C++ code.
+        tuple (list of VisionCpp.Operation, str): Pipeline and C++ code.
     """
     if not isinstance(expression, vp.Operation): raise TypeError
     if not types.is_str(devtype): raise TypeError
@@ -201,4 +201,4 @@ def generate(expression, devtype, use_clang_format=True):
         code = clang_format(code)
 
     logging.info("Generated C++ code:\n" + code)
-    return code
+    return pipeline, code

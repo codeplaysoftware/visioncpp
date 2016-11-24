@@ -60,9 +60,9 @@ def run(expression, devtype="cpu"):
     Returns:
         object: Expression output.
     """
-    code = codegen.generate(expression, devtype)
+    pipeline, code = codegen.generate(expression, devtype)
     binary = backend.compile_cpp_code(code)
-    output = backend.run_binary(binary)
+    output = backend.run(pipeline, binary)
     return output
 
 
