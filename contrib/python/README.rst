@@ -12,8 +12,6 @@ Requirements
 -  python 2.7 or >= 3.4
 -  `ComputeCpp <https://www.codeplay.com/products/computesuite/computecpp>`__
    Community Edition Beta
--  `pkg-config <https://www.freedesktop.org/wiki/Software/pkg-config/>`__
--  `OpenCV <http://opencv.org/>`__
 -  `clang-format <http://llvm.org/releases/download.html>`__
    *(optional)*
 

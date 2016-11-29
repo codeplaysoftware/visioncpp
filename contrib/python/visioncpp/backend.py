@@ -5,7 +5,6 @@ import visioncpp as vp
 import logging
 import os
 import sys
-import pkgconfig
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
@@ -34,7 +33,7 @@ def get_host_cflags():
         "-D_GLIBCXX_USE_CXX11_ABI=0",
         "-I" + os.path.join(vp.computecpp_prefix, "include"),
         "-I" + resource_filename(__name__, os.path.join("lib", "include")),
-    ] + pkgconfig.cflags("opencv").split()
+    ]
 
 
 def get_device_cflags():
@@ -61,9 +60,7 @@ def get_ldflags():
     """
     libdirs = [os.path.join(vp.computecpp_prefix, "lib")]
     libs = ["ComputeCpp", "pthread"]
-    return (pkgconfig.libs("opencv").split() +
-            ["-L" + x for x in libdirs] +
-            ["-l" + x for x in libs])
+    return ["-L" + x for x in libdirs] + ["-l" + x for x in libs])
 
 
 def invoke_computecpp(args, stdin=None):
