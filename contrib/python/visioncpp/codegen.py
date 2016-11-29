@@ -173,17 +173,9 @@ def generate(expression, devtype, use_clang_format=True):
         for node in pipeline:
             append_node(lines, node, "_{}_code".format(stage))
 
-    def is_repeating(pipeline):
-        for node in pipeline:
-            if util.get_attribute(node, "repeating"):
-                return True
-
     # Inputs:
     lines += ["\n// inputs:"]
     get_pipeline_stage(lines, pipeline, "input")
-
-    if is_repeating(pipeline):
-        lines += ["for (;;) {  // main loop"]
 
     # Compute scope:
     lines += ["\n{  // compute scope"]
@@ -193,9 +185,6 @@ def generate(expression, devtype, use_clang_format=True):
     # Outputs:
     lines += ["\n// outputs:"]
     get_pipeline_stage(lines, pipeline, "output")
-
-    if is_repeating(pipeline):
-        lines += ["}  // main loop"]
 
     code = library_source(lines)
 

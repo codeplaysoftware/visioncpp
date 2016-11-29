@@ -209,14 +209,6 @@ class test_Image(TestCase):
             vp.Image('/not/a/real/file.jpg')
 
 
-class test_Webcam(TestCase):
-    def test_devid(self):
-        w = vp.Webcam(0)
-        self.assertEqual(0, w.device_id)
-        w2 = vp.Webcam(1)
-        self.assertEqual(1, w2.device_id)
-
-
 class test_show(TestCase):
     def test_no_input(self):
         with self.assertRaises(vp.VisionCppException):

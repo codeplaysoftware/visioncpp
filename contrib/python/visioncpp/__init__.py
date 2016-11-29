@@ -234,68 +234,16 @@ class Image(TerminalOperation):
         return "Image<{}>".format(self.input)
 
 
-class Webcam(TerminalOperation):
-    """
-    A webcam input feed.
-    """
-    def __init__(self, device_id=0):
-        """
-        Construct a Webcam node.
-
-        Arguments:
-            device_id (int, optional): Capture device ID.
-        """
-        self.device_id = device_id
-
-        # TODO: Use opencv to get capture properties.
-        self.width = 640
-        self.height = 480
-        self.channels = 3
-
-    def _input_code(self):
-        nbytes = self.width * self.height * self.channels
-        return _shared_ptr(self.name + "_data", nbytes) + [
-            "cv::VideoCapture {name}_cap({devid});".format(
-                name=self.name, devid=self.device_id),
-            "if (!{name}_cap.isOpened()) {{".format(name=self.name),
-            ("  std::cerr << \"Could not open capture device {devid}\" "
-             "<< std::endl;").format(devid=self.device_id),
-            "return 1;",
-            "}",
-            "cv::Mat {name}_cv;".format(name=self.name),
-        ]
-
-    def _compute_code(self):
-        return [
-            "{name}_cap.read({name}_cv);".format(name=self.name),
-            ("auto {name} = visioncpp::terminal<visioncpp::pixel::U8C3, "
-             "{width}, {height}, visioncpp::memory_type::Buffer2D>"
-             "({name}_cv.data);").format(
-                name=self.name, width=self.width, height=self.height),
-            ("auto {name}_out = visioncpp::terminal<visioncpp::pixel::U8C3, "
-             "{width}, {height}, visioncpp::memory_type::Buffer2D>"
-             "({name}_data.get());").format(
-                name=self.name, width=self.width, height=self.height)
-        ]
-
-    def __repr__(self):
-        return "Webcam<{}>".format(self.device_id)
-
-
 class show(TerminalOperation):
     """
     Node to display an image.
     """
     def __init__(self, parent):
         self.parent = parent
-        self.repeating = False
 
         input = self.parent
         while input:
             if isinstance(input, Image):
-                break
-            elif isinstance(input, Webcam):
-                self.repeating = True
                 break
             input = input.parent
 
