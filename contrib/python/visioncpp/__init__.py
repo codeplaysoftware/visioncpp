@@ -201,7 +201,7 @@ class Image(TerminalOperation):
     """
     def __init__(self, path):
         self.input = os.path.expanduser(path)
-        self.image = util.get_image_data(self.input)
+        self.image = mpimg.imread(self.input)
         self.width, self.height, self.channels = self.image.shape
         self.data = np.require(self.image, np.uint8, ['CONTIGUOUS', 'ALIGNED'])
 
