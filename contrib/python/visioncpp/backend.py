@@ -232,16 +232,6 @@ def compile_cpp_code(code):
     Returns:
         str: Path to binary.
     """
-    code = """
-extern "C" {
-void test_add(float *a, float *b, float *c, long n) {
-  while (n--) {
-    *c++ = *a++ + *b++;
-  }
-}
-}
-    """ + code
-
     bincache = cache.FSCache(fs.path("~/.cache/visioncpp"))
 
     if bincache.get(code):
