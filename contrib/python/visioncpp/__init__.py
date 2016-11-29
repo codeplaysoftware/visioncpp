@@ -201,6 +201,9 @@ class Image(TerminalOperation):
     """
     def __init__(self, path):
         self.input = os.path.expanduser(path)
+        if not os.path.exists(self.input):
+            raise VisionCppException("File '{}' not found".format(self.input))
+
         self.image = mpimg.imread(self.input)
         self.width, self.height, self.channels = self.image.shape
         self.data = np.require(self.image, np.uint8, ['CONTIGUOUS', 'ALIGNED'])
