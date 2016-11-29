@@ -309,7 +309,7 @@ class RGBToBGR(PointOperation):
 
 class RGBToGREY(PointOperation):
     """
-    This functor performs RGB to GREY convertion.
+    This functor performs RGB to GREY conversion.
 
     Uses the following rule: GREY <- 0.299f * R + 0,587f * G + 0.114 * B.
     """
