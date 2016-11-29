@@ -60,7 +60,7 @@ def get_ldflags():
     """
     libdirs = [os.path.join(vp.computecpp_prefix, "lib")]
     libs = ["ComputeCpp", "pthread"]
-    return ["-L" + x for x in libdirs] + ["-l" + x for x in libs])
+    return ["-L" + x for x in libdirs] + ["-l" + x for x in libs]
 
 
 def invoke_computecpp(args, stdin=None):
