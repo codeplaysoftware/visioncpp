@@ -4,6 +4,13 @@
 Python interface to VisionCpp.
 """
 import os
+import matplotlib.image as mpimg
+import numpy as np
+
+try:  # python 2
+    from urllib2 import urlopen
+except ImportError:  # python 3
+    from urllib.request import urlopen
 
 __author__ = "Chris Cummins"
 __email__ = "chrisc.101@gmail.com"
@@ -203,9 +210,9 @@ class Image(TerminalOperation):
             raise VisionCppException(
                 "Image file '{}' not found".format(self.input))
 
-        # TODO: Use opencv to get image properties.
-        self.width, self.height = util.get_image_size(self.input)
-        self.channels = 3
+        self.image = mpimg.imread(self.input)
+        self.width, self.height, self.channels = self.image.shape
+        self.data = np.require(self.image, np.uint8, ['CONTIGUOUS', 'ALIGNED'])
 
     def _input_code(self):
         nbytes = self.width * self.height * self.channels
