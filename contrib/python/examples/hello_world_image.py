@@ -51,7 +51,12 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
+    debug = os.environ.get("DEBUG", False)
+
+    if debug:
         main()
-    except Exception as e:
-        print(type(e).__name__ + ":", e, file=stderr)
+    else:
+        try:
+            main()
+        except Exception as e:
+            print(type(e).__name__ + ":", e, file=stderr)
