@@ -1,16 +1,11 @@
 #!/usr/bin/env python
-
 """
 Python interface to VisionCpp.
 """
-import os
 import matplotlib.image as mpimg
 import numpy as np
-
-try:  # python 2
-    from urllib2 import urlopen
-except ImportError:  # python 3
-    from urllib.request import urlopen
+import os
+import re
 
 __author__ = "Chris Cummins"
 __email__ = "chrisc.101@gmail.com"
@@ -206,11 +201,7 @@ class Image(TerminalOperation):
     """
     def __init__(self, path):
         self.input = os.path.expanduser(path)
-        if not os.path.exists(self.input):
-            raise VisionCppException(
-                "Image file '{}' not found".format(self.input))
-
-        self.image = mpimg.imread(self.input)
+        self.image = util.get_image_data(self.input)
         self.width, self.height, self.channels = self.image.shape
         self.data = np.require(self.image, np.uint8, ['CONTIGUOUS', 'ALIGNED'])
 
