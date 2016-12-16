@@ -132,6 +132,8 @@ def process_expression(root):
     """
     Process an expression tree into a linear sequence of nodes.
 
+    Assigns unique node names to expressions in the tree.
+
     Arguments:
         root (VisionCpp.Operation): Expression tree.
 
