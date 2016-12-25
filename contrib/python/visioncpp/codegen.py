@@ -13,7 +13,7 @@ from subprocess import Popen, PIPE
 from visioncpp import util
 
 
-def library_source(lines):
+def library_source(lines, pipeline):
     """
     Return source code for a VisionCpp library.
 
@@ -22,26 +22,35 @@ def library_source(lines):
 
     Arguments:
         lines (str[]): Program implementation.
+        pipeline (Node[]): Program pipeline.
 
     Returns:
         str: Source code
     """
-    program_lines = [
+    def get_input_nodes(pipeline):
+        inputs = []
+        for node in pipeline:
+            if isinstance(node, vp.Image):
+                inputs.append(node)
+        return inputs
+
+    inputs = get_input_nodes(pipeline)
+    input_args = ", ".join("unsigned char *const in" + str(i+1)
+                           for i in range(len(inputs)))
+
+    return "\n".join([
         "#include <visioncpp.hpp>",
         "",
         "extern \"C\" {",
         "",
-        # FIXME: Hardcoded arguments while I figure this out:
-        "int native_expression_tree(unsigned char *const in1, "
-                                    "unsigned char *const out) {",
+        "int native_expression_tree({inputs}, unsigned char *const out) {{"
+        .format(inputs=input_args),
     ] + lines + [
         "  return 0;",
         "}",
         "",
-        "}  // extern \"C\""
-    ]
-
-    return "\n".join(program_lines) + "\n"
+        "}  // extern \"C\"\n"
+    ])
 
 
 def get_device(devtype="cpu", name="device"):
@@ -186,7 +195,7 @@ def generate(expression, devtype, use_clang_format=True):
     lines += ["\n// outputs:"]
     get_pipeline_stage(lines, pipeline, "output")
 
-    code = library_source(lines)
+    code = library_source(lines, pipeline)
 
     if use_clang_format:
         code = clang_format(code)
