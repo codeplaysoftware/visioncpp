@@ -35,8 +35,8 @@ def library_source(lines, pipeline):
         return inputs
 
     inputs = get_input_nodes(pipeline)
-    input_args = ", ".join("unsigned char *const in" + str(i+1)
-                           for i in range(len(inputs)))
+    input_args = ", ".join("unsigned char *const {}_arg".format(node.name)
+                           for node in inputs)
 
     return "\n".join([
         "#include <visioncpp.hpp>",

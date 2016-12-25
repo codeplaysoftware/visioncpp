@@ -213,15 +213,14 @@ class Image(TerminalOperation):
         return _shared_ptr(self.name + "_data", nbytes)
 
     def _compute_code(self):
+        name, width, height = self.name, self.width, self.height
         return [
             ("auto {name} = visioncpp::terminal<visioncpp::pixel::U8C3, "
              "{width}, {height}, visioncpp::memory_type::Buffer2D>"
-             "(in1);").format(  # FIXME: Hardoded argument
-                name=self.name, width=self.width, height=self.height),
+             "({name}_arg);").format(**vars()),
             ("auto {name}_out = visioncpp::terminal<visioncpp::pixel::U8C3, "
              "{width}, {height}, visioncpp::memory_type::Buffer2D>"
-             "({name}_data.get());").format(
-                name=self.name, width=self.width, height=self.height)
+             "({name}_data.get());").format(**vars())
         ]
 
     def __repr__(self):
