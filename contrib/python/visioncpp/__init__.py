@@ -258,7 +258,6 @@ class show(TerminalOperation):
     def _output_code(self):
         nbytes = self.input.width * self.input.height * self.input.channels
         return [
-            # FIXME: Hardcoded argument name:
             "memcpy(out, {input}_data.get(), {nbytes});".format(
                 input=self.input.name, nbytes=nbytes)
         ]
