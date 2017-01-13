@@ -9,7 +9,7 @@ GPU-accelerated vision processing using
 Requirements
 ------------
 
--  python 2.7 or >= 3.3
+-  python 2.7 or >= 3.4
 -  `ComputeCpp <https://www.codeplay.com/products/computesuite/computecpp>`__
    Community Edition Beta
 -  `clang-format <http://llvm.org/releases/download.html>`__

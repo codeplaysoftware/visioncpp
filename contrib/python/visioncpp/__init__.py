@@ -1,9 +1,11 @@
 #!/usr/bin/env python
-
 """
 Python interface to VisionCpp.
 """
+import matplotlib.image as mpimg
+import numpy as np
 import os
+import re
 
 __author__ = "Chris Cummins"
 __email__ = "chrisc.101@gmail.com"
@@ -60,9 +62,9 @@ def run(expression, devtype="cpu"):
     Returns:
         object: Expression output.
     """
-    code = codegen.generate(expression, devtype)
+    pipeline, code = codegen.generate(expression, devtype)
     binary = backend.compile_cpp_code(code)
-    output = backend.run_binary(binary)
+    output = backend.run(pipeline, binary)
     return output
 
 
@@ -198,91 +200,31 @@ class Image(TerminalOperation):
     An image node.
     """
     def __init__(self, path):
-        if not path.endswith(".jpg"):
-            raise VisionCppException("Unspported image type")
-
         self.input = os.path.expanduser(path)
         if not os.path.exists(self.input):
-            raise VisionCppException(
-                "Image file '{}' not found".format(self.input))
+            raise VisionCppException("File '{}' not found".format(self.input))
 
-        # TODO: Use opencv to get image properties.
-        self.width, self.height = util.get_image_size(self.input)
-        self.channels = 3
+        self.image = mpimg.imread(self.input)
+        self.width, self.height, self.channels = self.image.shape
+        self.data = np.require(self.image, np.uint8, ['CONTIGUOUS', 'ALIGNED'])
 
     def _input_code(self):
         nbytes = self.width * self.height * self.channels
         return _shared_ptr(self.name + "_data", nbytes)
 
     def _compute_code(self):
+        name, width, height = self.name, self.width, self.height
         return [
-            "cv::Mat {name}_cv = cv::imread(\"{arg}\");".format(
-                name=self.name, arg=self.input),
-            "if (!{name}_cv.data) {{".format(name=self.name),
-            ("std::cerr << \"Could not open or find the image {arg}\" "
-             "<< std::endl;".format(arg=self.input)),
-            "return 1;",
-            "}",
             ("auto {name} = visioncpp::terminal<visioncpp::pixel::U8C3, "
              "{width}, {height}, visioncpp::memory_type::Buffer2D>"
-             "({name}_cv.data);").format(
-                name=self.name, width=self.width, height=self.height),
+             "({name}_arg);").format(**vars()),
             ("auto {name}_out = visioncpp::terminal<visioncpp::pixel::U8C3, "
              "{width}, {height}, visioncpp::memory_type::Buffer2D>"
-             "({name}_data.get());").format(
-                name=self.name, width=self.width, height=self.height)
+             "({name}_data.get());").format(**vars())
         ]
 
     def __repr__(self):
         return "Image<{}>".format(self.input)
-
-
-class Webcam(TerminalOperation):
-    """
-    A webcam input feed.
-    """
-    def __init__(self, device_id=0):
-        """
-        Construct a Webcam node.
-
-        Arguments:
-            device_id (int, optional): Capture device ID.
-        """
-        self.device_id = device_id
-
-        # TODO: Use opencv to get capture properties.
-        self.width = 640
-        self.height = 480
-        self.channels = 3
-
-    def _input_code(self):
-        nbytes = self.width * self.height * self.channels
-        return _shared_ptr(self.name + "_data", nbytes) + [
-            "cv::VideoCapture {name}_cap({devid});".format(
-                name=self.name, devid=self.device_id),
-            "if (!{name}_cap.isOpened()) {{".format(name=self.name),
-            ("  std::cerr << \"Could not open capture device {devid}\" "
-             "<< std::endl;").format(devid=self.device_id),
-            "return 1;",
-            "}",
-            "cv::Mat {name}_cv;".format(name=self.name),
-        ]
-
-    def _compute_code(self):
-        return [
-            "{name}_cap.read({name}_cv);".format(name=self.name),
-            ("auto {name} = visioncpp::terminal<visioncpp::pixel::U8C3, "
-             "{width}, {height}, visioncpp::memory_type::Buffer2D>"
-             "({name}_cv.data);").format(
-                name=self.name, width=self.width, height=self.height),
-            ("auto {name}_out = visioncpp::terminal<visioncpp::pixel::U8C3, "
-             "{width}, {height}, visioncpp::memory_type::Buffer2D>"
-             "({name}_data.get());").format(
-                name=self.name, width=self.width, height=self.height)
-        ]
-
-    def __repr__(self):
-        return "Webcam<{}>".format(self.device_id)
 
 
 class show(TerminalOperation):
@@ -291,14 +233,10 @@ class show(TerminalOperation):
     """
     def __init__(self, parent):
         self.parent = parent
-        self.repeating = False
 
         input = self.parent
         while input:
             if isinstance(input, Image):
-                break
-            elif isinstance(input, Webcam):
-                self.repeating = True
                 break
             input = input.parent
 
@@ -306,14 +244,6 @@ class show(TerminalOperation):
             raise VisionCppException("Expression tree has no input")
         self.input = input
 
-    def _input_code(self):
-        return [
-            ('cv::Mat {name}_cv({height}, {width}, CV_8UC({channels}), '
-             '{input}_data.get());'.format(
-                name=self.name, width=self.input.width,
-                height=self.input.height,
-                channels=self.input.channels, input=self.input.name)),
-        ]
 
     def _compute_code(self):
         return [
@@ -325,18 +255,11 @@ class show(TerminalOperation):
         ]
 
     def _output_code(self):
-        lines = [
-            ('cv::namedWindow("{name}", cv::WINDOW_AUTOSIZE);'
-             .format(name=self.name)),
-            'cv::imshow("{name}", {name}_cv);'.format(name=self.name),
+        nbytes = self.input.width * self.input.height * self.input.channels
+        return [
+            "memcpy(out, {input}_data.get(), {nbytes});".format(
+                input=self.input.name, nbytes=nbytes)
         ]
-
-        if self.repeating:
-            lines += ["if (cv::waitKey(1) >= 0) break;"]
-        else:
-            lines += ["cv::waitKey(0);"]
-
-        return lines
 
 
 # PointOperations:
@@ -378,7 +301,7 @@ class RGBToBGR(PointOperation):
 
 class RGBToGREY(PointOperation):
     """
-    This functor performs RGB to GREY convertion.
+    This functor performs RGB to GREY conversion.
 
     Uses the following rule: GREY <- 0.299f * R + 0,587f * G + 0.114 * B.
     """

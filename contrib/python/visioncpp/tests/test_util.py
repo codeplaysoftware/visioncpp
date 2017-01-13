@@ -54,7 +54,3 @@ class test_util(TestCase):
         w, h = util.get_image_size(data_path('lena.gif'))
         self.assertEqual(512, w)
         self.assertEqual(512, h)
-
-    def test_get_image_size_unsupported_type(self):
-        with self.assertRaises(vp.VisionCppException):
-            util.get_image_size(data_path('lena.bmp'))

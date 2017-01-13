@@ -1,14 +1,18 @@
 from __future__ import print_function
 
 import visioncpp as vp
-from visioncpp import cache
 
 import logging
 import os
 import sys
-import pkgconfig
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import numpy as np
 
 from ctypes import cdll
+from labm8 import cache
+from labm8 import fs
+from labm8 import types
 from pkg_resources import resource_filename
 from shutil import rmtree
 from subprocess import Popen, PIPE, STDOUT
@@ -29,7 +33,7 @@ def get_host_cflags():
         "-D_GLIBCXX_USE_CXX11_ABI=0",
         "-I" + os.path.join(vp.computecpp_prefix, "include"),
         "-I" + resource_filename(__name__, os.path.join("lib", "include")),
-    ] + pkgconfig.cflags("opencv").split()
+    ]
 
 
 def get_device_cflags():
@@ -56,9 +60,7 @@ def get_ldflags():
     """
     libdirs = [os.path.join(vp.computecpp_prefix, "lib")]
     libs = ["ComputeCpp", "pthread"]
-    return (pkgconfig.libs("opencv").split() +
-            ["-L" + x for x in libdirs] +
-            ["-l" + x for x in libs])
+    return ["-L" + x for x in libdirs] + ["-l" + x for x in libs]
 
 
 def invoke_computecpp(args, stdin=None):
@@ -227,11 +229,11 @@ def compile_cpp_code(code):
     Returns:
         str: Path to binary.
     """
-    uid = cache.get_uid(code)
+    bincache = cache.FSCache(fs.path("~/.cache/visioncpp"))
 
-    if cache.is_cached(uid):
-        logging.info("Found cached binary {}".format(uid))
-        binary = cache.load(uid)
+    if bincache.get(code):
+        logging.info("Found cached binary {}"
+                     .format(fs.basename(bincache[code])))
     else:
         check_for_computecpp()
 
@@ -257,26 +259,64 @@ def compile_cpp_code(code):
             tmpbin = link(host, dir=tmpdir)
             progress("")
 
-            binary = cache.emplace(uid, tmpbin)
+            bincache[code] = tmpbin
         except Exception as e:
             rmtree(tmpdir)
             raise e
         rmtree(tmpdir)
 
-    return binary
+    return bincache[code]
 
 
-def run_binary(binary):
+def run(pipeline, binary):
     """
     Execute a program binary.
 
     Arguments:
+        pipeline (list of visioncpp.Operation): Serialized pipeline.
         binary (str): Path to binary.
 
     Raises:
-        VisionCppException: If program returns non-zero exit status.
+        TypeError: If any of the arguments are bad.
+        ValueError: If binary does not exist.
+        RuntimeError: If native tree returns non-zero exit status.
     """
-    assert(binary and os.path.exists(binary))
+    if not all(isinstance(stage, vp.Operation) for stage in pipeline):
+        raise TypeError
+    if not types.is_str(binary):
+        raise TypeError
+    if not (binary and os.path.exists(binary)):
+        raise ValueError
+
+    # Get input images
+    impaths = []
+    for stage in pipeline:
+        if isinstance(stage, vp.Image):
+            impaths.append(stage.input)
 
     lib = cdll.LoadLibrary(binary)
-    lib.native_expression_tree()
+
+    # inputs
+    assert(len(impaths) == 1)
+    img = mpimg.imread(impaths[0])
+    in1 = np.require(img, np.uint8, ['CONTIGUOUS', 'ALIGNED'])
+
+    # output
+    out_terminal = pipeline[-1]
+    if not isinstance(out_terminal, vp.show):
+        raise TypeError
+    size = out_terminal.input.width * out_terminal.input.height * 3
+    out = np.empty_like(np.zeros(size, dtype=np.uint8))
+
+    lib.native_expression_tree.argtypes = [
+        np.ctypeslib.ndpointer(np.uint8, flags='aligned, contiguous'),
+        np.ctypeslib.ndpointer(np.uint8, flags='aligned, contiguous'), # output
+    ]
+
+    ret = lib.native_expression_tree(in1, out)
+    if ret:
+        raise RuntimeError("native expression tree failed")
+
+    img = np.reshape(out, (-1, out_terminal.input.width, 3))
+    plt.imshow(img)
+    plt.show()

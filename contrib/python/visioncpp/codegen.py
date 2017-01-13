@@ -7,12 +7,13 @@ import sys
 
 from collections import defaultdict
 from distutils.spawn import find_executable
+from labm8 import types
 from subprocess import Popen, PIPE
 
 from visioncpp import util
 
 
-def library_source(lines):
+def library_source(lines, pipeline):
     """
     Return source code for a VisionCpp library.
 
@@ -21,24 +22,35 @@ def library_source(lines):
 
     Arguments:
         lines (str[]): Program implementation.
+        pipeline (Node[]): Program pipeline.
 
     Returns:
         str: Source code
     """
-    program_lines = [
-        "#include <opencv2/opencv.hpp>",
+    def get_input_nodes(pipeline):
+        inputs = []
+        for node in pipeline:
+            if isinstance(node, vp.Image):
+                inputs.append(node)
+        return inputs
+
+    inputs = get_input_nodes(pipeline)
+    input_args = ", ".join("unsigned char *const {}_arg".format(node.name)
+                           for node in inputs)
+
+    return "\n".join([
         "#include <visioncpp.hpp>",
         "",
         "extern \"C\" {",
         "",
-        "int native_expression_tree() {",
+        "int native_expression_tree({inputs}, unsigned char *const out) {{"
+        .format(inputs=input_args),
     ] + lines + [
+        "  return 0;",
         "}",
         "",
-        "}  // extern \"C\""
-    ]
-
-    return "\n".join(program_lines) + "\n"
+        "}  // extern \"C\"\n"
+    ])
 
 
 def get_device(devtype="cpu", name="device"):
@@ -120,7 +132,7 @@ def process_expression(root):
     """
     Process an expression tree into a linear sequence of nodes.
 
-    TODO: Refactor the node name assignment into node construction.
+    Assigns unique node names to expressions in the tree.
 
     Arguments:
         root (VisionCpp.Operation): Expression tree.
@@ -151,8 +163,11 @@ def generate(expression, devtype, use_clang_format=True):
         devtype (str, optional): Execution device type.
 
     Returns:
-        str: C++ code.
+        tuple (list of VisionCpp.Operation, str): Pipeline and C++ code.
     """
+    if not isinstance(expression, vp.Operation): raise TypeError
+    if not types.is_str(devtype): raise TypeError
+
     pipeline = process_expression(expression)
 
     lines = []
@@ -167,17 +182,9 @@ def generate(expression, devtype, use_clang_format=True):
         for node in pipeline:
             append_node(lines, node, "_{}_code".format(stage))
 
-    def is_repeating(pipeline):
-        for node in pipeline:
-            if util.get_attribute(node, "repeating"):
-                return True
-
     # Inputs:
     lines += ["\n// inputs:"]
     get_pipeline_stage(lines, pipeline, "input")
-
-    if is_repeating(pipeline):
-        lines += ["for (;;) {  // main loop"]
 
     # Compute scope:
     lines += ["\n{  // compute scope"]
@@ -188,13 +195,10 @@ def generate(expression, devtype, use_clang_format=True):
     lines += ["\n// outputs:"]
     get_pipeline_stage(lines, pipeline, "output")
 
-    if is_repeating(pipeline):
-        lines += ["}  // main loop"]
-
-    code = library_source(lines)
+    code = library_source(lines, pipeline)
 
     if use_clang_format:
         code = clang_format(code)
 
     logging.info("Generated C++ code:\n" + code)
-    return code
+    return pipeline, code
