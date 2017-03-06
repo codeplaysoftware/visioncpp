@@ -27,6 +27,9 @@ All you need to do is include the VisionCpp.hpp header in your project and you a
 #include <visioncpp.hpp> //all that is needed
 ~~~~~~~~~~~~~~~
 
+## <a name="tutorials" /> VisionCpp Tutorials
+There are some tutorials explaining how to perform different operations using VisionCpp. These cover basic [Hello World](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Hello-World), [Anisotropic Diffusion](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Anisotropic-Diffusion), [Bayer Filter Demosaic](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Bayer-Filter-Demosaic) and [Harris Corner Detection](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Harris-Corner-Detection).
+
 ## <a name="sample-code" /> Sample Code
 Below is a very simple application that will do the conversion RGB -> HSV. Full source code can be found in the examples folder.
 RGB is assumed to be a three-channel unsigned char storage with a reasonable channel order.
@@ -118,7 +121,7 @@ The output binaries will be catalogued in bin folder.
 ~~~~~~~~~~~~~~~
 
 ## <a name="examples" /> Examples
-Most of the examples are using camera.
+There is a set of example code in the /example/ folder of the repository. Most of the examples are performing image operations from the camera input.
 
 ## <a name="documentation" /> Documentation
 Online documentation can be found [here](https://codeplaysoftware.github.io/visioncpp/).
