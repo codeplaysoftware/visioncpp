@@ -9,6 +9,7 @@ Written using [SYCL 1.2](https://www.khronos.org/registry/sycl/specs/sycl-1.2.pd
 
 ## Table of contents
 * [Integration](#integration)
+* [Tutorials](#tutorials)
 * [Sample Code](#sample-code)
 * [Requirements](#requirements)
 * [Build](#build)
