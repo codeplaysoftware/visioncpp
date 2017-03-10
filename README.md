@@ -29,7 +29,7 @@ All you need to do is include the VisionCpp.hpp header in your project and you a
 ~~~~~~~~~~~~~~~
 
 ## <a name="tutorials" /> VisionCpp Tutorials
-There are some tutorials explaining how to perform different operations using VisionCpp. These cover basic [Hello World](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Hello-World), [Anisotropic Diffusion](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Anisotropic-Diffusion), [Bayer Filter Demosaic](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Bayer-Filter-Demosaic) and [Harris Corner Detection](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Harris-Corner-Detection).
+There are some tutorials explaining how to perform different operations using VisionCpp. These cover basic [Hello World](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Hello-World), [Anisotropic Diffusion](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Anisotropic-Diffusion), [Bayer Filter Demosaic](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Bayer-Filter-Demosaic), [Dense Depth Reconstruction with Block Matching Algorithm](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Dense-Depth-Reconstruction-with-Block-Matching-Algorithm) and [Harris Corner Detection](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Harris-Corner-Detection).
 
 ## <a name="sample-code" /> Sample Code
 Below is a very simple application that will do the conversion RGB -> HSV. Full source code can be found in the examples folder.
