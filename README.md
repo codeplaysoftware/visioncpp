@@ -1,6 +1,7 @@
 <div align="center">
   <br /><img src="https://www.codeplay.com/public/uploaded/public/computevision.png"><br />
 </div>
+
 # Overview
 **VisionCpp** is a lightweight header-only library for computer vision and image processing.
 The aim of the library is to provide a toolbox that enables performance portability for heterogeneous platforms using modern C++.
