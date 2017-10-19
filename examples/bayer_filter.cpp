@@ -159,7 +159,7 @@ struct BayerRGGBToBGR {
         // Get B
         uchar B1 = bayer.at(bayer.I_c, bayer.I_r - 2)[0];
         uchar B2 = bayer.at(bayer.I_c + 2, bayer.I_r)[0];
-        uchar B3 = bayer.at(bayer.I_c, bayer.I_r - 2)[0];
+        uchar B3 = bayer.at(bayer.I_c, bayer.I_r + 2)[0];
         uchar B4 = bayer.at(bayer.I_c - 2, bayer.I_r)[0];
 
         // Get R
