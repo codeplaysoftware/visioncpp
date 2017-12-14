@@ -118,7 +118,7 @@ else()
   message(STATUS "compute++ flags - ${COMPUTECPP_DEVICE_COMPILER_FLAGS}")
 endif()
 
-set(COMPUTECPP_DEVICE_COMPILER_FLAGS ${COMPUTECPP_DEVICE_COMPILER_FLAGS} -sycl-compress-name -no-serial-memop)
+set(COMPUTECPP_DEVICE_COMPILER_FLAGS ${COMPUTECPP_DEVICE_COMPILER_FLAGS} -sycl-compress-name -no-serial-memop -Wno-ignored-qualifiers)
 
 # Check if the platform is supported
 execute_process(COMMAND ${COMPUTECPP_INFO_TOOL} "--dump-is-supported"

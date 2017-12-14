@@ -42,9 +42,6 @@ class Device_<backend::sycl, dv> {
           for (const auto &e : l) {
             try {
               std::rethrow_exception(e);
-            } catch (cl::sycl::cl_exception e) {
-              std::cout << e.get_cl_error_message() << std::endl;
-              std::cout << e.get_cl_code() << std::endl;
             } catch (cl::sycl::exception e) {
               std::cout << e.what() << std::endl;
             }
@@ -95,6 +92,6 @@ class Device_<backend::sycl, dv> {
     dev.throw_asynchronous();
   }
 };
-}
-}
+}  // namespace internal
+}  // namespace visioncpp
 #endif  // VISIONCPP_INCLUDE_FRAMEWORK_DEVICE_SYCL_DEVICE_HPP_
