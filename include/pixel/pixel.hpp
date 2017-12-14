@@ -49,35 +49,28 @@ struct AssignValueToArray<false, K, PixelType, Params...> {
   static void avta(PixelType &dt,
                    visioncpp::internal::tools::tuple::Tuple<Params...> &t) {}
 };
-}
+}  // namespace internal
 /// \brief Contains VisionCpp pixel type definitions.
 namespace pixel {
-#define REGISTER_OPERATORS(Op, T)                     \
-  template <typename RHSScalar>                       \
-  T &operator Op##=(const RHSScalar &val) {           \
-    for (int i = 0; i < elements; i++) {              \
-      m_data[i] Op## = val;                           \
-    }                                                 \
-    return *this;                                     \
-  }                                                   \
-  template <typename RHSScalar>                       \
-  friend T operator Op(T lhs, const RHSScalar &rhs) { \
-    for (int i = 0; i < elements; i++) {              \
-      lhs[i] Op## = rhs;                              \
-    }                                                 \
-    return lhs;                                       \
-  }                                                   \
-  T &operator Op##=(const T &val) {                   \
-    for (int i = 0; i < elements; i++) {              \
-      m_data[i] Op## = val[i];                        \
-    }                                                 \
-    return *this;                                     \
-  }                                                   \
-  friend T operator Op(T lhs, const T &rhs) {         \
-    for (int i = 0; i < elements; i++) {              \
-      lhs[i] Op## = rhs[i];                           \
-    }                                                 \
-    return lhs;                                       \
+#define REGISTER_OPERATORS(Op, T)             \
+  template <typename RHSScalar>               \
+  T &operator Op##=(const RHSScalar &val) {   \
+    for (int i = 0; i < elements; i++) {      \
+      m_data[i] Op## = val;                   \
+    }                                         \
+    return *this;                             \
+  }                                           \
+  T &operator Op##=(const T &val) {           \
+    for (int i = 0; i < elements; i++) {      \
+      m_data[i] Op## = val[i];                \
+    }                                         \
+    return *this;                             \
+  }                                           \
+  friend T operator Op(T lhs, const T &rhs) { \
+    for (int i = 0; i < elements; i++) {      \
+      lhs[i] Op## = rhs[i];                   \
+    }                                         \
+    return lhs;                               \
   }
 
 template <typename LHSScalar, size_t Channels>
@@ -94,8 +87,8 @@ struct Storage {
   template <typename... P>
   Storage(P... p) {
     auto tp = visioncpp::internal::tools::tuple::make_tuple(p...);
-    internal::AssignValueToArray<0 != sizeof...(P), 0, decltype(m_data), P...>::avta(
-        m_data, tp);
+    internal::AssignValueToArray<0 != sizeof...(P), 0, decltype(m_data),
+                                 P...>::avta(m_data, tp);
   }
 };
 
@@ -140,5 +133,5 @@ typedef Storage<unsigned char, 3> U8C3;
 typedef Storage<unsigned char, 4> U8C4;
 
 }  // end of pixel
-}  // end of visionCPP
+}  // namespace visioncpp
 #endif  // VISIONCPP_INCLUDE_PIXEL_PIXEL_HPP_
