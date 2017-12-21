@@ -73,13 +73,12 @@ struct ImageProperties;
 namespace element_category {
 constexpr size_t Basic = 0;
 constexpr size_t Struct = 1;
-};
+};  // namespace element_category
 
 /// \struct SyclRange
-/// \brief This is used to determine the range for creating a syclbuffer based on
-/// the memory dimension
-/// template parameters:
-/// \tparam Dim : the memory dimension
+/// \brief This is used to determine the range for creating a syclbuffer based
+/// on the memory dimension template parameters: \tparam Dim : the memory
+/// dimension
 template <size_t Dim>
 struct SyclRange;
 
@@ -256,8 +255,7 @@ struct SyclMem;
 /// \brief specialisation of SyclMem when there is host memory allocated.
 template <size_t LeafType, size_t Dim, typename ElementType>
 struct SyclMem<true, LeafType, Dim, ElementType> {
-  using Type =
-      cl::sycl::buffer<ElementType, Dim, cl::sycl::map_allocator<ElementType>>;
+  using Type = cl::sycl::buffer<ElementType, Dim>;
 };
 
 /// \brief specialisation of SyclMem when there is no host memory allocated.
@@ -270,7 +268,7 @@ struct SyclMem<false, LeafType, Dim, ElementType> {
 /// \brief specialisation of SyclMem when the memory_type is Image
 template <size_t Dim, typename ElementType>
 struct SyclMem<true, memory_type::Image, Dim, ElementType> {
-  using Type = cl::sycl::image<Dim, cl::sycl::map_allocator<uint8_t>>;
+  using Type = cl::sycl::image<Dim>;
 };
 
 /// \brief specialisation of SyclMem when the memory_type is Constant
@@ -361,11 +359,9 @@ template <typename ElemType, typename Scalar, typename VisionMem, typename RNG>
 struct CreateSyclBuffer<memory_type::Image, ElemType, Scalar, VisionMem, RNG> {
   using Properties = ImageProperties<ElemType, Scalar>;
   /// function create_buffer
-  /// \brief This function is used to create a sycl buffer when the host memory is
-  /// allocated for synchronization.
-  /// parameters:
-  /// \param ptr : shared_ptr containing the VisionMem
-  /// \param dt : the input pointer for creating image
+  /// \brief This function is used to create a sycl buffer when the host memory
+  /// is allocated for synchronization. parameters: \param ptr : shared_ptr
+  /// containing the VisionMem \param dt : the input pointer for creating image
   /// \param rng : the sycl range for creating image
   /// \return void
   static inline void create_buffer(std::shared_ptr<VisionMem> &ptr, Scalar *dt,
@@ -561,8 +557,8 @@ inline void buffer_update(std::shared_ptr<VisionMem> &ptr, Scalar *dt) {
   BufferUpdate<LeafType, Rows, Cols, ElemType, Scalar,
                VisionMem>::buffer_update(ptr, dt);
 }
-}  // internal
-}  // visioncpp
+}  // namespace internal
+}  // namespace visioncpp
 
 // Vision Memories Headers
 #include "mem_const.hpp"
