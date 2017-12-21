@@ -72,6 +72,14 @@ namespace pixel {
     }                                         \
     return lhs;                               \
   }
+// [TODO] This macro conflicts with the operator overload from computecpp 0.5
+// template <typename RHSScalar>                       \
+// friend T operator Op(T lhs, const RHSScalar &rhs) { \
+//   for (int i = 0; i < elements; i++) {              \
+//     lhs[i] Op## = rhs;                              \
+//   }                                                 \
+//   return lhs;                                       \
+// }
 
 template <typename LHSScalar, size_t Channels>
 struct Storage {
