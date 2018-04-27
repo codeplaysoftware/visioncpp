@@ -20,6 +20,9 @@ else()
   message(ERROR " Unknown value for CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 endif()
 
+option(USE_CIMG "Use CImg Library to read images" OFF)
+option(USE_OPENCV "Use CImg Library to read images" ON)
+
 set(CMAKE_MODULE_PATH
 ${CMAKE_CURRENT_SOURCE_DIR}/cmake
 )
@@ -36,6 +39,30 @@ find_package(Threads REQUIRED)
 if(THREADS_HAVE_PTHREAD_ARG)
   set_property(TARGET my_app PROPERTY COMPILE_OPTIONS "pthread")
   set_property(TARGET my_app PROPERTY INTERFACE_COMPILE_OPTIONS "pthread")
+endif()
+
+if (USE_CIMG)
+
+  add_definitions(-DUSE_CIMG)
+  remove_definitions(-DUSE_OPENCV)
+  # include(ExternalProject)
+  #
+  # set(CIMG_ROOT_DIR ${CMAKE_BINARY_DIR}/external)
+  #
+  # ExternalProject_Add(cimg
+  #     GIT_REPOSITORY https://github.com/dtschump/CImg.git
+  #     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CIMG_ROOT_DIR}
+  # )
+
+  include_directories(${CIMG_ROOT_DIR})
+
+else ()
+  add_definitions(-DUSE_OPENCV)
+  remove_definitions(-DUSE_CIMG)
+  find_package(OpenCV REQUIRED)
+  include_directories(${OpenCV_INCLUDE_DIRS})
+  link_libraries(${OpenCV_LIBS})
+
 endif()
 
 if(NOT VISIONCPP_DOC_ONLY)
