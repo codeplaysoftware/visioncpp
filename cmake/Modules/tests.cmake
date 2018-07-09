@@ -27,7 +27,10 @@ foreach(_src ${_srcs})
 
   # add executable that depends on the generated file
   add_executable(${filename} ${_src})
-  add_sycl_to_target(${filename} ${_src} ${CMAKE_CURRENT_BINARY_DIR})
+  add_sycl_to_target(
+    TARGET ${filename} 
+    SOURCES ${_src})
+  target_link_libraries(${filename} PRIVATE Threads::Threads)
 
   add_test(NAME ${filename} COMMAND ${CMAKE_CURRENT_BINARY_DIR}/bin/test/${filename})
 endforeach(_src ${test_SRC})
