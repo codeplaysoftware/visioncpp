@@ -20,20 +20,26 @@ else()
   message(ERROR " Unknown value for CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 endif()
 
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/Modules)
+set(CMAKE_MODULE_PATH
+${CMAKE_CURRENT_SOURCE_DIR}/cmake
+)
 
 find_package(PythonInterp 3.2 REQUIRED)
 message(STATUS "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
 
 #setup
-find_package(CXX11 REQUIRED)
-find_package(OpenCL REQUIRED)
+include(FindCXX11)
+include(FindOpenCL)
 
 # find pthread
 find_package(Threads REQUIRED)
+if(THREADS_HAVE_PTHREAD_ARG)
+  set_property(TARGET my_app PROPERTY COMPILE_OPTIONS "pthread")
+  set_property(TARGET my_app PROPERTY INTERFACE_COMPILE_OPTIONS "pthread")
+endif()
 
 if(NOT VISIONCPP_DOC_ONLY)
-  find_package(ComputeCpp REQUIRED)
+  include(FindComputeCpp)
   #internal dep
   include(testgen)
   #projects
