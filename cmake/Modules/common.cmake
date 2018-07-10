@@ -1,5 +1,5 @@
-find_package(GTest REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(GTest REQUIRED)
 
 include_directories(
   ${GTEST_INCLUDE_DIRS}
@@ -11,10 +11,10 @@ include_directories(
 link_directories(${GTEST_LIBRARIES} ${COMPUTECPP_LIBS})
 
 link_libraries(
-  #gtest libs
-  ${GTEST_BOTH_LIBRARIES}
   #opencv libs
   ${OpenCV_LIBS}
+  #gtest libs
+  ${GTEST_BOTH_LIBRARIES}
   #sycl libs
   ${COMPUTECPP_RUNTIME_LIBRARY}
 )

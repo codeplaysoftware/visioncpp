@@ -27,10 +27,13 @@ foreach(_src ${_srcs})
 
   # add executable that depends on the generated file
   add_executable(${filename} ${_src})
+  # link the pthreads library to the executable
+  target_link_libraries(${filename} 
+    PRIVATE Threads::Threads)
+  # link sycl with the executable
   add_sycl_to_target(
     TARGET ${filename} 
     SOURCES ${_src})
-  target_link_libraries(${filename} PRIVATE Threads::Threads)
 
   add_test(NAME ${filename} COMMAND ${CMAKE_CURRENT_BINARY_DIR}/bin/test/${filename})
 endforeach(_src ${test_SRC})
