@@ -26,8 +26,8 @@ find_package(PythonInterp 3.2 REQUIRED)
 message(STATUS "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
 
 #setup
-find_package(CXX11 REQUIRED)
-find_package(OpenCL REQUIRED)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # find pthread
 find_package(Threads REQUIRED)
