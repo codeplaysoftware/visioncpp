@@ -1,21 +1,6 @@
-language: python
+language: cpp
 sudo: true
 dist: trusty
-
-python:
-  - "2.7"
-  - "3.4"
-  - "3.5"
-
-install:
-  - pip install --upgrade pip
-  - pip install coveralls
-  - pip install --only-binary=numpy 'numpy>=1.10.4'
-  - pip install --only-binary=scipy 'scipy>=0.16.1'
-  - pip install --only-binary=pandas 'pandas>=0.19.0'
-  - pip install 'Cython==0.23.4'
-  - cd "$TRAVIS_BUILD_DIR/contrib/python" && pip install -r requirements.txt && cd -
-  - cd "$TRAVIS_BUILD_DIR/contrib/python" && python ./setup.py install && cd -
 
 branches:
   except:
@@ -28,7 +13,6 @@ env:
 addons:
   apt:
     packages:
-      - clang-format-3.6
       - doxygen
       - graphviz
 before_script:
@@ -36,9 +20,7 @@ before_script:
   - chmod +x ./scripts/travis_deploy_docs.sh
 
 script:
-  - 'if [ "$TRAVIS_REPO_SLUG" = "codeplaysoftware/visioncpp" ] && [ "$TRAVIS_BRANCH" = "master" ]; then bash ./scripts/travis_build_docs.sh; fi'
-  - cd "$TRAVIS_BUILD_DIR/contrib/python" && coverage run --source=visioncpp setup.py test && cd -
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/travis_build_docs.sh; fi'
 
 after_success:
-  - 'if [ "$TRAVIS_REPO_SLUG" = "codeplaysoftware/visioncpp" ] && [ "$TRAVIS_BRANCH" = "master" ]; then bash ./scripts/travis_deploy_docs.sh; fi'
-  - cd "$TRAVIS_BUILD_DIR/contrib/python" && coveralls && cd ../../ && cd -
+- 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./scripts/travis_deploy_docs.sh; fi'

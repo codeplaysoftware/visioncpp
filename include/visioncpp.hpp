@@ -37,7 +37,4 @@
 // include framework headers
 #include "framework/framework.hpp"
 
-// include utils headers
-#include "utils/utils.hpp"
-
 #endif  // VISIONCPP_INCLUDE_VISIONCPP_HPP_
