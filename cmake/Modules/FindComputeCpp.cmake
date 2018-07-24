@@ -84,7 +84,7 @@ find_library(COMPUTECPP_RUNTIME_LIBRARY
   DOC "ComputeCpp Runtime Library")
 
 find_library(COMPUTECPP_RUNTIME_LIBRARY_DEBUG
-  NAMES ComputeCpp ComputeCpp_vs2015
+  NAMES ComputeCpp ComputeCpp_vs2015_d
   PATHS ${ComputeCpp_ROOT_DIR}
   PATH_SUFFIXES lib
   DOC "ComputeCpp Debug Runtime Library")
