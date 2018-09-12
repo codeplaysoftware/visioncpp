@@ -25,11 +25,11 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/Modules)
 find_package(PythonInterp 3.2 REQUIRED)
 message(STATUS "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
 
-#setup
+#setup the minimum required cxx version
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# find pthread
+#find pthread
 find_package(Threads REQUIRED)
 
 if(NOT VISIONCPP_DOC_ONLY)
