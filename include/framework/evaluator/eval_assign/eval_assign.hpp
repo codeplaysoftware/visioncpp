@@ -80,9 +80,9 @@ struct Evaluator<internal::ops_category::PointOP, Output_Index, Offset, LC, LR,
           if (cOffset.g_r + j < Expr::Type::Rows) {
             cOffset.pointOp_gc = cOffset.g_c + i;
             cOffset.pointOp_gr = cOffset.g_r + j;
-            LHS_Eval_Expr::get_accessor(t).get_pointer()[calculate_index(
+            *(LHS_Eval_Expr::get_accessor(t).get_pointer() + calculate_index(
                 cOffset.g_c + i, cOffset.g_r + j, Expr::Type::Cols,
-                Expr::Type::Rows)] =
+                Expr::Type::Rows)) =
                 tools::convert<ElementType>(
                     RHS_Eval_Expr::eval_point(cOffset, t));
           }

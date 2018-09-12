@@ -58,14 +58,14 @@ struct EvalExpr<RUnOP<UN_OP, Nested, Cols, Rows, LfType, LVL>, Loc, Params...> {
       if (get_compare<isLocal, LC, Cols>(cOffset.l_c, i, cOffset.g_c)) {
         for (int j = 0; j < LR; j += cOffset.rLRng) {
           if (get_compare<isLocal, LR, Rows>(cOffset.l_r, j, cOffset.g_r)) {
-            tools::tuple::get<OutOffset>(t).get_pointer()[calculate_index(
+            *(tools::tuple::get<OutOffset>(t).get_pointer() + calculate_index(
                 id_val<isLocal>(cOffset.l_c, cOffset.g_c) + i,
                 id_val<isLocal>(cOffset.l_r, cOffset.g_r) + j,
-                id_val<isLocal>(LC, Cols), id_val<isLocal>(LR, Rows))] =
+                id_val<isLocal>(LC, Cols), id_val<isLocal>(LR, Rows))) =
                 tools::convert<typename MemoryTrait<
                     LfType, decltype(tools::tuple::get<OutOffset>(t))>::Type>(
-                    typename UN_OP::OP()(nested_acc[calculate_index(
-                        cOffset.l_c + i, cOffset.l_r + j, LC, LR)]));
+                    typename UN_OP::OP()(*(nested_acc + calculate_index(
+                        cOffset.l_c + i, cOffset.l_r + j, LC, LR))));
           }
         }
       }

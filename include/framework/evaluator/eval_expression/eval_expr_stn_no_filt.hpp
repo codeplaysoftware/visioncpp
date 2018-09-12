@@ -63,10 +63,10 @@ struct EvalExpr<StnNoFilt<C_OP, Halo_T, Halo_L, Halo_B, Halo_R, RHS, Cols, Rows,
           if (get_compare<isLocal, LR, Rows>(cOffset.l_r, j, cOffset.g_r)) {
             neighbour.set_offset(cOffset.l_c + Halo_L + i,
                                  cOffset.l_r + Halo_T + j);
-            tools::tuple::get<OutOffset>(t).get_pointer()[calculate_index(
+            *(tools::tuple::get<OutOffset>(t).get_pointer() + calculate_index(
                 id_val<isLocal>(cOffset.l_c, cOffset.g_c) + i,
                 id_val<isLocal>(cOffset.l_r, cOffset.g_r) + j,
-                id_val<isLocal>(LC, Cols), id_val<isLocal>(LR, Rows))] =
+                id_val<isLocal>(LC, Cols), id_val<isLocal>(LR, Rows))) =
                 tools::convert<typename MemoryTrait<
                     LfType, decltype(tools::tuple::get<OutOffset>(t))>::Type>(
                     typename C_OP::OP()(neighbour));

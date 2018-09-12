@@ -61,7 +61,7 @@ struct LocalNeighbour {
   inline PixelType at(int c, int r) const {
     c = (c >= 0 ? c : 0);
     r = (r >= 0 ? r : 0);
-    return ptr[calculate_index(c, r, cols, rows)];
+    return *(ptr + calculate_index(c, r, cols, rows));
   }
   /// function at provides access to a specific Coordinate for a 1d buffer
   /// parameters:
@@ -139,7 +139,7 @@ struct ConstNeighbour {
   inline PixelType at(int c, int r) const {
     c = (c >= 0 ? c : 0);
     r = (r >= 0 ? r : 0);
-    return ptr[calculate_index(c, r, cols, rows)];
+    return *(ptr + calculate_index(c, r, cols, rows));
   }
   /// function at provides access to an specific Coordinate for a 1d buffer
   /// parameters:

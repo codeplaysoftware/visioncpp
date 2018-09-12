@@ -71,13 +71,13 @@ struct EvalExpr<RBiOP<BI_OP, LHS, RHS, Cols, Rows, LfType, LVL>, Loc,
           if (get_compare<isLocal, LR, Rows>(cOffset.l_r, j, cOffset.g_r)) {
             size_t child_index =
                 calculate_index(cOffset.l_c + i, cOffset.l_r + j, LC, LR);
-            tools::tuple::get<OutOffset>(t).get_pointer()[calculate_index(
+            *(tools::tuple::get<OutOffset>(t).get_pointer() + calculate_index(
                 id_val<isLocal>(cOffset.l_c, cOffset.g_c) + i,
                 id_val<isLocal>(cOffset.l_r, cOffset.g_r) + j,
-                id_val<isLocal>(LC, Cols), id_val<isLocal>(LR, Rows))] =
+                id_val<isLocal>(LC, Cols), id_val<isLocal>(LR, Rows))) =
                 tools::convert<typename MemoryTrait<
                     LfType, decltype(tools::tuple::get<OutOffset>(t))>::Type>(
-                    typename BI_OP::OP()(lhs_acc[child_index],
+                    typename BI_OP::OP()(*(lhs_acc + child_index),
                                          rhs_acc[child_index]));
           }
         }

@@ -59,7 +59,8 @@ struct EvalExpr<StnFilt<C_OP, Halo_T, Halo_L, Halo_B, Halo_R, LHS, RHS, Cols,
     // rhs expression shared mem
     auto rhs_acc = EvalExpr<RHS, Loc, Params...>::template eval_neighbour<
                        false, Halo_Top, Halo_Left, Halo_Butt, Halo_Right,
-                       Offset, Index - 1, LC, LR>(cOffset, t).get_pointer();
+                       Offset, Index - 1, LC, LR>(cOffset, t)
+                       .get_pointer();
 
     auto neighbour = LocalNeighbour<typename C_OP::InType1>(
         lhs_acc, LC + Halo_L + Halo_R, LR + Halo_T + Halo_B);
@@ -72,10 +73,11 @@ struct EvalExpr<StnFilt<C_OP, Halo_T, Halo_L, Halo_B, Halo_R, LHS, RHS, Cols,
           if (get_compare<isLocal, LR, Rows>(cOffset.l_r, j, cOffset.g_r)) {
             neighbour.set_offset(cOffset.l_c + Halo_L + i,
                                  cOffset.l_r + Halo_T + j);
-            tools::tuple::get<OutOffset>(t).get_pointer()[calculate_index(
-                id_val<isLocal>(cOffset.l_c, cOffset.g_c) + i,
-                id_val<isLocal>(cOffset.l_r, cOffset.g_r) + j,
-                id_val<isLocal>(LC, Cols), id_val<isLocal>(LR, Rows))] =
+            *(tools::tuple::get<OutOffset>(t).get_pointer() +
+              calculate_index(id_val<isLocal>(cOffset.l_c, cOffset.g_c) + i,
+                              id_val<isLocal>(cOffset.l_r, cOffset.g_r) + j,
+                              id_val<isLocal>(LC, Cols),
+                              id_val<isLocal>(LR, Rows))) =
                 tools::convert<typename MemoryTrait<
                     LfType, decltype(tools::tuple::get<OutOffset>(t))>::Type>(
                     typename C_OP::OP()(neighbour, filter));
@@ -90,6 +92,6 @@ struct EvalExpr<StnFilt<C_OP, Halo_T, Halo_L, Halo_B, Halo_R, LHS, RHS, Cols,
     return tools::tuple::get<OutOffset>(t);
   }
 };
-}  // internal
-}  // visioncpp
-#endif  // VISIONCPP_INCLUDE_FRAMEWORK_EVALUATOR_EVAL_EXPRESSION_EVAL_EXPR_STN_FILT_HPP_
+} // namespace internal
+} // namespace visioncpp
+#endif // VISIONCPP_INCLUDE_FRAMEWORK_EVALUATOR_EVAL_EXPRESSION_EVAL_EXPR_STN_FILT_HPP_
