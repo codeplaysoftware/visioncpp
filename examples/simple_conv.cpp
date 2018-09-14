@@ -26,6 +26,8 @@
 /// filter
 ///
 
+#ifdef NOT_COMPATIBLE_WITH_COMPUTECPP_050
+
 // include OpenCV for camera display
 #include <opencv2/opencv.hpp>
 
@@ -123,3 +125,5 @@ int main(int argc, char** argv) {
 
   return 0;
 }
+
+ #endif

@@ -25,6 +25,8 @@
 /// \brief this example shows how pyramid node works.
 ///
 
+#ifdef NOT_COMPATIBLE_WITH_COMPUTECPP_050
+
 // include OpenCV for camera display
 #include <opencv2/opencv.hpp>
 // include VisionCpp
@@ -165,7 +167,8 @@ int main(int argc, char **argv) {
     cv::imshow("Pyramid lvl 2: Greyscale", output_lvl2);
 
     // esc?
-    if (cv::waitKey(1) >= 0) break;
+    if (cv::waitKey(1) >= 0)
+      break;
   }
 
   // release video/camera
@@ -173,3 +176,5 @@ int main(int argc, char **argv) {
 
   return 0;
 }
+
+ #endif
