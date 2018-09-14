@@ -52,9 +52,9 @@ struct Coordinate {
         pointOp_gc(0),
         pointOp_gr(0),
         g_c(itemID.get_local_id(mem_dim::ColDim) +
-            (itemID.get_group_range(mem_dim::ColDim) * ((LC / cLRng) * cLRng))),
+            (itemID.get_group(mem_dim::ColDim) * ((LC / cLRng) * cLRng))),
         g_r(itemID.get_local_id(mem_dim::RowDim) +
-            itemID.get_group_range(mem_dim::RowDim) * ((LR / rLRng) * rLRng)),
+            itemID.get_group(mem_dim::RowDim) * ((LR / rLRng) * rLRng)),
         l_c(itemID.get_local_id(mem_dim::ColDim)),
         l_r(itemID.get_local_id(mem_dim::RowDim)) {}
 

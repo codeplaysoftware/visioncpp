@@ -52,21 +52,22 @@ struct EvalExpr<StnNoFilt<C_OP, Halo_T, Halo_L, Halo_B, Halo_R, RHS, Cols, Rows,
         EvalExpr<RHS, Loc, Params...>::template eval_neighbour<
             false, Halo_Top + Halo_T, Halo_Left + Halo_L, Halo_Butt + Halo_B,
             Halo_Right + Halo_R, Offset, Index - 1, LC + Halo_L + Halo_R,
-            LR + Halo_T + Halo_B>(cOffset, t).get_pointer();
+            LR + Halo_T + Halo_B>(cOffset, t)
+            .get_pointer();
 
     auto neighbour = LocalNeighbour<typename C_OP::InType>(
         nested_acc, LC + Halo_L + Halo_R, LR + Halo_T + Halo_B);
-
     for (int i = 0; i < LC; i += cOffset.cLRng) {
       if (get_compare<isLocal, LC, Cols>(cOffset.l_c, i, cOffset.g_c)) {
         for (int j = 0; j < LR; j += cOffset.rLRng) {
           if (get_compare<isLocal, LR, Rows>(cOffset.l_r, j, cOffset.g_r)) {
             neighbour.set_offset(cOffset.l_c + Halo_L + i,
                                  cOffset.l_r + Halo_T + j);
-            *(tools::tuple::get<OutOffset>(t).get_pointer() + calculate_index(
-                id_val<isLocal>(cOffset.l_c, cOffset.g_c) + i,
-                id_val<isLocal>(cOffset.l_r, cOffset.g_r) + j,
-                id_val<isLocal>(LC, Cols), id_val<isLocal>(LR, Rows))) =
+            *(tools::tuple::get<OutOffset>(t).get_pointer() +
+              calculate_index(id_val<isLocal>(cOffset.l_c, cOffset.g_c) + i,
+                              id_val<isLocal>(cOffset.l_r, cOffset.g_r) + j,
+                              id_val<isLocal>(LC, Cols),
+                              id_val<isLocal>(LR, Rows))) =
                 tools::convert<typename MemoryTrait<
                     LfType, decltype(tools::tuple::get<OutOffset>(t))>::Type>(
                     typename C_OP::OP()(neighbour));
@@ -81,6 +82,6 @@ struct EvalExpr<StnNoFilt<C_OP, Halo_T, Halo_L, Halo_B, Halo_R, RHS, Cols, Rows,
   }
   // eval Global -no global
 };
-}  // internal
-}  // visioncpp
-#endif  // VISIONCPP_INCLUDE_FRAMEWORK_EVALUATOR_EVAL_EXPRESSION_EVAL_EXPR_STN_NO_FILT_HPP_
+} // namespace internal
+} // namespace visioncpp
+#endif // VISIONCPP_INCLUDE_FRAMEWORK_EVALUATOR_EVAL_EXPRESSION_EVAL_EXPR_STN_NO_FILT_HPP_

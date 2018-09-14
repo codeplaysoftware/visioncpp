@@ -76,8 +76,8 @@ struct Fill<LeafNode<PlaceHolder<Memory_Type, N, Cols, Rows, Sc>, LVL>, Loc,
         for (size_t j = 0; j < LR; j += cOffset.rLRng) {
           size_t val_r = get_global_range<Halo_Top, Rows>(cOffset.g_r + j);
           if ((cOffset.l_r + j < LR)) {
-            *(tools::tuple::get<Index>(t).get_pointer() +
-              ((cOffset.l_c + i) + (LC * (cOffset.l_r + j)))) =
+            tools::tuple::get<Index>(t)
+                .get_pointer()[(cOffset.l_c + i) + (LC * (cOffset.l_r + j))] =
                 tools::convert<typename MemoryTrait<
                     Memory_Type, decltype(tools::tuple::get<Index>(t))>::Type>(
                     *(tools::tuple::get<N>(t).get_pointer() +

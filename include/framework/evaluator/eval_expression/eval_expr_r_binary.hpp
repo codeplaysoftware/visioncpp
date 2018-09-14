@@ -33,8 +33,8 @@ template <typename BI_OP, typename LHS, typename RHS, size_t Cols, size_t Rows,
 struct EvalExpr<RBiOP<BI_OP, LHS, RHS, Cols, Rows, LfType, LVL>, Loc,
                 Params...> {
   /// \brief evaluate function when the internal::ops_category is PointOP.
-  static typename BI_OP::OutType eval_point(
-      Loc &cOffset, const tools::tuple::Tuple<Params...> &t) {
+  static typename BI_OP::OutType
+  eval_point(Loc &cOffset, const tools::tuple::Tuple<Params...> &t) {
     auto lhs_acc = EvalExpr<LHS, Loc, Params...>::eval_point(cOffset, t);
     auto rhs_acc = EvalExpr<RHS, Loc, Params...>::eval_point(cOffset, t);
     return
@@ -57,13 +57,14 @@ struct EvalExpr<RBiOP<BI_OP, LHS, RHS, Cols, Rows, LfType, LVL>, Loc,
     static constexpr size_t RHSCount =
         LocalMemCount<RHS::ND_Category, RHS>::Count;
 
-    auto lhs_acc =
-        EvalExpr<LHS, Loc, Params...>::template eval_neighbour<
-            false, Halo_Top, Halo_Left, Halo_Butt, Halo_Right, Offset,
-            Index - 1 - RHSCount, LC, LR>(cOffset, t).get_pointer();
+    auto lhs_acc = EvalExpr<LHS, Loc, Params...>::template eval_neighbour<
+                       false, Halo_Top, Halo_Left, Halo_Butt, Halo_Right,
+                       Offset, Index - 1 - RHSCount, LC, LR>(cOffset, t)
+                       .get_pointer();
     auto rhs_acc = EvalExpr<RHS, Loc, Params...>::template eval_neighbour<
                        false, Halo_Top, Halo_Left, Halo_Butt, Halo_Right,
-                       Offset, Index - 1, LC, LR>(cOffset, t).get_pointer();
+                       Offset, Index - 1, LC, LR>(cOffset, t)
+                       .get_pointer();
     // eval the RBiOP
     for (int i = 0; i < LC; i += cOffset.cLRng) {
       if (get_compare<isLocal, LC, Cols>(cOffset.l_c, i, cOffset.g_c)) {
@@ -71,10 +72,11 @@ struct EvalExpr<RBiOP<BI_OP, LHS, RHS, Cols, Rows, LfType, LVL>, Loc,
           if (get_compare<isLocal, LR, Rows>(cOffset.l_r, j, cOffset.g_r)) {
             size_t child_index =
                 calculate_index(cOffset.l_c + i, cOffset.l_r + j, LC, LR);
-            *(tools::tuple::get<OutOffset>(t).get_pointer() + calculate_index(
-                id_val<isLocal>(cOffset.l_c, cOffset.g_c) + i,
-                id_val<isLocal>(cOffset.l_r, cOffset.g_r) + j,
-                id_val<isLocal>(LC, Cols), id_val<isLocal>(LR, Rows))) =
+            *(tools::tuple::get<OutOffset>(t).get_pointer() +
+              calculate_index(id_val<isLocal>(cOffset.l_c, cOffset.g_c) + i,
+                              id_val<isLocal>(cOffset.l_r, cOffset.g_r) + j,
+                              id_val<isLocal>(LC, Cols),
+                              id_val<isLocal>(LR, Rows))) =
                 tools::convert<typename MemoryTrait<
                     LfType, decltype(tools::tuple::get<OutOffset>(t))>::Type>(
                     typename BI_OP::OP()(*(lhs_acc + child_index),
@@ -90,6 +92,6 @@ struct EvalExpr<RBiOP<BI_OP, LHS, RHS, Cols, Rows, LfType, LVL>, Loc,
     return tools::tuple::get<OutOffset>(t);
   }
 };
-}  // internal
-}  // visioncpp
-#endif  // VISIONCPP_INCLUDE_FRAMEWORK_EVALUATOR_EVAL_EXPRESSION_EVAL_EXPR_R_BINARY_HPP_
+} // namespace internal
+} // namespace visioncpp
+#endif // VISIONCPP_INCLUDE_FRAMEWORK_EVALUATOR_EVAL_EXPRESSION_EVAL_EXPR_R_BINARY_HPP_
