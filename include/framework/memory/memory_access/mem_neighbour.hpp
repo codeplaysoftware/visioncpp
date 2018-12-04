@@ -33,9 +33,8 @@ namespace internal {
 /// neighbour operation is required.
 /// template parameters
 /// \tparam T is the pixel type for the local memory
-template <typename T>
-struct LocalNeighbour {
- public:
+template <typename T> struct LocalNeighbour {
+public:
   using PixelType = T;
   cl::sycl::local_ptr<T> &ptr;
 
@@ -61,15 +60,15 @@ struct LocalNeighbour {
   inline PixelType at(int c, int r) const {
     c = (c >= 0 ? c : 0);
     r = (r >= 0 ? r : 0);
-    return ptr[calculate_index(c, r, cols, rows)];
+    return *(ptr + calculate_index(c, r, cols, rows));
   }
   /// function at provides access to a specific Coordinate for a 1d buffer
   /// parameters:
   /// \param c: index
   /// \return PixelType
-  inline PixelType at(int c) const { return ptr[c]; }
+  inline PixelType at(int c) const { return *(ptr + c); }
 
- private:
+private:
   size_t cols;
   size_t rows;
 };
@@ -80,8 +79,7 @@ struct LocalNeighbour {
 /// neighbour operation is required.
 /// template parameters
 /// \tparam T is the pixel type for the global memory
-template <typename T>
-struct GlobalNeighbour {
+template <typename T> struct GlobalNeighbour {
   using PixelType = T;
   size_t I_c;
   size_t I_r;
@@ -108,13 +106,13 @@ struct GlobalNeighbour {
   inline PixelType at(int c, int r) const {
     c = (c >= 0 ? c : 0);
     r = (r >= 0 ? r : 0);
-    return ptr[calculate_index(c, r, cols, rows)];
+    return *(ptr + calculate_index(c, r, cols, rows));
   }
   /// function at provides access to a specific coordinate for a 1d buffer
   /// parameters:
   /// \param c:  index
   /// \return PixelType
-  inline PixelType at(int c) const { return ptr[c]; }
+  inline PixelType at(int c) const { return *(ptr + c); }
 };
 /// \struct ConstNeighbour
 /// \brief ConstNeighbour is used to provide global access to the constant
@@ -123,8 +121,7 @@ struct GlobalNeighbour {
 /// filter node for convolution operation.
 /// template parameters
 /// \tparam T is the pixel type for the constant memory
-template <typename T>
-struct ConstNeighbour {
+template <typename T> struct ConstNeighbour {
   using PixelType = T;
   cl::sycl::constant_ptr<T> &ptr;
   size_t cols;
@@ -139,14 +136,14 @@ struct ConstNeighbour {
   inline PixelType at(int c, int r) const {
     c = (c >= 0 ? c : 0);
     r = (r >= 0 ? r : 0);
-    return ptr[calculate_index(c, r, cols, rows)];
+    return *(ptr + calculate_index(c, r, cols, rows));
   }
   /// function at provides access to an specific Coordinate for a 1d buffer
   /// parameters:
   /// \param c:  index
   /// \return PixelType
-  inline PixelType at(int c) const { return ptr[c]; }
+  inline PixelType at(int c) const { return *(ptr + c); }
 };
-}  // memory
-}  // internal
-#endif  // VISIONCPP_INCLUDE_FRAMEWORK_MEMORY_MEMORY_ACCESS_MEM_NEIGHBOUR_HPP_
+} // namespace internal
+} // namespace visioncpp
+#endif // VISIONCPP_INCLUDE_FRAMEWORK_MEMORY_MEMORY_ACCESS_MEM_NEIGHBOUR_HPP_

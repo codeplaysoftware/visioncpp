@@ -5,18 +5,13 @@ include_directories(
   ${GTEST_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
   ${PROJECT_SOURCE_DIR}/include
-  ${COMPUTECPP_PACKAGE_ROOT_DIR}/include
 )
 
-link_directories(${GTEST_LIBRARIES} ${COMPUTECPP_LIBS})
+link_directories(${GTEST_LIBRARIES})
 
 link_libraries(
   #opencv libs
   ${OpenCV_LIBS}
   #gtest libs
   ${GTEST_BOTH_LIBRARIES}
-  #sycl libs
-  ${COMPUTECPP_RUNTIME_LIBRARY}
-  #others
-  -lpthread
 )

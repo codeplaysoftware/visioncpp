@@ -32,7 +32,7 @@ struct DeviceSelector;
 /// is cpu
 template <>
 struct DeviceSelector<device::cpu> {
-  using Type = cl::sycl::intel_selector;
+  using Type = cl::sycl::cpu_selector;
 };
 /// \brief specialisation of the device_selector for sycl when the device type
 /// is gpu

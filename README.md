@@ -109,7 +109,7 @@ Assuming you are in the root of a git repo:
 ~~~~~~~~~~~~~~~{.sh}
 mkdir build
 cd  build
-cmake .. -DCOMPUTECPP_PACKAGE_ROOT_DIR={PATH_TO_COMPUTECPP_ROOT} -DCMAKE_CXX_COMPILER={FAVORITE_CXX_COMPILER}
+cmake .. -DComputeCpp_DIR={PATH_TO_COMPUTECPP_ROOT} -DCMAKE_CXX_COMPILER={FAVORITE_CXX_COMPILER}
 make -j8
 make test
 ~~~~~~~~~~~~~~~

@@ -51,12 +51,12 @@ struct Coordinate {
         rLRng(itemID.get_local_range()[mem_dim::RowDim]),
         pointOp_gc(0),
         pointOp_gr(0),
-        g_c(itemID.get_local(mem_dim::ColDim) +
+        g_c(itemID.get_local_id(mem_dim::ColDim) +
             (itemID.get_group(mem_dim::ColDim) * ((LC / cLRng) * cLRng))),
-        g_r(itemID.get_local(mem_dim::RowDim) +
+        g_r(itemID.get_local_id(mem_dim::RowDim) +
             itemID.get_group(mem_dim::RowDim) * ((LR / rLRng) * rLRng)),
-        l_c(itemID.get_local(mem_dim::ColDim)),
-        l_r(itemID.get_local(mem_dim::RowDim)) {}
+        l_c(itemID.get_local_id(mem_dim::ColDim)),
+        l_r(itemID.get_local_id(mem_dim::RowDim)) {}
 
   /// function barrier is used to call sycl local barrier for local threads
   /// \return void

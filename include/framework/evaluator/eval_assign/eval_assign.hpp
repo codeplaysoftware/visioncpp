@@ -80,14 +80,14 @@ struct Evaluator<internal::ops_category::PointOP, Output_Index, Offset, LC, LR,
           if (cOffset.g_r + j < Expr::Type::Rows) {
             cOffset.pointOp_gc = cOffset.g_c + i;
             cOffset.pointOp_gr = cOffset.g_r + j;
-            LHS_Eval_Expr::get_accessor(t).get_pointer()[calculate_index(
-                cOffset.g_c + i, cOffset.g_r + j, Expr::Type::Cols,
-                Expr::Type::Rows)] =
+            *(LHS_Eval_Expr::get_accessor(t).get_pointer() +
+              calculate_index(cOffset.g_c + i, cOffset.g_r + j,
+                              Expr::Type::Cols, Expr::Type::Rows)) =
                 tools::convert<ElementType>(
                     RHS_Eval_Expr::eval_point(cOffset, t));
           }
   }
 };
-}  // internal
-}  // visioncpp
-#endif  // VISIONCPP_INCLUDE_FRAMEWORK_EVALUATOR_EVAL_ASSIGN_EVAL_ASSIGN_HPP_
+} // namespace internal
+} // namespace visioncpp
+#endif // VISIONCPP_INCLUDE_FRAMEWORK_EVALUATOR_EVAL_ASSIGN_EVAL_ASSIGN_HPP_

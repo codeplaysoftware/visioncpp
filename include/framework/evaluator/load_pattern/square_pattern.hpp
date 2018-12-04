@@ -80,8 +80,8 @@ struct Fill<LeafNode<PlaceHolder<Memory_Type, N, Cols, Rows, Sc>, LVL>, Loc,
                 .get_pointer()[(cOffset.l_c + i) + (LC * (cOffset.l_r + j))] =
                 tools::convert<typename MemoryTrait<
                     Memory_Type, decltype(tools::tuple::get<Index>(t))>::Type>(
-                    tools::tuple::get<N>(t).get_pointer()[calculate_index(
-                        val_c, val_r, Cols, Rows)]);
+                    *(tools::tuple::get<N>(t).get_pointer() +
+                      calculate_index(val_c, val_r, Cols, Rows)));
             /// FIXME: image cannot be accessed by pointer
           }
         }
@@ -101,6 +101,6 @@ static void fill_local_neighbour(Loc &cOffset,
   Fill<Expr, Loc, Params...>::template fill_neighbour<
       Halo_Top, Halo_Left, Halo_Butt, Halo_Right, Offset, LC, LR>(cOffset, t);
 }
-}  // internal
-}  // visioncpp
-#endif  // VISIONCPP_INCLUDE_FRAMEWORK_EVALUATOR_LOAD_PATTERN_SQUARE_PATTERN_HPP_
+} // namespace internal
+} // namespace visioncpp
+#endif // VISIONCPP_INCLUDE_FRAMEWORK_EVALUATOR_LOAD_PATTERN_SQUARE_PATTERN_HPP_

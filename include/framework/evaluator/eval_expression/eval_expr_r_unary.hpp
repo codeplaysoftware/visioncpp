@@ -32,8 +32,8 @@ template <typename UN_OP, typename Nested, size_t Cols, size_t Rows,
           size_t LfType, size_t LVL, typename Loc, typename... Params>
 struct EvalExpr<RUnOP<UN_OP, Nested, Cols, Rows, LfType, LVL>, Loc, Params...> {
   /// \brief evaluate function when the internal::ops_category is PointOP.
-  static typename UN_OP::OutType eval_point(
-      Loc &cOffset, const tools::tuple::Tuple<Params...> &t) {
+  static typename UN_OP::OutType
+  eval_point(Loc &cOffset, const tools::tuple::Tuple<Params...> &t) {
     auto nested_acc = EvalExpr<Nested, Loc, Params...>::eval_point(cOffset, t);
     return typename UN_OP::OP()(
         tools::convert<typename UN_OP::InType>(nested_acc));
@@ -53,19 +53,23 @@ struct EvalExpr<RUnOP<UN_OP, Nested, Cols, Rows, LfType, LVL>, Loc, Params...> {
             tools::tuple::get<OutOffset>(t))>::Type>::scope == scope::Local;
     auto nested_acc = EvalExpr<Nested, Loc, Params...>::template eval_neighbour<
                           false, Halo_Top, Halo_Left, Halo_Butt, Halo_Right,
-                          Offset, Index - 1, LC, LR>(cOffset, t).get_pointer();
+                          Offset, Index - 1, LC, LR>(cOffset, t)
+                          .get_pointer();
     for (int i = 0; i < LC; i += cOffset.cLRng) {
       if (get_compare<isLocal, LC, Cols>(cOffset.l_c, i, cOffset.g_c)) {
         for (int j = 0; j < LR; j += cOffset.rLRng) {
           if (get_compare<isLocal, LR, Rows>(cOffset.l_r, j, cOffset.g_r)) {
-            tools::tuple::get<OutOffset>(t).get_pointer()[calculate_index(
-                id_val<isLocal>(cOffset.l_c, cOffset.g_c) + i,
-                id_val<isLocal>(cOffset.l_r, cOffset.g_r) + j,
-                id_val<isLocal>(LC, Cols), id_val<isLocal>(LR, Rows))] =
+            *(tools::tuple::get<OutOffset>(t).get_pointer() +
+              calculate_index(id_val<isLocal>(cOffset.l_c, cOffset.g_c) + i,
+                              id_val<isLocal>(cOffset.l_r, cOffset.g_r) + j,
+                              id_val<isLocal>(LC, Cols),
+                              id_val<isLocal>(LR, Rows))) =
                 tools::convert<typename MemoryTrait<
                     LfType, decltype(tools::tuple::get<OutOffset>(t))>::Type>(
-                    typename UN_OP::OP()(nested_acc[calculate_index(
-                        cOffset.l_c + i, cOffset.l_r + j, LC, LR)]));
+                    typename UN_OP::OP()(
+                        *(nested_acc + calculate_index(cOffset.l_c + i,
+                                                       cOffset.l_r + j, LC,
+                                                       LR))));
           }
         }
       }
@@ -77,6 +81,6 @@ struct EvalExpr<RUnOP<UN_OP, Nested, Cols, Rows, LfType, LVL>, Loc, Params...> {
     return tools::tuple::get<OutOffset>(t);
   }
 };
-}  // internal
-}  // visioncpp
-#endif  // VISIONCPP_INCLUDE_FRAMEWORK_EVALUATOR_EVAL_EXPRESSION_EVAL_EXPR_R_UNARY_HPP_
+} // namespace internal
+} // namespace visioncpp
+#endif // VISIONCPP_INCLUDE_FRAMEWORK_EVALUATOR_EVAL_EXPRESSION_EVAL_EXPR_R_UNARY_HPP_
