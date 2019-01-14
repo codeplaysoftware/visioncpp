@@ -196,7 +196,7 @@ struct BayerRGGBToBGR {
 // main program
 int main(int argc, char **argv) {
   // Load the
-  cv::Mat bayer = cv::imread(argv[1], CV_LOAD_IMAGE_GRAYSCALE);
+  cv::Mat bayer = cv::imread(argv[1], cv::ImreadModes::IMREAD_GRAYSCALE);
 
   if (!bayer.data) {
     std::cout << "Image not loaded, BayerRGGB image required as input"
