@@ -22,7 +22,7 @@ Written using [SYCL 1.2](https://www.khronos.org/registry/sycl/specs/sycl-1.2.pd
 * [Known Issues](#known-issues)
 
 ## <a name="integration" /> Integration
-You will need to install ComputeCpp in order to use VisionCpp, you can follow the [ComputeCpp Getting Started guide](https://github.com/codeplaysoftware/computecpp-sdk/blob/master/documents/ComputeCpp_GettingStarted.asciidoc) that outlines the installation process.
+You will need to install ComputeCpp in order to use VisionCpp, you can follow the [ComputeCpp Getting Started guide](https://developer.codeplay.com/products/computecpp/ce/guides/getting-started) that outlines the installation process.
 All you need to do is include the VisionCpp.hpp header in your project and you are good to go! ( assuming that OpenCL and ComputeCPP is installed correctly. )
 
 ~~~~~~~~~~~~~~~{.cpp}
