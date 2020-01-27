@@ -6,7 +6,7 @@
 **VisionCpp** is a lightweight header-only library for computer vision and image processing.
 The aim of the library is to provide a toolbox that enables performance portability for heterogeneous platforms using modern C++.
 
-Written using [SYCL 1.2](https://www.khronos.org/registry/sycl/specs/sycl-1.2.pdf) and compiled/tested with [ComputeCpp](https://codeplay.com/products/computesuite/computecpp) to accelerate vision code using OpenCL devices.
+Written using [SYCL 1.2.1](https://www.khronos.org/registry/SYCL/specs/sycl-1.2.1.pdf) and compiled/tested with [ComputeCpp](https://codeplay.com/products/computesuite/computecpp) to accelerate vision code using OpenCL devices.
 
 ## Table of contents
 * [Integration](#integration)
