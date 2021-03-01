@@ -1,5 +1,5 @@
 <div align="center">
-  <br /><img src="https://www.codeplay.com/public/uploaded/public/computevision.png"><br />
+  <br /><img src="https://developer.codeplay.com/assets/img/home/tools/visioncpp.png"><br />
 </div>
 
 # Overview
@@ -10,7 +10,7 @@ Written using [SYCL 1.2.1](https://www.khronos.org/registry/SYCL/specs/sycl-1.2.
 
 ## Table of contents
 * [Integration](#integration)
-* [Tutorials](#tutorials)
+* [Tutorials](#visioncpp-tutorials)
 * [Sample Code](#sample-code)
 * [Requirements](#requirements)
 * [Build](#build)
@@ -21,7 +21,7 @@ Written using [SYCL 1.2.1](https://www.khronos.org/registry/SYCL/specs/sycl-1.2.
 * [License](#license)
 * [Known Issues](#known-issues)
 
-## <a name="integration" /> Integration
+## Integration
 You will need to install ComputeCpp in order to use VisionCpp, you can follow the [ComputeCpp Getting Started guide](https://developer.codeplay.com/products/computecpp/ce/guides/getting-started) that outlines the installation process.
 All you need to do is include the VisionCpp.hpp header in your project and you are good to go! ( assuming that OpenCL and ComputeCPP is installed correctly. )
 
@@ -29,10 +29,10 @@ All you need to do is include the VisionCpp.hpp header in your project and you a
 #include <visioncpp.hpp> //all that is needed
 ~~~~~~~~~~~~~~~
 
-## <a name="tutorials" /> VisionCpp Tutorials
+## VisionCpp Tutorials
 There are some tutorials explaining how to perform different operations using VisionCpp. These cover basic [Hello World](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Hello-World), [Anisotropic Diffusion](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Anisotropic-Diffusion), [Bayer Filter Demosaic](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Bayer-Filter-Demosaic), [Dense Depth Reconstruction with Block Matching Algorithm](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Dense-Depth-Reconstruction-with-Block-Matching-Algorithm) and [Harris Corner Detection](https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Harris-Corner-Detection).
 
-## <a name="sample-code" /> Sample Code
+## Sample Code
 Below is a very simple application that will do the conversion RGB -> HSV. Full source code can be found in the examples folder.
 RGB is assumed to be a three-channel unsigned char storage with a reasonable channel order.
 
@@ -97,14 +97,14 @@ RGB is assumed to be a three-channel unsigned char storage with a reasonable cha
 
 ~~~~~~~~~~~~~~~
 
-## <a name="requirements" /> Requirements
+## Requirements
 To successfully compile VisionCpp tests, you will need:
 * ComputeCpp (https://codeplay.com/products/computesuite/computecpp)
 * OpenCV 3.2 (https://github.com/opencv/opencv) - used for camera access, window display and as a testing reference.
 * GTest (https://github.com/google/googletest) - testing framework.
 * OpenCL 1.2
 
-## <a name="build" /> Build
+## Build
 Assuming you are in the root of a git repo:
 ~~~~~~~~~~~~~~~{.sh}
 mkdir build
@@ -122,10 +122,10 @@ The output binaries will be catalogued in bin folder.
     | - test
 ~~~~~~~~~~~~~~~
 
-## <a name="examples" /> Examples
+## Examples
 There is a set of example code in the /example/ folder of the repository. Most of the examples are performing image operations from the camera input.
 
-## <a name="documentation" /> Documentation
+## Documentation
 Online documentation can be found [here](https://codeplaysoftware.github.io/visioncpp/).
 
 The documentation is created using [Doxygen](http://www.stack.nl/~dimitri/doxygen/).
@@ -139,18 +139,18 @@ The documentation will be created in html folder in build directory.
   | - doc
 ~~~~~~~~~~~~~~~
 
-## <a name="contributing" /> Contributing
+## Contributing
 Contributors always welcome! See <a href="https://github.com/codeplaysoftware/visioncpp/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a> for details.
 
 The list of <a href="https://github.com/codeplaysoftware/visioncpp/blob/master/CONTRIBUTORS.md">contributors</a>.
 
-## <a name="resources" /> Resources
+## Resources
 * [Kernel composition in SYCL](http://opus.bath.ac.uk/49695/)
 * [VisionCPP: A SYCL-based Computer Vision Framework](http://dl.acm.org/citation.cfm?doid=2909437.2909444)
 * [Wiki](https://github.com/codeplaysoftware/visioncpp/wiki)
 
-## <a name="license" /> License
+## License
 The Apache License, Version 2.0 License. See [LICENSE](https://github.com/codeplaysoftware/visioncpp/blob/master/LICENSE) for more.
 
-## <a name="known-issues" /> Known Issues
+## Known Issues
 * The Tuple class works only with clang++.
