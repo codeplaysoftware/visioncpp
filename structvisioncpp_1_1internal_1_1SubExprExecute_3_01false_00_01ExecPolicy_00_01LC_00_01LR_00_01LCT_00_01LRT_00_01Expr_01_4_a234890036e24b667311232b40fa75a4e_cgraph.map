@@ -1,4 +1,0 @@
-<map id="visioncpp::internal::SubExprExecute&lt; false, ExecPolicy, LC, LR, LCT, LRT, Expr &gt;::execute" name="visioncpp::internal::SubExprExecute&lt; false, ExecPolicy, LC, LR, LCT, LRT, Expr &gt;::execute">
-<area shape="rect" id="node2" href="$namespacevisioncpp.html#a76942b49bab20ba8ffc240a9790c548d" title="special case of the execute function with default value for local memory and workgroup size template ..." alt="" coords="232,27,363,53"/>
-<area shape="rect" id="node3" href="$namespacevisioncpp.html#a1047ae9a8641a453f2c673cf7fbea8d9" title="execute function is called by user in order to execute an expression template parameters: ..." alt="" coords="411,27,541,53"/>
-</map>

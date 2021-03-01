@@ -1,2 +1,3 @@
 <map id="visioncpp::OP_SepFilterRow" name="visioncpp::OP_SepFilterRow">
+<area shape="rect" id="node1" title="Separable filter for rows. If the number of channel is different in your case feel free to write your..." alt="" coords="5,5,208,83"/>
 </map>

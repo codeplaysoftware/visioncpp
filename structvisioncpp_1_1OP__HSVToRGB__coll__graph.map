@@ -1,2 +1,3 @@
 <map id="visioncpp::OP_HSVToRGB" name="visioncpp::OP_HSVToRGB">
+<area shape="rect" id="node1" title="functor converts HSV(H:[0.0f, 360.f], S:[0.0f, 1.0f] V: [0.0f, 1.0f]) to color RGB(R:[0...." alt="" coords="5,5,192,83"/>
 </map>

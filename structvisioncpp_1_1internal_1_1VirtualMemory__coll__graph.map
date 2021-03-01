@@ -1,2 +1,6 @@
-<map id="visioncpp::internal::VirtualMemory&lt; PlcType, Node, LC, LR, LCT, LRT &gt;" name="visioncpp::internal::VirtualMemory&lt; PlcType, Node, LC, LR, LCT, LRT &gt;">
+<map id="visioncpp::internal::VirtualMemory" name="visioncpp::internal::VirtualMemory">
+<area shape="rect" id="node1" title="the definition is in VirtualMemory" alt="" coords="17,204,241,311"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,61,83"/>
+<area shape="rect" id="node3" title=" " alt="" coords="99,5,159,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="207,5,257,83"/>
 </map>

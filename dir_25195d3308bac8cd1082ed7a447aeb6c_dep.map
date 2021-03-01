@@ -1,12 +1,12 @@
 <map id="operators" name="operators">
 <area shape="rect" id="node2" href="dir_4e28d03358d26cc7ef852270dfdc4b1e.html" title="convert" alt="" coords="37,159,109,207"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000012_000019.html" title="1" alt="" coords="125,152,133,166"/>
-<area shape="rect" id="node3" href="dir_f16b7fa74ba7d1f6f478371b55ad29c1.html" title="convolution" alt="" coords="133,159,221,207"/>
-<area shape="rect" id="edge4-headlabel" href="dir_000012_000021.html" title="1" alt="" coords="205,141,213,155"/>
-<area shape="rect" id="node4" href="dir_6f014f6a24df670545cd7a4546998a98.html" title="downsampling" alt="" coords="246,159,351,207"/>
-<area shape="rect" id="edge3-headlabel" href="dir_000012_000020.html" title="1" alt="" coords="277,131,285,146"/>
-<area shape="rect" id="node5" href="dir_dd9e72c0b4aa3d24d877e51d1860c913.html" title="experimental" alt="" coords="376,159,472,207"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000012_000013.html" title="1" alt="" coords="362,136,370,150"/>
-<area shape="rect" id="clust2" href="dir_25195d3308bac8cd1082ed7a447aeb6c.html" alt="" coords="27,52,483,217"/>
-<area shape="rect" id="clust1" href="dir_d44c64559bbebec7f509842c48db8b23.html" title="include" alt="" coords="16,16,493,228"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000012_000019.html" title="1" alt="" coords="125,153,135,168"/>
+<area shape="rect" id="node3" href="dir_f16b7fa74ba7d1f6f478371b55ad29c1.html" title="convolution" alt="" coords="133,159,232,207"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000012_000021.html" title="1" alt="" coords="211,141,221,156"/>
+<area shape="rect" id="node4" href="dir_6f014f6a24df670545cd7a4546998a98.html" title="downsampling" alt="" coords="256,159,373,207"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000012_000020.html" title="1" alt="" coords="290,132,299,146"/>
+<area shape="rect" id="node5" href="dir_dd9e72c0b4aa3d24d877e51d1860c913.html" title="experimental" alt="" coords="397,159,507,207"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000012_000013.html" title="1" alt="" coords="385,136,394,151"/>
+<area shape="rect" id="clust2" href="dir_25195d3308bac8cd1082ed7a447aeb6c.html" alt="" coords="27,52,517,217"/>
+<area shape="rect" id="clust1" href="dir_d44c64559bbebec7f509842c48db8b23.html" title="include" alt="" coords="16,16,528,228"/>
 </map>

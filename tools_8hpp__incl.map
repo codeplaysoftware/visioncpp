@@ -1,7 +1,9 @@
 <map id="tools.hpp" name="tools.hpp">
-<area shape="rect" id="node2" href="$convert_8hpp.html" title="Series of pixel convert functions. " alt="" coords="5,80,96,107"/>
-<area shape="rect" id="node3" href="$static__if_8hpp.html" title="This file provides a set of static_if functions used at to calculate the result of if statement at co..." alt="" coords="120,80,213,107"/>
-<area shape="rect" id="node4" href="$time_8hpp.html" title="Basic time operations. " alt="" coords="237,80,309,107"/>
-<area shape="rect" id="node6" href="$tuple_8hpp.html" title="Tuples standard layout implementation. " alt="" coords="333,80,407,107"/>
-<area shape="rect" id="node7" href="$type__dereferencer_8hpp.html" title="These methods are used to remove all the &amp; const and * from a type. " alt="" coords="433,80,583,107"/>
+<area shape="rect" id="node1" title="Collection of tools headers." alt="" coords="252,5,335,32"/>
+<area shape="rect" id="node2" href="$convert_8hpp.html" title="Series of pixel convert functions." alt="" coords="5,80,104,107"/>
+<area shape="rect" id="node3" href="$static__if_8hpp.html" title="This file provides a set of static_if functions used at to calculate the result of if statement at co..." alt="" coords="128,80,229,107"/>
+<area shape="rect" id="node4" href="$time_8hpp.html" title="Basic time operations." alt="" coords="253,80,333,107"/>
+<area shape="rect" id="node6" href="$tuple_8hpp.html" title="Tuples standard layout implementation. http://en.cppreference.com/w/cpp/utility/tuple." alt="" coords="357,80,440,107"/>
+<area shape="rect" id="node7" href="$type__dereferencer_8hpp.html" title="These methods are used to remove all the &amp; const and * from a type." alt="" coords="464,80,632,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="260,155,327,181"/>
 </map>

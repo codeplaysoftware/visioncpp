@@ -1,5 +1,6 @@
 <map id="static_if.hpp" name="static_if.hpp">
-<area shape="rect" id="node2" href="$tools_8hpp.html" title="Collection of tools headers. " alt="" coords="21,80,95,107"/>
-<area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers. " alt="" coords="5,155,112,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="7,229,109,256"/>
+<area shape="rect" id="node1" title="This file provides a set of static_if functions used at to calculate the result of if statement at co..." alt="" coords="15,5,117,32"/>
+<area shape="rect" id="node2" href="$tools_8hpp.html" title="Collection of tools headers." alt="" coords="25,80,107,107"/>
+<area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="5,155,127,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="10,229,122,256"/>
 </map>

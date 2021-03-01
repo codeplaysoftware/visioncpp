@@ -1,0 +1,3 @@
+<map id="visioncpp::internal::Evaluator&lt; ops_category::NeighbourOP, OutputIndex, Offset, LC, LR, ParallelCopy&lt; LHS, RHS, Cols, Rows, OffsetColIn, OffsetRowIn, OffsetColOut, OffsetRowOut, LfType, LVL &gt;, Loc, Params... &gt;" name="visioncpp::internal::Evaluator&lt; ops_category::NeighbourOP, OutputIndex, Offset, LC, LR, ParallelCopy&lt; LHS, RHS, Cols, Rows, OffsetColIn, OffsetRowIn, OffsetColOut, OffsetRowOut, LfType, LVL &gt;, Loc, Params... &gt;">
+<area shape="rect" id="node1" title="Partial specialisation of the Evaluator when the expression is an ParallelCopy expression and the ops..." alt="" coords="5,5,304,171"/>
+</map>

@@ -1,5 +1,6 @@
 <map id="type_dereferencer.hpp" name="type_dereferencer.hpp">
-<area shape="rect" id="node2" href="$tools_8hpp.html" title="Collection of tools headers. " alt="" coords="43,80,116,107"/>
-<area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers. " alt="" coords="26,155,133,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="29,229,131,256"/>
+<area shape="rect" id="node1" title="These methods are used to remove all the &amp; const and * from a type." alt="" coords="5,5,173,32"/>
+<area shape="rect" id="node2" href="$tools_8hpp.html" title="Collection of tools headers." alt="" coords="48,80,131,107"/>
+<area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="29,155,150,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="33,229,145,256"/>
 </map>

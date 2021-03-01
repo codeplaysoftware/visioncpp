@@ -1,2 +1,3 @@
-<map id="visioncpp::internal::tools::tuple::ElemTypeHolder&lt; size_t, class &gt;" name="visioncpp::internal::tools::tuple::ElemTypeHolder&lt; size_t, class &gt;">
+<map id="visioncpp::internal::tools::tuple::ElemTypeHolder" name="visioncpp::internal::tools::tuple::ElemTypeHolder">
+<area shape="rect" id="node1" title="ElemTypeHolder class is used to specify the types of the elements inside the tuple." alt="" coords="5,5,223,97"/>
 </map>

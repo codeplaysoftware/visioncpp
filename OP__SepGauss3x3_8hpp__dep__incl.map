@@ -1,5 +1,6 @@
 <map id="OP_SepGauss3x3.hpp" name="OP_SepGauss3x3.hpp">
-<area shape="rect" id="node2" href="$ops__conv_8hpp.html" title="This header gathers all convolution operations. " alt="" coords="30,80,132,107"/>
-<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp. " alt="" coords="47,155,115,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="30,229,132,256"/>
+<area shape="rect" id="node1" title="Separable Gaussian filter for 3x3 filter size." alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node2" href="$ops__conv_8hpp.html" title="This header gathers all convolution operations." alt="" coords="31,80,142,107"/>
+<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="50,155,123,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="31,229,143,256"/>
 </map>

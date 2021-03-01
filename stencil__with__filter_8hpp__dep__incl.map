@@ -1,6 +1,7 @@
 <map id="stencil_with_filter.hpp" name="stencil_with_filter.hpp">
-<area shape="rect" id="node2" href="$neighbour__ops_8hpp.html" title="This file contains a set of includes used to construct neighbour nodes in expression tree..." alt="" coords="13,80,143,107"/>
-<area shape="rect" id="node3" href="$expr__tree_8hpp.html" title="This file contains the forward declarations and all the necessary include headers for the constructio..." alt="" coords="28,155,129,181"/>
-<area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers. " alt="" coords="25,229,132,256"/>
-<area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="27,304,129,331"/>
+<area shape="rect" id="node1" title="This file contains the StnNoFilt struct which is used to construct a convolutional operation when the..." alt="" coords="5,5,169,32"/>
+<area shape="rect" id="node2" href="$neighbour__ops_8hpp.html" title="This file contains a set of includes used to construct neighbour nodes in expression tree." alt="" coords="15,80,160,107"/>
+<area shape="rect" id="node3" href="$expr__tree_8hpp.html" title="This file contains the forward declarations and all the necessary include headers for the constructio..." alt="" coords="31,155,143,181"/>
+<area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="27,229,148,256"/>
+<area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="31,304,143,331"/>
 </map>

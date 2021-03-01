@@ -1,13 +1,14 @@
 <map id="evaluator.hpp" name="evaluator.hpp">
-<area shape="rect" id="node2" href="$eval__assign_8hpp.html" title="This file contains the specialisation of the Evaluator struct for assign when it is a root struct..." alt="" coords="149,88,339,115"/>
-<area shape="rect" id="node3" href="$eval__assign__partial_8hpp.html" title="This file contains the specialisation of the Evaluator struct for assign when it is a root struct..." alt="" coords="363,81,527,122"/>
-<area shape="rect" id="node4" href="$eval__expression_8hpp.html" title="This file contains a collection of headers that required for eval_expression. " alt="" coords="552,81,696,122"/>
-<area shape="rect" id="node12" href="$square__pattern_8hpp.html" title="this file contains the partial specialisation of the Fill for LeafNode " alt="" coords="720,81,855,122"/>
-<area shape="rect" id="node5" href="$eval__expr__assign_8hpp.html" title="this file contains the specialisation of EvalExpr for Assign when it is not a root ..." alt="" coords="5,171,152,197"/>
-<area shape="rect" id="node6" href="$eval__expr__leaf__node_8hpp.html" title="This file contains the specialisation of the EvalExpr for LeafNode. " alt="" coords="177,171,343,197"/>
-<area shape="rect" id="node7" href="$eval__expr__r__binary_8hpp.html" title="This file contains the specialisation of the EvalExpr for RBiOP( pointwise Binary operation node)..." alt="" coords="367,171,523,197"/>
-<area shape="rect" id="node8" href="$eval__expr__r__unary_8hpp.html" title="This file contains the specialisation of the EvalExpr for RUnOP( pointwise Unary operation node)..." alt="" coords="547,171,700,197"/>
-<area shape="rect" id="node9" href="$eval__expr__reduction_8hpp.html" title="This file contains the specialisation of the EvalExpr for RDCN( reduction operation node)..." alt="" coords="725,171,888,197"/>
-<area shape="rect" id="node10" href="$eval__expr__stn__filt_8hpp.html" title="This file contains the specialisation of the EvalExpr for StnFilt( stencil node with filter )..." alt="" coords="912,171,1060,197"/>
-<area shape="rect" id="node11" href="$eval__expr__stn__no__filt_8hpp.html" title="This file contains the specialisation of the EvalExpr for StnFilt( stencil node without filter)..." alt="" coords="1085,171,1256,197"/>
+<area shape="rect" id="node1" title="This file contains a collection of headers and forward declaration for evaluating an expression tree." alt="" coords="530,5,641,32"/>
+<area shape="rect" id="node2" href="$eval__assign_8hpp.html" title="This file contains the specialisation of the Evaluator struct for assign when it is a root struct." alt="" coords="165,87,373,114"/>
+<area shape="rect" id="node3" href="$eval__assign__partial_8hpp.html" title=" " alt="" coords="398,80,578,121"/>
+<area shape="rect" id="node4" href="$eval__expression_8hpp.html" title="This file contains a collection of headers that required for eval_expression." alt="" coords="603,80,763,121"/>
+<area shape="rect" id="node12" href="$square__pattern_8hpp.html" title="this file contains the partial specialisation of the Fill for LeafNode" alt="" coords="787,80,939,121"/>
+<area shape="rect" id="node5" href="$eval__expr__assign_8hpp.html" title=" " alt="" coords="5,169,168,196"/>
+<area shape="rect" id="node6" href="$eval__expr__leaf__node_8hpp.html" title="This file contains the specialisation of the EvalExpr for LeafNode." alt="" coords="193,169,378,196"/>
+<area shape="rect" id="node7" href="$eval__expr__r__binary_8hpp.html" title="This file contains the specialisation of the EvalExpr for RBiOP( pointwise Binary operation node)." alt="" coords="402,169,574,196"/>
+<area shape="rect" id="node8" href="$eval__expr__r__unary_8hpp.html" title="This file contains the specialisation of the EvalExpr for RUnOP( pointwise Unary operation node)." alt="" coords="599,169,767,196"/>
+<area shape="rect" id="node9" href="$eval__expr__reduction_8hpp.html" title="This file contains the specialisation of the EvalExpr for RDCN( reduction operation node)." alt="" coords="791,169,974,196"/>
+<area shape="rect" id="node10" href="$eval__expr__stn__filt_8hpp.html" title="This file contains the specialisation of the EvalExpr for StnFilt( stencil node with filter )." alt="" coords="999,169,1164,196"/>
+<area shape="rect" id="node11" href="$eval__expr__stn__no__filt_8hpp.html" title="This file contains the specialisation of the EvalExpr for StnFilt( stencil node without filter)." alt="" coords="1189,169,1377,196"/>
 </map>

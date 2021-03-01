@@ -1,5 +1,6 @@
 <map id="local_mem_count.hpp" name="local_mem_count.hpp">
-<area shape="rect" id="node2" href="$expr__convertor_8hpp.html" title="this is used to replace the leaf node with a PlaceHolder node. " alt="" coords="12,80,145,107"/>
-<area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers. " alt="" coords="25,155,132,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="27,229,129,256"/>
+<area shape="rect" id="node1" title="LocalmemCount used to counting terminal nodes. The total number of leaf nodes is used by MakePlaceHol..." alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node2" href="$expr__convertor_8hpp.html" title="this is used to replace the leaf node with a PlaceHolder node." alt="" coords="15,80,161,107"/>
+<area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="27,155,149,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="32,229,144,256"/>
 </map>

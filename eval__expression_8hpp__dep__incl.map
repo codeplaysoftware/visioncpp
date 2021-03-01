@@ -1,5 +1,6 @@
 <map id="eval_expression.hpp" name="eval_expression.hpp">
-<area shape="rect" id="node2" href="$evaluator_8hpp.html" title="This file contains a collection of headers and forward declaration for evaluating an expression tree..." alt="" coords="25,80,124,107"/>
-<area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers. " alt="" coords="21,155,128,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="23,229,125,256"/>
+<area shape="rect" id="node1" title="This file contains a collection of headers that required for eval_expression." alt="" coords="5,5,161,32"/>
+<area shape="rect" id="node2" href="$evaluator_8hpp.html" title="This file contains a collection of headers and forward declaration for evaluating an expression tree." alt="" coords="28,80,139,107"/>
+<area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="23,155,144,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="27,229,139,256"/>
 </map>

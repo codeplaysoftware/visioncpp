@@ -1,2 +1,3 @@
 <map id="visioncpp::internal::BufferUpdate&lt; LeafType, Rows, Cols, ElemType, Scalar, VisionMem &gt;" name="visioncpp::internal::BufferUpdate&lt; LeafType, Rows, Cols, ElemType, Scalar, VisionMem &gt;">
+<area shape="rect" id="node1" title="This is used to update the Vision Memory with new value update sycl buffer at the moment we use ptr...." alt="" coords="5,5,199,127"/>
 </map>

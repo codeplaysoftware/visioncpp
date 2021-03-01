@@ -1,5 +1,6 @@
 <map id="OP_DownsampleClosest.hpp" name="OP_DownsampleClosest.hpp">
-<area shape="rect" id="node2" href="$ops__downsampling_8hpp.html" title="This header gathers all downsampling operations. " alt="" coords="23,80,181,107"/>
-<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp. " alt="" coords="69,155,136,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="51,229,153,256"/>
+<area shape="rect" id="node1" title="This files contains downsampling filter using closest technique If the number of channel is different..." alt="" coords="5,5,213,32"/>
+<area shape="rect" id="node2" href="$ops__downsampling_8hpp.html" title="This header gathers all downsampling operations." alt="" coords="22,80,197,107"/>
+<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="73,155,146,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="53,229,165,256"/>
 </map>

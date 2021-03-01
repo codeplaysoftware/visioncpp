@@ -1,6 +1,0 @@
-<map id="visioncpp::internal::EvalExpr&lt; RDCN&lt; C_OP, RHS, Cols, Rows, LfType, LVL &gt;, Loc, Params...&gt;::eval_global_neighbour" name="visioncpp::internal::EvalExpr&lt; RDCN&lt; C_OP, RHS, Cols, Rows, LfType, LVL &gt;, Loc, Params...&gt;::eval_global_neighbour">
-<area shape="rect" id="node2" href="$namespacevisioncpp_1_1internal.html#a432878bd5a7c47c218a371ecf9eefe6a" title="function calculate_index " alt="" coords="277,5,403,46"/>
-<area shape="rect" id="node3" href="$namespacevisioncpp_1_1internal_1_1tools.html#ad0890ca41e9275137b7a578b24136dbe" title="function convert " alt="" coords="277,70,403,111"/>
-<area shape="rect" id="node5" href="$structvisioncpp_1_1internal_1_1GlobalNeighbour.html#a5ac361558e9816f6cf4503c4993040c1" title="function set_offset: " alt="" coords="264,135,416,191"/>
-<area shape="rect" id="node4" href="$structvisioncpp_1_1internal_1_1tools_1_1Convertor.html#a50519510c30e56ead8657c8a06d8c9d4" title="function convert " alt="" coords="464,63,595,119"/>
-</map>

@@ -1,2 +1,3 @@
 <map id="visioncpp::OP_U8C1ToFloat" name="visioncpp::OP_U8C1ToFloat">
+<area shape="rect" id="node1" title="It converts uchar to float converting range [0, 255] to [0.0f, 1.0f]." alt="" coords="5,5,204,83"/>
 </map>

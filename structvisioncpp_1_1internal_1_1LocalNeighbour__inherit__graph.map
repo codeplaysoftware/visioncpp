@@ -1,4 +1,5 @@
 <map id="visioncpp::internal::LocalNeighbour&lt; T &gt;" name="visioncpp::internal::LocalNeighbour&lt; T &gt;">
-<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title="{visioncpp::internal\l::LocalNeighbour\&lt; InTp1 \&gt;\n|+ ptr\l+ I_c\l+ I_r\l|+ LocalNeighbour()\l+ set_offset()\l+ at()\l+ at()\l}" alt="" coords="5,235,181,400"/>
-<area shape="rect" id="node3" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title="{visioncpp::internal\l::LocalNeighbour\&lt; InTp \&gt;\n|+ ptr\l+ I_c\l+ I_r\l|+ LocalNeighbour()\l+ set_offset()\l+ at()\l+ at()\l}" alt="" coords="207,235,377,400"/>
+<area shape="rect" id="node1" title="LocalNeighbour is used to provide local access for each element of the local memory based on the Coor..." alt="" coords="127,5,297,171"/>
+<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title=" " alt="" coords="5,233,203,399"/>
+<area shape="rect" id="node3" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title=" " alt="" coords="227,233,416,399"/>
 </map>

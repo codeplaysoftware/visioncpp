@@ -1,35 +1,36 @@
 <map id="ops.hpp" name="ops.hpp">
-<area shape="rect" id="node2" href="$ops__convert_8hpp.html" title="This header gathers all conversion operations. " alt="" coords="697,80,861,107"/>
-<area shape="rect" id="node11" href="$ops__conv_8hpp.html" title="This header gathers all convolution operations. " alt="" coords="1727,80,1900,107"/>
-<area shape="rect" id="node16" href="$ops__downsampling_8hpp.html" title="This header gathers all downsampling operations. " alt="" coords="2055,80,2300,107"/>
-<area shape="rect" id="node19" href="$opencvinterop_8hpp.html" title="This header gathers all interoperability with OpenCV operations. " alt="" coords="2324,80,2452,107"/>
-<area shape="rect" id="node20" href="$OP__Broadcast_8hpp.html" title="This file contains a struct to set pixel to the value passed in. " alt="" coords="2477,80,2608,107"/>
-<area shape="rect" id="node21" href="$OP__ScaleChannel_8hpp.html" title="This files contains structs that change different channels by factor passed via float f..." alt="" coords="2633,80,2787,107"/>
-<area shape="rect" id="node22" href="$experimental_8hpp.html" title="This header gathers all experimental operations. " alt="" coords="3178,80,3376,107"/>
-<area shape="rect" id="node3" href="$OP__BGRToRGB_8hpp.html" title="it converts BGR pixel to RGB pixel " alt="" coords="5,155,152,181"/>
-<area shape="rect" id="node4" href="$OP__F32C3ToU8C3_8hpp.html" title="it converts F32C3 pixel to U8C3 pixel " alt="" coords="177,155,337,181"/>
-<area shape="rect" id="node5" href="$OP__HSVToRGB_8hpp.html" title="it converts HSV pixel to RGB pixel " alt="" coords="362,155,507,181"/>
-<area shape="rect" id="node6" href="$OP__HSVToU8C3_8hpp.html" title="it converts HSV pixel to U8C3 pixel " alt="" coords="531,155,681,181"/>
-<area shape="rect" id="node7" href="$OP__RGBToBGR_8hpp.html" title="it converts RGB pixel to BGR pixel " alt="" coords="707,155,853,181"/>
-<area shape="rect" id="node8" href="$OP__RGBToGREY_8hpp.html" title="it converts RGB pixel to Grey pixel " alt="" coords="877,155,1031,181"/>
-<area shape="rect" id="node9" href="$OP__RGBToHSV_8hpp.html" title="it converts RGB pixel to HSV pixel " alt="" coords="1057,155,1201,181"/>
-<area shape="rect" id="node10" href="$OP__U8C3ToF32C3_8hpp.html" title="it converts U8C3 pixel to F32C3 pixel " alt="" coords="1226,155,1387,181"/>
-<area shape="rect" id="node12" href="$OP__Filter2D_8hpp.html" title="This file apply the general convolution. " alt="" coords="1411,155,1529,181"/>
-<area shape="rect" id="node13" href="$OP__GaussianBlur3x3_8hpp.html" title="this file apply the Gaussian blur 3x3 " alt="" coords="1554,155,1725,181"/>
-<area shape="rect" id="node14" href="$OP__SepFilter_8hpp.html" title="This file applies Separable filter convolution. " alt="" coords="1751,155,1876,181"/>
-<area shape="rect" id="node15" href="$OP__SepGauss3x3_8hpp.html" title="Separable Gaussian filter for 3x3 filter size. " alt="" coords="1900,155,2053,181"/>
-<area shape="rect" id="node17" href="$OP__DownsampleAverage_8hpp.html" title="This file contains the downsampling filter using average technique. " alt="" coords="2079,155,2276,181"/>
-<area shape="rect" id="node18" href="$OP__DownsampleClosest_8hpp.html" title="This files contains downsampling filter using closest technique If the number of channel is different..." alt="" coords="2300,155,2495,181"/>
-<area shape="rect" id="node23" href="$OP__AbsSub_8hpp.html" title="It gets the absolute difference between 2 images. " alt="" coords="2519,155,2637,181"/>
-<area shape="rect" id="node24" href="$OP__Add_8hpp.html" title="It adds the values pixel by pixel of two images. " alt="" coords="2663,155,2759,181"/>
-<area shape="rect" id="node25" href="$OP__AniDiff_8hpp.html" title="It applies a simplified version of the anisotropic diffusion. " alt="" coords="2783,155,2896,181"/>
-<area shape="rect" id="node26" href="$OP__Div_8hpp.html" title="It divides two matrices element&#45;wise. " alt="" coords="2921,155,3015,181"/>
-<area shape="rect" id="node27" href="$OP__FloatToF32C3_8hpp.html" title="Converts from uchar to float and float to uchar. " alt="" coords="3039,155,3195,181"/>
-<area shape="rect" id="node28" href="$OP__Median_8hpp.html" title="It applies the median filter in an image. " alt="" coords="3220,155,3335,181"/>
-<area shape="rect" id="node29" href="$OP__Merge2Chns_8hpp.html" title="It merges 2 matrices of one channels into one matrix of 2 channels. " alt="" coords="3359,155,3505,181"/>
-<area shape="rect" id="node30" href="$OP__Mul_8hpp.html" title="Element&#45;wise matrix multiplication. " alt="" coords="3530,155,3624,181"/>
-<area shape="rect" id="node31" href="$OP__PowerOf2_8hpp.html" title="It calculates the power of 2 of a matrix. " alt="" coords="3649,155,3779,181"/>
-<area shape="rect" id="node32" href="$OP__Scale_8hpp.html" title="It scales the pixel value of an image by a factor. " alt="" coords="3804,155,3911,181"/>
-<area shape="rect" id="node33" href="$OP__Sub_8hpp.html" title="It calculates the difference between 2 images. " alt="" coords="3935,155,4031,181"/>
-<area shape="rect" id="node34" href="$OP__Thresh_8hpp.html" title="it applies a threshold operation in the image " alt="" coords="4055,155,4168,181"/>
+<area shape="rect" id="node1" title="This header gathers all operations available in VisionCpp." alt="" coords="2413,5,2486,32"/>
+<area shape="rect" id="node2" href="$ops__convert_8hpp.html" title="This header gathers all conversion operations." alt="" coords="687,80,870,107"/>
+<area shape="rect" id="node11" href="$ops__conv_8hpp.html" title="This header gathers all convolution operations." alt="" coords="1738,80,1929,107"/>
+<area shape="rect" id="node16" href="$ops__downsampling_8hpp.html" title="This header gathers all downsampling operations." alt="" coords="2079,80,2353,107"/>
+<area shape="rect" id="node19" href="$opencvinterop_8hpp.html" title="This header gathers all interoperability with OpenCV operations." alt="" coords="2378,80,2521,107"/>
+<area shape="rect" id="node20" href="$OP__Broadcast_8hpp.html" title="This file contains a struct to set pixel to the value passed in." alt="" coords="2545,80,2685,107"/>
+<area shape="rect" id="node21" href="$OP__ScaleChannel_8hpp.html" title="This files contains structs that change different channels by factor passed via float f." alt="" coords="2709,80,2872,107"/>
+<area shape="rect" id="node22" href="$experimental_8hpp.html" title="This header gathers all experimental operations." alt="" coords="3247,80,3475,107"/>
+<area shape="rect" id="node3" href="$OP__BGRToRGB_8hpp.html" title="it converts BGR pixel to RGB pixel" alt="" coords="5,155,149,181"/>
+<area shape="rect" id="node4" href="$OP__F32C3ToU8C3_8hpp.html" title="it converts F32C3 pixel to U8C3 pixel" alt="" coords="173,155,339,181"/>
+<area shape="rect" id="node5" href="$OP__HSVToRGB_8hpp.html" title="it converts HSV pixel to RGB pixel" alt="" coords="363,155,507,181"/>
+<area shape="rect" id="node6" href="$OP__HSVToU8C3_8hpp.html" title="it converts HSV pixel to U8C3 pixel" alt="" coords="531,155,682,181"/>
+<area shape="rect" id="node7" href="$OP__RGBToBGR_8hpp.html" title="it converts RGB pixel to BGR pixel" alt="" coords="706,155,851,181"/>
+<area shape="rect" id="node8" href="$OP__RGBToGREY_8hpp.html" title="it converts RGB pixel to Grey pixel" alt="" coords="876,155,1025,181"/>
+<area shape="rect" id="node9" href="$OP__RGBToHSV_8hpp.html" title="it converts RGB pixel to HSV pixel" alt="" coords="1050,155,1193,181"/>
+<area shape="rect" id="node10" href="$OP__U8C3ToF32C3_8hpp.html" title="it converts U8C3 pixel to F32C3 pixel" alt="" coords="1217,155,1383,181"/>
+<area shape="rect" id="node12" href="$OP__Filter2D_8hpp.html" title="This file apply the general convolution." alt="" coords="1407,155,1534,181"/>
+<area shape="rect" id="node13" href="$OP__GaussianBlur3x3_8hpp.html" title="this file apply the Gaussian blur 3x3" alt="" coords="1558,155,1743,181"/>
+<area shape="rect" id="node14" href="$OP__SepFilter_8hpp.html" title="This file applies Separable filter convolution." alt="" coords="1768,155,1899,181"/>
+<area shape="rect" id="node15" href="$OP__SepGauss3x3_8hpp.html" title="Separable Gaussian filter for 3x3 filter size." alt="" coords="1923,155,2085,181"/>
+<area shape="rect" id="node17" href="$OP__DownsampleAverage_8hpp.html" title="This file contains the downsampling filter using average technique." alt="" coords="2109,155,2323,181"/>
+<area shape="rect" id="node18" href="$OP__DownsampleClosest_8hpp.html" title="This files contains downsampling filter using closest technique If the number of channel is different..." alt="" coords="2347,155,2555,181"/>
+<area shape="rect" id="node23" href="$OP__AbsSub_8hpp.html" title="It gets the absolute difference between 2 images." alt="" coords="2579,155,2701,181"/>
+<area shape="rect" id="node24" href="$OP__Add_8hpp.html" title="It adds the values pixel by pixel of two images." alt="" coords="2726,155,2826,181"/>
+<area shape="rect" id="node25" href="$OP__AniDiff_8hpp.html" title="It applies a simplified version of the anisotropic diffusion." alt="" coords="2850,155,2969,181"/>
+<area shape="rect" id="node26" href="$OP__Div_8hpp.html" title="It divides two matrices element&#45;wise." alt="" coords="2993,155,3089,181"/>
+<area shape="rect" id="node27" href="$OP__FloatToF32C3_8hpp.html" title="Converts from uchar to float and float to uchar." alt="" coords="3113,155,3276,181"/>
+<area shape="rect" id="node28" href="$OP__Median_8hpp.html" title="It applies the median filter in an image. It gets the median value of a neighbour after sorted." alt="" coords="3300,155,3423,181"/>
+<area shape="rect" id="node29" href="$OP__Merge2Chns_8hpp.html" title="It merges 2 matrices of one channels into one matrix of 2 channels." alt="" coords="3447,155,3603,181"/>
+<area shape="rect" id="node30" href="$OP__Mul_8hpp.html" title="Element&#45;wise matrix multiplication." alt="" coords="3628,155,3727,181"/>
+<area shape="rect" id="node31" href="$OP__PowerOf2_8hpp.html" title="It calculates the power of 2 of a matrix." alt="" coords="3751,155,3889,181"/>
+<area shape="rect" id="node32" href="$OP__Scale_8hpp.html" title="It scales the pixel value of an image by a factor." alt="" coords="3914,155,4025,181"/>
+<area shape="rect" id="node33" href="$OP__Sub_8hpp.html" title="It calculates the difference between 2 images." alt="" coords="4049,155,4148,181"/>
+<area shape="rect" id="node34" href="$OP__Thresh_8hpp.html" title="it applies a threshold operation in the image" alt="" coords="4173,155,4291,181"/>
 </map>

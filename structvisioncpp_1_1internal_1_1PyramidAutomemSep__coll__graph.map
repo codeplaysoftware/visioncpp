@@ -1,4 +1,10 @@
 <map id="visioncpp::internal::PyramidAutomemSep&lt; SepFltrColOP, SepFltrRowOP, DownSmplOP, RHS, SepFilterCol, SepFilterRow, Cols, Rows, LfType, LVL, Dp &gt;" name="visioncpp::internal::PyramidAutomemSep&lt; SepFltrColOP, SepFltrRowOP, DownSmplOP, RHS, SepFilterCol, SepFilterRow, Cols, Rows, LfType, LVL, Dp &gt;">
-<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1CreatePyramidTupleType.html" title="{visioncpp::internal\l::CreatePyramidTupleType\l\&lt; false, Cols/2, Rows/2,\l LeafType, Depth, 0, LHSExpr \&gt;\n||}" alt="" coords="8,235,217,357"/>
-<area shape="rect" id="node3" href="$structvisioncpp_1_1internal_1_1CreatePyramidTupleType.html" title="CreatePyramidTupleType: This file is used to create each output element type for each downsampling ou..." alt="" coords="5,5,221,141"/>
+<area shape="rect" id="node1" title="PyramidAutomemSep is used to construct a pyramid node in the expression tree with two separable Filte..." alt="" coords="371,520,615,715"/>
+<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1CreatePyramidTupleType.html" title=" " alt="" coords="9,233,233,355"/>
+<area shape="rect" id="node3" href="$structvisioncpp_1_1internal_1_1CreatePyramidTupleType.html" title="CreatePyramidTupleType: This file is used to create each output element type for each downsampling ou..." alt="" coords="5,5,237,141"/>
+<area shape="rect" id="node4" title=" " alt="" coords="257,255,364,333"/>
+<area shape="rect" id="node5" title=" " alt="" coords="393,255,453,333"/>
+<area shape="rect" id="node6" title=" " alt="" coords="539,255,589,333"/>
+<area shape="rect" id="node7" title=" " alt="" coords="613,255,664,333"/>
+<area shape="rect" id="node8" title=" " alt="" coords="793,255,893,333"/>
 </map>

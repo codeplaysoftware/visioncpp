@@ -1,5 +1,6 @@
 <map id="OP_DownsampleAverage.hpp" name="OP_DownsampleAverage.hpp">
-<area shape="rect" id="node2" href="$ops__downsampling_8hpp.html" title="This header gathers all downsampling operations. " alt="" coords="25,80,183,107"/>
-<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp. " alt="" coords="70,155,137,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="53,229,155,256"/>
+<area shape="rect" id="node1" title="This file contains the downsampling filter using average technique." alt="" coords="5,5,219,32"/>
+<area shape="rect" id="node2" href="$ops__downsampling_8hpp.html" title="This header gathers all downsampling operations." alt="" coords="25,80,199,107"/>
+<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="75,155,149,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="56,229,168,256"/>
 </map>

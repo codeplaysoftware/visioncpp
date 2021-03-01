@@ -1,5 +1,6 @@
 <map id="OP_PowerOf2.hpp" name="OP_PowerOf2.hpp">
-<area shape="rect" id="node2" href="$experimental_8hpp.html" title="This header gathers all experimental operations. " alt="" coords="9,80,129,107"/>
-<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp. " alt="" coords="35,155,103,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="18,229,120,256"/>
+<area shape="rect" id="node1" title="It calculates the power of 2 of a matrix." alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node2" href="$experimental_8hpp.html" title="This header gathers all experimental operations." alt="" coords="6,80,143,107"/>
+<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="38,155,111,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="19,229,131,256"/>
 </map>

@@ -1,2 +1,3 @@
 <map id="visioncpp::OP_F32C3ToU8C3" name="visioncpp::OP_F32C3ToU8C3">
+<area shape="rect" id="node1" title="This functor performs conversion from [0.0f, 1.0f] to [0, 255]." alt="" coords="5,5,212,83"/>
 </map>

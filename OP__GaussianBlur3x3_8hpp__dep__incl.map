@@ -1,5 +1,6 @@
 <map id="OP_GaussianBlur3x3.hpp" name="OP_GaussianBlur3x3.hpp">
-<area shape="rect" id="node2" href="$ops__conv_8hpp.html" title="This header gathers all convolution operations. " alt="" coords="39,80,141,107"/>
-<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp. " alt="" coords="57,155,124,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="39,229,141,256"/>
+<area shape="rect" id="node1" title="this file apply the Gaussian blur 3x3" alt="" coords="5,5,191,32"/>
+<area shape="rect" id="node2" href="$ops__conv_8hpp.html" title="This header gathers all convolution operations." alt="" coords="43,80,153,107"/>
+<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="61,155,135,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="42,229,154,256"/>
 </map>

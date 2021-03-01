@@ -1,5 +1,6 @@
 <map id="OP_FloatToF32C3.hpp" name="OP_FloatToF32C3.hpp">
-<area shape="rect" id="node2" href="$experimental_8hpp.html" title="This header gathers all experimental operations. " alt="" coords="22,80,143,107"/>
-<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp. " alt="" coords="49,155,116,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="31,229,133,256"/>
+<area shape="rect" id="node1" title="Converts from uchar to float and float to uchar." alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node2" href="$experimental_8hpp.html" title="This header gathers all experimental operations." alt="" coords="18,80,155,107"/>
+<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="50,155,123,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="31,229,143,256"/>
 </map>

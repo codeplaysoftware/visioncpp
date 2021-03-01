@@ -1,5 +1,6 @@
 <map id="OP_HSVToU8C3.hpp" name="OP_HSVToU8C3.hpp">
-<area shape="rect" id="node2" href="$ops__convert_8hpp.html" title="This header gathers all conversion operations. " alt="" coords="21,80,139,107"/>
-<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp. " alt="" coords="46,155,113,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="29,229,131,256"/>
+<area shape="rect" id="node1" title="it converts HSV pixel to U8C3 pixel" alt="" coords="5,5,156,32"/>
+<area shape="rect" id="node2" href="$ops__convert_8hpp.html" title="This header gathers all conversion operations." alt="" coords="16,80,145,107"/>
+<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="44,155,117,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="25,229,137,256"/>
 </map>

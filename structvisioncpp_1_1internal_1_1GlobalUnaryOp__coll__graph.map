@@ -1,4 +1,8 @@
 <map id="visioncpp::internal::GlobalUnaryOp&lt; USROP, InTp &gt;" name="visioncpp::internal::GlobalUnaryOp&lt; USROP, InTp &gt;">
-<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1GlobalNeighbour.html" title="{visioncpp::internal\l::GlobalNeighbour\&lt; InTp \&gt;\n||+ GlobalNeighbour()\l+ set_offset()\l+ at()\l+ at()\l}" alt="" coords="132,389,308,525"/>
-<area shape="rect" id="node5" href="$structvisioncpp_1_1internal_1_1GlobalNeighbour.html" title="GlobalNeighbour is used to provide local access for each element of the global memory based on the Co..." alt="" coords="330,189,488,325"/>
+<area shape="rect" id="node1" title="This class is used to encapsulate the global unary functor and the types of each operand in this func..." alt="" coords="5,587,199,693"/>
+<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1GlobalNeighbour.html" title=" " alt="" coords="153,388,350,524"/>
+<area shape="rect" id="node3" title=" " alt="" coords="93,219,252,296"/>
+<area shape="rect" id="node4" title=" " alt="" coords="271,5,331,83"/>
+<area shape="rect" id="node5" href="$structvisioncpp_1_1internal_1_1GlobalNeighbour.html" title="GlobalNeighbour is used to provide local access for each element of the global memory based on the Co..." alt="" coords="368,189,545,325"/>
+<area shape="rect" id="node6" title=" " alt="" coords="387,5,526,83"/>
 </map>

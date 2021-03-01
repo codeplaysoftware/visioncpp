@@ -1,2 +1,3 @@
 <map id="visioncpp::OP_DownsampleAverage" name="visioncpp::OP_DownsampleAverage">
+<area shape="rect" id="node1" title="Downsampling filter using average technique Other filters could be added for different numbers of cha..." alt="" coords="5,5,208,97"/>
 </map>

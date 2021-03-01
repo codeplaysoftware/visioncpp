@@ -1,6 +1,7 @@
 <map id="pyramid_with_auto_mem_gen.hpp" name="pyramid_with_auto_mem_gen.hpp">
-<area shape="rect" id="node2" href="$complex__ops_8hpp.html" title="This file contains a set of includes and forward declaration required to build complex operations lik..." alt="" coords="26,96,149,123"/>
-<area shape="rect" id="node3" href="$expr__tree_8hpp.html" title="This file contains the forward declarations and all the necessary include headers for the constructio..." alt="" coords="37,171,139,197"/>
-<area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers. " alt="" coords="34,245,141,272"/>
-<area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="37,320,139,347"/>
+<area shape="rect" id="node1" title="This file contains the construction of the pyramid node where a user can pass general filter2d functo..." alt="" coords="5,5,193,47"/>
+<area shape="rect" id="node2" href="$complex__ops_8hpp.html" title="This file contains a set of includes and forward declaration required to build complex operations lik..." alt="" coords="31,95,167,121"/>
+<area shape="rect" id="node3" href="$expr__tree_8hpp.html" title="This file contains the forward declarations and all the necessary include headers for the constructio..." alt="" coords="43,169,155,196"/>
+<area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="39,244,160,271"/>
+<area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="43,319,155,345"/>
 </map>

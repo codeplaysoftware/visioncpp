@@ -1,5 +1,6 @@
 <map id="OP_BGRToRGB.hpp" name="OP_BGRToRGB.hpp">
-<area shape="rect" id="node2" href="$ops__convert_8hpp.html" title="This header gathers all conversion operations. " alt="" coords="19,80,137,107"/>
-<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp. " alt="" coords="45,155,112,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="27,229,129,256"/>
+<area shape="rect" id="node1" title="it converts BGR pixel to RGB pixel" alt="" coords="5,5,149,32"/>
+<area shape="rect" id="node2" href="$ops__convert_8hpp.html" title="This header gathers all conversion operations." alt="" coords="13,80,142,107"/>
+<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="41,155,114,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="21,229,133,256"/>
 </map>

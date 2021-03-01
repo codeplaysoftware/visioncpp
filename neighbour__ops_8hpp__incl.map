@@ -1,5 +1,6 @@
 <map id="neighbour_ops.hpp" name="neighbour_ops.hpp">
-<area shape="rect" id="node2" href="$reduction_8hpp.html" title="This file contains RDCN struct which is used to construct a node to shrink an image. " alt="" coords="5,80,104,107"/>
-<area shape="rect" id="node3" href="$stencil__no__filter_8hpp.html" title="This file contains StnNoFilt struct which is used to construct a convolutional operation when the val..." alt="" coords="129,80,268,107"/>
-<area shape="rect" id="node4" href="$stencil__with__filter_8hpp.html" title="This file contains the StnNoFilt struct which is used to construct a convolutional operation when the..." alt="" coords="293,80,440,107"/>
+<area shape="rect" id="node1" title="This file contains a set of includes used to construct neighbour nodes in expression tree." alt="" coords="144,5,289,32"/>
+<area shape="rect" id="node2" href="$reduction_8hpp.html" title="This file contains RDCN struct which is used to construct a node to shrink an image." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" href="$stencil__no__filter_8hpp.html" title="This file contains StnNoFilt struct which is used to construct a convolutional operation when the val..." alt="" coords="141,80,293,107"/>
+<area shape="rect" id="node4" href="$stencil__with__filter_8hpp.html" title="This file contains the StnNoFilt struct which is used to construct a convolutional operation when the..." alt="" coords="317,80,481,107"/>
 </map>

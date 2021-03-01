@@ -1,9 +1,10 @@
 <map id="memory.hpp" name="memory.hpp">
-<area shape="rect" id="node2" href="$mem__const_8hpp.html" title="specialisations of SyclMem type when we are passing constant variable to the device. " alt="" coords="5,88,120,115"/>
-<area shape="rect" id="node3" href="$mem__prop_8hpp.html" title="Series of pixel convert functions. " alt="" coords="145,88,252,115"/>
-<area shape="rect" id="node4" href="$mem__virtual_8hpp.html" title="This file contains the VirtualMemory struct. " alt="" coords="277,88,395,115"/>
-<area shape="rect" id="node5" href="$mem__vision_8hpp.html" title="this file contains the memory struct used to store {Sycl buffer , Host pointer or Sycl image}..." alt="" coords="419,88,535,115"/>
-<area shape="rect" id="node6" href="$memory__access_8hpp.html" title="this file contains a set of forward declarations and include headers required for constructing and ac..." alt="" coords="561,81,729,122"/>
-<area shape="rect" id="node7" href="$mem__coordinate_8hpp.html" title="This files contains the Coordinate struct which is used to specify local/global offset for local/glob..." alt="" coords="491,171,633,197"/>
-<area shape="rect" id="node8" href="$mem__neighbour_8hpp.html" title="this file contains different types of memory required for executing neighbour operation to calculate ..." alt="" coords="659,171,797,197"/>
+<area shape="rect" id="node1" title=" " alt="" coords="316,5,419,32"/>
+<area shape="rect" id="node2" href="$mem__const_8hpp.html" title="specialisations of SyclMem type when we are passing constant variable to the device...." alt="" coords="5,87,132,114"/>
+<area shape="rect" id="node3" href="$mem__prop_8hpp.html" title="Series of pixel convert functions." alt="" coords="157,87,277,114"/>
+<area shape="rect" id="node4" href="$mem__virtual_8hpp.html" title=" " alt="" coords="301,87,434,114"/>
+<area shape="rect" id="node5" href="$mem__vision_8hpp.html" title="this file contains the memory struct used to store {Sycl buffer , Host pointer or Sycl image}." alt="" coords="458,87,589,114"/>
+<area shape="rect" id="node6" href="$memory__access_8hpp.html" title=" " alt="" coords="613,80,799,121"/>
+<area shape="rect" id="node7" href="$mem__coordinate_8hpp.html" title="This files contains the Coordinate struct which is used to specify local/global offset for local/glob..." alt="" coords="535,169,695,196"/>
+<area shape="rect" id="node8" href="$mem__neighbour_8hpp.html" title=" " alt="" coords="719,169,874,196"/>
 </map>

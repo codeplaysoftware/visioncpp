@@ -1,6 +1,7 @@
 <map id="eval_expr_r_unary.hpp" name="eval_expr_r_unary.hpp">
-<area shape="rect" id="node2" href="$eval__expression_8hpp.html" title="This file contains a collection of headers that required for eval_expression. " alt="" coords="11,80,151,107"/>
-<area shape="rect" id="node3" href="$evaluator_8hpp.html" title="This file contains a collection of headers and forward declaration for evaluating an expression tree..." alt="" coords="31,155,131,181"/>
-<area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers. " alt="" coords="27,229,135,256"/>
-<area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="30,304,132,331"/>
+<area shape="rect" id="node1" title="This file contains the specialisation of the EvalExpr for RUnOP( pointwise Unary operation node)." alt="" coords="5,5,173,32"/>
+<area shape="rect" id="node2" href="$eval__expression_8hpp.html" title="This file contains a collection of headers that required for eval_expression." alt="" coords="11,80,167,107"/>
+<area shape="rect" id="node3" href="$evaluator_8hpp.html" title="This file contains a collection of headers and forward declaration for evaluating an expression tree." alt="" coords="34,155,145,181"/>
+<area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="29,229,150,256"/>
+<area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="33,304,145,331"/>
 </map>

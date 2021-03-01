@@ -1,2 +1,3 @@
 <map id="visioncpp::OP_RGBToCVBGR" name="visioncpp::OP_RGBToCVBGR">
+<area shape="rect" id="node1" title="This node is a utility node that does a conversion from float with order of RGB to cv::Mat ( unsigned..." alt="" coords="5,5,211,83"/>
 </map>

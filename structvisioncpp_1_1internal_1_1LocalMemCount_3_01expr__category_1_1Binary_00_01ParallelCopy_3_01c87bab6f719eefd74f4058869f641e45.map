@@ -1,2 +1,4 @@
 <map id="visioncpp::internal::LocalMemCount&lt; expr_category::Binary, ParallelCopy&lt; LHSExpr, RHSExpr, Cols, Rows, OffsetColIn, OffsetRowIn, OffsetColOut, OffsetRowOut, LeafType, LVL &gt; &gt;" name="visioncpp::internal::LocalMemCount&lt; expr_category::Binary, ParallelCopy&lt; LHSExpr, RHSExpr, Cols, Rows, OffsetColIn, OffsetRowIn, OffsetColOut, OffsetRowOut, LeafType, LVL &gt; &gt;">
+<area shape="rect" id="node1" title="Specialisation of ExtractAccessor class where the expression node is is ParallelCopy (partial assign)" alt="" coords="5,145,285,296"/>
+<area shape="rect" id="node2" title=" " alt="" coords="115,5,175,83"/>
 </map>

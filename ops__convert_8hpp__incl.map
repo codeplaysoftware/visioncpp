@@ -1,10 +1,11 @@
 <map id="ops_convert.hpp" name="ops_convert.hpp">
-<area shape="rect" id="node2" href="$OP__BGRToRGB_8hpp.html" title="it converts BGR pixel to RGB pixel " alt="" coords="5,80,152,107"/>
-<area shape="rect" id="node3" href="$OP__F32C3ToU8C3_8hpp.html" title="it converts F32C3 pixel to U8C3 pixel " alt="" coords="177,80,337,107"/>
-<area shape="rect" id="node4" href="$OP__HSVToRGB_8hpp.html" title="it converts HSV pixel to RGB pixel " alt="" coords="362,80,507,107"/>
-<area shape="rect" id="node5" href="$OP__HSVToU8C3_8hpp.html" title="it converts HSV pixel to U8C3 pixel " alt="" coords="531,80,681,107"/>
-<area shape="rect" id="node6" href="$OP__RGBToBGR_8hpp.html" title="it converts RGB pixel to BGR pixel " alt="" coords="707,80,853,107"/>
-<area shape="rect" id="node7" href="$OP__RGBToGREY_8hpp.html" title="it converts RGB pixel to Grey pixel " alt="" coords="877,80,1031,107"/>
-<area shape="rect" id="node8" href="$OP__RGBToHSV_8hpp.html" title="it converts RGB pixel to HSV pixel " alt="" coords="1057,80,1201,107"/>
-<area shape="rect" id="node9" href="$OP__U8C3ToF32C3_8hpp.html" title="it converts U8C3 pixel to F32C3 pixel " alt="" coords="1226,80,1387,107"/>
+<area shape="rect" id="node1" title="This header gathers all conversion operations." alt="" coords="627,5,757,32"/>
+<area shape="rect" id="node2" href="$OP__BGRToRGB_8hpp.html" title="it converts BGR pixel to RGB pixel" alt="" coords="5,80,149,107"/>
+<area shape="rect" id="node3" href="$OP__F32C3ToU8C3_8hpp.html" title="it converts F32C3 pixel to U8C3 pixel" alt="" coords="173,80,339,107"/>
+<area shape="rect" id="node4" href="$OP__HSVToRGB_8hpp.html" title="it converts HSV pixel to RGB pixel" alt="" coords="363,80,507,107"/>
+<area shape="rect" id="node5" href="$OP__HSVToU8C3_8hpp.html" title="it converts HSV pixel to U8C3 pixel" alt="" coords="531,80,682,107"/>
+<area shape="rect" id="node6" href="$OP__RGBToBGR_8hpp.html" title="it converts RGB pixel to BGR pixel" alt="" coords="706,80,851,107"/>
+<area shape="rect" id="node7" href="$OP__RGBToGREY_8hpp.html" title="it converts RGB pixel to Grey pixel" alt="" coords="876,80,1025,107"/>
+<area shape="rect" id="node8" href="$OP__RGBToHSV_8hpp.html" title="it converts RGB pixel to HSV pixel" alt="" coords="1050,80,1193,107"/>
+<area shape="rect" id="node9" href="$OP__U8C3ToF32C3_8hpp.html" title="it converts U8C3 pixel to F32C3 pixel" alt="" coords="1217,80,1383,107"/>
 </map>

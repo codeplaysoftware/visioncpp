@@ -1,6 +1,7 @@
 <map id="ops_conv.hpp" name="ops_conv.hpp">
-<area shape="rect" id="node2" href="$OP__Filter2D_8hpp.html" title="This file apply the general convolution. " alt="" coords="5,80,123,107"/>
-<area shape="rect" id="node3" href="$OP__GaussianBlur3x3_8hpp.html" title="this file apply the Gaussian blur 3x3 " alt="" coords="147,80,319,107"/>
-<area shape="rect" id="node4" href="$OP__SepFilter_8hpp.html" title="This file applies Separable filter convolution. " alt="" coords="344,80,469,107"/>
-<area shape="rect" id="node5" href="$OP__SepGauss3x3_8hpp.html" title="Separable Gaussian filter for 3x3 filter size. " alt="" coords="493,80,647,107"/>
+<area shape="rect" id="node1" title="This header gathers all convolution operations." alt="" coords="284,5,395,32"/>
+<area shape="rect" id="node2" href="$OP__Filter2D_8hpp.html" title="This file apply the general convolution." alt="" coords="5,80,132,107"/>
+<area shape="rect" id="node3" href="$OP__GaussianBlur3x3_8hpp.html" title="this file apply the Gaussian blur 3x3" alt="" coords="156,80,341,107"/>
+<area shape="rect" id="node4" href="$OP__SepFilter_8hpp.html" title="This file applies Separable filter convolution." alt="" coords="366,80,497,107"/>
+<area shape="rect" id="node5" href="$OP__SepGauss3x3_8hpp.html" title="Separable Gaussian filter for 3x3 filter size." alt="" coords="521,80,683,107"/>
 </map>

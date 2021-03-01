@@ -1,2 +1,3 @@
 <map id="visioncpp::OP_AniDiff_Grey" name="visioncpp::OP_AniDiff_Grey">
+<area shape="rect" id="node1" title="This functor applies anisotropic diffusion for one channel." alt="" coords="5,5,204,83"/>
 </map>

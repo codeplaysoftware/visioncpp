@@ -1,5 +1,6 @@
 <map id="mem_const.hpp" name="mem_const.hpp">
-<area shape="rect" id="node2" href="$memory_8hpp.html" title="this file contains a set of forward declarations and include headers required for constructing and ac..." alt="" coords="15,80,109,107"/>
-<area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers. " alt="" coords="9,155,116,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="11,229,113,256"/>
+<area shape="rect" id="node1" title="specialisations of SyclMem type when we are passing constant variable to the device...." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node2" href="$memory_8hpp.html" title=" " alt="" coords="17,80,120,107"/>
+<area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="8,155,129,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="13,229,125,256"/>
 </map>

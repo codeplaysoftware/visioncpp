@@ -1,6 +1,7 @@
 <map id="eval_expr_leaf_node.hpp" name="eval_expr_leaf_node.hpp">
-<area shape="rect" id="node2" href="$eval__expression_8hpp.html" title="This file contains a collection of headers that required for eval_expression. " alt="" coords="17,80,157,107"/>
-<area shape="rect" id="node3" href="$evaluator_8hpp.html" title="This file contains a collection of headers and forward declaration for evaluating an expression tree..." alt="" coords="38,155,137,181"/>
-<area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers. " alt="" coords="34,229,141,256"/>
-<area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="37,304,139,331"/>
+<area shape="rect" id="node1" title="This file contains the specialisation of the EvalExpr for LeafNode." alt="" coords="5,5,191,32"/>
+<area shape="rect" id="node2" href="$eval__expression_8hpp.html" title="This file contains a collection of headers that required for eval_expression." alt="" coords="20,80,176,107"/>
+<area shape="rect" id="node3" href="$evaluator_8hpp.html" title="This file contains a collection of headers and forward declaration for evaluating an expression tree." alt="" coords="43,155,153,181"/>
+<area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="37,229,159,256"/>
+<area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="42,304,154,331"/>
 </map>

@@ -1,2 +1,3 @@
 <map id="visioncpp::OP_RGBToBGR" name="visioncpp::OP_RGBToBGR">
+<area shape="rect" id="node1" title="This functor reorders channels BGR to RGB." alt="" coords="5,5,192,83"/>
 </map>

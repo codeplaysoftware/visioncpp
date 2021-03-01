@@ -1,5 +1,6 @@
 <map id="make_place_holder_expr.hpp" name="make_place_holder_expr.hpp">
-<area shape="rect" id="node2" href="$expr__convertor_8hpp.html" title="this is used to replace the leaf node with a PlaceHolder node. " alt="" coords="33,80,167,107"/>
-<area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers. " alt="" coords="46,155,153,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="49,229,151,256"/>
+<area shape="rect" id="node1" title="PlaceHolder expression helper is used to create an expression in which the leafNodes of visionMemorie..." alt="" coords="5,5,216,32"/>
+<area shape="rect" id="node2" href="$expr__convertor_8hpp.html" title="this is used to replace the leaf node with a PlaceHolder node." alt="" coords="37,80,184,107"/>
+<area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="50,155,171,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="55,229,167,256"/>
 </map>

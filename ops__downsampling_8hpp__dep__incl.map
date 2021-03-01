@@ -1,4 +1,5 @@
 <map id="ops_downsampling.hpp" name="ops_downsampling.hpp">
-<area shape="rect" id="node2" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp. " alt="" coords="50,80,117,107"/>
-<area shape="rect" id="node3" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="33,155,135,181"/>
+<area shape="rect" id="node1" title="This header gathers all downsampling operations." alt="" coords="5,5,180,32"/>
+<area shape="rect" id="node2" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="56,80,129,107"/>
+<area shape="rect" id="node3" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="37,155,149,181"/>
 </map>

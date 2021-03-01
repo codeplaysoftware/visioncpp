@@ -1,2 +1,3 @@
 <map id="visioncpp::internal::SyclMem&lt; false, memory_type::Image, Dim, ElementType &gt;" name="visioncpp::internal::SyclMem&lt; false, memory_type::Image, Dim, ElementType &gt;">
+<area shape="rect" id="node1" title="specialisation of the SyclMem when the memory_type is Image and no device pointer is allocated to the..." alt="" coords="5,5,255,112"/>
 </map>

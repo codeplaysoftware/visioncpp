@@ -1,4 +1,9 @@
 <map id="visioncpp::internal::PyramidAutomemGen&lt; Fltr2DOP, DownSmplOP, RHS, Fltr2D, Cols, Rows, LfType, LVL, Dp &gt;" name="visioncpp::internal::PyramidAutomemGen&lt; Fltr2DOP, DownSmplOP, RHS, Fltr2D, Cols, Rows, LfType, LVL, Dp &gt;">
-<area shape="rect" id="node3" href="$structvisioncpp_1_1internal_1_1CreatePyramidTupleType.html" title="{visioncpp::internal\l::CreatePyramidTupleType\l\&lt; false, Cols/2, Rows/2,\l LeafType, Depth, 0, LHSExpr \&gt;\n||}" alt="" coords="88,235,297,357"/>
-<area shape="rect" id="node4" href="$structvisioncpp_1_1internal_1_1CreatePyramidTupleType.html" title="CreatePyramidTupleType: This file is used to create each output element type for each downsampling ou..." alt="" coords="85,5,301,141"/>
+<area shape="rect" id="node1" title="PyramidDownGen is used to construct a pyramid node in the expression tree with general Filter2D and g..." alt="" coords="225,520,449,700"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,255,68,333"/>
+<area shape="rect" id="node3" href="$structvisioncpp_1_1internal_1_1CreatePyramidTupleType.html" title=" " alt="" coords="91,233,315,355"/>
+<area shape="rect" id="node4" href="$structvisioncpp_1_1internal_1_1CreatePyramidTupleType.html" title="CreatePyramidTupleType: This file is used to create each output element type for each downsampling ou..." alt="" coords="87,5,319,141"/>
+<area shape="rect" id="node5" title=" " alt="" coords="339,255,399,333"/>
+<area shape="rect" id="node6" title=" " alt="" coords="455,255,504,333"/>
+<area shape="rect" id="node7" title=" " alt="" coords="529,255,579,333"/>
 </map>

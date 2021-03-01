@@ -1,3 +1,4 @@
 <map id="visioncpp::internal::ConstNeighbour&lt; T &gt;" name="visioncpp::internal::ConstNeighbour&lt; T &gt;">
-<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1ConstNeighbour.html" title="{visioncpp::internal\l::ConstNeighbour\&lt; InTp2 \&gt;\n|+ ptr\l+ cols\l+ rows\l|+ ConstNeighbour()\l+ at()\l+ at()\l}" alt="" coords="5,222,187,373"/>
+<area shape="rect" id="node1" title="ConstNeighbour is used to provide global access to the constant memory. It is used as an input type f..." alt="" coords="19,5,191,156"/>
+<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1ConstNeighbour.html" title=" " alt="" coords="5,219,205,369"/>
 </map>

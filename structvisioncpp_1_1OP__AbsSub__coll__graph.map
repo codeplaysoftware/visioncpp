@@ -1,2 +1,3 @@
 <map id="visioncpp::OP_AbsSub" name="visioncpp::OP_AbsSub">
+<area shape="rect" id="node1" title="this functor uses the sycl::fabs to return the difference" alt="" coords="5,5,171,83"/>
 </map>

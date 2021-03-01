@@ -1,2 +1,3 @@
 <map id="visioncpp::internal::DeviceSelector&lt; device::cpu &gt;" name="visioncpp::internal::DeviceSelector&lt; device::cpu &gt;">
+<area shape="rect" id="node1" title="specialisation of the device_selector for sycl when the device type is cpu" alt="" coords="5,5,192,112"/>
 </map>

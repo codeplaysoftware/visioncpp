@@ -1,5 +1,6 @@
 <map id="OP_RGBToGREY.hpp" name="OP_RGBToGREY.hpp">
-<area shape="rect" id="node2" href="$ops__convert_8hpp.html" title="This header gathers all conversion operations. " alt="" coords="22,80,140,107"/>
-<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp. " alt="" coords="47,155,115,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="30,229,132,256"/>
+<area shape="rect" id="node1" title="it converts RGB pixel to Grey pixel" alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node2" href="$ops__convert_8hpp.html" title="This header gathers all conversion operations." alt="" coords="15,80,145,107"/>
+<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="43,155,117,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="24,229,136,256"/>
 </map>

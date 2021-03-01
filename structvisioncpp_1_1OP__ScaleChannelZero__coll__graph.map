@@ -1,2 +1,3 @@
 <map id="visioncpp::OP_ScaleChannelZero" name="visioncpp::OP_ScaleChannelZero">
+<area shape="rect" id="node1" title="This custom functor changes 0 channel by factor passed via float f." alt="" coords="5,5,240,83"/>
 </map>

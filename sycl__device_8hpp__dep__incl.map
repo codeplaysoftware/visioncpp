@@ -1,6 +1,7 @@
 <map id="sycl_device.hpp" name="sycl_device.hpp">
-<area shape="rect" id="node2" href="$sycl_2device_8hpp.html" title="This file contains the include headers for sycl devices. " alt="" coords="20,80,105,107"/>
-<area shape="rect" id="node3" href="$device_8hpp.html" title="include headers for adding different devices. " alt="" coords="20,155,105,181"/>
-<area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers. " alt="" coords="9,229,116,256"/>
-<area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="11,304,113,331"/>
+<area shape="rect" id="node1" title="This fill contains features related to sycl devices." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node2" href="$sycl_2device_8hpp.html" title="This file contains the include headers for sycl devices." alt="" coords="22,80,115,107"/>
+<area shape="rect" id="node3" href="$device_8hpp.html" title="include headers for adding different devices. Currently we only support sycl backend" alt="" coords="22,155,115,181"/>
+<area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="8,229,129,256"/>
+<area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="13,304,125,331"/>
 </map>

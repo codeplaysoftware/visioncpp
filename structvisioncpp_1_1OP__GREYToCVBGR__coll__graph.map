@@ -1,2 +1,3 @@
 <map id="visioncpp::OP_GREYToCVBGR" name="visioncpp::OP_GREYToCVBGR">
+<area shape="rect" id="node1" title="float between [0.0f, 1.0f] to [0, 255] One channel GREY ( float ) is going to be converted to one cha..." alt="" coords="5,5,217,83"/>
 </map>

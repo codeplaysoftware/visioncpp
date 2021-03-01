@@ -1,5 +1,6 @@
 <map id="OP_Merge2Chns.hpp" name="OP_Merge2Chns.hpp">
-<area shape="rect" id="node2" href="$experimental_8hpp.html" title="This header gathers all experimental operations. " alt="" coords="18,80,139,107"/>
-<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp. " alt="" coords="45,155,112,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="27,229,129,256"/>
+<area shape="rect" id="node1" title="It merges 2 matrices of one channels into one matrix of 2 channels." alt="" coords="5,5,161,32"/>
+<area shape="rect" id="node2" href="$experimental_8hpp.html" title="This header gathers all experimental operations." alt="" coords="15,80,152,107"/>
+<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="47,155,120,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="27,229,139,256"/>
 </map>

@@ -1,6 +1,7 @@
 <map id="leaf_node.hpp" name="leaf_node.hpp">
-<area shape="rect" id="node2" href="$point__ops_8hpp.html" title="This files contains a set of include headers for point operation node in the expression tree..." alt="" coords="7,80,109,107"/>
-<area shape="rect" id="node3" href="$expr__tree_8hpp.html" title="This file contains the forward declarations and all the necessary include headers for the constructio..." alt="" coords="8,155,109,181"/>
-<area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers. " alt="" coords="5,229,112,256"/>
-<area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="7,304,109,331"/>
+<area shape="rect" id="node1" title="This file contains the LeafNode struct which is a general representation of our terminal node in the ..." alt="" coords="9,5,123,32"/>
+<area shape="rect" id="node2" href="$point__ops_8hpp.html" title="This files contains a set of include headers for point operation node in the expression tree." alt="" coords="9,80,123,107"/>
+<area shape="rect" id="node3" href="$expr__tree_8hpp.html" title="This file contains the forward declarations and all the necessary include headers for the constructio..." alt="" coords="10,155,122,181"/>
+<area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="5,229,127,256"/>
+<area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="10,304,122,331"/>
 </map>

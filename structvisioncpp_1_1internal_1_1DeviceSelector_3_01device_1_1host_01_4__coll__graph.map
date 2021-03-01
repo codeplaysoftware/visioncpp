@@ -1,2 +1,3 @@
 <map id="visioncpp::internal::DeviceSelector&lt; device::host &gt;" name="visioncpp::internal::DeviceSelector&lt; device::host &gt;">
+<area shape="rect" id="node1" title="specialisation of the device_selector for sycl when the device type is host" alt="" coords="5,5,192,112"/>
 </map>

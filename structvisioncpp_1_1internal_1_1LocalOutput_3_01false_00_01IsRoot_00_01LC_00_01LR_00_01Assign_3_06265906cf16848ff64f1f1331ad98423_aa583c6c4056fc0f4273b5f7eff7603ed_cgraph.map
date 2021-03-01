@@ -1,4 +1,5 @@
 <map id="visioncpp::internal::LocalOutput&lt; false, IsRoot, LC, LR, Assign&lt; LHSExpr, RHSExpr, Cols, Rows, LeafType, LVL &gt; &gt;::getTuple" name="visioncpp::internal::LocalOutput&lt; false, IsRoot, LC, LR, Assign&lt; LHSExpr, RHSExpr, Cols, Rows, LeafType, LVL &gt; &gt;::getTuple">
-<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1LocalOutput.html#abc63292a957140f2a601692f3c2983c4" title="getTuple function is used to create and wrap local memory into a tuple " alt="" coords="246,34,405,75"/>
-<area shape="rect" id="node3" href="$namespacevisioncpp_1_1internal_1_1tools_1_1tuple.html#a327306360f5729315416bf96f49a4d73" title="make_tuple " alt="" coords="454,34,623,75"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,200,105"/>
+<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1LocalOutput.html#abc63292a957140f2a601692f3c2983c4" title="getTuple function is used to create and wrap local memory into a tuple" alt="" coords="248,35,419,76"/>
+<area shape="rect" id="node3" href="$namespacevisioncpp_1_1internal_1_1tools_1_1tuple.html#ab2c7fe8e219c5f9e016a8ea40356005f" title="make_tuple" alt="" coords="467,35,653,76"/>
 </map>

@@ -1,2 +1,3 @@
-<map id="visioncpp::internal::IfExprExecNeeded&lt; Conds, ParentConds, Category, Expr &gt;" name="visioncpp::internal::IfExprExecNeeded&lt; Conds, ParentConds, Category, Expr &gt;">
+<map id="visioncpp::internal::IfExprExecNeeded&lt; Conds, ParentConds, Category, Expr, DeviceT &gt;" name="visioncpp::internal::IfExprExecNeeded&lt; Conds, ParentConds, Category, Expr, DeviceT &gt;">
+<area shape="rect" id="node1" title="IfExprExecNeeded is used to decide: 1) the expression should force its children to launch a separate ..." alt="" coords="5,5,204,127"/>
 </map>

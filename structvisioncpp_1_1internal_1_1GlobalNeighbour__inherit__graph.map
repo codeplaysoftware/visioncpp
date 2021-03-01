@@ -1,3 +1,4 @@
 <map id="visioncpp::internal::GlobalNeighbour&lt; T &gt;" name="visioncpp::internal::GlobalNeighbour&lt; T &gt;">
-<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1GlobalNeighbour.html" title="{visioncpp::internal\l::GlobalNeighbour\&lt; InTp \&gt;\n|+ I_c\l+ I_r\l+ cols\l+ rows\l+ ptr\l|+ GlobalNeighbour()\l+ set_offset()\l+ at()\l+ at()\l}" alt="" coords="5,264,181,459"/>
+<area shape="rect" id="node1" title="GlobalNeighbour is used to provide local access for each element of the global memory based on the Co..." alt="" coords="15,5,193,200"/>
+<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1GlobalNeighbour.html" title=" " alt="" coords="5,263,203,457"/>
 </map>

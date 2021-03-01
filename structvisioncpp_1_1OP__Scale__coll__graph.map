@@ -1,2 +1,3 @@
 <map id="visioncpp::OP_Scale" name="visioncpp::OP_Scale">
+<area shape="rect" id="node1" title="Scales the pixel value of an image by a factor." alt="" coords="5,5,157,83"/>
 </map>

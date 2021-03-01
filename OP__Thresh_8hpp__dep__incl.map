@@ -1,5 +1,6 @@
 <map id="OP_Thresh.hpp" name="OP_Thresh.hpp">
-<area shape="rect" id="node2" href="$experimental_8hpp.html" title="This header gathers all experimental operations. " alt="" coords="5,80,125,107"/>
-<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp. " alt="" coords="31,155,99,181"/>
-<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library. " alt="" coords="14,229,116,256"/>
+<area shape="rect" id="node1" title="it applies a threshold operation in the image" alt="" coords="15,5,133,32"/>
+<area shape="rect" id="node2" href="$experimental_8hpp.html" title="This header gathers all experimental operations." alt="" coords="5,80,143,107"/>
+<area shape="rect" id="node3" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="37,155,111,181"/>
+<area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="18,229,130,256"/>
 </map>

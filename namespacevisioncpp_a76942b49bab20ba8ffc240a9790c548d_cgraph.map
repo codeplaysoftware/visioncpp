@@ -1,3 +1,4 @@
 <map id="visioncpp::execute" name="visioncpp::execute">
-<area shape="rect" id="node2" href="$namespacevisioncpp.html#a1047ae9a8641a453f2c673cf7fbea8d9" title="execute function is called by user in order to execute an expression template parameters: ..." alt="" coords="184,5,315,32"/>
+<area shape="rect" id="node1" title="special case of the execute function with default value for local memory and workgroup size template ..." alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node2" href="$namespacevisioncpp.html#a1047ae9a8641a453f2c673cf7fbea8d9" title="execute function is called by user in order to execute an expression template parameters:" alt="" coords="196,5,339,32"/>
 </map>
