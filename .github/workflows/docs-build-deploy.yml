@@ -1,0 +1,55 @@
+
+name: Docs Build/Deploy
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push events but only for the master branch
+  push:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build-and-deploy"
+  build-and-deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Pre-requisites
+        run: |
+              sudo apt install doxygen
+              sudo apt install graphviz
+
+      # Build the docs
+      - name: Build Docs
+        run: |
+          mkdir build
+          cd build
+          cmake -DVISIONCPP_DOC_ONLY=TRUE ..
+          make doc
+
+      #Checks that the build created some files
+      - name: Check Build
+        id: check_build
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "build/html/visioncpp_8hpp.html"
+
+      # Deploys the docs to the gh-pages branch 
+      - name: Deploy Docs
+        if: steps.check_build.outputs.files_exists == 'true'
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: gh-pages
+          folder: build/html
+          git-config-name: "Github Actions"
+          git-config-email: "noreply@github.com"
+          commit-message: |
+            ""Deploy docs to GH Pages Build: ${{github.run_number}}" -m "Commit: ${{github.sha}}""
