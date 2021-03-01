@@ -27,7 +27,7 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <visioncpp.hpp>
-#include <opencv/cv.h>
+#include <opencv2/opencv.hpp>
 
 // used to generate test names
 #define GLUE_HELPER(x, y) x##_##y

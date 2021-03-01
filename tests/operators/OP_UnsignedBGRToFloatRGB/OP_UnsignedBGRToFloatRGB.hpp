@@ -33,7 +33,7 @@ void run_test(QUEUE &q, DATA data, int i) {
       [](float *dataMem) { delete[] dataMem; });
 
   // 2) create gold_standard image
-  cvtColor(frame, ref, CV_BGR2RGB);
+  cvtColor(frame, ref, cv::COLOR_BGRA2GRAY);
   ref = ref / 255.0f;
 
   {
