@@ -51,7 +51,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><div align="center"> <br  />
-<img src="https://www.codeplay.com/public/uploaded/public/computevision.png" alt="" class="inline"/><br  />
+<img src="https://developer.codeplay.com/assets/img/home/tools/visioncpp.png" alt="" class="inline"/><br  />
  </div><h1><a class="anchor" id="autotoc_md0"></a>
 Overview</h1>
 <p><b>VisionCpp</b> is a lightweight header-only library for computer vision and image processing. The aim of the library is to provide a toolbox that enables performance portability for heterogeneous platforms using modern C++.</p>
@@ -60,7 +60,7 @@ Overview</h1>
 Table of contents</h2>
 <ul>
 <li><a href="#integration">Integration</a></li>
-<li><a href="#tutorials">Tutorials</a></li>
+<li><a href="#visioncpp-tutorials">Tutorials</a></li>
 <li><a href="#sample-code">Sample Code</a></li>
 <li><a href="#requirements">Requirements</a></li>
 <li><a href="#build">Build</a></li>
@@ -72,14 +72,14 @@ Table of contents</h2>
 <li><a href="#known-issues">Known Issues</a></li>
 </ul>
 <h2><a class="anchor" id="autotoc_md2"></a>
-&lt;a name="integration" /&gt; Integration</h2>
+Integration</h2>
 <p>You will need to install ComputeCpp in order to use VisionCpp, you can follow the <a href="https://developer.codeplay.com/products/computecpp/ce/guides/getting-started">ComputeCpp Getting Started guide</a> that outlines the installation process. All you need to do is include the VisionCpp.hpp header in your project and you are good to go! ( assuming that OpenCL and ComputeCPP is installed correctly. )</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="visioncpp_8hpp.html">visioncpp.hpp</a>&gt;</span> <span class="comment">//all that is needed</span></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
-&lt;a name="tutorials" /&gt; VisionCpp Tutorials</h2>
+VisionCpp Tutorials</h2>
 <p>There are some tutorials explaining how to perform different operations using VisionCpp. These cover basic <a href="https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Hello-World">Hello World</a>, <a href="https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Anisotropic-Diffusion">Anisotropic Diffusion</a>, <a href="https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Bayer-Filter-Demosaic">Bayer Filter Demosaic</a>, <a href="https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Dense-Depth-Reconstruction-with-Block-Matching-Algorithm">Dense Depth Reconstruction with Block Matching Algorithm</a> and <a href="https://github.com/codeplaysoftware/visioncpp/wiki/Example:-Harris-Corner-Detection">Harris Corner Detection</a>.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
-&lt;a name="sample-code" /&gt; Sample Code</h2>
+Sample Code</h2>
 <p>Below is a very simple application that will do the conversion RGB -&gt; HSV. Full source code can be found in the examples folder. RGB is assumed to be a three-channel unsigned char storage with a reasonable channel order.</p>
 <div class="fragment"><div class="line"><span class="comment">// main, args, checks and all the boring stuff</span></div>
 <div class="line"> </div>
@@ -139,7 +139,7 @@ Table of contents</h2>
 <div class="line">printf(<span class="stringliteral">&quot;RGB: %u %u %u \nHSV: %u %u %u \n&quot;</span>, in_rgb.get()[0], in_rgb.get()[1],</div>
 <div class="line">       in_rgb.get()[2], out_hsv.get()[0], out_hsv.get()[1], out_hsv.get()[2]);</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
-&lt;a name="requirements" /&gt; Requirements</h2>
+Requirements</h2>
 <p>To successfully compile VisionCpp tests, you will need:</p><ul>
 <li>ComputeCpp (<a href="https://codeplay.com/products/computesuite/computecpp">https://codeplay.com/products/computesuite/computecpp</a>)</li>
 <li>OpenCV 3.2 (<a href="https://github.com/opencv/opencv">https://github.com/opencv/opencv</a>) - used for camera access, window display and as a testing reference.</li>
@@ -147,7 +147,7 @@ Table of contents</h2>
 <li>OpenCL 1.2</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md6"></a>
-&lt;a name="build" /&gt; Build</h2>
+Build</h2>
 <p>Assuming you are in the root of a git repo: </p><div class="fragment"><div class="line">mkdir build</div>
 <div class="line">cd  build</div>
 <div class="line">cmake .. -DComputeCpp_DIR={PATH_TO_COMPUTECPP_ROOT} -DCMAKE_CXX_COMPILER={FAVORITE_CXX_COMPILER}</div>
@@ -158,30 +158,30 @@ Table of contents</h2>
 <div class="line">    | - example</div>
 <div class="line">    | - test</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
-&lt;a name="examples" /&gt; Examples</h2>
+Examples</h2>
 <p>There is a set of example code in the /example/ folder of the repository. Most of the examples are performing image operations from the camera input.</p>
 <h2><a class="anchor" id="autotoc_md8"></a>
-&lt;a name="documentation" /&gt; Documentation</h2>
+Documentation</h2>
 <p>Online documentation can be found <a href="https://codeplaysoftware.github.io/visioncpp/">here</a>.</p>
 <p>The documentation is created using <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>. </p><div class="fragment"><div class="line">make doc</div>
 </div><!-- fragment --><p>The documentation will be created in html folder in build directory. </p><div class="fragment"><div class="line">| - build</div>
 <div class="line">  | - doc</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
-&lt;a name="contributing" /&gt; Contributing</h2>
+Contributing</h2>
 <p>Contributors always welcome! See <a href="https://github.com/codeplaysoftware/visioncpp/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a> for details.</p>
 <p>The list of <a href="https://github.com/codeplaysoftware/visioncpp/blob/master/CONTRIBUTORS.md">contributors</a>.</p>
 <h2><a class="anchor" id="autotoc_md10"></a>
-&lt;a name="resources" /&gt; Resources</h2>
+Resources</h2>
 <ul>
 <li><a href="http://opus.bath.ac.uk/49695/">Kernel composition in SYCL</a></li>
 <li><a href="http://dl.acm.org/citation.cfm?doid=2909437.2909444">VisionCPP: A SYCL-based Computer Vision Framework</a></li>
 <li><a href="https://github.com/codeplaysoftware/visioncpp/wiki">Wiki</a></li>
 </ul>
 <h2><a class="anchor" id="autotoc_md11"></a>
-&lt;a name="license" /&gt; License</h2>
+License</h2>
 <p>The Apache License, Version 2.0 License. See <a href="https://github.com/codeplaysoftware/visioncpp/blob/master/LICENSE">LICENSE</a> for more.</p>
 <h2><a class="anchor" id="autotoc_md12"></a>
-&lt;a name="known-issues" /&gt; Known Issues</h2>
+Known Issues</h2>
 <ul>
 <li>The Tuple class works only with clang++. </li>
 </ul>
@@ -197,7 +197,7 @@ Table of contents</h2>
 <div class="ttc" id="anamespacevisioncpp_html_ac71d7d7da8acfbf97499256c6ac9cf92"><div class="ttname"><a href="namespacevisioncpp.html#ac71d7d7da8acfbf97499256c6ac9cf92">visioncpp::make_device</a></div><div class="ttdeci">internal::Device_&lt; BK, DV &gt; make_device()</div><div class="ttdoc">template deduction function for Device_ class</div><div class="ttdef"><b>Definition:</b> <a href="forward__declarations_8hpp_source.html#l00090">forward_declarations.hpp:90</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 1 2021 16:05:49 for VisionCpp by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Oct 8 2021 15:38:02 for VisionCpp by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
