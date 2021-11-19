@@ -45,7 +45,7 @@ jobs:
       # Deploys the docs to the gh-pages branch 
       - name: Deploy Docs
         if: steps.check_build.outputs.files_exists == 'true'
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+        uses: JamesIves/github-pages-deploy-action@4.1.6
         with:
           branch: gh-pages
           folder: build/html
