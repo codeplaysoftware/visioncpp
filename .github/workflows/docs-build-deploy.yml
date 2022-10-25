@@ -38,7 +38,7 @@ jobs:
       #Checks that the build created some files
       - name: Check Build
         id: check_build
-        uses: andstor/file-existence-action@v1
+        uses: andstor/file-existence-action@v2
         with:
           files: "build/html/visioncpp_8hpp.html"
 
