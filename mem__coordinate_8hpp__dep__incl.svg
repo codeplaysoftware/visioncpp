@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="memory__access_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="memory__access_8hpp.html" target="_top" xlink:title="this file contains a set of forward declarations and include headers required for constructing and ac...">
 <polygon fill="none" stroke="black" points="1.5,-168.5 1.5,-187.5 118.5,-187.5 118.5,-168.5 1.5,-168.5"/>
 <text text-anchor="middle" x="60" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">memory_access.hpp</text>
 </a>
@@ -35,7 +35,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="memory_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="memory_8hpp.html" target="_top" xlink:title="this file contains a set of forward declarations and include headers required for constructing and ac...">
 <polygon fill="none" stroke="black" points="21.5,-112.5 21.5,-131.5 98.5,-131.5 98.5,-112.5 21.5,-112.5"/>
 <text text-anchor="middle" x="60" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">memory.hpp</text>
 </a>

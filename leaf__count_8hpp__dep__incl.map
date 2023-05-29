@@ -1,5 +1,5 @@
 <map id="leaf_count.hpp" name="leaf_count.hpp">
-<area shape="rect" id="node1" title="LeafCount used to counting terminal nodes. The total number of leaf nodes is used by MakePlaceHolderE..." alt="" coords="19,5,138,32"/>
+<area shape="rect" id="node1" title="LeafCount used to counting terminal nodes." alt="" coords="19,5,138,32"/>
 <area shape="rect" id="node2" href="$expr__convertor_8hpp.html" title="this is used to replace the leaf node with a PlaceHolder node." alt="" coords="5,80,152,107"/>
 <area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="18,155,139,181"/>
 <area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="23,229,135,256"/>

@@ -1,3 +1,3 @@
 <map id="visioncpp::internal::CreateSyclBuffer&lt; LeafType, ElemType, Scalar, VisionMem, RNG &gt;" name="visioncpp::internal::CreateSyclBuffer&lt; LeafType, ElemType, Scalar, VisionMem, RNG &gt;">
-<area shape="rect" id="node1" title="This class is used to instantiate the sycl memory based on the memory types. template parameters:" alt="" coords="5,5,204,141"/>
+<area shape="rect" id="node1" title="This class is used to instantiate the sycl memory based on the memory types." alt="" coords="5,5,204,141"/>
 </map>

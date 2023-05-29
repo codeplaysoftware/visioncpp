@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="LocalmemCount used to counting terminal nodes. The total number of leaf nodes is used by MakePlaceHol...">
+<g id="a_node1"><a xlink:title="LocalmemCount used to counting terminal nodes.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-168.5 0,-187.5 124,-187.5 124,-168.5 0,-168.5"/>
 <text text-anchor="middle" x="62" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">local_mem_count.hpp</text>
 </a>

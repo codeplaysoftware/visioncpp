@@ -1,5 +1,5 @@
 <map id="eval_assign_partial.hpp" name="eval_assign_partial.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,181,32"/>
+<area shape="rect" id="node1" title="This file contains the specialisation of the Evaluator struct for assign when it is a root struct." alt="" coords="5,5,181,32"/>
 <area shape="rect" id="node2" href="$evaluator_8hpp.html" title="This file contains a collection of headers and forward declaration for evaluating an expression tree." alt="" coords="38,80,149,107"/>
 <area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="33,155,154,181"/>
 <area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="37,229,149,256"/>

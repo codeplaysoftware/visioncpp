@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="memory_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="memory_8hpp.html" target="_top" xlink:title="this file contains a set of forward declarations and include headers required for constructing and ac...">
 <polygon fill="none" stroke="black" points="7,-112.5 7,-131.5 84,-131.5 84,-112.5 7,-112.5"/>
 <text text-anchor="middle" x="45.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">memory.hpp</text>
 </a>

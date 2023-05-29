@@ -1,7 +1,7 @@
 <map id="extract_accessors.hpp" name="extract_accessors.hpp">
 <area shape="rect" id="node1" title="This files is used to provide an access mechanism for terminal nodes on the device." alt="" coords="5,5,172,32"/>
 <area shape="rect" id="node2" href="$sycl_2device_8hpp.html" title="This file contains the include headers for sycl devices." alt="" coords="42,80,135,107"/>
-<area shape="rect" id="node3" href="$device_8hpp.html" title="include headers for adding different devices. Currently we only support sycl backend" alt="" coords="42,155,135,181"/>
+<area shape="rect" id="node3" href="$device_8hpp.html" title="include headers for adding different devices." alt="" coords="42,155,135,181"/>
 <area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="28,229,149,256"/>
 <area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="33,304,145,331"/>
 </map>

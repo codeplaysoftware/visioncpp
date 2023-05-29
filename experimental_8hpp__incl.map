@@ -5,7 +5,7 @@
 <area shape="rect" id="node4" href="$OP__AniDiff_8hpp.html" title="It applies a simplified version of the anisotropic diffusion." alt="" coords="277,80,395,107"/>
 <area shape="rect" id="node5" href="$OP__Div_8hpp.html" title="It divides two matrices element&#45;wise." alt="" coords="420,80,516,107"/>
 <area shape="rect" id="node6" href="$OP__FloatToF32C3_8hpp.html" title="Converts from uchar to float and float to uchar." alt="" coords="540,80,703,107"/>
-<area shape="rect" id="node7" href="$OP__Median_8hpp.html" title="It applies the median filter in an image. It gets the median value of a neighbour after sorted." alt="" coords="727,80,849,107"/>
+<area shape="rect" id="node7" href="$OP__Median_8hpp.html" title="It applies the median filter in an image." alt="" coords="727,80,849,107"/>
 <area shape="rect" id="node8" href="$OP__Merge2Chns_8hpp.html" title="It merges 2 matrices of one channels into one matrix of 2 channels." alt="" coords="874,80,1030,107"/>
 <area shape="rect" id="node9" href="$OP__Mul_8hpp.html" title="Element&#45;wise matrix multiplication." alt="" coords="1055,80,1153,107"/>
 <area shape="rect" id="node10" href="$OP__PowerOf2_8hpp.html" title="It calculates the power of 2 of a matrix." alt="" coords="1177,80,1316,107"/>

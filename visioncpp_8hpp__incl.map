@@ -2,10 +2,10 @@
 <area shape="rect" id="node1" title="This file is collection of headers that makes VisionCpp library." alt="" coords="2732,5,2844,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="2495,80,2575,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="2599,80,2695,107"/>
-<area shape="rect" id="node4" href="$pixel_8hpp.html" title="This file contains definition of underlying pixel types used in VisionCpp. Generic form of the pixel ..." alt="" coords="3507,80,3623,107"/>
+<area shape="rect" id="node4" href="$pixel_8hpp.html" title="This file contains definition of underlying pixel types used in VisionCpp." alt="" coords="3507,80,3623,107"/>
 <area shape="rect" id="node6" href="$ops_8hpp.html" title="This header gathers all operations available in VisionCpp." alt="" coords="2719,80,2857,107"/>
 <area shape="rect" id="node40" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="6238,80,6434,107"/>
-<area shape="rect" id="node5" href="$tuple_8hpp.html" title="Tuples standard layout implementation. http://en.cppreference.com/w/cpp/utility/tuple." alt="" coords="4316,244,4457,285"/>
+<area shape="rect" id="node5" href="$tuple_8hpp.html" title="Tuples standard layout implementation." alt="" coords="4316,244,4457,285"/>
 <area shape="rect" id="node7" href="$ops__convert_8hpp.html" title="This header gathers all conversion operations." alt="" coords="2894,162,3077,189"/>
 <area shape="rect" id="node16" href="$ops__conv_8hpp.html" title="This header gathers all convolution operations." alt="" coords="3762,162,3953,189"/>
 <area shape="rect" id="node21" href="$ops__downsampling_8hpp.html" title="This header gathers all downsampling operations." alt="" coords="207,162,481,189"/>
@@ -32,7 +32,7 @@
 <area shape="rect" id="node30" href="$OP__AniDiff_8hpp.html" title="It applies a simplified version of the anisotropic diffusion." alt="" coords="1949,251,2067,278"/>
 <area shape="rect" id="node31" href="$OP__Div_8hpp.html" title="It divides two matrices element&#45;wise." alt="" coords="2092,251,2188,278"/>
 <area shape="rect" id="node32" href="$OP__FloatToF32C3_8hpp.html" title="Converts from uchar to float and float to uchar." alt="" coords="475,251,637,278"/>
-<area shape="rect" id="node33" href="$OP__Median_8hpp.html" title="It applies the median filter in an image. It gets the median value of a neighbour after sorted." alt="" coords="661,251,784,278"/>
+<area shape="rect" id="node33" href="$OP__Median_8hpp.html" title="It applies the median filter in an image." alt="" coords="661,251,784,278"/>
 <area shape="rect" id="node34" href="$OP__Merge2Chns_8hpp.html" title="It merges 2 matrices of one channels into one matrix of 2 channels." alt="" coords="809,251,965,278"/>
 <area shape="rect" id="node35" href="$OP__Mul_8hpp.html" title="Element&#45;wise matrix multiplication." alt="" coords="989,251,1088,278"/>
 <area shape="rect" id="node36" href="$OP__PowerOf2_8hpp.html" title="It calculates the power of 2 of a matrix." alt="" coords="1112,251,1251,278"/>
@@ -41,26 +41,26 @@
 <area shape="rect" id="node39" href="$OP__Thresh_8hpp.html" title="it applies a threshold operation in the image" alt="" coords="1534,251,1653,278"/>
 <area shape="rect" id="node41" href="$forward__declarations_8hpp.html" title="forward declarations for the library" alt="" coords="4499,162,4685,189"/>
 <area shape="rect" id="node42" href="$tools_8hpp.html" title="Collection of tools headers." alt="" coords="4710,162,4829,189"/>
-<area shape="rect" id="node48" href="$memory_8hpp.html" title=" " alt="" coords="5440,162,5603,189"/>
+<area shape="rect" id="node48" href="$memory_8hpp.html" title="this file contains a set of forward declarations and include headers required for constructing and ac..." alt="" coords="5440,162,5603,189"/>
 <area shape="rect" id="node56" href="$expr__convertor_8hpp.html" title="this is used to replace the leaf node with a PlaceHolder node." alt="" coords="6259,155,6413,196"/>
 <area shape="rect" id="node62" href="$expr__tree_8hpp.html" title="This file contains the forward declarations and all the necessary include headers for the constructio..." alt="" coords="6940,162,7119,189"/>
 <area shape="rect" id="node77" href="$evaluator_8hpp.html" title="This file contains a collection of headers and forward declaration for evaluating an expression tree." alt="" coords="8227,162,8405,189"/>
 <area shape="rect" id="node89" href="$executor_8hpp.html" title="This files contains a series of forward declaration and include files required for executing an expre..." alt="" coords="8845,162,9011,189"/>
-<area shape="rect" id="node93" href="$device_8hpp.html" title="include headers for adding different devices. Currently we only support sycl backend" alt="" coords="9265,162,9405,189"/>
+<area shape="rect" id="node93" href="$device_8hpp.html" title="include headers for adding different devices." alt="" coords="9265,162,9405,189"/>
 <area shape="rect" id="node43" href="$convert_8hpp.html" title="Series of pixel convert functions." alt="" coords="4481,251,4580,278"/>
 <area shape="rect" id="node44" href="$static__if_8hpp.html" title="This file provides a set of static_if functions used at to calculate the result of if statement at co..." alt="" coords="4604,251,4705,278"/>
 <area shape="rect" id="node45" href="$time_8hpp.html" title="Basic time operations." alt="" coords="4729,251,4809,278"/>
 <area shape="rect" id="node47" href="$type__dereferencer_8hpp.html" title="These methods are used to remove all the &amp; const and * from a type." alt="" coords="4833,251,5001,278"/>
 <area shape="rect" id="node46" title=" " alt="" coords="4736,341,4803,367"/>
-<area shape="rect" id="node49" href="$mem__const_8hpp.html" title="specialisations of SyclMem type when we are passing constant variable to the device...." alt="" coords="5549,251,5675,278"/>
+<area shape="rect" id="node49" href="$mem__const_8hpp.html" title="specialisations of SyclMem type when we are passing constant variable to the device." alt="" coords="5549,251,5675,278"/>
 <area shape="rect" id="node50" href="$mem__prop_8hpp.html" title="Series of pixel convert functions." alt="" coords="5700,251,5820,278"/>
-<area shape="rect" id="node51" href="$mem__virtual_8hpp.html" title=" " alt="" coords="5025,251,5159,278"/>
+<area shape="rect" id="node51" href="$mem__virtual_8hpp.html" title="This file contains the VirtualMemory struct." alt="" coords="5025,251,5159,278"/>
 <area shape="rect" id="node52" href="$mem__vision_8hpp.html" title="this file contains the memory struct used to store {Sycl buffer , Host pointer or Sycl image}." alt="" coords="5183,251,5313,278"/>
-<area shape="rect" id="node53" href="$memory__access_8hpp.html" title=" " alt="" coords="5337,244,5524,285"/>
+<area shape="rect" id="node53" href="$memory__access_8hpp.html" title="this file contains a set of forward declarations and include headers required for constructing and ac..." alt="" coords="5337,244,5524,285"/>
 <area shape="rect" id="node54" href="$mem__coordinate_8hpp.html" title="This files contains the Coordinate struct which is used to specify local/global offset for local/glob..." alt="" coords="5441,341,5601,367"/>
-<area shape="rect" id="node55" href="$mem__neighbour_8hpp.html" title=" " alt="" coords="5263,341,5417,367"/>
-<area shape="rect" id="node57" href="$leaf__count_8hpp.html" title="LeafCount used to counting terminal nodes. The total number of leaf nodes is used by MakePlaceHolderE..." alt="" coords="6462,251,6581,278"/>
-<area shape="rect" id="node58" href="$local__mem__count_8hpp.html" title="LocalmemCount used to counting terminal nodes. The total number of leaf nodes is used by MakePlaceHol..." alt="" coords="6604,251,6769,278"/>
+<area shape="rect" id="node55" href="$mem__neighbour_8hpp.html" title="this file contains different types of memory required for executing neighbour operation to calculate ..." alt="" coords="5263,341,5417,367"/>
+<area shape="rect" id="node57" href="$leaf__count_8hpp.html" title="LeafCount used to counting terminal nodes." alt="" coords="6462,251,6581,278"/>
+<area shape="rect" id="node58" href="$local__mem__count_8hpp.html" title="LocalmemCount used to counting terminal nodes." alt="" coords="6604,251,6769,278"/>
 <area shape="rect" id="node59" href="$local__output_8hpp.html" title="This file contains the different specialisations of the LocalOutput." alt="" coords="5844,251,5975,278"/>
 <area shape="rect" id="node60" href="$make__place__holder__expr_8hpp.html" title="PlaceHolder expression helper is used to create an expression in which the leafNodes of visionMemorie..." alt="" coords="5999,251,6209,278"/>
 <area shape="rect" id="node61" href="$place__holder__leaf__node_8hpp.html" title="This file contains different specialisations leafNodes for different types of memory." alt="" coords="6234,251,6438,278"/>
@@ -75,14 +75,14 @@
 <area shape="rect" id="node70" href="$parallel__copy_8hpp.html" title="This file contains the ParallelCopy struct which is used to allocate the partial result of the right&#45;..." alt="" coords="6423,341,6558,367"/>
 <area shape="rect" id="node71" href="$resizable__binary_8hpp.html" title="This file contains RBiOP (Binary Operation) struct which is used to apply Binary Operation on left ha..." alt="" coords="6583,341,6737,367"/>
 <area shape="rect" id="node72" href="$resizable__unary_8hpp.html" title="This file contains RUnOP (Unary Operation) struct which is used to apply Unary Operation on the right..." alt="" coords="6762,341,6913,367"/>
-<area shape="rect" id="node74" href="$pyramid__mem_8hpp.html" title="This file is used to create a pyramid output memory when the auto generate output memory is selected...." alt="" coords="7149,341,7294,367"/>
+<area shape="rect" id="node74" href="$pyramid__mem_8hpp.html" title="This file is used to create a pyramid output memory when the auto generate output memory is selected." alt="" coords="7149,341,7294,367"/>
 <area shape="rect" id="node75" href="$pyramid__with__auto__mem__gen_8hpp.html" title="This file contains the construction of the pyramid node where a user can pass general filter2d functo..." alt="" coords="7318,333,7506,375"/>
 <area shape="rect" id="node76" href="$pyramid__with__auto__mem__sep_8hpp.html" title="This file contains the construction of the pyramid node where a user can pass separable filter2d func..." alt="" coords="6937,333,7125,375"/>
 <area shape="rect" id="node78" href="$eval__assign_8hpp.html" title="This file contains the specialisation of the Evaluator struct for assign when it is a root struct." alt="" coords="7993,251,8201,278"/>
-<area shape="rect" id="node79" href="$eval__assign__partial_8hpp.html" title=" " alt="" coords="8226,244,8406,285"/>
+<area shape="rect" id="node79" href="$eval__assign__partial_8hpp.html" title="This file contains the specialisation of the Evaluator struct for assign when it is a root struct." alt="" coords="8226,244,8406,285"/>
 <area shape="rect" id="node80" href="$eval__expression_8hpp.html" title="This file contains a collection of headers that required for eval_expression." alt="" coords="8431,244,8591,285"/>
 <area shape="rect" id="node88" href="$square__pattern_8hpp.html" title="this file contains the partial specialisation of the Fill for LeafNode" alt="" coords="8615,244,8767,285"/>
-<area shape="rect" id="node81" href="$eval__expr__assign_8hpp.html" title=" " alt="" coords="9029,341,9192,367"/>
+<area shape="rect" id="node81" href="$eval__expr__assign_8hpp.html" title="this file contains the specialisation of EvalExpr for Assign when it is not a root" alt="" coords="9029,341,9192,367"/>
 <area shape="rect" id="node82" href="$eval__expr__leaf__node_8hpp.html" title="This file contains the specialisation of the EvalExpr for LeafNode." alt="" coords="9217,341,9402,367"/>
 <area shape="rect" id="node83" href="$eval__expr__r__binary_8hpp.html" title="This file contains the specialisation of the EvalExpr for RBiOP( pointwise Binary operation node)." alt="" coords="8030,341,8202,367"/>
 <area shape="rect" id="node84" href="$eval__expr__r__unary_8hpp.html" title="This file contains the specialisation of the EvalExpr for RUnOP( pointwise Unary operation node)." alt="" coords="8227,341,8395,367"/>

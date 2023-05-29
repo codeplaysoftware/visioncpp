@@ -95,7 +95,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="OP__Median_8hpp.html" target="_top" xlink:title="It applies the median filter in an image. It gets the median value of a neighbour after sorted.">
+<g id="a_node7"><a xlink:href="OP__Median_8hpp.html" target="_top" xlink:title="It applies the median filter in an image.">
 <polygon fill="none" stroke="black" points="541,-0.5 541,-19.5 633,-19.5 633,-0.5 541,-0.5"/>
 <text text-anchor="middle" x="587" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">OP_Median.hpp</text>
 </a>

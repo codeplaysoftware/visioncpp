@@ -11,7 +11,7 @@
 <area shape="rect" id="node9" href="$parallel__copy_8hpp.html" title="This file contains the ParallelCopy struct which is used to allocate the partial result of the right&#45;..." alt="" coords="761,177,896,203"/>
 <area shape="rect" id="node10" href="$resizable__binary_8hpp.html" title="This file contains RBiOP (Binary Operation) struct which is used to apply Binary Operation on left ha..." alt="" coords="921,177,1075,203"/>
 <area shape="rect" id="node11" href="$resizable__unary_8hpp.html" title="This file contains RUnOP (Unary Operation) struct which is used to apply Unary Operation on the right..." alt="" coords="1100,177,1251,203"/>
-<area shape="rect" id="node13" href="$pyramid__mem_8hpp.html" title="This file is used to create a pyramid output memory when the auto generate output memory is selected...." alt="" coords="1275,177,1420,203"/>
+<area shape="rect" id="node13" href="$pyramid__mem_8hpp.html" title="This file is used to create a pyramid output memory when the auto generate output memory is selected." alt="" coords="1275,177,1420,203"/>
 <area shape="rect" id="node14" href="$pyramid__with__auto__mem__gen_8hpp.html" title="This file contains the construction of the pyramid node where a user can pass general filter2d functo..." alt="" coords="1444,169,1632,211"/>
 <area shape="rect" id="node15" href="$pyramid__with__auto__mem__sep_8hpp.html" title="This file contains the construction of the pyramid node where a user can pass separable filter2d func..." alt="" coords="1656,169,1844,211"/>
 </map>

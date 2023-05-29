@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="pyramid__mem_8hpp.html" target="_top" xlink:title="This file is used to create a pyramid output memory when the auto generate output memory is selected....">
+<g id="a_node2"><a xlink:href="pyramid__mem_8hpp.html" target="_top" xlink:title="This file is used to create a pyramid output memory when the auto generate output memory is selected.">
 <polygon fill="none" stroke="black" points="0,-6 0,-25 109,-25 109,-6 0,-6"/>
 <text text-anchor="middle" x="54.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">pyramid_mem.hpp</text>
 </a>

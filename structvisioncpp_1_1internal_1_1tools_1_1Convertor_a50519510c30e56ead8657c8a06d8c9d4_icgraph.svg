@@ -12,10 +12,10 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="function convert">
-<polygon fill="#bfbfbf" stroke="black" points="351,-303.5 351,-344.5 458,-344.5 458,-303.5 351,-303.5"/>
-<text text-anchor="start" x="359" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
-<text text-anchor="start" x="359" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">::tools::Convertor::</text>
-<text text-anchor="middle" x="404.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">convert</text>
+<polygon fill="#bfbfbf" stroke="black" points="351,-332.5 351,-373.5 458,-373.5 458,-332.5 351,-332.5"/>
+<text text-anchor="start" x="359" y="-361.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
+<text text-anchor="start" x="359" y="-350.5" font-family="Helvetica,sans-Serif" font-size="10.00">::tools::Convertor::</text>
+<text text-anchor="middle" x="404.5" y="-339.5" font-family="Helvetica,sans-Serif" font-size="10.00">convert</text>
 </a>
 </g>
 </g>
@@ -23,17 +23,17 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="namespacevisioncpp_1_1internal_1_1tools.html#ad0890ca41e9275137b7a578b24136dbe" target="_top" xlink:title="function convert">
-<polygon fill="none" stroke="black" points="208,-309 208,-339 315,-339 315,-309 208,-309"/>
-<text text-anchor="start" x="216" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
-<text text-anchor="middle" x="261.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">::tools::convert</text>
+<polygon fill="none" stroke="black" points="208,-338 208,-368 315,-368 315,-338 208,-338"/>
+<text text-anchor="start" x="216" y="-356" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
+<text text-anchor="middle" x="261.5" y="-345" font-family="Helvetica,sans-Serif" font-size="10.00">::tools::convert</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M340.95,-324C332.3,-324 323.49,-324 315.05,-324"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="341,-327.5 351,-324 341,-320.5 341,-327.5"/>
+<path fill="none" stroke="midnightblue" d="M340.95,-353C332.3,-353 323.49,-353 315.05,-353"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="341,-356.5 351,-353 341,-349.5 341,-356.5"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -51,17 +51,17 @@
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M258.9,-349.22C254.31,-401.82 236.88,-524.49 172,-599 169.1,-602.34 165.86,-605.42 162.39,-608.28"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="262.4,-349.35 259.7,-339.11 255.42,-348.8 262.4,-349.35"/>
+<path fill="none" stroke="midnightblue" d="M257.76,-378.21C251.25,-426.67 230.77,-533.77 172,-599 168.93,-602.41 165.51,-605.56 161.86,-608.47"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="261.26,-378.36 259.03,-368 254.32,-377.49 261.26,-378.36"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="structvisioncpp_1_1internal_1_1EvalExpr_3_01RDCN_3_01C__OP_00_01RHS_00_01Cols_00_01Rows_00_01LfT8c8d43150999b006086b237539962930.html#a6aae6e1e368e345822c332f4c0c97054" target="_top" xlink:title="evaluate function when the internal::ops_category is NeighbourOP.">
+<g id="a_node4"><a xlink:href="structvisioncpp_1_1internal_1_1EvalExpr_3_01Assign_3_01LHS_00_01RHS_00_01Cols_00_01Rows_00_01LfTeef9e8bb9ee55fb68584e2a0065c5dfc.html#a74179b14c4b68fb166bb9d2f6960684f" target="_top" xlink:title="evaluate function when the internal::ops_category is NeighbourOP.">
 <polygon fill="none" stroke="black" points="7,-526.5 7,-589.5 165,-589.5 165,-526.5 7,-526.5"/>
 <text text-anchor="start" x="15" y="-577.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
-<text text-anchor="start" x="15" y="-566.5" font-family="Helvetica,sans-Serif" font-size="10.00">::EvalExpr&lt; RDCN&lt; C</text>
-<text text-anchor="start" x="15" y="-555.5" font-family="Helvetica,sans-Serif" font-size="10.00">_OP, RHS, Cols, Rows,</text>
+<text text-anchor="start" x="15" y="-566.5" font-family="Helvetica,sans-Serif" font-size="10.00">::EvalExpr&lt; Assign&lt;</text>
+<text text-anchor="start" x="15" y="-555.5" font-family="Helvetica,sans-Serif" font-size="10.00"> LHS, RHS, Cols, Rows,</text>
 <text text-anchor="start" x="15" y="-544.5" font-family="Helvetica,sans-Serif" font-size="10.00"> LfType, LVL &gt;, Loc, Params...</text>
 <text text-anchor="middle" x="86" y="-533.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &gt;::eval_neighbour</text>
 </a>
@@ -70,106 +70,106 @@
 <!-- Node2&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node2&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M254.94,-348.79C244.82,-388.83 219.86,-468.2 172,-517 168.67,-520.39 165.01,-523.54 161.13,-526.46"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="258.35,-349.59 257.31,-339.04 251.55,-347.94 258.35,-349.59"/>
+<path fill="none" stroke="midnightblue" d="M252.56,-378C240.32,-413.09 213.76,-477.09 172,-517 168.45,-520.4 164.56,-523.56 160.46,-526.5"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="256.02,-378.7 255.91,-368.1 249.39,-376.46 256.02,-378.7"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="structvisioncpp_1_1internal_1_1EvalExpr_3_01StnNoFilt_3_01C__OP_00_01Halo__T_00_01Halo__L_00_01Hc8751eddb8d9925ba96b0bc205f2035f.html#ad99b1ceb5e6045a4b2c5444d3a364e40" target="_top" xlink:title="evaluate function when the internal::ops_category is NeighbourOP.">
-<polygon fill="none" stroke="black" points="7.5,-433 7.5,-507 164.5,-507 164.5,-433 7.5,-433"/>
-<text text-anchor="start" x="15.5" y="-495" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
-<text text-anchor="start" x="15.5" y="-484" font-family="Helvetica,sans-Serif" font-size="10.00">::EvalExpr&lt; StnNoFilt</text>
-<text text-anchor="start" x="15.5" y="-473" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; C_OP, Halo_T, Halo_L,</text>
-<text text-anchor="start" x="15.5" y="-462" font-family="Helvetica,sans-Serif" font-size="10.00"> Halo_B, Halo_R, RHS, Cols,</text>
-<text text-anchor="start" x="15.5" y="-451" font-family="Helvetica,sans-Serif" font-size="10.00"> Rows, LfType, LVL &gt;, Loc,</text>
-<text text-anchor="middle" x="86" y="-440" font-family="Helvetica,sans-Serif" font-size="10.00"> Params... &gt;::eval_neighbour</text>
+<g id="a_node5"><a xlink:href="structvisioncpp_1_1internal_1_1EvalExpr_3_01RBiOP_3_01BI__OP_00_01LHS_00_01RHS_00_01Cols_00_01Roa9f52694509ef22e8d940c587e28326e.html#ab36078d7b10a148fed01295f20da2d1e" target="_top" xlink:title="evaluate function when the internal::ops_category is NeighbourOP.">
+<polygon fill="none" stroke="black" points="7,-444.5 7,-507.5 165,-507.5 165,-444.5 7,-444.5"/>
+<text text-anchor="start" x="15" y="-495.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
+<text text-anchor="start" x="15" y="-484.5" font-family="Helvetica,sans-Serif" font-size="10.00">::EvalExpr&lt; RBiOP&lt; BI</text>
+<text text-anchor="start" x="15" y="-473.5" font-family="Helvetica,sans-Serif" font-size="10.00">_OP, LHS, RHS, Cols, Rows,</text>
+<text text-anchor="start" x="15" y="-462.5" font-family="Helvetica,sans-Serif" font-size="10.00"> LfType, LVL &gt;, Loc, Params...</text>
+<text text-anchor="middle" x="86" y="-451.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &gt;::eval_neighbour</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node2&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M243.27,-347.43C226.68,-368.9 200.04,-400.64 172,-423 167.78,-426.36 163.29,-429.62 158.66,-432.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="246.27,-349.27 249.53,-339.2 240.69,-345.04 246.27,-349.27"/>
+<path fill="none" stroke="midnightblue" d="M239.71,-375.67C222.69,-393.34 197.36,-417.71 172,-435 167.26,-438.23 162.23,-441.34 157.07,-444.31"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="242.58,-377.73 246.92,-368.07 237.5,-372.91 242.58,-377.73"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="structvisioncpp_1_1internal_1_1EvalExpr_3_01StnFilt_3_01C__OP_00_01Halo__T_00_01Halo__L_00_01Hal3690e60d43e39520bd684a51e78c32a1.html#a1b2187d5c9d69078ec7380ca2ef43930" target="_top" xlink:title="evaluate function when the internal::ops_category is NeighbourOP.">
-<polygon fill="none" stroke="black" points="16,-328.5 16,-413.5 156,-413.5 156,-328.5 16,-328.5"/>
-<text text-anchor="start" x="24" y="-401.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
-<text text-anchor="start" x="24" y="-390.5" font-family="Helvetica,sans-Serif" font-size="10.00">::EvalExpr&lt; StnFilt</text>
-<text text-anchor="start" x="24" y="-379.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; C_OP, Halo_T, Halo</text>
-<text text-anchor="start" x="24" y="-368.5" font-family="Helvetica,sans-Serif" font-size="10.00">_L, Halo_B, Halo_R, LHS,</text>
-<text text-anchor="start" x="24" y="-357.5" font-family="Helvetica,sans-Serif" font-size="10.00"> RHS, Cols, Rows, LfType,</text>
-<text text-anchor="start" x="24" y="-346.5" font-family="Helvetica,sans-Serif" font-size="10.00"> LVL &gt;, Loc, Params... &gt;</text>
-<text text-anchor="middle" x="86" y="-335.5" font-family="Helvetica,sans-Serif" font-size="10.00">::eval_neighbour</text>
+<g id="a_node6"><a xlink:href="structvisioncpp_1_1internal_1_1EvalExpr_3_01RUnOP_3_01UN__OP_00_01Nested_00_01Cols_00_01Rows_00_798d17f6ff6a8c924dcf80fd69add3c4.html#a120ba27b1540b24b9bd713f1c2bc09ce" target="_top" xlink:title="evaluate function when the internal::ops_category is NeighbourOP.">
+<polygon fill="none" stroke="black" points="7,-362.5 7,-425.5 165,-425.5 165,-362.5 7,-362.5"/>
+<text text-anchor="start" x="15" y="-413.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
+<text text-anchor="start" x="15" y="-402.5" font-family="Helvetica,sans-Serif" font-size="10.00">::EvalExpr&lt; RUnOP&lt; UN</text>
+<text text-anchor="start" x="15" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00">_OP, Nested, Cols, Rows,</text>
+<text text-anchor="start" x="15" y="-380.5" font-family="Helvetica,sans-Serif" font-size="10.00"> LfType, LVL &gt;, Loc, Params...</text>
+<text text-anchor="middle" x="86" y="-369.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &gt;::eval_neighbour</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node2&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M198.19,-340.88C184.51,-344.59 169.95,-348.53 156.02,-352.3"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="199.24,-344.22 207.97,-338.23 197.41,-337.47 199.24,-344.22"/>
+<path fill="none" stroke="midnightblue" d="M197.98,-367.77C187.37,-370.28 176.23,-372.91 165.28,-375.5"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="199.05,-371.12 207.97,-365.41 197.44,-364.31 199.05,-371.12"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="structvisioncpp_1_1internal_1_1EvalExpr_3_01RUnOP_3_01UN__OP_00_01Nested_00_01Cols_00_01Rows_00_798d17f6ff6a8c924dcf80fd69add3c4.html#a120ba27b1540b24b9bd713f1c2bc09ce" target="_top" xlink:title="evaluate function when the internal::ops_category is NeighbourOP.">
-<polygon fill="none" stroke="black" points="7,-246.5 7,-309.5 165,-309.5 165,-246.5 7,-246.5"/>
-<text text-anchor="start" x="15" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
-<text text-anchor="start" x="15" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">::EvalExpr&lt; RUnOP&lt; UN</text>
-<text text-anchor="start" x="15" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">_OP, Nested, Cols, Rows,</text>
-<text text-anchor="start" x="15" y="-264.5" font-family="Helvetica,sans-Serif" font-size="10.00"> LfType, LVL &gt;, Loc, Params...</text>
-<text text-anchor="middle" x="86" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &gt;::eval_neighbour</text>
+<g id="a_node7"><a xlink:href="structvisioncpp_1_1internal_1_1EvalExpr_3_01RDCN_3_01C__OP_00_01RHS_00_01Cols_00_01Rows_00_01LfT8c8d43150999b006086b237539962930.html#a6aae6e1e368e345822c332f4c0c97054" target="_top" xlink:title="evaluate function when the internal::ops_category is NeighbourOP.">
+<polygon fill="none" stroke="black" points="7,-280.5 7,-343.5 165,-343.5 165,-280.5 7,-280.5"/>
+<text text-anchor="start" x="15" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
+<text text-anchor="start" x="15" y="-320.5" font-family="Helvetica,sans-Serif" font-size="10.00">::EvalExpr&lt; RDCN&lt; C</text>
+<text text-anchor="start" x="15" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">_OP, RHS, Cols, Rows,</text>
+<text text-anchor="start" x="15" y="-298.5" font-family="Helvetica,sans-Serif" font-size="10.00"> LfType, LVL &gt;, Loc, Params...</text>
+<text text-anchor="middle" x="86" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &gt;::eval_neighbour</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node2&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M197.98,-307.42C187.37,-304.61 176.23,-301.66 165.28,-298.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="197.41,-310.89 207.97,-310.07 199.2,-304.13 197.41,-310.89"/>
+<path fill="none" stroke="midnightblue" d="M197.98,-338.23C187.37,-335.72 176.23,-333.09 165.28,-330.5"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="197.44,-341.69 207.97,-340.59 199.05,-334.88 197.44,-341.69"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="structvisioncpp_1_1internal_1_1EvalExpr_3_01RBiOP_3_01BI__OP_00_01LHS_00_01RHS_00_01Cols_00_01Roa9f52694509ef22e8d940c587e28326e.html#ab36078d7b10a148fed01295f20da2d1e" target="_top" xlink:title="evaluate function when the internal::ops_category is NeighbourOP.">
-<polygon fill="none" stroke="black" points="7,-164.5 7,-227.5 165,-227.5 165,-164.5 7,-164.5"/>
-<text text-anchor="start" x="15" y="-215.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
-<text text-anchor="start" x="15" y="-204.5" font-family="Helvetica,sans-Serif" font-size="10.00">::EvalExpr&lt; RBiOP&lt; BI</text>
-<text text-anchor="start" x="15" y="-193.5" font-family="Helvetica,sans-Serif" font-size="10.00">_OP, LHS, RHS, Cols, Rows,</text>
-<text text-anchor="start" x="15" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00"> LfType, LVL &gt;, Loc, Params...</text>
-<text text-anchor="middle" x="86" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &gt;::eval_neighbour</text>
+<g id="a_node8"><a xlink:href="structvisioncpp_1_1internal_1_1EvalExpr_3_01StnFilt_3_01C__OP_00_01Halo__T_00_01Halo__L_00_01Hal3690e60d43e39520bd684a51e78c32a1.html#a1b2187d5c9d69078ec7380ca2ef43930" target="_top" xlink:title="evaluate function when the internal::ops_category is NeighbourOP.">
+<polygon fill="none" stroke="black" points="16,-176.5 16,-261.5 156,-261.5 156,-176.5 16,-176.5"/>
+<text text-anchor="start" x="24" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
+<text text-anchor="start" x="24" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">::EvalExpr&lt; StnFilt</text>
+<text text-anchor="start" x="24" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; C_OP, Halo_T, Halo</text>
+<text text-anchor="start" x="24" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">_L, Halo_B, Halo_R, LHS,</text>
+<text text-anchor="start" x="24" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"> RHS, Cols, Rows, LfType,</text>
+<text text-anchor="start" x="24" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00"> LVL &gt;, Loc, Params... &gt;</text>
+<text text-anchor="middle" x="86" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">::eval_neighbour</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node2&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M241.31,-301.36C224.44,-282.45 198.52,-255.66 172,-237 167.31,-233.7 162.31,-230.54 157.18,-227.53"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="238.73,-303.73 247.96,-308.93 243.99,-299.11 238.73,-303.73"/>
+<path fill="none" stroke="midnightblue" d="M238.61,-330.4C221.33,-313.15 196.18,-289.31 172,-271 167.04,-267.24 161.79,-263.51 156.43,-259.87"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="236.43,-333.18 245.96,-337.82 241.4,-328.25 236.43,-333.18"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="structvisioncpp_1_1internal_1_1EvalExpr_3_01Assign_3_01LHS_00_01RHS_00_01Cols_00_01Rows_00_01LfTeef9e8bb9ee55fb68584e2a0065c5dfc.html#a74179b14c4b68fb166bb9d2f6960684f" target="_top" xlink:title="evaluate function when the internal::ops_category is NeighbourOP.">
-<polygon fill="none" stroke="black" points="7,-82.5 7,-145.5 165,-145.5 165,-82.5 7,-82.5"/>
-<text text-anchor="start" x="15" y="-133.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
-<text text-anchor="start" x="15" y="-122.5" font-family="Helvetica,sans-Serif" font-size="10.00">::EvalExpr&lt; Assign&lt;</text>
-<text text-anchor="start" x="15" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00"> LHS, RHS, Cols, Rows,</text>
-<text text-anchor="start" x="15" y="-100.5" font-family="Helvetica,sans-Serif" font-size="10.00"> LfType, LVL &gt;, Loc, Params...</text>
-<text text-anchor="middle" x="86" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &gt;::eval_neighbour</text>
+<g id="a_node9"><a xlink:href="structvisioncpp_1_1internal_1_1EvalExpr_3_01StnNoFilt_3_01C__OP_00_01Halo__T_00_01Halo__L_00_01Hc8751eddb8d9925ba96b0bc205f2035f.html#ad99b1ceb5e6045a4b2c5444d3a364e40" target="_top" xlink:title="evaluate function when the internal::ops_category is NeighbourOP.">
+<polygon fill="none" stroke="black" points="7.5,-83 7.5,-157 164.5,-157 164.5,-83 7.5,-83"/>
+<text text-anchor="start" x="15.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
+<text text-anchor="start" x="15.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">::EvalExpr&lt; StnNoFilt</text>
+<text text-anchor="start" x="15.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; C_OP, Halo_T, Halo_L,</text>
+<text text-anchor="start" x="15.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00"> Halo_B, Halo_R, RHS, Cols,</text>
+<text text-anchor="start" x="15.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"> Rows, LfType, LVL &gt;, Loc,</text>
+<text text-anchor="middle" x="86" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"> Params... &gt;::eval_neighbour</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node9 -->
 <g id="edge8" class="edge">
 <title>Node2&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M253.1,-299.25C241.25,-263.32 214.89,-196.5 172,-155 168.59,-151.7 164.85,-148.61 160.92,-145.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="249.82,-300.46 256.19,-308.93 256.48,-298.34 249.82,-300.46"/>
+<path fill="none" stroke="midnightblue" d="M254,-328.05C242.87,-289.45 216.91,-214.73 172,-167 168.76,-163.56 165.22,-160.31 161.47,-157.25"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="250.7,-329.23 256.75,-337.93 257.44,-327.36 250.7,-329.23"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
@@ -187,8 +187,8 @@
 <!-- Node2&#45;&gt;Node10 -->
 <g id="edge9" class="edge">
 <title>Node2&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M257.95,-298.59C251.75,-249.31 231.74,-139.73 172,-73 168.94,-69.58 165.53,-66.42 161.89,-63.5"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="254.49,-299.17 259.13,-308.7 261.44,-298.36 254.49,-299.17"/>
+<path fill="none" stroke="midnightblue" d="M258.96,-327.47C254.47,-274.21 237.21,-149.94 172,-74 168.78,-70.25 165.15,-66.81 161.25,-63.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="255.49,-328 259.73,-337.71 262.47,-327.47 255.49,-328"/>
 </g>
 </g>
 </svg>

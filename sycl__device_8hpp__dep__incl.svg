@@ -35,7 +35,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="device_8hpp.html" target="_top" xlink:title="include headers for adding different devices. Currently we only support sycl backend">
+<g id="a_node3"><a xlink:href="device_8hpp.html" target="_top" xlink:title="include headers for adding different devices.">
 <polygon fill="none" stroke="black" points="12.5,-112.5 12.5,-131.5 82.5,-131.5 82.5,-112.5 12.5,-112.5"/>
 <text text-anchor="middle" x="47.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">device.hpp</text>
 </a>

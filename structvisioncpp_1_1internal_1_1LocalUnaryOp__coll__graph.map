@@ -1,9 +1,8 @@
 <map id="visioncpp::internal::LocalUnaryOp&lt; USROP, InTp &gt;" name="visioncpp::internal::LocalUnaryOp&lt; USROP, InTp &gt;">
-<area shape="rect" id="node1" title="This class is used to encapsulate the local unary functor and the types of each operand in this funct..." alt="" coords="187,557,372,664"/>
-<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title=" " alt="" coords="110,359,299,495"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,189,156,267"/>
-<area shape="rect" id="node4" title=" " alt="" coords="203,5,241,83"/>
-<area shape="rect" id="node5" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title="LocalNeighbour is used to provide local access for each element of the local memory based on the Coor..." alt="" coords="263,160,432,296"/>
-<area shape="rect" id="node6" title=" " alt="" coords="282,5,413,83"/>
-<area shape="rect" id="node7" title=" " alt="" coords="324,388,384,465"/>
+<area shape="rect" id="node1" title="This class is used to encapsulate the local unary functor and the types of each operand in this funct..." alt="" coords="107,587,293,693"/>
+<area shape="rect" id="node2" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title=" " alt="" coords="31,359,220,524"/>
+<area shape="rect" id="node3" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title="LocalNeighbour is used to provide local access for each element of the local memory based on the Coor..." alt="" coords="41,160,210,296"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,5,136,83"/>
+<area shape="rect" id="node5" title=" " alt="" coords="161,5,199,83"/>
+<area shape="rect" id="node6" title=" " alt="" coords="245,403,305,480"/>
 </map>

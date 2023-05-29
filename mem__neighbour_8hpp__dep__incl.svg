@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="this file contains different types of memory required for executing neighbour operation to calculate ...">
 <polygon fill="#bfbfbf" stroke="black" points="0.5,-224.5 0.5,-243.5 116.5,-243.5 116.5,-224.5 0.5,-224.5"/>
 <text text-anchor="middle" x="58.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">mem_neighbour.hpp</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="memory__access_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="memory__access_8hpp.html" target="_top" xlink:title="this file contains a set of forward declarations and include headers required for constructing and ac...">
 <polygon fill="none" stroke="black" points="0,-168.5 0,-187.5 117,-187.5 117,-168.5 0,-168.5"/>
 <text text-anchor="middle" x="58.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">memory_access.hpp</text>
 </a>
@@ -35,7 +35,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="memory_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="memory_8hpp.html" target="_top" xlink:title="this file contains a set of forward declarations and include headers required for constructing and ac...">
 <polygon fill="none" stroke="black" points="20,-112.5 20,-131.5 97,-131.5 97,-112.5 20,-112.5"/>
 <text text-anchor="middle" x="58.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">memory.hpp</text>
 </a>

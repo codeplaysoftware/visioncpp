@@ -12,21 +12,21 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="the definition is in LeafNode.">
-<polygon fill="#bfbfbf" stroke="black" points="48.5,-0.5 48.5,-156.5 216.5,-156.5 216.5,-0.5 48.5,-0.5"/>
-<text text-anchor="start" x="56.5" y="-144.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
-<text text-anchor="middle" x="132.5" y="-133.5" font-family="Helvetica,sans-Serif" font-size="10.00">::LeafNode&lt; RHS, LVL &gt;</text>
-<polyline fill="none" stroke="black" points="48.5,-126.5 216.5,-126.5 "/>
-<text text-anchor="middle" x="132.5" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="48.5,-107.5 216.5,-107.5 "/>
-<text text-anchor="start" x="56.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LeafNode()</text>
-<text text-anchor="start" x="56.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LeafNode()</text>
-<text text-anchor="start" x="56.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LeafNode()</text>
-<text text-anchor="start" x="56.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ reset()</text>
-<text text-anchor="start" x="56.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ sub_expression_evaluation()</text>
-<text text-anchor="start" x="56.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ set_output()</text>
-<text text-anchor="start" x="56.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ reset_input()</text>
-<text text-anchor="start" x="56.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ lock()</text>
-<text text-anchor="start" x="56.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ unlock()</text>
+<polygon fill="#bfbfbf" stroke="black" points="45.5,-0.5 45.5,-156.5 213.5,-156.5 213.5,-0.5 45.5,-0.5"/>
+<text text-anchor="start" x="53.5" y="-144.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
+<text text-anchor="middle" x="129.5" y="-133.5" font-family="Helvetica,sans-Serif" font-size="10.00">::LeafNode&lt; RHS, LVL &gt;</text>
+<polyline fill="none" stroke="black" points="45.5,-126.5 213.5,-126.5 "/>
+<text text-anchor="middle" x="129.5" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="45.5,-107.5 213.5,-107.5 "/>
+<text text-anchor="start" x="53.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LeafNode()</text>
+<text text-anchor="start" x="53.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LeafNode()</text>
+<text text-anchor="start" x="53.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LeafNode()</text>
+<text text-anchor="start" x="53.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ reset()</text>
+<text text-anchor="start" x="53.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ sub_expression_evaluation()</text>
+<text text-anchor="start" x="53.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ set_output()</text>
+<text text-anchor="start" x="53.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ reset_input()</text>
+<text text-anchor="start" x="53.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ lock()</text>
+<text text-anchor="start" x="53.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ unlock()</text>
 </a>
 </g>
 </g>
@@ -46,58 +46,58 @@
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M22.73,-259.37C23.94,-235.81 28.15,-201.62 41.5,-175 42.87,-172.27 44.34,-169.56 45.91,-166.88"/>
-<polygon fill="none" stroke="#404040" points="45.93,-166.85 45.76,-159.65 52.35,-156.72 52.52,-163.93 45.93,-166.85"/>
-<text text-anchor="middle" x="85" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00"> +Operation_type</text>
-<text text-anchor="middle" x="85" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+Level</text>
-<text text-anchor="middle" x="85" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">+LeafType</text>
-<text text-anchor="middle" x="85" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+RThread</text>
-<text text-anchor="middle" x="85" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+CThread</text>
-<text text-anchor="middle" x="85" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ND_Category</text>
+<path fill="none" stroke="#404040" d="M22.84,-259.42C24.13,-235.9 28.38,-201.73 41.5,-175 42.85,-172.26 44.3,-169.53 45.84,-166.84"/>
+<polygon fill="none" stroke="#404040" points="45.87,-166.79 45.63,-159.59 52.2,-156.6 52.43,-163.81 45.87,-166.79"/>
+<text text-anchor="middle" x="83.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00"> +CThread</text>
+<text text-anchor="middle" x="83.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+LeafType</text>
+<text text-anchor="middle" x="83.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">+Level</text>
+<text text-anchor="middle" x="83.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ND_Category</text>
+<text text-anchor="middle" x="83.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+Operation_type</text>
+<text text-anchor="middle" x="83.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+RThread</text>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:title=" ">
-<polygon fill="none" stroke="#bfbfbf" points="114,-259.5 114,-316.5 151,-316.5 151,-259.5 114,-259.5"/>
-<text text-anchor="middle" x="132.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">RHS</text>
-<polyline fill="none" stroke="#bfbfbf" points="114,-297.5 151,-297.5 "/>
-<text text-anchor="middle" x="132.5" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="114,-278.5 151,-278.5 "/>
-<text text-anchor="middle" x="132.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="none" stroke="#bfbfbf" points="111,-259.5 111,-316.5 148,-316.5 148,-259.5 111,-259.5"/>
+<text text-anchor="middle" x="129.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">RHS</text>
+<polyline fill="none" stroke="#bfbfbf" points="111,-297.5 148,-297.5 "/>
+<text text-anchor="middle" x="129.5" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="111,-278.5 148,-278.5 "/>
+<text text-anchor="middle" x="129.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node1 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M132.5,-259.45C132.5,-236.28 132.5,-201.81 132.5,-169.23"/>
-<polygon fill="none" stroke="#404040" points="132.5,-168.86 128.5,-162.86 132.5,-156.86 136.5,-162.86 132.5,-168.86"/>
-<text text-anchor="middle" x="169" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"> +vilibMemory</text>
+<path fill="none" stroke="#404040" d="M129.5,-259.45C129.5,-236.28 129.5,-201.81 129.5,-169.23"/>
+<polygon fill="none" stroke="#404040" points="129.5,-168.86 125.5,-162.86 129.5,-156.86 133.5,-162.86 129.5,-168.86"/>
+<text text-anchor="middle" x="166" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"> +vilibMemory</text>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:title=" ">
-<polygon fill="none" stroke="#bfbfbf" points="209.5,-259.5 209.5,-316.5 247.5,-316.5 247.5,-259.5 209.5,-259.5"/>
-<text text-anchor="middle" x="228.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">bool</text>
-<polyline fill="none" stroke="#bfbfbf" points="209.5,-297.5 247.5,-297.5 "/>
-<text text-anchor="middle" x="228.5" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="209.5,-278.5 247.5,-278.5 "/>
-<text text-anchor="middle" x="228.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="none" stroke="#bfbfbf" points="206.5,-259.5 206.5,-316.5 244.5,-316.5 244.5,-259.5 206.5,-259.5"/>
+<text text-anchor="middle" x="225.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">bool</text>
+<polyline fill="none" stroke="#bfbfbf" points="206.5,-297.5 244.5,-297.5 "/>
+<text text-anchor="middle" x="225.5" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="206.5,-278.5 244.5,-278.5 "/>
+<text text-anchor="middle" x="225.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node1 -->
 <g id="edge3" class="edge">
 <title>Node4&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M226.63,-259.21C224.24,-235.86 218.8,-202.06 206.5,-175 205.31,-172.38 204.04,-169.77 202.69,-167.17"/>
-<polygon fill="none" stroke="#404040" points="202.63,-167.06 196.21,-163.77 196.78,-156.58 203.19,-159.87 202.63,-167.06"/>
-<text text-anchor="middle" x="289.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"> +has_out</text>
-<text text-anchor="start" x="223.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+SubExpressionEvaluation</text>
-<text text-anchor="middle" x="289.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">Needed</text>
-<text text-anchor="start" x="223.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+subexpr_execution</text>
-<text text-anchor="middle" x="289.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">_reseter</text>
+<path fill="none" stroke="#404040" d="M223.63,-259.21C221.24,-235.86 215.8,-202.06 203.5,-175 202.31,-172.38 201.04,-169.77 199.69,-167.17"/>
+<polygon fill="none" stroke="#404040" points="199.63,-167.06 193.21,-163.77 193.78,-156.58 200.19,-159.87 199.63,-167.06"/>
+<text text-anchor="start" x="220.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"> +SubExpressionEvaluation</text>
+<text text-anchor="middle" x="288" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">Needed</text>
+<text text-anchor="middle" x="288" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+has_out</text>
+<text text-anchor="start" x="220.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+subexpr_execution</text>
+<text text-anchor="middle" x="288" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">_reseter</text>
 </g>
 </g>
 </svg>

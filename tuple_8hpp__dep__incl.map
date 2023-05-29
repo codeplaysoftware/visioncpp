@@ -1,7 +1,7 @@
 <map id="tuple.hpp" name="tuple.hpp">
-<area shape="rect" id="node1" title="Tuples standard layout implementation. http://en.cppreference.com/w/cpp/utility/tuple." alt="" coords="87,5,170,32"/>
+<area shape="rect" id="node1" title="Tuples standard layout implementation." alt="" coords="87,5,170,32"/>
 <area shape="rect" id="node2" href="$tools_8hpp.html" title="Collection of tools headers." alt="" coords="37,80,119,107"/>
-<area shape="rect" id="node5" href="$pixel_8hpp.html" title="This file contains definition of underlying pixel types used in VisionCpp. Generic form of the pixel ..." alt="" coords="151,155,232,181"/>
+<area shape="rect" id="node5" href="$pixel_8hpp.html" title="This file contains definition of underlying pixel types used in VisionCpp." alt="" coords="151,155,232,181"/>
 <area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="5,155,127,181"/>
 <area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="73,229,185,256"/>
 </map>

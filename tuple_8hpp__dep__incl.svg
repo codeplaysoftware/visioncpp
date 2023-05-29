@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Tuples standard layout implementation. http://en.cppreference.com/w/cpp/utility/tuple.">
+<g id="a_node1"><a xlink:title="Tuples standard layout implementation.">
 <polygon fill="#bfbfbf" stroke="black" points="61.5,-168.5 61.5,-187.5 123.5,-187.5 123.5,-168.5 61.5,-168.5"/>
 <text text-anchor="middle" x="92.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">tuple.hpp</text>
 </a>
@@ -35,7 +35,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="pixel_8hpp.html" target="_top" xlink:title="This file contains definition of underlying pixel types used in VisionCpp. Generic form of the pixel ...">
+<g id="a_node5"><a xlink:href="pixel_8hpp.html" target="_top" xlink:title="This file contains definition of underlying pixel types used in VisionCpp.">
 <polygon fill="none" stroke="black" points="109,-56.5 109,-75.5 170,-75.5 170,-56.5 109,-56.5"/>
 <text text-anchor="middle" x="139.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">pixel.hpp</text>
 </a>

@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="include headers for adding different devices. Currently we only support sycl backend">
+<g id="a_node1"><a xlink:title="include headers for adding different devices.">
 <polygon fill="#bfbfbf" stroke="black" points="10.5,-112.5 10.5,-131.5 80.5,-131.5 80.5,-112.5 10.5,-112.5"/>
 <text text-anchor="middle" x="45.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">device.hpp</text>
 </a>

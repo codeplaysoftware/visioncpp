@@ -43,10 +43,10 @@
 <title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#404040" d="M76,-182.48C76,-163.51 76,-137.52 76,-113.72"/>
 <polygon fill="none" stroke="#404040" points="76,-113.53 72,-107.53 76,-101.53 80,-107.53 76,-113.53"/>
-<text text-anchor="middle" x="102" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> +Out_LR</text>
-<text text-anchor="middle" x="102" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+Out_LC</text>
-<text text-anchor="middle" x="102" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+LR_Ratio</text>
-<text text-anchor="middle" x="102" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+LC_Ratio</text>
+<text text-anchor="middle" x="103.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> +LC_Ratio</text>
+<text text-anchor="middle" x="103.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+LR_Ratio</text>
+<text text-anchor="middle" x="103.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+Out_LC</text>
+<text text-anchor="middle" x="103.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+Out_LR</text>
 </g>
 </g>
 </svg>

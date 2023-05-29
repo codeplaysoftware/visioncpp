@@ -1,6 +1,6 @@
 <map id="memory_access.hpp" name="memory_access.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,161,32"/>
-<area shape="rect" id="node2" href="$memory_8hpp.html" title=" " alt="" coords="32,80,135,107"/>
+<area shape="rect" id="node1" title="this file contains a set of forward declarations and include headers required for constructing and ac..." alt="" coords="5,5,161,32"/>
+<area shape="rect" id="node2" href="$memory_8hpp.html" title="this file contains a set of forward declarations and include headers required for constructing and ac..." alt="" coords="32,80,135,107"/>
 <area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="23,155,144,181"/>
 <area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="27,229,139,256"/>
 </map>

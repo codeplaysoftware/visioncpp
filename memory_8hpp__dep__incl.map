@@ -1,5 +1,5 @@
 <map id="memory.hpp" name="memory.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="15,5,117,32"/>
+<area shape="rect" id="node1" title="this file contains a set of forward declarations and include headers required for constructing and ac..." alt="" coords="15,5,117,32"/>
 <area shape="rect" id="node2" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="5,80,127,107"/>
 <area shape="rect" id="node3" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="10,155,122,181"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="mem_vision.hpp" name="mem_vision.hpp">
 <area shape="rect" id="node1" title="this file contains the memory struct used to store {Sycl buffer , Host pointer or Sycl image}." alt="" coords="5,5,136,32"/>
-<area shape="rect" id="node2" href="$memory_8hpp.html" title=" " alt="" coords="19,80,122,107"/>
+<area shape="rect" id="node2" href="$memory_8hpp.html" title="this file contains a set of forward declarations and include headers required for constructing and ac..." alt="" coords="19,80,122,107"/>
 <area shape="rect" id="node3" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="10,155,131,181"/>
 <area shape="rect" id="node4" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="15,229,127,256"/>
 </map>

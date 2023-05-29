@@ -44,10 +44,10 @@
 <title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#404040" d="M83.5,-193.26C83.5,-174.49 83.5,-148.83 83.5,-124.88"/>
 <polygon fill="none" stroke="#404040" points="83.5,-124.55 79.5,-118.55 83.5,-112.55 87.5,-118.55 83.5,-124.55"/>
-<text text-anchor="middle" x="114" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00"> +Out_LR</text>
-<text text-anchor="middle" x="114" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+Out_LC</text>
-<text text-anchor="middle" x="114" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+Halo_COL</text>
-<text text-anchor="middle" x="114" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+Halo_ROW</text>
+<text text-anchor="middle" x="114" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00"> +Halo_COL</text>
+<text text-anchor="middle" x="114" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+Halo_ROW</text>
+<text text-anchor="middle" x="114" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+Out_LC</text>
+<text text-anchor="middle" x="114" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+Out_LR</text>
 </g>
 </g>
 </svg>

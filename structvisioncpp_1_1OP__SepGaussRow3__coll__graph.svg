@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Separable filter for rows. If the number of channel is different in your case feel free to write your...">
+<g id="a_node1"><a xlink:title="Separable filter for rows.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-57.5 163,-57.5 163,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="81.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::OP_SepGaussRow3</text>
 <polyline fill="none" stroke="black" points="0,-38.5 163,-38.5 "/>

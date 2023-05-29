@@ -1,13 +1,11 @@
 <map id="visioncpp::internal::LocalBinaryOp&lt; USROP, InTp1, InTp2 &gt;" name="visioncpp::internal::LocalBinaryOp&lt; USROP, InTp1, InTp2 &gt;">
-<area shape="rect" id="node1" title="This class is used to encapsulate the local binary functor and the types of each operand in this func..." alt="" coords="172,557,360,664"/>
-<area shape="rect" id="node2" title=" " alt="" coords="79,5,139,83"/>
-<area shape="rect" id="node8" href="$structvisioncpp_1_1internal_1_1ConstNeighbour.html" title=" " alt="" coords="166,366,366,487"/>
-<area shape="rect" id="node10" href="$structvisioncpp_1_1internal_1_1ConstNeighbour.html" title="ConstNeighbour is used to provide global access to the constant memory. It is used as an input type f..." alt="" coords="180,167,352,289"/>
-<area shape="rect" id="node3" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title=" " alt="" coords="627,359,825,495"/>
-<area shape="rect" id="node4" title=" " alt="" coords="583,189,741,267"/>
-<area shape="rect" id="node5" title=" " alt="" coords="787,5,825,83"/>
-<area shape="rect" id="node6" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title="LocalNeighbour is used to provide local access for each element of the local memory based on the Coor..." alt="" coords="848,160,1017,296"/>
-<area shape="rect" id="node7" title=" " alt="" coords="867,5,998,83"/>
-<area shape="rect" id="node9" title=" " alt="" coords="376,189,559,267"/>
-<area shape="rect" id="node11" title=" " alt="" coords="189,5,343,83"/>
+<area shape="rect" id="node1" title="This class is used to encapsulate the local binary functor and the types of each operand in this func..." alt="" coords="79,587,267,693"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,65,83"/>
+<area shape="rect" id="node8" href="$structvisioncpp_1_1internal_1_1ConstNeighbour.html" title="ConstNeighbour is used to provide global access to the constant memory." alt="" coords="85,167,257,289"/>
+<area shape="rect" id="node3" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title=" " alt="" coords="297,359,494,524"/>
+<area shape="rect" id="node4" href="$structvisioncpp_1_1internal_1_1LocalNeighbour.html" title="LocalNeighbour is used to provide local access for each element of the local memory based on the Coor..." alt="" coords="311,160,480,296"/>
+<area shape="rect" id="node5" title=" " alt="" coords="299,5,430,83"/>
+<area shape="rect" id="node6" title=" " alt="" coords="455,5,493,83"/>
+<area shape="rect" id="node7" href="$structvisioncpp_1_1internal_1_1ConstNeighbour.html" title=" " alt="" coords="73,366,273,517"/>
+<area shape="rect" id="node9" title=" " alt="" coords="94,5,249,83"/>
 </map>

@@ -31,11 +31,11 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:title=" ">
-<polygon fill="none" stroke="#bfbfbf" points="37,-182.5 37,-239.5 163,-239.5 163,-182.5 37,-182.5"/>
-<text text-anchor="middle" x="100" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">static constexpr size_t</text>
-<polyline fill="none" stroke="#bfbfbf" points="37,-220.5 163,-220.5 "/>
+<polygon fill="none" stroke="#bfbfbf" points="77.5,-182.5 77.5,-239.5 122.5,-239.5 122.5,-182.5 77.5,-182.5"/>
+<text text-anchor="middle" x="100" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">size_t</text>
+<polyline fill="none" stroke="#bfbfbf" points="77.5,-220.5 122.5,-220.5 "/>
 <text text-anchor="middle" x="100" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="37,-201.5 163,-201.5 "/>
+<polyline fill="none" stroke="#bfbfbf" points="77.5,-201.5 122.5,-201.5 "/>
 <text text-anchor="middle" x="100" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
@@ -45,8 +45,8 @@
 <title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#404040" d="M100,-182.35C100,-169.03 100,-152.37 100,-135.76"/>
 <polygon fill="none" stroke="#404040" points="100,-135.72 96,-129.72 100,-123.72 104,-129.72 100,-135.72"/>
-<text text-anchor="middle" x="123" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> +Out_LR</text>
-<text text-anchor="middle" x="123" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+Out_LC</text>
+<text text-anchor="middle" x="123" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> +Out_LC</text>
+<text text-anchor="middle" x="123" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+Out_LR</text>
 </g>
 </g>
 </svg>

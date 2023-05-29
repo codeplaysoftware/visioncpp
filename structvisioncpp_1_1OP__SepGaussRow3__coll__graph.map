@@ -1,3 +1,3 @@
 <map id="visioncpp::OP_SepGaussRow3" name="visioncpp::OP_SepGaussRow3">
-<area shape="rect" id="node1" title="Separable filter for rows. If the number of channel is different in your case feel free to write your..." alt="" coords="5,5,223,83"/>
+<area shape="rect" id="node1" title="Separable filter for rows." alt="" coords="5,5,223,83"/>
 </map>

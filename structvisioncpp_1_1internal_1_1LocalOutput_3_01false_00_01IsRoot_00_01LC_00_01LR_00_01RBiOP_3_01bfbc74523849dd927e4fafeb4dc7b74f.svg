@@ -43,8 +43,8 @@
 <title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#404040" d="M46.72,-182.45C45.65,-164.44 45.66,-140.53 50.5,-120 51.04,-117.7 51.67,-115.39 52.37,-113.08"/>
 <polygon fill="none" stroke="#404040" points="52.43,-112.91 50.65,-105.92 56.41,-101.58 58.19,-108.57 52.43,-112.91"/>
-<text text-anchor="middle" x="73.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> +Out_LR</text>
-<text text-anchor="middle" x="73.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+Out_LC</text>
+<text text-anchor="middle" x="73.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> +Out_LC</text>
+<text text-anchor="middle" x="73.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+Out_LR</text>
 <text text-anchor="middle" x="73.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+lhs</text>
 <text text-anchor="middle" x="73.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+rhs</text>
 </g>

@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="PlaceHolder is used to replace the Vision Memory in the LeafNode containing sycl buffer....">
+<g id="a_node1"><a xlink:title="PlaceHolder is used to replace the Vision Memory in the LeafNode containing sycl buffer.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-79.5 133,-79.5 133,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
 <text text-anchor="start" x="8" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">::PlaceHolder&lt; Memory</text>
@@ -41,11 +41,11 @@
 <title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#404040" d="M66.5,-171.48C66.5,-149.57 66.5,-118.31 66.5,-91.88"/>
 <polygon fill="none" stroke="#404040" points="66.5,-91.75 62.5,-85.75 66.5,-79.75 70.5,-85.75 66.5,-91.75"/>
-<text text-anchor="middle" x="92.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00"> +Rows</text>
-<text text-anchor="middle" x="92.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+Scope</text>
+<text text-anchor="middle" x="92.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00"> +Cols</text>
+<text text-anchor="middle" x="92.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+I</text>
 <text text-anchor="middle" x="92.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+LeafType</text>
-<text text-anchor="middle" x="92.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+Cols</text>
-<text text-anchor="middle" x="92.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">+I</text>
+<text text-anchor="middle" x="92.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+Rows</text>
+<text text-anchor="middle" x="92.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">+Scope</text>
 </g>
 </g>
 </svg>

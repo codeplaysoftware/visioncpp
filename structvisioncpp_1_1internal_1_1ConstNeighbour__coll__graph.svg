@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="ConstNeighbour is used to provide global access to the constant memory. It is used as an input type f...">
+<g id="a_node1"><a xlink:title="ConstNeighbour is used to provide global access to the constant memory.">
 <polygon fill="#bfbfbf" stroke="black" points="7,-0.5 7,-90.5 136,-90.5 136,-0.5 7,-0.5"/>
 <text text-anchor="start" x="15" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
 <text text-anchor="middle" x="71.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">::ConstNeighbour&lt; T &gt;</text>
@@ -42,8 +42,8 @@
 <title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#404040" d="M32.89,-149.32C38.05,-135.6 44.46,-118.51 50.58,-102.22"/>
 <polygon fill="none" stroke="#404040" points="50.74,-101.8 49.1,-94.78 54.95,-90.57 56.59,-97.59 50.74,-101.8"/>
-<text text-anchor="middle" x="65" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00"> +rows</text>
-<text text-anchor="middle" x="65" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+cols</text>
+<text text-anchor="middle" x="63.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00"> +cols</text>
+<text text-anchor="middle" x="63.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+rows</text>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">

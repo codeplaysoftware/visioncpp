@@ -50,7 +50,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="memory_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node10"><a xlink:href="memory_8hpp.html" target="_top" xlink:title="this file contains a set of forward declarations and include headers required for constructing and ac...">
 <polygon fill="none" stroke="black" points="757,-140 757,-159 879,-159 879,-140 757,-140"/>
 <text text-anchor="middle" x="818" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">memory/memory.hpp</text>
 </a>
@@ -126,7 +126,7 @@
 <!-- Node55 -->
 <g id="node55" class="node">
 <title>Node55</title>
-<g id="a_node55"><a xlink:href="device_8hpp.html" target="_top" xlink:title="include headers for adding different devices. Currently we only support sycl backend">
+<g id="a_node55"><a xlink:href="device_8hpp.html" target="_top" xlink:title="include headers for adding different devices.">
 <polygon fill="none" stroke="black" points="3700.5,-140 3700.5,-159 3805.5,-159 3805.5,-140 3700.5,-140"/>
 <text text-anchor="middle" x="3753" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">device/device.hpp</text>
 </a>
@@ -186,7 +186,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="tuple_8hpp.html" target="_top" xlink:title="Tuples standard layout implementation. http://en.cppreference.com/w/cpp/utility/tuple.">
+<g id="a_node8"><a xlink:href="tuple_8hpp.html" target="_top" xlink:title="Tuples standard layout implementation.">
 <polygon fill="none" stroke="black" points="264,-73 264,-92 326,-92 326,-73 264,-73"/>
 <text text-anchor="middle" x="295" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">tuple.hpp</text>
 </a>
@@ -231,7 +231,7 @@
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="mem__const_8hpp.html" target="_top" xlink:title="specialisations of SyclMem type when we are passing constant variable to the device....">
+<g id="a_node11"><a xlink:href="mem__const_8hpp.html" target="_top" xlink:title="specialisations of SyclMem type when we are passing constant variable to the device.">
 <polygon fill="none" stroke="black" points="488.5,-73 488.5,-92 583.5,-92 583.5,-73 488.5,-73"/>
 <text text-anchor="middle" x="536" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">mem_const.hpp</text>
 </a>
@@ -261,7 +261,7 @@
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="mem__virtual_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node13"><a xlink:href="mem__virtual_8hpp.html" target="_top" xlink:title="This file contains the VirtualMemory struct.">
 <polygon fill="none" stroke="black" points="710,-73 710,-92 810,-92 810,-73 710,-73"/>
 <text text-anchor="middle" x="760" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">mem_virtual.hpp</text>
 </a>
@@ -291,7 +291,7 @@
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="memory__access_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node15"><a xlink:href="memory__access_8hpp.html" target="_top" xlink:title="this file contains a set of forward declarations and include headers required for constructing and ac...">
 <polygon fill="none" stroke="black" points="944,-67.5 944,-97.5 1084,-97.5 1084,-67.5 944,-67.5"/>
 <text text-anchor="start" x="952" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">memory_access/memory</text>
 <text text-anchor="middle" x="1014" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_access.hpp</text>
@@ -322,7 +322,7 @@
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="mem__neighbour_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node17"><a xlink:href="mem__neighbour_8hpp.html" target="_top" xlink:title="this file contains different types of memory required for executing neighbour operation to calculate ...">
 <polygon fill="none" stroke="black" points="1024,-6 1024,-25 1140,-25 1140,-6 1024,-6"/>
 <text text-anchor="middle" x="1082" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">mem_neighbour.hpp</text>
 </a>
@@ -337,7 +337,7 @@
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="leaf__count_8hpp.html" target="_top" xlink:title="LeafCount used to counting terminal nodes. The total number of leaf nodes is used by MakePlaceHolderE...">
+<g id="a_node19"><a xlink:href="leaf__count_8hpp.html" target="_top" xlink:title="LeafCount used to counting terminal nodes.">
 <polygon fill="none" stroke="black" points="1102.5,-73 1102.5,-92 1191.5,-92 1191.5,-73 1102.5,-73"/>
 <text text-anchor="middle" x="1147" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">leaf_count.hpp</text>
 </a>
@@ -352,7 +352,7 @@
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
-<g id="a_node20"><a xlink:href="local__mem__count_8hpp.html" target="_top" xlink:title="LocalmemCount used to counting terminal nodes. The total number of leaf nodes is used by MakePlaceHol...">
+<g id="a_node20"><a xlink:href="local__mem__count_8hpp.html" target="_top" xlink:title="LocalmemCount used to counting terminal nodes.">
 <polygon fill="none" stroke="black" points="1209,-73 1209,-92 1333,-92 1333,-73 1209,-73"/>
 <text text-anchor="middle" x="1271" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">local_mem_count.hpp</text>
 </a>
@@ -579,7 +579,7 @@
 <!-- Node36 -->
 <g id="node36" class="node">
 <title>Node36</title>
-<g id="a_node36"><a xlink:href="pyramid__mem_8hpp.html" target="_top" xlink:title="This file is used to create a pyramid output memory when the auto generate output memory is selected....">
+<g id="a_node36"><a xlink:href="pyramid__mem_8hpp.html" target="_top" xlink:title="This file is used to create a pyramid output memory when the auto generate output memory is selected.">
 <polygon fill="none" stroke="black" points="2311.5,-6 2311.5,-25 2420.5,-25 2420.5,-6 2311.5,-6"/>
 <text text-anchor="middle" x="2366" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">pyramid_mem.hpp</text>
 </a>
@@ -641,7 +641,7 @@
 <!-- Node41 -->
 <g id="node41" class="node">
 <title>Node41</title>
-<g id="a_node41"><a xlink:href="eval__assign__partial_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node41"><a xlink:href="eval__assign__partial_8hpp.html" target="_top" xlink:title="This file contains the specialisation of the Evaluator struct for assign when it is a root struct.">
 <polygon fill="none" stroke="black" points="2905.5,-67.5 2905.5,-97.5 3040.5,-97.5 3040.5,-67.5 2905.5,-67.5"/>
 <text text-anchor="start" x="2913.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">eval_assign/eval_assign</text>
 <text text-anchor="middle" x="2973" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_partial.hpp</text>
@@ -689,7 +689,7 @@
 <!-- Node43 -->
 <g id="node43" class="node">
 <title>Node43</title>
-<g id="a_node43"><a xlink:href="eval__expr__assign_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node43"><a xlink:href="eval__expr__assign_8hpp.html" target="_top" xlink:title="this file contains the specialisation of EvalExpr for Assign when it is not a root">
 <polygon fill="none" stroke="black" points="2757,-6 2757,-25 2879,-25 2879,-6 2757,-6"/>
 <text text-anchor="middle" x="2818" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">eval_expr_assign.hpp</text>
 </a>

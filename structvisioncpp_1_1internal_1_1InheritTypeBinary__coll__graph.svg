@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="This struct is used to extract the output type of the binary operation from both input....">
+<g id="a_node1"><a xlink:title="This struct is used to extract the output type of the binary operation from both input.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-79.5 128,-79.5 128,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
 <text text-anchor="start" x="8" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">::InheritTypeBinary</text>

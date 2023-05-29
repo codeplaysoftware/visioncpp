@@ -12,16 +12,16 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="48.5,-0.5 48.5,-101.5 216.5,-101.5 216.5,-0.5 48.5,-0.5"/>
-<text text-anchor="start" x="56.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
-<text text-anchor="start" x="56.5" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">::PyramidLeafNode&lt; Pyramid</text>
-<text text-anchor="middle" x="132.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">T, N &gt;</text>
-<polyline fill="none" stroke="black" points="48.5,-60.5 216.5,-60.5 "/>
-<text text-anchor="middle" x="132.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="48.5,-41.5 216.5,-41.5 "/>
-<text text-anchor="start" x="56.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PyramidLeafNode()</text>
-<text text-anchor="start" x="56.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ reset()</text>
-<text text-anchor="start" x="56.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ sub_expression_evaluation()</text>
+<polygon fill="#bfbfbf" stroke="black" points="45.5,-0.5 45.5,-101.5 213.5,-101.5 213.5,-0.5 45.5,-0.5"/>
+<text text-anchor="start" x="53.5" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">visioncpp::internal</text>
+<text text-anchor="start" x="53.5" y="-78.5" font-family="Helvetica,sans-Serif" font-size="10.00">::PyramidLeafNode&lt; Pyramid</text>
+<text text-anchor="middle" x="129.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">T, N &gt;</text>
+<polyline fill="none" stroke="black" points="45.5,-60.5 213.5,-60.5 "/>
+<text text-anchor="middle" x="129.5" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="45.5,-41.5 213.5,-41.5 "/>
+<text text-anchor="start" x="53.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PyramidLeafNode()</text>
+<text text-anchor="start" x="53.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ reset()</text>
+<text text-anchor="start" x="53.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ sub_expression_evaluation()</text>
 </a>
 </g>
 </g>
@@ -41,39 +41,39 @@
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M20.99,-215.34C20.82,-189 23.97,-149.17 41.5,-120 43.42,-116.81 45.55,-113.71 47.85,-110.73"/>
-<polygon fill="none" stroke="#404040" points="47.92,-110.64 48.79,-103.49 55.73,-101.54 54.86,-108.69 47.92,-110.64"/>
-<text text-anchor="middle" x="85" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00"> +Operation_type</text>
-<text text-anchor="middle" x="85" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+Level</text>
-<text text-anchor="middle" x="85" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+Depth</text>
-<text text-anchor="middle" x="85" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+LeafType</text>
-<text text-anchor="middle" x="85" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+RThread</text>
-<text text-anchor="middle" x="85" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+CThread</text>
-<text text-anchor="middle" x="85" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ND_Category</text>
+<path fill="none" stroke="#404040" d="M21.09,-215.4C21,-189.11 24.21,-149.31 41.5,-120 43.29,-116.96 45.28,-114.01 47.42,-111.15"/>
+<polygon fill="none" stroke="#404040" points="47.56,-110.98 48.34,-103.81 55.25,-101.77 54.48,-108.94 47.56,-110.98"/>
+<text text-anchor="middle" x="83.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00"> +CThread</text>
+<text text-anchor="middle" x="83.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+Depth</text>
+<text text-anchor="middle" x="83.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+LeafType</text>
+<text text-anchor="middle" x="83.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+Level</text>
+<text text-anchor="middle" x="83.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ND_Category</text>
+<text text-anchor="middle" x="83.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+Operation_type</text>
+<text text-anchor="middle" x="83.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+RThread</text>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:title=" ">
-<polygon fill="none" stroke="#bfbfbf" points="113.5,-215.5 113.5,-272.5 151.5,-272.5 151.5,-215.5 113.5,-215.5"/>
-<text text-anchor="middle" x="132.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">bool</text>
-<polyline fill="none" stroke="#bfbfbf" points="113.5,-253.5 151.5,-253.5 "/>
-<text text-anchor="middle" x="132.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="113.5,-234.5 151.5,-234.5 "/>
-<text text-anchor="middle" x="132.5" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="none" stroke="#bfbfbf" points="110.5,-215.5 110.5,-272.5 148.5,-272.5 148.5,-215.5 110.5,-215.5"/>
+<text text-anchor="middle" x="129.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">bool</text>
+<polyline fill="none" stroke="#bfbfbf" points="110.5,-253.5 148.5,-253.5 "/>
+<text text-anchor="middle" x="129.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="110.5,-234.5 148.5,-234.5 "/>
+<text text-anchor="middle" x="129.5" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node1 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M132.5,-215.23C132.5,-188.78 132.5,-148.06 132.5,-113.9"/>
-<polygon fill="none" stroke="#404040" points="132.5,-113.66 128.5,-107.66 132.5,-101.66 136.5,-107.66 132.5,-113.66"/>
-<text text-anchor="middle" x="198.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00"> +has_out</text>
-<text text-anchor="start" x="132.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+SubExpressionEvaluation</text>
-<text text-anchor="middle" x="198.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">Needed</text>
-<text text-anchor="start" x="132.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+subexpr_execution</text>
-<text text-anchor="middle" x="198.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">_reseter</text>
+<path fill="none" stroke="#404040" d="M129.5,-215.23C129.5,-188.78 129.5,-148.06 129.5,-113.9"/>
+<polygon fill="none" stroke="#404040" points="129.5,-113.66 125.5,-107.66 129.5,-101.66 133.5,-107.66 129.5,-113.66"/>
+<text text-anchor="start" x="129.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00"> +SubExpressionEvaluation</text>
+<text text-anchor="middle" x="197" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">Needed</text>
+<text text-anchor="middle" x="197" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+has_out</text>
+<text text-anchor="start" x="129.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+subexpr_execution</text>
+<text text-anchor="middle" x="197" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">_reseter</text>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -91,8 +91,8 @@
 <!-- Node4&#45;&gt;Node1 -->
 <g id="edge3" class="edge">
 <title>Node4&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M289.26,-215.34C289.55,-188.45 286.03,-147.72 265.5,-120 255.5,-106.5 242.05,-95.48 227.52,-86.55"/>
-<polygon fill="none" stroke="#404040" points="227.21,-86.37 220.02,-86.86 216.8,-80.41 223.99,-79.92 227.21,-86.37"/>
+<path fill="none" stroke="#404040" d="M289.31,-215.3C289.64,-188.38 286.16,-147.62 265.5,-120 254.77,-105.66 240.18,-94.14 224.53,-84.96"/>
+<polygon fill="none" stroke="#404040" points="224.09,-84.72 216.9,-85.36 213.55,-78.97 220.73,-78.33 224.09,-84.72"/>
 <text text-anchor="middle" x="302" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> +rhs</text>
 </g>
 </g>

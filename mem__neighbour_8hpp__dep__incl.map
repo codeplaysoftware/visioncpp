@@ -1,7 +1,7 @@
 <map id="mem_neighbour.hpp" name="mem_neighbour.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="6,5,161,32"/>
-<area shape="rect" id="node2" href="$memory__access_8hpp.html" title=" " alt="" coords="5,80,161,107"/>
-<area shape="rect" id="node3" href="$memory_8hpp.html" title=" " alt="" coords="32,155,135,181"/>
+<area shape="rect" id="node1" title="this file contains different types of memory required for executing neighbour operation to calculate ..." alt="" coords="6,5,161,32"/>
+<area shape="rect" id="node2" href="$memory__access_8hpp.html" title="this file contains a set of forward declarations and include headers required for constructing and ac..." alt="" coords="5,80,161,107"/>
+<area shape="rect" id="node3" href="$memory_8hpp.html" title="this file contains a set of forward declarations and include headers required for constructing and ac..." alt="" coords="32,155,135,181"/>
 <area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="23,229,144,256"/>
 <area shape="rect" id="node5" href="$visioncpp_8hpp.html" title="This file is collection of headers that makes VisionCpp library." alt="" coords="27,304,139,331"/>
 </map>

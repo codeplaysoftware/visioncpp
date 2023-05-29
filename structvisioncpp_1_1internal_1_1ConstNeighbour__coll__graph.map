@@ -1,5 +1,5 @@
 <map id="visioncpp::internal::ConstNeighbour&lt; T &gt;" name="visioncpp::internal::ConstNeighbour&lt; T &gt;">
-<area shape="rect" id="node1" title="ConstNeighbour is used to provide global access to the constant memory. It is used as an input type f..." alt="" coords="15,160,187,281"/>
+<area shape="rect" id="node1" title="ConstNeighbour is used to provide global access to the constant memory." alt="" coords="15,160,187,281"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,5,65,83"/>
 <area shape="rect" id="node3" title=" " alt="" coords="90,5,245,83"/>
 </map>

@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="This file contains the VirtualMemory struct.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-168.5 0,-187.5 100,-187.5 100,-168.5 0,-168.5"/>
 <text text-anchor="middle" x="50" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">mem_virtual.hpp</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="memory_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="memory_8hpp.html" target="_top" xlink:title="this file contains a set of forward declarations and include headers required for constructing and ac...">
 <polygon fill="none" stroke="black" points="11.5,-112.5 11.5,-131.5 88.5,-131.5 88.5,-112.5 11.5,-112.5"/>
 <text text-anchor="middle" x="50" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">memory.hpp</text>
 </a>

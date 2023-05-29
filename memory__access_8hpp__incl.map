@@ -1,5 +1,5 @@
 <map id="memory_access.hpp" name="memory_access.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="98,5,254,32"/>
+<area shape="rect" id="node1" title="this file contains a set of forward declarations and include headers required for constructing and ac..." alt="" coords="98,5,254,32"/>
 <area shape="rect" id="node2" href="$mem__coordinate_8hpp.html" title="This files contains the Coordinate struct which is used to specify local/global offset for local/glob..." alt="" coords="5,80,165,107"/>
-<area shape="rect" id="node3" href="$mem__neighbour_8hpp.html" title=" " alt="" coords="189,80,344,107"/>
+<area shape="rect" id="node3" href="$mem__neighbour_8hpp.html" title="this file contains different types of memory required for executing neighbour operation to calculate ..." alt="" coords="189,80,344,107"/>
 </map>

@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="specialisations of SyclMem type when we are passing constant variable to the device....">
+<g id="a_node1"><a xlink:title="specialisations of SyclMem type when we are passing constant variable to the device.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-168.5 0,-187.5 95,-187.5 95,-168.5 0,-168.5"/>
 <text text-anchor="middle" x="47.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">mem_const.hpp</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="memory_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="memory_8hpp.html" target="_top" xlink:title="this file contains a set of forward declarations and include headers required for constructing and ac...">
 <polygon fill="none" stroke="black" points="9,-112.5 9,-131.5 86,-131.5 86,-112.5 9,-112.5"/>
 <text text-anchor="middle" x="47.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">memory.hpp</text>
 </a>

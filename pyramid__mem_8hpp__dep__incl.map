@@ -1,5 +1,5 @@
 <map id="pyramid_mem.hpp" name="pyramid_mem.hpp">
-<area shape="rect" id="node1" title="This file is used to create a pyramid output memory when the auto generate output memory is selected...." alt="" coords="5,5,151,32"/>
+<area shape="rect" id="node1" title="This file is used to create a pyramid output memory when the auto generate output memory is selected." alt="" coords="5,5,151,32"/>
 <area shape="rect" id="node2" href="$complex__ops_8hpp.html" title="This file contains a set of includes and forward declaration required to build complex operations lik..." alt="" coords="10,80,146,107"/>
 <area shape="rect" id="node3" href="$expr__tree_8hpp.html" title="This file contains the forward declarations and all the necessary include headers for the constructio..." alt="" coords="22,155,134,181"/>
 <area shape="rect" id="node4" href="$framework_8hpp.html" title="Collection of VisionCpp framework headers." alt="" coords="17,229,139,256"/>
