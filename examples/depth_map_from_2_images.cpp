@@ -32,6 +32,7 @@
 
 // include OpenCV for camera display
 #include <opencv2/opencv.hpp>
+#include <opencv2/imgcodecs.hpp>
 
 // include VisionCpp
 #include <visioncpp.hpp>
@@ -105,9 +106,9 @@ struct Stereo_BMA {
 int main(int argc, char** argv) {
   // load images left and write in gray scale
   cv::Mat input_l =
-      cv::imread("../data/tsukuba_l.png", CV_LOAD_IMAGE_GRAYSCALE);
+      cv::imread("../data/tsukuba_l.png", cv::ImreadModes::IMREAD_GRAYSCALE );
   cv::Mat input_r =
-      cv::imread("../data/tsukuba_r.png", CV_LOAD_IMAGE_GRAYSCALE);
+      cv::imread("../data/tsukuba_r.png", cv::ImreadModes::IMREAD_GRAYSCALE );
 
   if (!input_l.data || !input_r.data) {  // check if we succeeded
     std::cout << "Loading image failed." << std::endl;

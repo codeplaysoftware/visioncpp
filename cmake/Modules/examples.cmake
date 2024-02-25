@@ -1,5 +1,8 @@
 # include common configs
 include(common)
+if(POLICY CMP0058) 
+    cmake_policy(SET CMP0058 NEW) 
+endif() 
 
 project(visioncpp-Examples CXX)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/example)

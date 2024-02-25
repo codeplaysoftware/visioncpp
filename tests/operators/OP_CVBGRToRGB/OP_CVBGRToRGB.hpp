@@ -18,6 +18,7 @@
 // limitations under the License.
 
 #include "../../include/common.hpp"
+#include "opencv2/core.hpp"
 
 template <size_t TERMINAL, size_t POLICY, typename QUEUE, typename DATA>
 void run_test(QUEUE &q, DATA data, int i) {
@@ -33,7 +34,7 @@ void run_test(QUEUE &q, DATA data, int i) {
       [](float *dataMem) { delete[] dataMem; });
 
   // 2) create gold_standard image
-  cvtColor(frame, ref, CV_BGR2RGB);
+  cvtColor(frame, ref, cv::COLOR_BGR2RGB);
 
   // that should being it down to 0.0 to 1.0
   ref /= 255.0f;
